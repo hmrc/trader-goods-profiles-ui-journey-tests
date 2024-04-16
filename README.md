@@ -1,8 +1,11 @@
-**This is the template README. Please update this with project specific content.**
+# Trader Goods Profiles
+Trader Goods Profiles (TGP) supports UK Internal Market Scheme (UKIMS) registered traders moving goods from Great Britain to Northern Ireland that are not-at-risk of moving into the European Union.
+
+TGP stores goods information allowing traders or intermediaries to use the information to create, update and remove declarations.
 
 # trader-goods-profiles-ui-journey-tests
 
-<SERVICE_NAME> UI journey tests.
+This repo contains the UI journey tests for the <trader-goods-profiles-frontend>.
 
 ## Pre-requisites
 
