@@ -18,6 +18,4 @@ package uk.gov.hmrc.ui.pages
 
 import uk.gov.hmrc.selenium.component.PageObject
 
-trait BasePage extends PageObject {
-  // blank test
-}
+trait BasePage extends PageObject {}
