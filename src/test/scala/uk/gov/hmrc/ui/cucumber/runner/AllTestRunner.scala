@@ -16,6 +16,4 @@
 
 package uk.gov.hmrc.ui.cucumber.runner
 
-class AllTestRunner {
-
-}
+class AllTestRunner {}

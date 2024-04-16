@@ -16,6 +16,4 @@
 
 package uk.gov.hmrc.ui.driver
 
-class BrowserDriver {
-
-}
+class BrowserDriver {}

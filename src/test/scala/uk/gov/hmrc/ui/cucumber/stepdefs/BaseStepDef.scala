@@ -16,6 +16,4 @@
 
 package uk.gov.hmrc.ui.cucumber.stepdefs
 
-class BaseStepDef {
-
-}
+class BaseStepDef {}

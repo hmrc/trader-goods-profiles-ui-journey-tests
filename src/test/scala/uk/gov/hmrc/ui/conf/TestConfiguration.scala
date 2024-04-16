@@ -16,6 +16,4 @@
 
 package uk.gov.hmrc.ui.conf
 
-class TestConfiguration {
-
-}
+class TestConfiguration {}
