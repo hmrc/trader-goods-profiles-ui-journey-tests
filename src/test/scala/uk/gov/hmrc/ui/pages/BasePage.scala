@@ -18,4 +18,7 @@ package uk.gov.hmrc.ui.pages
 
 import uk.gov.hmrc.selenium.component.PageObject
 
-trait BasePage extends PageObject {}
+trait BasePage extends PageObject {
+  def title(args: String*): String
+  // test1
+}
