@@ -14,21 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.ui.cucumber.runner
+package uk.gov.hmrc.ui.cucumber.stepdefs
 
-import io.cucumber.junit.{Cucumber, CucumberOptions}
-import org.junit.runner.RunWith
+import uk.gov.hmrc.ui.pages._
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array(
-    "pretty",
-    "html:target/cucumberReportJourneyTests.html",
-    "json:target/cucumber.json",
-    "junit:target/test-reports/JourneyTestsRunner.xml"
-  ),
-  tags = "@AllTests"
-)
-class AllTestRunner
+class StepDefinitions extends BaseStepDef {
+
+  Given("I am on the TGP Home Page") { () =>
+    BasePage.invokeURL(BasePage.URL_TGPHomePage)
+  }
+}

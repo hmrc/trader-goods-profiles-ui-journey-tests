@@ -16,6 +16,28 @@
 
 package uk.gov.hmrc.ui.pages
 
-import uk.gov.hmrc.selenium.component.PageObject
+import org.openqa.selenium.{By, WebDriver}
+import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.ui.conf.TestConfiguration
+import uk.gov.hmrc.ui.driver.BrowserDriver
 
-trait BasePage extends PageObject {}
+trait BasePage extends BrowserDriver with Matchers {}
+
+object BasePage {
+  lazy val baseUrl    = TestConfiguration.environmentHost
+  val URL_TGPHomePage = s"$baseUrl/trader-goods-profiles"
+
+  def invokeURL(
+    url: String
+  )(implicit
+    driver: WebDriver
+  ): Unit = {
+    driver.manage().deleteAllCookies()
+    driver.navigate().to(url)
+    val titlecheck = driver.getTitle
+    if (titlecheck == "Authority Wizard") {
+      driver.findElement(By.id("redirectionUrl")).clear()
+      driver.findElement(By.id("redirectionUrl")).sendKeys(URL_TGPHomePage)
+    }
+  }
+}
