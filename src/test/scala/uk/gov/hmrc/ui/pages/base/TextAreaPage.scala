@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 HM Revenue & Customs
+ * Copyright 2023 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,16 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.ui.driver
+package uk.gov.hmrc.ui.pages.base
 
-import com.typesafe.scalalogging.LazyLogging
-import org.openqa.selenium.remote.RemoteWebDriver
-import uk.gov.hmrc.selenium.webdriver.Driver
+import org.openqa.selenium.By
 
-trait BrowserDriver extends LazyLogging {
-  logger.info(
-    s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
-  )
+trait TextAreaPage extends BasePage {
+  import uk.gov.hmrc.ui.pages._
 
-  implicit lazy val driver: RemoteWebDriver = Driver.instance
+  val textArea: By = By.id("value")
+
+  def enterText(content: String): TextAreaPage = {
+    textArea.find.enterText(content)
+    this
+  }
+
+  def getText: String =
+    textArea.find.getText
 }

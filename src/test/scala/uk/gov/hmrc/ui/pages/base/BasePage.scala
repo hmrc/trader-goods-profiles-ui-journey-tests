@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.ui.pages
+package uk.gov.hmrc.ui.pages.base
 
 import org.openqa.selenium.{By, WebDriver}
 import org.scalatest.matchers.should.Matchers
@@ -24,8 +24,8 @@ import uk.gov.hmrc.ui.driver.BrowserDriver
 trait BasePage extends BrowserDriver with Matchers {}
 
 object BasePage {
-  lazy val baseUrl    = TestConfiguration.environmentHost
-  val URL_TGPHomePage = s"$baseUrl/trader-goods-profiles"
+  lazy val baseUrl: String = TestConfiguration.environmentHost
+  val URL_TGPHomePage      = s"$baseUrl/trader-goods-profiles"
 
   def invokeURL(
     url: String
@@ -34,8 +34,8 @@ object BasePage {
   ): Unit = {
     driver.manage().deleteAllCookies()
     driver.navigate().to(url)
-    val titlecheck = driver.getTitle
-    if (titlecheck == "Authority Wizard") {
+    val titleCheck = driver.getTitle
+    if (titleCheck == "Authority Wizard") {
       driver.findElement(By.id("redirectionUrl")).clear()
       driver.findElement(By.id("redirectionUrl")).sendKeys(URL_TGPHomePage)
     }

@@ -1,8 +1,12 @@
-**This is the template README. Please update this with project specific content.**
+# Trader Goods Profiles
+
+Trader Goods Profiles (TGP) supports UK Internal Market Scheme (UKIMS) registered traders moving goods from Great Britain to Northern Ireland that are not-at-risk of moving into the European Union.
+
+TGP stores goods information allowing traders or intermediaries to use the information to create, update and remove declarations.
 
 # trader-goods-profiles-ui-journey-tests
 
-<SERVICE_NAME> UI journey tests.
+This repo contains the UI journey tests for the .
 
 ## Pre-requisites
 
@@ -14,10 +18,10 @@ Start Mongo Docker container as follows:
 docker run --rm -d -p 27017:27017 --name mongo percona/percona-server-mongodb:5.0
 ```
 
-Start `<SERVICE_MANAGER_PROFILE>` services as follows:
+Start `TGP_FE` services as follows:
 
 ```bash
-sm2 --start <SERVICE_MANAGER_PROFILE>
+sm2 --start TGP_FE
 ```
 
 ### Docker Selenium Grid

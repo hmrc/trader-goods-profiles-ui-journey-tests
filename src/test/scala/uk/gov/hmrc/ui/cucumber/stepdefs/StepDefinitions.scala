@@ -17,10 +17,17 @@
 package uk.gov.hmrc.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.ui.pages._
+import uk.gov.hmrc.ui.pages.base.BasePage
 
 class StepDefinitions extends BaseStepDef {
 
-  Given("I am on the TGP Home Page") { () =>
+  And("""I am on the TGP Home Page""") { () =>
     BasePage.invokeURL(BasePage.URL_TGPHomePage)
+  }
+  And("""I refresh the page""") { () =>
+    driver.navigate().refresh()
+  }
+  And("""I should be on the TGP Home Page""") { () =>
+    driver.getTitle == BasePage.URL_TGPHomePage
   }
 }

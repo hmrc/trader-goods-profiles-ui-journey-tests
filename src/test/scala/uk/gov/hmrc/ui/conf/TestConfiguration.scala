@@ -32,10 +32,19 @@ object TestConfiguration {
     s"$host${serviceRoute(service)}"
   }
 
+  def authorise(service: String): String = {
+    val host = env match {
+      case "local" => s"$environmentHost:${servicePort(service)}"
+      case _       => s"${envConfig.getString(s"services.host")}"
+    }
+    s"$host${authRoute(service)}"
+  }
+
   def environmentHost: String = envConfig.getString("services.host")
 
   def servicePort(serviceName: String): String = envConfig.getString(s"services.$serviceName.port")
 
-  def serviceRoute(serviceName: String): String =
-    envConfig.getString(s"services.$serviceName.productionRoute")
+  def serviceRoute(serviceName: String): String = envConfig.getString(s"services.$serviceName.productionRoute")
+
+  def authRoute(serviceName: String): String = envConfig.getString(s"services.$serviceName.authorise")
 }

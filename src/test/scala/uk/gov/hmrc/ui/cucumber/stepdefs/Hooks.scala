@@ -19,9 +19,9 @@ package uk.gov.hmrc.ui.cucumber.stepdefs
 import io.cucumber.scala.{EN, ScalaDsl, Scenario}
 import org.openqa.selenium.{OutputType, TakesScreenshot}
 import uk.gov.hmrc.selenium.webdriver.Browser
-import uk.gov.hmrc.ui.driver.BrowserDriver
+import uk.gov.hmrc.ui.pages.base.BasePage
 
-object Hooks extends ScalaDsl with EN with Browser with BrowserDriver {
+object Hooks extends ScalaDsl with EN with Browser with BasePage {
 
   BeforeAll {
     startBrowser()
