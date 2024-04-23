@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 HM Revenue & Customs
+ * Copyright 2023 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import io.cucumber.junit.{Cucumber, CucumberOptions}
-import org.junit.runner.RunWith
+class CommonStepDef extends BaseStepDef {
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array(
-    "pretty",
-    "html:target/cucumberReportJourneyTests.html",
-    "json:target/cucumber.json",
-    "junit:target/test-reports/JourneyTestsRunner.xml"
-  ),
-  tags = "@AllTests"
-)
-class AllTestRunner
+  And("""^(?:I )?wait for (.*) seconds$""") { t: Int =>
+    val time = t * 1000
+    Thread.sleep(time)
+  }
+
+  And("""^(?:I )?refresh the page$""") { () =>
+    driver.navigate().refresh()
+  }
+}

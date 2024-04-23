@@ -1,15 +1,20 @@
-import sbt.*
+import sbt._
 
 object Dependencies {
 
   val test: Seq[ModuleID] = Seq(
-    "com.vladsch.flexmark" % "flexmark-all"   % "0.64.8" % Test,
-    "org.scalatest"       %% "scalatest"      % "3.2.18" % Test,
-    "org.slf4j"            % "slf4j-simple"   % "2.0.9"  % Test,
-    "uk.gov.hmrc"         %% "ui-test-runner" % "0.19.0" % Test,
-    "io.cucumber"          % "cucumber-junit"  % "7.16.1" % Test,
-    "io.cucumber"         %% "cucumber-scala"  % "8.21.1" % Test,
-    "com.github.sbt"       % "junit-interface" % "0.13.3" % Test
-  )
+    "uk.gov.hmrc"         %% "ui-test-runner"         % "0.15.0",
+    "org.scalatest"       %% "scalatest"              % "3.2.15",
+    "com.vladsch.flexmark" % "flexmark-all"           % "0.64.0",
+    "io.cucumber"         %% "cucumber-scala"         % "8.17.0",
+    "io.cucumber"          % "cucumber-junit"         % "7.14.0",
+    "junit"                % "junit"                  % "4.13.2",
+    "com.novocode"         % "junit-interface"        % "0.11",
+    "com.typesafe"         % "config"                 % "1.4.2",
+    "org.mongodb.scala"   %% "mongo-scala-driver"     % "4.9.0",
+    "com.typesafe.play"   %% "play-ahc-ws-standalone" % "2.1.10",
+    "com.typesafe.play"   %% "play-json"              % "2.9.4",
+    "uk.gov.hmrc"         %% "webdriver-factory"      % "0.40.0"
+  ).map(_ % Test)
 
 }

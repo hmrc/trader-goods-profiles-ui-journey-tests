@@ -4,5 +4,7 @@ lazy val root = (project in file("."))
     version := "0.1.0",
     scalaVersion := "2.13.12",
     libraryDependencies ++= Dependencies.test,
-    (Compile / compile) := ((Compile / compile) dependsOn (Compile / scalafmtSbtCheck, Compile / scalafmtCheckAll)).value
+    // The testOptions from SbtAutoBuildPlugin supports only ScalaTest. Resetting testOptions for Cucumber Tests.
+    Test / testOptions := Seq.empty
   )
+

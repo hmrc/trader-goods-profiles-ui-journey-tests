@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 HM Revenue & Customs
+ * Copyright 2023 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,22 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.ui.driver
+package uk.gov.hmrc.test.ui.pages.Base
 
-import org.openqa.selenium.WebDriver
-import org.openqa.selenium.remote.RemoteWebDriver
-import org.openqa.selenium.support.ui.WebDriverWait
-import uk.gov.hmrc.selenium.webdriver.Driver
+import org.openqa.selenium.By
 
-import java.time.Duration
+trait RadioPage extends Page {
 
-trait BrowserDriver {
+  def select(answer: String): this.type
 
-  implicit def driver: RemoteWebDriver =
-    Driver.instance
+  protected def clickRadioBtn(answer: String): Unit =
+    findBy(By.cssSelector(s"input[type='radio'][value='$answer']")).click()
 
-  def webDriverWait()(implicit driver: WebDriver): WebDriverWait = {
-    val timeToWait = 15
-    new WebDriverWait(driver, Duration.ofSeconds(timeToWait))
-  }
 }
