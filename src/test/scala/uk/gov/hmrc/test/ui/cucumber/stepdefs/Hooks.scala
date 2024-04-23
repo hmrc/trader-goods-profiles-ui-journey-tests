@@ -13,24 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
-
 import io.cucumber.scala.{EN, ScalaDsl, Scenario}
 import org.openqa.selenium.{OutputType, TakesScreenshot}
 import uk.gov.hmrc.selenium.webdriver.Browser
 import uk.gov.hmrc.test.ui.pages.Base.BasePage
-
 object Hooks extends ScalaDsl with EN with Browser with BasePage {
-
   BeforeAll {
     startBrowser()
   }
-
   Before {
     deleteCookies()
   }
-
   After { scenario: Scenario =>
     if (scenario.isFailed) {
       val screenshotName = scenario.getName.replaceAll(" ", "_")
@@ -38,7 +32,6 @@ object Hooks extends ScalaDsl with EN with Browser with BasePage {
       scenario.attach(screenshot, "image/png", screenshotName)
     }
   }
-
   AfterAll {
     quitBrowser()
   }
