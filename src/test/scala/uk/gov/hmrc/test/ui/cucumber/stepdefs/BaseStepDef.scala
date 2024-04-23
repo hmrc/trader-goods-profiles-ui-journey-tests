@@ -14,13 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.ui.pages._
+import io.cucumber.scala.{EN, ScalaDsl}
+import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
-class StepDefinitions extends BaseStepDef {
-
-  Given("I am on the TGP Home Page") { () =>
-    BasePage.invokeURL(BasePage.URL_TGPHomePage)
-  }
-}
+trait BaseStepDef extends BrowserDriver with ScalaDsl with EN with Matchers

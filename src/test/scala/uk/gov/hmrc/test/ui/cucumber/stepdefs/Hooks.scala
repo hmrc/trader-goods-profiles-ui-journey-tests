@@ -14,17 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import io.cucumber.scala.{EN, ScalaDsl, Scenario}
 import org.openqa.selenium.{OutputType, TakesScreenshot}
 import uk.gov.hmrc.selenium.webdriver.Browser
-import uk.gov.hmrc.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
-object Hooks extends ScalaDsl with EN with Browser with BrowserDriver {
+object Hooks extends ScalaDsl with EN with Browser with BasePage {
 
   BeforeAll {
     startBrowser()
+  }
+
+  Before {
+    deleteCookies()
   }
 
   After { scenario: Scenario =>

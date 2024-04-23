@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 HM Revenue & Customs
+ * Copyright 2023 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.ui.conf
+package uk.gov.hmrc.test.ui.conf
 
 import com.typesafe.config.{Config, ConfigFactory}
 
@@ -32,10 +32,19 @@ object TestConfiguration {
     s"$host${serviceRoute(service)}"
   }
 
+  def authorise(service: String): String = {
+    val host = env match {
+      case "local" => s"$environmentHost:${servicePort(service)}"
+      case _       => s"${envConfig.getString(s"services.host")}"
+    }
+    s"$host${authRoute(service)}"
+  }
+
   def environmentHost: String = envConfig.getString("services.host")
 
   def servicePort(serviceName: String): String = envConfig.getString(s"services.$serviceName.port")
 
-  def serviceRoute(serviceName: String): String =
-    envConfig.getString(s"services.$serviceName.productionRoute")
+  def serviceRoute(serviceName: String): String = envConfig.getString(s"services.$serviceName.productionRoute")
+
+  def authRoute(serviceName: String): String = envConfig.getString(s"services.$serviceName.authorise")
 }

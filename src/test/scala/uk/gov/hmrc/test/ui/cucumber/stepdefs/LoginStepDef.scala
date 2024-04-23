@@ -14,11 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import io.cucumber.scala.{EN, ScalaDsl}
-import org.scalatest.concurrent.Eventually
-import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
+import uk.gov.hmrc.test.ui.pages.AuthorityWizard.navigateTo
+import uk.gov.hmrc.test.ui.pages.AuthorityWizard
 
-trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {}
+class LoginStepDef extends BaseStepDef {
+
+  And("I login to TGP Profile setup page") { () =>
+    AuthorityWizard
+      .loadPage()
+      .fillInputs()
+      .submitPage()
+
+//    navigateTo(TestConfiguration.url("trader-goods-profiles-frontend"))
+  }
+}
