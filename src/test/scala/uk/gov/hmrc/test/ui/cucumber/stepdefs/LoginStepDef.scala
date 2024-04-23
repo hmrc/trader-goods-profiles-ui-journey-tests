@@ -14,8 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-class AllTestRunner {
+import uk.gov.hmrc.test.ui.pages.AuthorityWizard
 
+class LoginStepDef extends BaseStepDef {
+
+  And("I login to TGP Profile setup page") { () =>
+    AuthorityWizard
+      .loadPage()
+      .fillInputs()
+      .submitPage()
+  }
 }

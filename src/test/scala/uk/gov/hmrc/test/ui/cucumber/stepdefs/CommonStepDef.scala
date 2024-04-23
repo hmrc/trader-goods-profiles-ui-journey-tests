@@ -14,8 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.ui.conf
+package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-class TestConfiguration {
+class CommonStepDef extends BaseStepDef {
 
+  And("""^(?:I )?wait for (.*) seconds$""") { t: Int =>
+    val time = t * 1000
+    Thread.sleep(time)
+  }
+
+  And("""^(?:I )?refresh the page$""") { () =>
+    driver.navigate().refresh()
+  }
 }

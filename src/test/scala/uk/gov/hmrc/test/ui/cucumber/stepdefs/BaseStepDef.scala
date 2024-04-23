@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.ui.driver
+package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-class BrowserDriver {
+import io.cucumber.scala.{EN, ScalaDsl}
+import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
-}
+trait BaseStepDef extends BrowserDriver with ScalaDsl with EN with Matchers
