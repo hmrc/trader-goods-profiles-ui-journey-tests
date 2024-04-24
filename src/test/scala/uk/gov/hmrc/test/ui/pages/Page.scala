@@ -14,11 +14,25 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.pages
 
-class CommonStepDef extends BaseStepDef {
+import uk.gov.hmrc.test.ui.pages.Base.{BasePage, PageNotFoundException}
 
-  And("""^(?:I )?refresh the page$""") { () =>
-    driver.navigate().refresh()
+trait Page extends BasePage {
+
+  def title(args: String*): String
+
+  def loadPage(args: String*): this.type = {
+    onPage(title(args: _*))
+    this
   }
+
+  val serviceName: String = "Trader Goods Profile"
+
+  private def onPage(pageTitle: String): Unit =
+    if (driver.getTitle != s"$pageTitle - $serviceName - GOV.UK")
+      throw PageNotFoundException(
+        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
+      )
+
 }

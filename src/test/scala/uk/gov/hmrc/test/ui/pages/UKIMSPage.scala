@@ -14,11 +14,24 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.pages
 
-class CommonStepDef extends BaseStepDef {
+import uk.gov.hmrc.test.ui.pages.Base.{BasePage, PageNotFoundException}
 
-  And("""^(?:I )?refresh the page$""") { () =>
-    driver.navigate().refresh()
+object UKIMSPage extends BasePage {
+
+  def title(): String =
+    "Apply for authorisation for the UK Internal Market Scheme if you bring goods into Northern Ireland"
+
+  def loadPage(): this.type = {
+    onPage(title())
+    this
   }
+
+  private def onPage(pageTitle: String): Unit =
+    if (driver.getTitle != s"$pageTitle - GOV.UK")
+      throw PageNotFoundException(
+        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
+      )
+
 }

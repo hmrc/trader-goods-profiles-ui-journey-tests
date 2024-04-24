@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.AuthorityWizard
 
 class LoginStepDef extends BaseStepDef {
 
-  And("I login to TGP Profile setup page") { () =>
+  And("I login to TGP Profile setup page with valid enrollments using authority wizard") { () =>
     AuthorityWizard
       .loadPage()
       .fillInputs()
