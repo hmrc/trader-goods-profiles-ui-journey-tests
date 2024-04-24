@@ -14,16 +14,24 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.AuthorityWizard
+import uk.gov.hmrc.test.ui.pages.Base.{BasePage, PageNotFoundException}
 
-class LoginStepDef extends BaseStepDef {
+object NIPHLPage extends BasePage {
 
-  And("I login to TGP Profile setup page with valid enrollments using authority wizard") { () =>
-    AuthorityWizard
-      .loadPage()
-      .fillInputs()
-      .submitPage()
+  def title(): String =
+    "Moving plants from Great Britain to Northern Ireland"
+
+  def loadPage(): this.type = {
+    onPage(title())
+    this
   }
+
+  private def onPage(pageTitle: String): Unit =
+    if (driver.getTitle != s"$pageTitle - GOV.UK")
+      throw PageNotFoundException(
+        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
+      )
+
 }
