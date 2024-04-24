@@ -2,7 +2,7 @@
 
 Feature: Trader Goods Profile setup
 
-  Background: As UKIMS authorised trader I log on to the trader goods profile service
+  Background: As a UKIMS authorised trader I log on to the trader goods profile service
     Given I login to TGP Profile setup page with valid enrollments using authority wizard
 
   Scenario: 01 - I can navigate to UKIMS page
