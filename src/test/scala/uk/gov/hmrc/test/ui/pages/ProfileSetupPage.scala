@@ -16,6 +16,8 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import uk.gov.hmrc.test.ui.pages.Base.Page
+
 object ProfileSetupPage extends Page {
 
   override def title(args: String*): String = "Setting up your profile"
