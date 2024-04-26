@@ -24,7 +24,7 @@ object CategoryGuidancePage extends Page {
   override def title(args: String*): String = "Categorisation"
 
   def navigateToPage(args: String*): this.type = {
-    val url: String = TestConfiguration.url("trader-goods-profiles-frontend") + "/category-guidance"
+    val url: String = TestConfiguration.url("trader-goods-profiles-frontend") + "/categorisation-start"
     driver.navigate().to(url)
     super.loadPage(args: _*)
   }
