@@ -14,25 +14,18 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.Unauthorised
 
-import uk.gov.hmrc.test.ui.pages.Base.{BasePage, PageNotFoundException}
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
+import uk.gov.hmrc.test.ui.pages.Base.Page
 
-trait Page extends BasePage {
+object UnauthorisedUserPage extends Page {
 
-  def title(args: String*): String
+  override def title(args: String*): String = "There is a problem"
 
-  def loadPage(args: String*): this.type = {
-    onPage(title(args: _*))
-    this
+  def navigateToPage(args: String*): this.type = {
+    val url: String = TestConfiguration.url("trader-goods-profiles-frontend") + "/unauthorised"
+    driver.navigate().to(url)
+    super.loadPage(args: _*)
   }
-
-  val serviceName: String = "Trader Goods Profile"
-
-  private def onPage(pageTitle: String): Unit =
-    if (driver.getTitle != s"$pageTitle - $serviceName - GOV.UK")
-      throw PageNotFoundException(
-        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
-      )
-
 }

@@ -14,23 +14,18 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.Categorisation
 
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object ProfileSetupPage extends Page {
+object CategoryGuidancePage extends Page {
 
-  override def title(args: String*): String = "Setting up your profile"
+  override def title(args: String*): String = "Categorisation"
 
-  def clickOnLink(link: String): this.type = {
-    link match {
-      case "who can apply to UKIMS"                               =>
-        clickByPartialLinkText("who can apply to UKIMS")
-      case "the Northern Ireland Retail Movement Scheme"          =>
-        clickByPartialLinkText("the Northern Ireland Retail Movement Scheme")
-      case "Moving plants from Great Britain to Northern Ireland" =>
-        clickByPartialLinkText("Moving plants from Great Britain to Northern Ireland")
-    }
-    this
+  def navigateToPage(args: String*): this.type = {
+    val url: String = TestConfiguration.url("trader-goods-profiles-frontend") + "/category-guidance"
+    driver.navigate().to(url)
+    super.loadPage(args: _*)
   }
 }
