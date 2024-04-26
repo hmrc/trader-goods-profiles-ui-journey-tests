@@ -21,10 +21,6 @@ import uk.gov.hmrc.test.ui.pages.Unauthorised.UnauthorisedUserPage
 
 class UnauthorisedUserStepDef extends BaseStepDef {
 
-  Given("""^(?:I )?navigate to the 'unauthorised error' page$""") { () =>
-    UnauthorisedUserPage
-      .navigateToPage()
-  }
   Then("""^(?:I )?should be on the 'unauthorised error' page$""") { () =>
     UnauthorisedUserPage
       .loadPage()

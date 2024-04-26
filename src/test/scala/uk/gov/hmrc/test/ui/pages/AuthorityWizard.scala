@@ -38,4 +38,12 @@ object AuthorityWizard extends BasePage {
     findById("input-0-0-name").sendKeys("fake-identifier")
     this
   }
+
+  def fillInvalidInputs(): this.type = {
+    val redirectionUrl = TestConfiguration.authorise("trader-goods-profiles-Profile-setup")
+    findById("redirectionUrl").sendKeys(redirectionUrl)
+    findById("enrolment[0].name").sendKeys("Invalid-name")
+    findById("input-0-0-name").sendKeys("Invalid-identifier")
+    this
+  }
 }
