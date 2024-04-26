@@ -16,9 +16,17 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
+import org.openqa.selenium.By
+import org.openqa.selenium.By.className
+import uk.gov.hmrc.test.ui.pages.ProfileSetupPage
+
 class CommonStepDef extends BaseStepDef {
 
   And("""^(?:I )?refresh the page$""") { () =>
     driver.navigate().refresh()
+  }
+
+  And("""^(?:I )?select continue$""") { () =>
+    driver.findElement(By.className("govuk-button"))
   }
 }
