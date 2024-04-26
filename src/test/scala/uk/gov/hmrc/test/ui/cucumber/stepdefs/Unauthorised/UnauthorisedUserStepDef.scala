@@ -14,23 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.Unauthorised
 
-import uk.gov.hmrc.test.ui.pages.AuthorityWizard
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.Unauthorised.UnauthorisedUserPage
 
-class LoginStepDef extends BaseStepDef {
+class UnauthorisedUserStepDef extends BaseStepDef {
 
-  And("I login to TGP Profile setup page with valid enrollments using authority wizard") { () =>
-    AuthorityWizard
+  Then("""^(?:I )?should be on the 'unauthorised error' page$""") { () =>
+    UnauthorisedUserPage
       .loadPage()
-      .fillInputs()
-      .submitPage()
-  }
-
-  And("I login to TGP Profile setup page with invalid enrollments using authority wizard") { () =>
-    AuthorityWizard
-      .loadPage()
-      .fillInvalidInputs()
-      .submitPage()
   }
 }

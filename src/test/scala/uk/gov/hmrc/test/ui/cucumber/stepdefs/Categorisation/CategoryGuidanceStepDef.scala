@@ -14,23 +14,18 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
 
-import uk.gov.hmrc.test.ui.pages.AuthorityWizard
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.Categorisation.CategoryGuidancePage
 
-class LoginStepDef extends BaseStepDef {
-
-  And("I login to TGP Profile setup page with valid enrollments using authority wizard") { () =>
-    AuthorityWizard
-      .loadPage()
-      .fillInputs()
-      .submitPage()
+class CategoryGuidanceStepDef extends BaseStepDef {
+  Given("""^(?:I )?navigate to the 'categorisation' page$""") { () =>
+    CategoryGuidancePage
+      .navigateToPage()
   }
-
-  And("I login to TGP Profile setup page with invalid enrollments using authority wizard") { () =>
-    AuthorityWizard
+  Then("""^(?:I )?should be on the 'categorisation' page$""") { () =>
+    CategoryGuidancePage
       .loadPage()
-      .fillInvalidInputs()
-      .submitPage()
   }
 }
