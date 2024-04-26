@@ -20,4 +20,4 @@ Feature: Trader Goods Profile setup
   Scenario: I can navigate to the UKIMS Number page
     Given I should be on the 'Setting up your profile' page
     When I select continue
-    Then I should be navigated to 'UK internal scheme number' page
+    Then I should be on the 'UK internal scheme number' page

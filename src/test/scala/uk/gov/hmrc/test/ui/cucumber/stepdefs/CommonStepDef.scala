@@ -29,4 +29,8 @@ class CommonStepDef extends BaseStepDef {
   And("""^(?:I )?select continue$""") { () =>
     driver.findElement(By.className("govuk-button"))
   }
+
+  And("""^(?:I )?select the back button$""") { () =>
+    driver.findElement(By.className("govuk-back-link"))
+  }
 }
