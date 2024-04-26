@@ -20,11 +20,11 @@ import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Categorisation.CategoryGuidancePage
 
 class CategoryGuidanceStepDef extends BaseStepDef {
-  Given("""^(?:I )?navigate to the categorisation page$""") { () =>
+  Given("""^(?:I )?navigate to the 'categorisation' page$""") { () =>
     CategoryGuidancePage
       .navigateToPage()
   }
-  Then("""^(?:I )?should be on the categorisation page$""") { () =>
+  Then("""^(?:I )?should be on the 'categorisation' page$""") { () =>
     CategoryGuidancePage
       .loadPage()
   }
