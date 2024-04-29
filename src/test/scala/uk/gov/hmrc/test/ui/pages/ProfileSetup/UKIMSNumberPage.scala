@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages.ProfileSetup
 
-import uk.gov.hmrc.test.ui.pages.Base.{Page, StringPage}
+import uk.gov.hmrc.test.ui.pages.Base.StringPage
 
 object UKIMSNumberPage extends StringPage {
 
