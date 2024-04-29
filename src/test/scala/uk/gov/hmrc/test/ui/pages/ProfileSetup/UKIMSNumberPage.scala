@@ -14,11 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.pages.ProfileSetup
 
-import io.cucumber.scala.{EN, ScalaDsl}
-import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.pages.Base.BasePage
+import uk.gov.hmrc.test.ui.pages.Base.{BasePage, StringPage}
 
-trait BaseStepDef extends BrowserDriver with ScalaDsl with EN with Matchers with BasePage
+object UKIMSNumberPage extends StringPage with BasePage {
+
+  override def title(args: String*): String = "UK Internal Market Scheme number"
+
+  override def fillInput(input: String): this.type = {
+    fillInputById("ukimsNumber", input)
+    this
+  }
+}

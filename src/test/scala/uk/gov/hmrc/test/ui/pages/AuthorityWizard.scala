@@ -22,6 +22,20 @@ import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
 object AuthorityWizard extends BasePage {
 
+  def validLogin(): this.type = {
+    loadPage()
+    fillInputs()
+    submitPage()
+    this
+  }
+
+  def invalidLogin(): this.type = {
+    loadPage()
+    fillInvalidInputs()
+    submitPage()
+    this
+  }
+
   def loadPage(): this.type = {
     val url: String = TestConfiguration.url("auth-login-stub")
     driver.navigate().to(url)

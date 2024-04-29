@@ -18,7 +18,11 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 class CommonStepDef extends BaseStepDef {
 
-  And("""^(?:I )?refresh the page$""") { () =>
-    driver.navigate().refresh()
+  And("""^(?:I )?select continue$""") { () =>
+    submitPage()
+  }
+
+  And("""^(?:I )?select the back link$""") { () =>
+    clickBackLink()
   }
 }
