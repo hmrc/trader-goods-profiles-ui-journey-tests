@@ -18,6 +18,5 @@ Feature: Trader Goods Profile setup
     Then I should be on the 'NIPHL' page
 
   Scenario: I can navigate to the UKIMS Number page
-    Given I should be on the 'Setting up your profile' page
     When I select continue
     Then I should be on the 'UK internal scheme number' page
