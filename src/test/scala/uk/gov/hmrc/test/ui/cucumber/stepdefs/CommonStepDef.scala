@@ -17,8 +17,6 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
-import org.openqa.selenium.By.className
-import uk.gov.hmrc.test.ui.pages.ProfileSetupPage
 
 class CommonStepDef extends BaseStepDef {
 
@@ -27,10 +25,10 @@ class CommonStepDef extends BaseStepDef {
   }
 
   And("""^(?:I )?select continue$""") { () =>
-    driver.findElement(By.className("govuk-button"))
+    driver.findElement(By.className("govuk-button")).click()
   }
 
   And("""^(?:I )?select the back button$""") { () =>
-    driver.findElement(By.className("govuk-back-link"))
+    driver.findElement(By.className("govuk-back-link")).click()
   }
 }

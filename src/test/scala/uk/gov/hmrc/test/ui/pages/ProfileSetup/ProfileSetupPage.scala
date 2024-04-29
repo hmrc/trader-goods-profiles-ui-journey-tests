@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.ProfileSetup
 
 import uk.gov.hmrc.test.ui.pages.Base.Page
 

@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.ProfileSetup
 
-import uk.gov.hmrc.test.ui.pages._
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.ProfileSetup.UKIMSNumberPage
 
 class UKIMSNumberStepDef extends BaseStepDef {
 
@@ -27,16 +28,16 @@ class UKIMSNumberStepDef extends BaseStepDef {
 
   Then("""^(?:I )?enter (.*) format of my UKIMS Number in the free text field$""") { (ukimsNumberValidation: String) =>
     ukimsNumberValidation match {
-      case "an invalid"     =>
-        // enter invalid UKIMS
-      case "a valid"        =>
-        // enter valid UKIMS
+      case "an incorrect" =>
+        UKIMSNumberPage
+          .fillInput("INVALID")
+      case "a valid"      =>
+        UKIMSNumberPage
+          .fillInput("XI47699357400020231115081800")
     }
   }
 
   Then("""^(?:I )?leave UKIMS Number field blank$""") { () =>
-    UKIMSNumberPage
-      .loadPage() // WIP
   }
 
   Then("""^Error message '(.*)' should be displayed$""") { (errorMessage: String) =>

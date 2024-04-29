@@ -14,12 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.ProfileSetup
 
-import uk.gov.hmrc.test.ui.pages.Base.Page
+import uk.gov.hmrc.test.ui.pages.Base.{Page, StringPage}
 
-object UKIMSNumberPage extends Page {
+object UKIMSNumberPage extends StringPage {
 
   override def title(args: String*): String = "UK Internal Market Scheme number"
 
+  override def fillInput(input: String): this.type = {
+    fillInputById("ukimsNumber", input)
+    this
+  }
 }

@@ -1,11 +1,12 @@
-#@AllTest
+@AllTest
 
 Feature: Trader Goods Profile setup
 
   Background: As a UKIMS authorised trader I enter my UKIMS number to setup my TGP
     Given I login to TGP Profile setup page with valid enrollments using authority wizard
+    And I select continue
 
-  Scenario: 02 - I enter an incorrect formatted UKIMS Number
+  Scenario: I enter an incorrect formatted UKIMS Number
     Given I should be on the 'UK internal scheme number' page
     When I enter an incorrect format of my UKIMS Number in the free text field
     And I select continue
@@ -25,6 +26,5 @@ Feature: Trader Goods Profile setup
   Scenario: I enter a valid UKIMS Number
     Given I should be on the 'UK internal scheme number' page
     When I enter a valid format of my UKIMS Number in the free text field
-    # Example valid format = XI47699357400020231115081800
 #    And I select continue
 #    Then I should be on the 'Northern Ireland Retail Movement Scheme (NIRMS)' page
