@@ -37,8 +37,7 @@ class UKIMSNumberStepDef extends BaseStepDef {
     }
   }
 
-  Then("""^(?:I )?leave UKIMS Number field blank$""") { () =>
-  }
+  Then("""^(?:I )?leave UKIMS Number field blank$""") { () => }
 
   Then("""^Error message '(.*)' should be displayed$""") { (errorMessage: String) =>
     UKIMSNumberPage
