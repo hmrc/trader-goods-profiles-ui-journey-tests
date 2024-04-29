@@ -55,7 +55,7 @@ trait BasePage extends BrowserDriver with Matchers {
 
   def submitPage(): Unit = clickByClassName("govuk-button")
 
-  def clickBackButton(): Unit = clickByClassName("govuk-back-link")
+  def clickBackLink(): Unit = clickByClassName("govuk-back-link")
 
   private def bringIntoView(by: By, action: WebElement => Unit): Unit = {
     val element = findBy(by)

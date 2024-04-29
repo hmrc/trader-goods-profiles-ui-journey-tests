@@ -21,5 +21,5 @@ Feature: Trader Goods Profile setup
     Then Error message 'Enter your UKIMS number' should be displayed
 
   Scenario: I can go back from the UKIMS Number page
-    When I select the back button
+    When I select the back link
     Then I should be on the 'Setting up your profile' page

@@ -22,7 +22,7 @@ class CommonStepDef extends BaseStepDef {
     submitPage()
   }
 
-  And("""^(?:I )?select the back button$""") { () =>
-    clickBackButton()
+  And("""^(?:I )?select the back link$""") { () =>
+    clickBackLink()
   }
 }
