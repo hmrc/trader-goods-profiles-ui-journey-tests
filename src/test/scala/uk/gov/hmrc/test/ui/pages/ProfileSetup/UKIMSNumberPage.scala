@@ -16,9 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages.ProfileSetup
 
-import uk.gov.hmrc.test.ui.pages.Base.StringPage
+import uk.gov.hmrc.test.ui.pages.Base.{BasePage, StringPage}
 
-object UKIMSNumberPage extends StringPage {
+object UKIMSNumberPage extends StringPage with BasePage {
 
   override def title(args: String*): String = "UK Internal Market Scheme number"
 

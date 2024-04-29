@@ -17,27 +17,32 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.ProfileSetup
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.AuthorityWizard
 import uk.gov.hmrc.test.ui.pages.ProfileSetup.UKIMSNumberPage
 
 class UKIMSNumberStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'UK internal scheme number' page$""") { () =>
+  Then("""^(?:I )?(am|should be) on the 'UK internal scheme number' page$""") { (amShould: String) =>
+    AuthorityWizard
+      .validLogin()
+    submitPage()
     UKIMSNumberPage
       .loadPage()
   }
 
-  Then("""^(?:I )?enter (.*) format of my UKIMS Number in the free text field$""") { (ukimsNumberValidation: String) =>
+  Then("""^(?:I )?enter (.*) value of my UKIMS Number in the free text field$""") { (ukimsNumberValidation: String) =>
     ukimsNumberValidation match {
-      case "an incorrect" =>
+      case "incorrect" =>
         UKIMSNumberPage
           .fillInput("INVALID")
-      case "a valid"      =>
+      case "valid"     =>
         UKIMSNumberPage
           .fillInput("XI47699357400020231115081800")
+      case "empty"     =>
+        UKIMSNumberPage
+          .fillInput("")
     }
   }
-
-  Then("""^(?:I )?leave UKIMS Number field blank$""") { () => }
 
   Then("""^Error message '(.*)' should be displayed$""") { (errorMessage: String) =>
     UKIMSNumberPage

@@ -22,15 +22,11 @@ class LoginStepDef extends BaseStepDef {
 
   And("I login to TGP Profile setup page with valid enrollments using authority wizard") { () =>
     AuthorityWizard
-      .loadPage()
-      .fillInputs()
-      .submitPage()
+      .validLogin()
   }
 
   And("I login to TGP Profile setup page with invalid enrollments using authority wizard") { () =>
     AuthorityWizard
-      .loadPage()
-      .fillInvalidInputs()
-      .submitPage()
+      .invalidLogin()
   }
 }
