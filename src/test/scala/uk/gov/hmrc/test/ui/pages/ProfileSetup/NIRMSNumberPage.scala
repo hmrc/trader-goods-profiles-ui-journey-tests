@@ -14,15 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Base
+package uk.gov.hmrc.test.ui.pages.ProfileSetup
 
-import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.pages.Base.Page
 
-trait RadioPage extends Page {
+object NIRMSNumberPage extends Page {
 
-  def select(answer: String): this.type
+  override def title(args: String*): String = "Northern Ireland Retail Movement Scheme number"
 
-  protected def clickRadioBtn(answer: String): Unit =
-    findBy(By.cssSelector(s"input[type='radio'][value='$answer']")).click()
-
+  override def fillInput(input: String): this.type = {
+    fillInputById("nirmsNumber", input)
+    this
+  }
 }

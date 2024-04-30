@@ -43,4 +43,8 @@ class NIRMSQuestionStepDef extends BaseStepDef {
     NIRMSProductEligibilityPage
       .loadPage()
   }
+
+  When("""^(?:I )?select (.+) for the boolean question""") { (option: String) =>
+    clickRadioBtn(option)
+  }
 }
