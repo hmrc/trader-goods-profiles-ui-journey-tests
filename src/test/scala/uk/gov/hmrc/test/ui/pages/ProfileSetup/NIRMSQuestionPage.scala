@@ -14,20 +14,11 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.pages.ProfileSetup
 
-class CommonStepDef extends BaseStepDef {
+import uk.gov.hmrc.test.ui.pages.Base.Page
 
-  And("""^(?:I )?select continue$""") { () =>
-    submitPage()
-  }
+object NIRMSQuestionPage extends Page {
 
-  And("""^(?:I )?select the back link$""") { () =>
-    clickBackLink()
-  }
-
-  Then("""^Error message '(.*)' should be displayed$""") { (errorMessage: String) =>
-    verifyErrorMessage(errorMessage)
-  }
-
+  override def title(args: String*): String = "Northern Ireland Retail Movement Scheme (NIRMS)"
 }

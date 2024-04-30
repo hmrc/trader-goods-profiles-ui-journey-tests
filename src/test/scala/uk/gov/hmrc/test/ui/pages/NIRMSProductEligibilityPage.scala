@@ -14,20 +14,22 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.pages
 
-class CommonStepDef extends BaseStepDef {
+import uk.gov.hmrc.test.ui.pages.Base.{Page, PageNotFoundException}
 
-  And("""^(?:I )?select continue$""") { () =>
-    submitPage()
+object NIRMSProductEligibilityPage extends Page {
+
+  override def title(args: String*): String = "Northern Ireland Retail Movement Scheme: how the scheme will work"
+
+  def loadPage(): this.type = {
+    onPage(title())
+    this
   }
 
-  And("""^(?:I )?select the back link$""") { () =>
-    clickBackLink()
-  }
-
-  Then("""^Error message '(.*)' should be displayed$""") { (errorMessage: String) =>
-    verifyErrorMessage(errorMessage)
-  }
-
+  private def onPage(pageTitle: String): Unit =
+    if (driver.getTitle != s"$pageTitle - GOV.UK")
+      throw PageNotFoundException(
+        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
+      )
 }

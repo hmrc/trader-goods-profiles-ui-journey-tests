@@ -7,8 +7,8 @@ Feature: Trader Goods Profile setup
 
   Scenario: I enter a valid UKIMS Number
     When I enter valid value of my UKIMS Number in the free text field
-#    And I select continue
-#    Then I should be on the 'Northern Ireland Retail Movement Scheme (NIRMS)' page
+    And I select continue
+    Then I should be on the 'Northern Ireland Retail Movement Scheme' page
 
   Scenario: I enter an incorrect formatted UKIMS Number
     When I enter incorrect value of my UKIMS Number in the free text field

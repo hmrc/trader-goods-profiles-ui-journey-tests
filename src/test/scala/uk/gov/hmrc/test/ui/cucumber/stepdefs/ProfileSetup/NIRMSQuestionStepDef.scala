@@ -17,30 +17,30 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.ProfileSetup
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.AuthorityWizard
-import uk.gov.hmrc.test.ui.pages.ProfileSetup.UKIMSNumberPage
+import uk.gov.hmrc.test.ui.pages.{AuthorityWizard, NIRMSProductEligibilityPage}
+import uk.gov.hmrc.test.ui.pages.ProfileSetup.{NIRMSQuestionPage, UKIMSNumberPage}
 
-class UKIMSNumberStepDef extends BaseStepDef {
+class NIRMSQuestionStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?(am|should be) on the 'UK internal scheme number' page$""") { (amShould: String) =>
+  Then("""^(?:I )?(am|should be) on the 'Northern Ireland Retail Movement Scheme' page$""") { (amShould: String) =>
     AuthorityWizard
       .validLogin()
     submitPage()
     UKIMSNumberPage
       .loadPage()
+    UKIMSNumberPage
+      .fillInput("XI47699357400020231115081800")
+    submitPage()
+    NIRMSQuestionPage
+      .loadPage()
   }
 
-  Then("""^(?:I )?enter (.*) value of my UKIMS Number in the free text field$""") { (ukimsNumberValidation: String) =>
-    ukimsNumberValidation match {
-      case "incorrect" =>
-        UKIMSNumberPage
-          .fillInput("INVALID")
-      case "valid"     =>
-        UKIMSNumberPage
-          .fillInput("XI47699357400020231115081800")
-      case "empty"     =>
-        UKIMSNumberPage
-          .fillInput("")
-    }
+  When("""^(?:I )?click on the (.+) link$""") { (link: String) =>
+    clickByPartialLinkText(link)
+  }
+
+  Then("""^(?:I )?should be on the 'Northern Ireland Retail Movement Scheme: how the scheme will work' page$""") { () =>
+    NIRMSProductEligibilityPage
+      .loadPage()
   }
 }
