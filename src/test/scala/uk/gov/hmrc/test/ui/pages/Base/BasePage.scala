@@ -55,6 +55,9 @@ trait BasePage extends BrowserDriver with Matchers {
 
   def submitPage(): Unit = clickByClassName("govuk-button")
 
+  def verifyErrorMessage(message: String): Unit =
+    findBy(By.className("govuk-error-message")).getText.contains(message)
+
   def clickBackLink(): Unit = clickByClassName("govuk-back-link")
 
   private def bringIntoView(by: By, action: WebElement => Unit): Unit = {
