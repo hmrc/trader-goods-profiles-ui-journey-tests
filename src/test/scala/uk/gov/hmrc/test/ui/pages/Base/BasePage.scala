@@ -17,12 +17,14 @@
 package uk.gov.hmrc.test.ui.pages.Base
 
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait}
-import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
+import org.openqa.selenium.{By, JavascriptExecutor, Keys, WebDriver, WebElement}
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.conf.TestConfiguration.config
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
 import java.time.Duration
+import scala.collection.mutable
+import scala.jdk.CollectionConverters.CollectionHasAsScala
 
 trait BasePage extends BrowserDriver with Matchers {
 
@@ -68,8 +70,73 @@ trait BasePage extends BrowserDriver with Matchers {
 
   def checkForContent(content: String): Unit =
     findBy(By.id("main-content")).getText.contains(content)
+
+  def clickRadioBtn(answer: String): this.type = {
+    answer match {
+      case "Yes" => clickById("value")
+      case "No"  => clickById("value-no")
+    }
+    this
+  }
+
+  def fillInput(input: String): this.type = {
+    fillInputById("nirmsNumber", input)
+    this
+  }
+
+  def clearInput(input: WebElement): Unit = input.clear()
+
+  def fillInputById(id: String, text: String): Unit = {
+    val input = findBy(By.id(id))
+    clearInput(input)
+    input.sendKeys(text)
+  }
+
+  def randomAlphaNumericString(length: Int): String = {
+    val chars = ('a' to 'z') ++ ('A' to 'Z') ++ ('0' to '9')
+
+    def randomStringFromCharList(chars: Seq[Char]): String = {
+      val sb = new mutable.StringBuilder
+      for (_ <- 1 to length) {
+        val randomNum = util.Random.nextInt(chars.length)
+        sb.append(chars(randomNum))
+      }
+      sb.toString
+    }
+
+    randomStringFromCharList(chars)
+  }
+  def select(answer: String): this.type             = {
+    selectValueFromDropDown(answer)
+    this
+  }
+
+  protected def selectValueFromDropDown(valueOption: String, id: String = "value"): Unit = {
+    findBy(By.id(id))
+    fillInputById(id, valueOption)
+    selectFirstValue(id)
+  }
+
+  def clearSelectInput(input: WebElement): Unit = {
+    val length = findById("value-select")
+      .findElements(By.tagName("option"))
+      .asScala
+      .find(_.isSelected)
+      .map(_.getAttribute("innerText").length)
+      .getOrElse(0)
+
+    (0 until length).foreach(_ => input.sendKeys(Keys.BACK_SPACE))
+  }
+
+  protected def openDropdownAndSelectFirstValue(id: String): Unit = {
+    clickById(id)
+    selectFirstValue(id)
+  }
+
+  private def selectFirstValue(id: String): Unit =
+    clickById(s"${id}__option--0")
+
+  case class PageNotFoundException(s: String) extends Exception(s)
+
+  case class InvalidTitleArgsException(s: String) extends Exception(s)
 }
-
-case class PageNotFoundException(s: String) extends Exception(s)
-
-case class InvalidTitleArgsException(s: String) extends Exception(s)

@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.Base.{BasePage, PageNotFoundException}
+import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
 object NIPHLPage extends BasePage {
 
