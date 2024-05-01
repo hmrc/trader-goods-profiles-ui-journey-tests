@@ -28,16 +28,16 @@ class NIRMSNumberStepDef extends BaseStepDef {
         .validLogin()
       submitPage()
       UKIMSNumberPage
-        .loadPage()
+        .verifyPageTitle()
       UKIMSNumberPage
         .fillInput("XI47699357400020231115081800")
       submitPage()
       NIRMSQuestionPage
-        .loadPage()
+        .verifyPageTitle()
       clickRadioBtn("Yes")
       submitPage()
       NIRMSNumberPage
-        .loadPage()
+        .verifyPageTitle()
   }
 
   Then("""^(?:I )?enter (.*) value of my NIRMS Number in the free text field$""") { (nrimsNumberValidation: String) =>

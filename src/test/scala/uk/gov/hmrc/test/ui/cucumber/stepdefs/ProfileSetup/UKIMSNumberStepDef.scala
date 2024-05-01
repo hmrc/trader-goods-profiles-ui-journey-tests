@@ -27,7 +27,7 @@ class UKIMSNumberStepDef extends BaseStepDef {
       .validLogin()
     submitPage()
     UKIMSNumberPage
-      .loadPage()
+      .verifyPageTitle()
   }
 
   Then("""^(?:I )?enter (.*) value of my UKIMS Number in the free text field$""") { (ukimsNumberValidation: String) =>

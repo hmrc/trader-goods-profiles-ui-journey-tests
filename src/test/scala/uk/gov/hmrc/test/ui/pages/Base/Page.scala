@@ -20,7 +20,7 @@ trait Page extends BasePage {
 
   def title(args: String*): String
 
-  def loadPage(args: String*): this.type = {
+  def verifyPageTitle(args: String*): this.type = {
     onPage(title(args: _*))
     this
   }

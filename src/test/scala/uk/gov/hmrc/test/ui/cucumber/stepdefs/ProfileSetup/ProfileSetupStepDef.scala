@@ -24,12 +24,12 @@ class ProfileSetupStepDef extends BaseStepDef {
 
   Then("""^(?:I )?(am|should be) on the 'Setting up your profile' page$""") { (amShould: String) =>
     ProfileSetupPage
-      .loadPage()
+      .verifyPageTitle()
   }
 
   Given("""^(?:I )?click on the (.+) link on the 'Setting up your profile' page$""") { (link: String) =>
     ProfileSetupPage
-      .loadPage()
+      .verifyPageTitle()
       .clickOnLink(link)
   }
 

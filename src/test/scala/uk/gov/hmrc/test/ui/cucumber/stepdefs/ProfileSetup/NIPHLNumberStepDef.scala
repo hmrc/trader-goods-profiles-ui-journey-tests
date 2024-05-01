@@ -27,20 +27,20 @@ class NIPHLNumberStepDef extends BaseStepDef {
       .validLogin()
     submitPage()
     UKIMSNumberPage
-      .loadPage()
+      .verifyPageTitle()
     UKIMSNumberPage
       .fillInput("XI47699357400020231115081800")
     submitPage()
     NIRMSQuestionPage
-      .loadPage()
+      .verifyPageTitle()
     clickRadioBtn("No")
     submitPage()
     NIPHLQuestionPage
-      .loadPage()
+      .verifyPageTitle()
     clickRadioBtn("Yes")
     submitPage()
     NIPHLNumberPage
-      .loadPage()
+      .verifyPageTitle()
   }
 
   Then("""^(?:I )?enter (.*) value of my NIPHL Number in the free text field$""") { (niphlNumberValidation: String) =>

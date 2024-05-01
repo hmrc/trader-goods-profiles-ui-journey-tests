@@ -23,6 +23,6 @@ class UnauthorisedUserStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the 'unauthorised error' page$""") { () =>
     UnauthorisedUserPage
-      .loadPage()
+      .verifyPageTitle()
   }
 }

@@ -27,12 +27,12 @@ class NIRMSQuestionStepDef extends BaseStepDef {
       .validLogin()
     submitPage()
     UKIMSNumberPage
-      .loadPage()
+      .verifyPageTitle()
     UKIMSNumberPage
       .fillInput("XI47699357400020231115081800")
     submitPage()
     NIRMSQuestionPage
-      .loadPage()
+      .verifyPageTitle()
   }
 
   When("""^(?:I )?click on the (.+) link$""") { (link: String) =>
