@@ -8,7 +8,7 @@ Feature: Trader Goods Profile setup
   Scenario:I enter an valid formatted NIRMS Number
     When I enter valid value of my NIRMS Number in the free text field
     And I select continue
-#      Then I should be on the 'Northern Ireland plant health label (NIPHL)' page
+    Then I should be on the 'Northern Ireland plant health label' page
 
   Scenario: I leave the NIRMS Number field blank
     When I enter empty value of my NIRMS Number in the free text field

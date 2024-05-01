@@ -26,6 +26,6 @@ object CategoryGuidancePage extends Page {
   def navigateToPage(args: String*): this.type = {
     val url: String = TestConfiguration.url("trader-goods-profiles-frontend") + "/categorisation-start"
     driver.navigate().to(url)
-    super.loadPage(args: _*)
+    super.verifyPageTitle(args: _*)
   }
 }

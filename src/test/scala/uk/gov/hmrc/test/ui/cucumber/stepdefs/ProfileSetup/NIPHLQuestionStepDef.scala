@@ -18,11 +18,10 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.ProfileSetup
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.AuthorityWizard
-import uk.gov.hmrc.test.ui.pages.ProfileSetup.UKIMSNumberPage
+import uk.gov.hmrc.test.ui.pages.ProfileSetup.{NIPHLQuestionPage, NIRMSQuestionPage, UKIMSNumberPage}
 
-class UKIMSNumberStepDef extends BaseStepDef {
-
-  Then("""^(?:I )?(am|should be) on the 'UK internal scheme number' page$""") { (amShould: String) =>
+class NIPHLQuestionStepDef extends BaseStepDef {
+  Then("""^(?:I )?(am|should be) on the 'Northern Ireland plant health label' page$""") { (amShould: String) =>
     amShould match {
       case "am"        =>
         AuthorityWizard
@@ -30,23 +29,18 @@ class UKIMSNumberStepDef extends BaseStepDef {
         submitPage()
         UKIMSNumberPage
           .verifyPageTitle()
-      case "should be" =>
-        UKIMSNumberPage
-          .verifyPageTitle()
-    }
-  }
-
-  Then("""^(?:I )?enter (.*) value of my UKIMS Number in the free text field$""") { (ukimsNumberValidation: String) =>
-    ukimsNumberValidation match {
-      case "incorrect" =>
-        UKIMSNumberPage
-          .fillInput("INVALID")
-      case "valid"     =>
         UKIMSNumberPage
           .fillInput("XI47699357400020231115081800")
-      case "empty"     =>
-        UKIMSNumberPage
-          .fillInput("")
+        submitPage()
+        NIRMSQuestionPage
+          .verifyPageTitle()
+        clickRadioBtn("No")
+        submitPage()
+        NIPHLQuestionPage
+          .verifyPageTitle()
+      case "should be" =>
+        NIPHLQuestionPage
+          .verifyPageTitle()
     }
   }
 }

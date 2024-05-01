@@ -23,16 +23,22 @@ import uk.gov.hmrc.test.ui.pages.ProfileSetup.{NIRMSQuestionPage, UKIMSNumberPag
 class NIRMSQuestionStepDef extends BaseStepDef {
 
   Then("""^(?:I )?(am|should be) on the 'Northern Ireland Retail Movement Scheme' page$""") { (amShould: String) =>
-    AuthorityWizard
-      .validLogin()
-    submitPage()
-    UKIMSNumberPage
-      .loadPage()
-    UKIMSNumberPage
-      .fillInput("XI47699357400020231115081800")
-    submitPage()
-    NIRMSQuestionPage
-      .loadPage()
+    amShould match {
+      case "am"        =>
+        AuthorityWizard
+          .validLogin()
+        submitPage()
+        UKIMSNumberPage
+          .verifyPageTitle()
+        UKIMSNumberPage
+          .fillInput("XI47699357400020231115081800")
+        submitPage()
+        NIRMSQuestionPage
+          .verifyPageTitle()
+      case "should be" =>
+        NIRMSQuestionPage
+          .verifyPageTitle()
+    }
   }
 
   When("""^(?:I )?click on the (.+) link$""") { (link: String) =>
@@ -41,7 +47,7 @@ class NIRMSQuestionStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the 'Northern Ireland Retail Movement Scheme: how the scheme will work' page$""") { () =>
     NIRMSProductEligibilityPage
-      .loadPage()
+      .verifyPageTitle()
   }
 
   When("""^(?:I )?select (.+) for the boolean question""") { (option: String) =>
