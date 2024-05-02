@@ -22,7 +22,7 @@ import uk.gov.hmrc.test.ui.pages.ProfileSetup.{NIPHLNumberPage, NIPHLQuestionPag
 
 class NIPHLNumberStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?(am|should be) on the 'NIPHL reference' page$""") { (amShould: String) =>
+  Then("""^(?:I )?(am|should be) on the 'NIPHL registration number' page$""") { (amShould: String) =>
     AuthorityWizard
       .validLogin()
     submitPage()

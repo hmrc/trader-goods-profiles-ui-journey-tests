@@ -3,7 +3,7 @@
 Feature: Trader Goods Profile setup
 
   Background: As a UKIMS authorised trader I provide my NIPHL number to setup my TGP
-    Given I am on the 'NIPHL reference' page
+    Given I am on the 'NIPHL registration number' page
 
   Scenario:I enter an valid formatted NIPHL Number
     When I enter valid value of my NIPHL Number in the free text field
