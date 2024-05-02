@@ -16,20 +16,27 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.Base.Page
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
-object NIRMSProductEligibilityPage extends Page {
+object NIRMSProductEligibilityPage extends BasePage {
 
-  override def title(args: String*): String = "Northern Ireland Retail Movement Scheme: how the scheme will work"
+  def title(args: String*): String = "Northern Ireland Retail Movement Scheme: how the scheme will work"
 
-  def verifyPageTitle(): this.type = {
-    onPage(title())
+  def assertPage(): this.type = {
+    verifyTitle(title())
+    verifyHeader(title())
     this
   }
 
-  private def onPage(pageTitle: String): Unit =
+  private def verifyTitle(pageTitle: String): Unit =
     if (driver.getTitle != s"$pageTitle - GOV.UK")
       throw PageNotFoundException(
         s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
       )
+
+  def verifyHeader(h1: String): this.type = {
+    findBy(By.className("govuk-heading-xl")).getText.shouldEqual(h1)
+    this
+  }
 }

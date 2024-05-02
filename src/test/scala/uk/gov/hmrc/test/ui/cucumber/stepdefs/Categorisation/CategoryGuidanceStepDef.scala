@@ -26,6 +26,6 @@ class CategoryGuidanceStepDef extends BaseStepDef {
   }
   Then("""^(?:I )?should be on the 'categorisation' page$""") { () =>
     CategoryGuidancePage
-      .verifyPageTitle()
+      .assertPage()
   }
 }

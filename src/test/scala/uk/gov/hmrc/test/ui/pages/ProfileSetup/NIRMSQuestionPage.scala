@@ -21,4 +21,5 @@ import uk.gov.hmrc.test.ui.pages.Base.Page
 object NIRMSQuestionPage extends Page {
 
   override def title(args: String*): String = "Northern Ireland Retail Movement Scheme (NIRMS)"
+  override def h1(args: String*): String    = "Northern Ireland Retail Movement Scheme (NIRMS)"
 }

@@ -21,8 +21,8 @@ import uk.gov.hmrc.test.ui.pages.Base.Page
 object ProfileSetupPage extends Page {
 
   override def title(args: String*): String = "Setting up your profile"
-
-  def clickOnLink(link: String): this.type = {
+  override def h1(args: String*): String    = "Setting up your profile"
+  def clickOnLink(link: String): this.type  = {
     link match {
       case "who can apply to UKIMS"                               =>
         clickByPartialLinkText("who can apply to UKIMS")

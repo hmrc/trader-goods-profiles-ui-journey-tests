@@ -14,15 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.Unauthorised
+package uk.gov.hmrc.test.ui.pages.ProfileSetup
 
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Unauthorised.UnauthorisedUserPage
+import uk.gov.hmrc.test.ui.pages.Base.Page
 
-class UnauthorisedUserStepDef extends BaseStepDef {
+object NIPHLNumberPage extends Page {
 
-  Then("""^(?:I )?should be on the 'unauthorised error' page$""") { () =>
-    UnauthorisedUserPage
-      .assertPage()
+  override def title(args: String*): String        = "NIPHL reference"
+  override def h1(args: String*): String           = "NIPHL registration number"
+  override def fillInput(input: String): this.type = {
+    fillInputById("value", input)
+    this
   }
 }

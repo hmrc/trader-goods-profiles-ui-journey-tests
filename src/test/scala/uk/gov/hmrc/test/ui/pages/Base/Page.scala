@@ -19,18 +19,24 @@ package uk.gov.hmrc.test.ui.pages.Base
 trait Page extends BasePage {
 
   def title(args: String*): String
+  def h1(args: String*): String
 
-  def verifyPageTitle(args: String*): this.type = {
-    onPage(title(args: _*))
+  def assertPage(args: String*): this.type = {
+    verifyTitle(title(args: _*))
+    verifyHeader(h1(args: _*))
     this
   }
 
   val serviceName: String = "Trader Goods Profile"
 
-  private def onPage(pageTitle: String): Unit =
+  private def verifyTitle(pageTitle: String): Unit =
     if (driver.getTitle != s"$pageTitle - $serviceName - GOV.UK")
       throw PageNotFoundException(
         s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
       )
 
+  def verifyHeader(h1: String): this.type = {
+    checkHeader(h1)
+    this
+  }
 }

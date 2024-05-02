@@ -24,27 +24,27 @@ class ProfileSetupStepDef extends BaseStepDef {
 
   Then("""^(?:I )?(am|should be) on the 'Setting up your profile' page$""") { (amShould: String) =>
     ProfileSetupPage
-      .verifyPageTitle()
+      .assertPage()
   }
 
   Given("""^(?:I )?click on the (.+) link on the 'Setting up your profile' page$""") { (link: String) =>
     ProfileSetupPage
-      .verifyPageTitle()
+      .assertPage()
       .clickOnLink(link)
   }
 
   Then("""^(?:I )?should be on the 'UKIMS' page$""") { () =>
     UKIMSPage
-      .verifyPageTitle()
+      .assertPage()
   }
 
   Then("""^(?:I )?should be on the 'NIRMS' page$""") { () =>
     NIRMSPage
-      .verifyPageTitle()
+      .assertPage()
   }
 
   Then("""^(?:I )?should be on the 'NIPHL' page$""") { () =>
     NIPHLPage
-      .verifyPageTitle()
+      .assertPage()
   }
 }

@@ -22,10 +22,11 @@ import uk.gov.hmrc.test.ui.pages.Base.Page
 object CategoryGuidancePage extends Page {
 
   override def title(args: String*): String = "Categorisation"
+  override def h1(args: String*): String    = "Categorisation"
 
   def navigateToPage(args: String*): this.type = {
     val url: String = TestConfiguration.url("trader-goods-profiles-frontend") + "/categorisation-start"
     driver.navigate().to(url)
-    super.verifyPageTitle(args: _*)
+    super.assertPage(args: _*)
   }
 }

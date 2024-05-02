@@ -8,7 +8,7 @@ Feature: Trader Goods Profile setup
   Scenario: I select yes for the boolean question
     When I select Yes for the boolean question
     And I select continue
-#    Then I should be on the 'Northern Ireland plant health label number' page
+    Then I should be on the 'NIPHL reference' page
 
   Scenario: I select no for the boolean question
     When I select No for the boolean question

@@ -29,10 +29,10 @@ class UKIMSNumberStepDef extends BaseStepDef {
           .validLogin()
         submitPage()
         UKIMSNumberPage
-          .verifyPageTitle()
+          .assertPage()
       case "should be" =>
         UKIMSNumberPage
-          .verifyPageTitle()
+          .assertPage()
     }
   }
 
