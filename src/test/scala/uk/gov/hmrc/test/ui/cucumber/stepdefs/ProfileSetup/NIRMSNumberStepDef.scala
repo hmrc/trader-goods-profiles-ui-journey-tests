@@ -30,19 +30,19 @@ class NIRMSNumberStepDef extends BaseStepDef {
             .validLogin()
           submitPage()
           UKIMSNumberPage
-            .verifyPageTitle()
+            .assertPage()
           UKIMSNumberPage
             .fillInput("XI47699357400020231115081800")
           submitPage()
           NIRMSQuestionPage
-            .verifyPageTitle()
+            .assertPage()
           clickRadioBtn("Yes")
           submitPage()
           NIRMSNumberPage
-            .verifyPageTitle()
+            .assertPage()
         case "should be" =>
           NIRMSNumberPage
-            .verifyPageTitle()
+            .assertPage()
       }
   }
 

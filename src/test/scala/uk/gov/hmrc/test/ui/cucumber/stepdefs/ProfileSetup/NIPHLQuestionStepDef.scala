@@ -28,19 +28,19 @@ class NIPHLQuestionStepDef extends BaseStepDef {
           .validLogin()
         submitPage()
         UKIMSNumberPage
-          .verifyPageTitle()
+          .assertPage()
         UKIMSNumberPage
           .fillInput("XI47699357400020231115081800")
         submitPage()
         NIRMSQuestionPage
-          .verifyPageTitle()
+          .assertPage()
         clickRadioBtn("No")
         submitPage()
         NIPHLQuestionPage
-          .verifyPageTitle()
+          .assertPage()
       case "should be" =>
         NIPHLQuestionPage
-          .verifyPageTitle()
+          .assertPage()
     }
   }
 }

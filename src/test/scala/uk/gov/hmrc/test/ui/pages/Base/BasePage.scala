@@ -71,6 +71,9 @@ trait BasePage extends BrowserDriver with Matchers {
   def checkForContent(content: String): Unit =
     findBy(By.id("main-content")).getText.contains(content)
 
+  def checkHeader(content: String): Unit =
+    findBy(By.className("govuk-heading-l")).getText.shouldEqual(content)
+
   def clickRadioBtn(answer: String): this.type = {
     answer match {
       case "Yes" => clickById("value")

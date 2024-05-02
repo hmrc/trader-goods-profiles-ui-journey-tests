@@ -21,6 +21,7 @@ import uk.gov.hmrc.test.ui.pages.Base.Page
 object UKIMSNumberPage extends Page {
 
   override def title(args: String*): String = "UK Internal Market Scheme number"
+  override def h1(args: String*): String    = "UK Internal Market Scheme number"
 
   override def fillInput(input: String): this.type = {
     fillInputById("ukimsNumber", input)

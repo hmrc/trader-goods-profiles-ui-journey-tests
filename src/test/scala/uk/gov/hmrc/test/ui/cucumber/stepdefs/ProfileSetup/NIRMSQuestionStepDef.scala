@@ -29,15 +29,15 @@ class NIRMSQuestionStepDef extends BaseStepDef {
           .validLogin()
         submitPage()
         UKIMSNumberPage
-          .verifyPageTitle()
+          .assertPage()
         UKIMSNumberPage
           .fillInput("XI47699357400020231115081800")
         submitPage()
         NIRMSQuestionPage
-          .verifyPageTitle()
+          .assertPage()
       case "should be" =>
         NIRMSQuestionPage
-          .verifyPageTitle()
+          .assertPage()
     }
   }
 
@@ -47,7 +47,7 @@ class NIRMSQuestionStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the 'Northern Ireland Retail Movement Scheme: how the scheme will work' page$""") { () =>
     NIRMSProductEligibilityPage
-      .verifyPageTitle()
+      .assertPage()
   }
 
   When("""^(?:I )?select (.+) for the boolean question""") { (option: String) =>
