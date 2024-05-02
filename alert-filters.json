@@ -1,0 +1,156 @@
+{
+  "add": [
+    {
+      "reason": "Absence of Anti-CSRF Tokens",
+      "contextId": 1,
+      "url": "https://www.gov.uk/government/publications/retail-movement-scheme-how-the-scheme-will-work/retail-movement-scheme-how-the-scheme-will-work",
+      "ruleId": 10202,
+      "urlIsRegex": "false",
+      "newLevel": 0
+    },
+    {
+      "reason": "Absence of Anti-CSRF Tokens",
+      "contextId": 1,
+      "url": "https:\/\/www.gov.uk\/guidance.*",
+      "ruleId": 10202,
+      "urlIsRegex": "true",
+      "newLevel": 0
+    },
+    {
+      "reason": "Cross-Domain Misconfiguration",
+      "contextId": 1,
+      "url": "https:\/\/www.gov.uk\/assets.*",
+      "ruleId": 10098,
+      "urlIsRegex": "true",
+      "newLevel": 0
+    },
+    {
+      "reason": "X-Content-Type-Options Header Missing",
+      "contextId": 1,
+      "url": "https:\/\/www.gov.uk\/assets.*",
+      "ruleId": 10021,
+      "urlIsRegex": "true",
+      "newLevel": 0
+    },
+    {
+      "reason": "Information Disclosure - Suspicious Comments",
+      "contextId": 1,
+      "url": "http://localhost:9000/trader-goods-profiles/hmrc-frontend/assets/hmrc-frontend-5.66.0.min.js",
+      "ruleId": 10027,
+      "urlIsRegex": "false",
+      "newLevel": 0
+    },
+    {
+      "reason": "Information Disclosure - Suspicious Comments",
+      "contextId": 1,
+      "url": "http:\/\/localhost:9949\/auth-login-stub.*",
+      "ruleId": 10027,
+      "urlIsRegex": "true",
+      "newLevel": 0
+    },
+    {
+      "reason": "Information Disclosure - Suspicious Comments",
+      "contextId": 1,
+      "url": "https:\/\/www.gov.uk\/assets.*",
+      "ruleId": 10027,
+      "urlIsRegex": "true",
+      "newLevel": 0
+    },
+    {
+      "reason": "Information Disclosure - Suspicious Comments",
+      "contextId": 1,
+      "url": "https:\/\/www.gov.uk\/government\/publications.*",
+      "ruleId": 10027,
+      "urlIsRegex": "true",
+      "newLevel": 0
+    },
+    {
+      "reason": "Information Disclosure - Suspicious Comments",
+      "contextId": 1,
+      "url": "https:\/\/www.gov.uk\/guidance.*",
+      "ruleId": 10027,
+      "urlIsRegex": "true",
+      "newLevel": 0
+    },
+    {
+      "reason": "Loosely Scoped Cookie",
+      "contextId": 1,
+      "url": "http:\/\/localhost:9000\/trader-goods-profiles\/hmrc-frontend\/assets.*",
+      "ruleId": 90033,
+      "urlIsRegex": "true",
+      "newLevel": 0
+    },
+    {
+      "reason": "Loosely Scoped Cookie",
+      "contextId": 1,
+      "url": "http:\/\/localhost:9000\/trader-goods-profiles\/assets.*",
+      "ruleId": 90033,
+      "urlIsRegex": "true",
+      "newLevel": 0
+    },
+    {
+      "reason": "Loosely Scoped Cookie",
+      "contextId": 1,
+      "url": "http:\/\/localhost:9949\/auth-login-stub.*",
+      "ruleId": 90033,
+      "urlIsRegex": "true",
+      "newLevel": 0
+    },
+    {
+      "reason": "Re-examine Cache-control Directives",
+      "contextId": 1,
+      "url": "https://www.gov.uk/government/publications/retail-movement-scheme-how-the-scheme-will-work/retail-movement-scheme-how-the-scheme-will-work",
+      "ruleId": 10015,
+      "urlIsRegex": "false",
+      "newLevel": 0
+    },
+    {
+      "reason": "Re-examine Cache-control Directives",
+      "contextId": 1,
+      "url": "https:\/\/www.gov.uk\/guidance.*",
+      "ruleId": 10015,
+      "urlIsRegex": "true",
+      "newLevel": 0
+    },
+    {
+      "reason": "Retrieved from Cache",
+      "contextId": 1,
+      "url": "https:\/\/www.gov.uk\/assets.*",
+      "ruleId": 10050,
+      "urlIsRegex": "true",
+      "newLevel": 0
+    },
+    {
+      "reason": "Retrieved from Cache",
+      "contextId": 1,
+      "url": "https://www.gov.uk/government/publications/retail-movement-scheme-how-the-scheme-will-work/retail-movement-scheme-how-the-scheme-will-work",
+      "ruleId": 10050,
+      "urlIsRegex": "false",
+      "newLevel": 0
+    },
+    {
+      "reason": "Retrieved from Cache",
+      "contextId": 1,
+      "url": "https:\/\/www.gov.uk\/guidance.*",
+      "ruleId": 10050,
+      "urlIsRegex": "true",
+      "newLevel": 0
+    },
+    {
+      "reason": "False Positive - Absence of Anti-CSRF Tokens",
+      "contextId": 1,
+      "url": "http:\/\/localhost:9949\/auth-login-stub.*",
+      "ruleId": 10202,
+      "urlIsRegex": "true",
+      "newLevel": 0
+    },
+    {
+      "reason": "False Positive - Re-examine Cache-control Directives",
+      "contextId": 1,
+      "url": "https:\/\/content-autofill.googleapis.com\/v1\/pages.*",
+      "ruleId": 10015,
+      "urlIsRegex": "true",
+      "newLevel": 0
+    }
+  ]
+}

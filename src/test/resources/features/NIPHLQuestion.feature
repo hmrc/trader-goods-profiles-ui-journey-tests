@@ -25,4 +25,4 @@ Feature: Trader Goods Profile setup
 
 #  Scenario: I can go back from the NIPHL Question page
 #    When I select the back link
-#    Then I should be on the 'NIRMS number' page or 'NIRMS question' page
+#    Then I should be on the 'NIRMS number' page
