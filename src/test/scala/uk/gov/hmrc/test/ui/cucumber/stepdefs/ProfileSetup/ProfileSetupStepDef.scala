@@ -35,16 +35,16 @@ class ProfileSetupStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the 'UKIMS' page$""") { () =>
     UKIMSPage
-      .loadPage()
+      .verifyPageTitle()
   }
 
   Then("""^(?:I )?should be on the 'NIRMS' page$""") { () =>
     NIRMSPage
-      .loadPage()
+      .verifyPageTitle()
   }
 
   Then("""^(?:I )?should be on the 'NIPHL' page$""") { () =>
     NIPHLPage
-      .loadPage()
+      .verifyPageTitle()
   }
 }

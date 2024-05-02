@@ -23,7 +23,7 @@ object NIPHLPage extends BasePage {
   def title(): String =
     "Moving plants from Great Britain to Northern Ireland"
 
-  def loadPage(): this.type = {
+  def verifyPageTitle(): this.type = {
     onPage(title())
     this
   }

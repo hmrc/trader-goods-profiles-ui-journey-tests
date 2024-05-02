@@ -24,20 +24,26 @@ class NIRMSNumberStepDef extends BaseStepDef {
 
   Then("""^(?:I )?(am|should be) on the 'Northern Ireland Retail Movement Scheme number' page$""") {
     (amShould: String) =>
-      AuthorityWizard
-        .validLogin()
-      submitPage()
-      UKIMSNumberPage
-        .verifyPageTitle()
-      UKIMSNumberPage
-        .fillInput("XI47699357400020231115081800")
-      submitPage()
-      NIRMSQuestionPage
-        .verifyPageTitle()
-      clickRadioBtn("Yes")
-      submitPage()
-      NIRMSNumberPage
-        .verifyPageTitle()
+      amShould match {
+        case "am"        =>
+          AuthorityWizard
+            .validLogin()
+          submitPage()
+          UKIMSNumberPage
+            .verifyPageTitle()
+          UKIMSNumberPage
+            .fillInput("XI47699357400020231115081800")
+          submitPage()
+          NIRMSQuestionPage
+            .verifyPageTitle()
+          clickRadioBtn("Yes")
+          submitPage()
+          NIRMSNumberPage
+            .verifyPageTitle()
+        case "should be" =>
+          NIRMSNumberPage
+            .verifyPageTitle()
+      }
   }
 
   Then("""^(?:I )?enter (.*) value of my NIRMS Number in the free text field$""") { (nrimsNumberValidation: String) =>

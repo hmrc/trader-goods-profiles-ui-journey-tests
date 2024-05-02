@@ -23,7 +23,7 @@ object NIRMSPage extends BasePage {
   def title(): String =
     "Northern Ireland Retail Movement Scheme: how to register and seal consignments"
 
-  def loadPage(): this.type = {
+  def verifyPageTitle(): this.type = {
     onPage(title())
     this
   }
