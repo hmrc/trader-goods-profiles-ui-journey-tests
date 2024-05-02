@@ -23,7 +23,7 @@ object UKIMSPage extends BasePage {
   def title(): String =
     "Apply for authorisation for the UK Internal Market Scheme if you bring goods into Northern Ireland"
 
-  def loadPage(): this.type = {
+  def verifyPageTitle(): this.type = {
     onPage(title())
     this
   }

@@ -14,18 +14,11 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
+package uk.gov.hmrc.test.ui.pages.ProfileSetup
 
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Categorisation.CategoryGuidancePage
+import uk.gov.hmrc.test.ui.pages.Base.Page
 
-class CategoryGuidanceStepDef extends BaseStepDef {
-  Given("""^(?:I )?navigate to the 'categorisation' page$""") { () =>
-    CategoryGuidancePage
-      .navigateToPage()
-  }
-  Then("""^(?:I )?should be on the 'categorisation' page$""") { () =>
-    CategoryGuidancePage
-      .verifyPageTitle()
-  }
+object NIPHLQuestionPage extends Page {
+
+  override def title(args: String*): String = "Northern Ireland plant health label (NIPHL)"
 }

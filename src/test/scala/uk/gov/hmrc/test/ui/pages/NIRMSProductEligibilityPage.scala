@@ -22,7 +22,7 @@ object NIRMSProductEligibilityPage extends Page {
 
   override def title(args: String*): String = "Northern Ireland Retail Movement Scheme: how the scheme will work"
 
-  def loadPage(): this.type = {
+  def verifyPageTitle(): this.type = {
     onPage(title())
     this
   }
