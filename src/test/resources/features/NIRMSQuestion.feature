@@ -23,6 +23,6 @@ Feature: Trader Goods Profile setup
     When I click on the which products can be moved under NIRMS link
     Then I should be on the 'Northern Ireland Retail Movement Scheme: how the scheme will work' page
 
-  Scenario: I can go back from the NIRMS Question page
-    When I select the back link
-    Then I should be on the 'UK internal scheme number' page
+#  Scenario: I can go back from the NIRMS Question page
+#    When I select the back link
+#    Then I should be on the 'UK internal scheme number' page

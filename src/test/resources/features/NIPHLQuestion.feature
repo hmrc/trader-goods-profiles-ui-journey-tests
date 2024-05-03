@@ -13,7 +13,7 @@ Feature: Trader Goods Profile setup
   Scenario: I select no for the boolean question
     When I select No for the boolean question
     And I select continue
-#    Then I should be on the 'Check your answers' page
+    Then I should be on the 'Check Your Answers' page without a NIRMS or NIPHL number
 
   Scenario: I do not select any option for the boolean question
     And I select continue

@@ -23,24 +23,30 @@ import uk.gov.hmrc.test.ui.pages.ProfileSetup.{NIPHLNumberPage, NIPHLQuestionPag
 class NIPHLNumberStepDef extends BaseStepDef {
 
   Then("""^(?:I )?(am|should be) on the 'NIPHL registration number' page$""") { (amShould: String) =>
-    AuthorityWizard
-      .validLogin()
-    submitPage()
-    UKIMSNumberPage
-      .assertPage()
-    UKIMSNumberPage
-      .fillInput("XI47699357400020231115081800")
-    submitPage()
-    NIRMSQuestionPage
-      .assertPage()
-    clickRadioBtn("No")
-    submitPage()
-    NIPHLQuestionPage
-      .assertPage()
-    clickRadioBtn("Yes")
-    submitPage()
-    NIPHLNumberPage
-      .assertPage()
+    amShould match {
+      case "am"        =>
+        AuthorityWizard
+          .validLogin()
+        submitPage()
+        UKIMSNumberPage
+          .assertPage()
+        UKIMSNumberPage
+          .fillInput("XI47699357400020231115081800")
+        submitPage()
+        NIRMSQuestionPage
+          .assertPage()
+        clickRadioBtn("No")
+        submitPage()
+        NIPHLQuestionPage
+          .assertPage()
+        clickRadioBtn("Yes")
+        submitPage()
+        NIPHLNumberPage
+          .assertPage()
+      case "should be" =>
+        NIPHLNumberPage
+          .assertPage()
+    }
   }
 
   Then("""^(?:I )?enter (.*) value of my NIPHL Number in the free text field$""") { (niphlNumberValidation: String) =>

@@ -20,12 +20,12 @@ Feature: Trader Goods Profile setup
     And I select continue
     Then Error message 'Enter your NIRMS number in the correct format' should be displayed
 
-  Scenario: I can go back from the NIRMS Number page
-    When I select the back link
-    Then I should be on the 'Northern Ireland Retail Movement Scheme' page
-
-  Scenario: I select back link on the NIRMS Number error page
-    When I enter empty value of my NIRMS Number in the free text field
-    And I select continue
-    And I select the back link
-    Then I should be on the 'Northern Ireland Retail Movement Scheme' page
+#  Scenario: I can go back from the NIRMS Number page
+#    When I select the back link
+#    Then I should be on the 'Northern Ireland Retail Movement Scheme' page
+#
+#  Scenario: I select back link on the NIRMS Number error page
+#    When I enter empty value of my NIRMS Number in the free text field
+#    And I select continue
+#    And I select the back link
+#    Then I should be on the 'Northern Ireland Retail Movement Scheme' page

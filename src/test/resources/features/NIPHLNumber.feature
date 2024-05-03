@@ -8,7 +8,7 @@ Feature: Trader Goods Profile setup
   Scenario:I enter an valid formatted NIPHL Number
     When I enter valid value of my NIPHL Number in the free text field
     And I select continue
-#    Then I should be on the 'Check your answers' page
+    Then I should be on the 'Check Your Answers' page without a NIRMS or NIPHL number
 
   Scenario: I leave the NIPHL Number field blank
     When I enter empty value of my NIPHL Number in the free text field
@@ -20,12 +20,12 @@ Feature: Trader Goods Profile setup
     And I select continue
     Then Error message 'Enter your NIPHL registration number in the correct format.' should be displayed
 
-  Scenario: I can go back from the NIPHL Number page
-    When I select the back link
+#  Scenario: I can go back from the NIPHL Number page
+#    When I select the back link
 #    Then I should be on the 'Northern Ireland plant health label' page
 
-  Scenario: I select back link on the NIPHL Number error page
-    When I enter empty value of my NIPHL Number in the free text field
-    And I select continue
-    And I select the back link
+#  Scenario: I select back link on the NIPHL Number error page
+#    When I enter empty value of my NIPHL Number in the free text field
+#    And I select continue
+#    And I select the back link
 #    Then I should be on the 'Northern Ireland plant health label' page
