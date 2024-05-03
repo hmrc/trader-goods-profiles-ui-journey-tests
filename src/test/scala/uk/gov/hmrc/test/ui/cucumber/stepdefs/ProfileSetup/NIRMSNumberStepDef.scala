@@ -32,7 +32,7 @@ class NIRMSNumberStepDef extends BaseStepDef {
           UKIMSNumberPage
             .assertPage()
           UKIMSNumberPage
-            .fillInput("XI47699357400020231115081800")
+            .fillInput("ukimsNumber", "XI47699357400020231115081800")
           submitPage()
           NIRMSQuestionPage
             .assertPage()
@@ -50,13 +50,13 @@ class NIRMSNumberStepDef extends BaseStepDef {
     nrimsNumberValidation match {
       case "incorrect" =>
         NIRMSNumberPage
-          .fillInput("Rms-gb-123456")
+          .fillInput("nirmsNumber", "Rms-gb-123456")
       case "valid"     =>
         NIRMSNumberPage
-          .fillInput("RMS-GB-123456")
+          .fillInput("nirmsNumber", "RMS-GB-123456")
       case "empty"     =>
         NIRMSNumberPage
-          .fillInput("")
+          .fillInput("nirmsNumber", "")
     }
   }
 }

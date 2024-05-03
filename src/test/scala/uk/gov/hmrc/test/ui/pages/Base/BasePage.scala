@@ -82,8 +82,8 @@ trait BasePage extends BrowserDriver with Matchers {
     this
   }
 
-  def fillInput(input: String): this.type = {
-    fillInputById("nirmsNumber", input)
+  def fillInput(id: String, input: String): this.type = {
+    fillInputById(id, input)
     this
   }
 

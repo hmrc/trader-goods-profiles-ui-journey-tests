@@ -20,10 +20,6 @@ import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object NIPHLNumberPage extends Page {
 
-  override def title(args: String*): String        = "NIPHL registration number"
-  override def h1(args: String*): String           = "NIPHL registration number"
-  override def fillInput(input: String): this.type = {
-    fillInputById("value", input)
-    this
-  }
+  override def title(args: String*): String = "NIPHL registration number"
+  override def h1(args: String*): String    = "NIPHL registration number"
 }

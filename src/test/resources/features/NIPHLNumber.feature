@@ -22,10 +22,10 @@ Feature: Trader Goods Profile setup
 
   Scenario: I can go back from the NIPHL Number page
     When I select the back link
-#    Then I should be on the 'Northern Ireland plant health label' page
+    Then I should be on the 'Northern Ireland plant health label' page
 
   Scenario: I select back link on the NIPHL Number error page
     When I enter empty value of my NIPHL Number in the free text field
     And I select continue
     And I select the back link
-#    Then I should be on the 'Northern Ireland plant health label' page
+    Then I should be on the 'Northern Ireland plant health label' page

@@ -27,12 +27,6 @@ class ProfileSetupStepDef extends BaseStepDef {
       .assertPage()
   }
 
-  Given("""^(?:I )?click on the (.+) link on the 'Setting up your profile' page$""") { (link: String) =>
-    ProfileSetupPage
-      .assertPage()
-      .clickOnLink(link)
-  }
-
   Then("""^(?:I )?should be on the 'UKIMS' page$""") { () =>
     UKIMSPage
       .assertPage()
