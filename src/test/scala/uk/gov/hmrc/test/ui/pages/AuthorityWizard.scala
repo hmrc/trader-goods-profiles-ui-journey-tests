@@ -49,7 +49,7 @@ object AuthorityWizard extends BasePage {
     val redirectionUrl = TestConfiguration.authorise("trader-goods-profiles-Profile-setup")
     findById("redirectionUrl").sendKeys(redirectionUrl)
     findById("enrolment[0].name").sendKeys("HMRC-CUS-ORG")
-    findById("input-0-0-name").sendKeys("fake-identifier")
+    findById("input-0-0-name").sendKeys("EORINumber")
     this
   }
 

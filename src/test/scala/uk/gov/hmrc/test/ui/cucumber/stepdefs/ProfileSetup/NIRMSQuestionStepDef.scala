@@ -31,7 +31,7 @@ class NIRMSQuestionStepDef extends BaseStepDef {
         UKIMSNumberPage
           .assertPage()
         UKIMSNumberPage
-          .fillInput("XI47699357400020231115081800")
+          .fillInput("ukimsNumber", "XI47699357400020231115081800")
         submitPage()
         NIRMSQuestionPage
           .assertPage()
@@ -41,16 +41,8 @@ class NIRMSQuestionStepDef extends BaseStepDef {
     }
   }
 
-  When("""^(?:I )?click on the (.+) link$""") { (link: String) =>
-    clickByPartialLinkText(link)
-  }
-
   Then("""^(?:I )?should be on the 'Northern Ireland Retail Movement Scheme: how the scheme will work' page$""") { () =>
     NIRMSProductEligibilityPage
       .assertPage()
-  }
-
-  When("""^(?:I )?select (.+) for the boolean question""") { (option: String) =>
-    clickRadioBtn(option)
   }
 }
