@@ -14,12 +14,18 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.ProfileSetup
+package uk.gov.hmrc.test.ui.pages.CreateRecord
 
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object NIPHLNumberPage extends Page {
+object CreateCommodityCodePage extends Page {
+  override def title(args: String*): String = "Commodity code"
+  override def h1(args: String*): String    = "Commodity code"
 
-  override def title(args: String*): String = "NIPHL registration number"
-  override def h1(args: String*): String    = "NIPHL registration number"
+  def navigateToPage(args: String*): this.type = {
+    val url: String = TestConfiguration.url("trader-goods-profiles-frontend") + "/commodity-code"
+    driver.navigate().to(url)
+    super.assertPage(args: _*)
+  }
 }

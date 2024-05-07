@@ -31,7 +31,7 @@ class NIPHLNumberStepDef extends BaseStepDef {
         UKIMSNumberPage
           .assertPage()
         UKIMSNumberPage
-          .fillInput("XI47699357400020231115081800")
+          .fillInput("ukimsNumber, XI47699357400020231115081800")
         submitPage()
         NIRMSQuestionPage
           .assertPage()
@@ -53,13 +53,13 @@ class NIPHLNumberStepDef extends BaseStepDef {
     niphlNumberValidation match {
       case "incorrect" =>
         NIPHLNumberPage
-          .fillInput("SN123452")
+          .fillInput("value", "SN123452")
       case "valid"     =>
         NIPHLNumberPage
-          .fillInput("SN12345")
+          .fillInput("value", "SN12345")
       case "empty"     =>
         NIPHLNumberPage
-          .fillInput("")
+          .fillInput("value", "")
     }
   }
 }

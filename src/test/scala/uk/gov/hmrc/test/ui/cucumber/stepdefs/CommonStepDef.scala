@@ -30,4 +30,12 @@ class CommonStepDef extends BaseStepDef {
     verifyErrorMessage(errorMessage)
   }
 
+  When("""^(?:I )?click on the (.+) link$""") { (link: String) =>
+    clickByPartialLinkText(link)
+  }
+
+  When("""^(?:I )?select (.+) for the boolean question""") { (option: String) =>
+    clickRadioBtn(option)
+  }
+
 }
