@@ -40,10 +40,10 @@ class UKIMSNumberStepDef extends BaseStepDef {
     ukimsNumberValidation match {
       case "incorrect" =>
         UKIMSNumberPage
-          .fillInput("ukimsNumber, INVALID")
+          .fillInput("ukimsNumber", "INVALID")
       case "different" =>
         UKIMSNumberPage
-          .fillInput("ukimsNumber, XI47699357400020231115081801")
+          .fillInput("ukimsNumber", "XI47699357400020231115081801")
       case "valid"     =>
         UKIMSNumberPage
           .fillInput("ukimsNumber", "XI47699357400020231115081800")
