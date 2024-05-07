@@ -8,7 +8,7 @@ Feature: Trader Goods Profile setup
   Scenario:I enter an valid formatted NIPHL Number
     When I enter valid value of my NIPHL Number in the free text field
     And I select continue
-    Then I should be on the 'Check Your Answers' page without a NIRMS or NIPHL number
+    Then I should be on the 'Check Your Answers' page without a NIRMS and with a NIPHL number
 
   Scenario: I leave the NIPHL Number field blank
     When I enter empty value of my NIPHL Number in the free text field
