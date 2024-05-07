@@ -1,6 +1,6 @@
 @AllTest
 
-Feature: Trader Goods Profile setup
+Feature: Trader Goods Profile setup - NIRMS Question page
 
   Background: As a UKIMS authorised trader I provide my NIRMS number to setup my TGP
     Given I am on the 'Northern Ireland Retail Movement Scheme' page
@@ -23,6 +23,7 @@ Feature: Trader Goods Profile setup
     When I click on the which products can be moved under NIRMS link
     Then I should be on the 'Northern Ireland Retail Movement Scheme: how the scheme will work' page
 
+#    TODO: Implement when back link functionality is implemented
 #  Scenario: I can go back from the NIRMS Question page
 #    When I select the back link
 #    Then I should be on the 'UK internal scheme number' page

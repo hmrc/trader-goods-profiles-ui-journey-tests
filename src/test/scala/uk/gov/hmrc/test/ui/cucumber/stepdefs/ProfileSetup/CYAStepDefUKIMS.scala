@@ -145,23 +145,19 @@ class CYAStepDefUKIMS extends BaseStepDef {
       }
   }
 
-  Then("""^(?:I )?click the (.*) change link$""") { (key: String) =>
+  Then("""^(?:I )?click the UKIMS Number change link$""") { () =>
+    CYAPageUKIMS
+      .clickChangeLink("1")
+  }
+
+  Then("""^(?:My )?'UKIMS Number' has the (.*) valid value$""") { (key: String) =>
     key match {
-      case "first"  =>
+      case "same"      =>
         CYAPageUKIMS
-          .clickChangeLink("1")
-      case "second" =>
+          .verifyUKIMSInput("XI47699357400020231115081800")
+      case "different" =>
         CYAPageUKIMS
-          .clickChangeLink("2")
-      case "third"  =>
-        CYAPageUKIMS
-          .clickChangeLink("3")
-      case "fourth" =>
-        CYAPageUKIMS
-          .clickChangeLink("4")
-      case "fifth"  =>
-        CYAPageUKIMS
-          .clickChangeLink("5")
+          .verifyUKIMSInput("XI47699357400020231115081801")
     }
   }
 }

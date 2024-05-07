@@ -1,6 +1,6 @@
 @AllTest
 
-Feature: Trader Goods Profile setup
+Feature: Trader Goods Profile setup - NIPHL Number Page
 
   Background: As a UKIMS authorised trader I provide my NIPHL number to setup my TGP
     Given I am on the 'NIPHL registration number' page
@@ -20,6 +20,7 @@ Feature: Trader Goods Profile setup
     And I select continue
     Then Error message 'Enter your NIPHL registration number in the correct format.' should be displayed
 
+#    TODO: Implement when back link functionality is implemented
 #  Scenario: I can go back from the NIPHL Number page
 #    When I select the back link
 #    Then I should be on the 'Northern Ireland plant health label' page

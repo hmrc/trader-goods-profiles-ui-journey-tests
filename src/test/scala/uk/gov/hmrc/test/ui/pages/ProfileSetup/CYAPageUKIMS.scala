@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages.ProfileSetup
 
+import org.junit.Assert
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
@@ -28,6 +29,13 @@ object CYAPageUKIMS extends Page {
 
     click(By.cssSelector("div:nth-child(" + key + ") > dd.govuk-summary-list__actions > a"))
 
+    this
+  }
+
+  def verifyUKIMSInput(expected: String): this.type = {
+    val actual = findBy(By.cssSelector("div:nth-child(1) > dd.govuk-summary-list__value")).getText
+
+    Assert.assertEquals("Expected " + expected + " value but found " + actual + " instead.", expected, actual)
     this
   }
 }
