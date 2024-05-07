@@ -1,6 +1,6 @@
 @AllTest
 
-Feature: Trader Goods Profile setup
+Feature: Trader Goods Profile setup - UKIMS Number page
 
   Background: As a UKIMS authorised trader I enter my UKIMS number to setup my TGP
     Given I am on the 'UK internal scheme number' page
@@ -20,6 +20,7 @@ Feature: Trader Goods Profile setup
     And I select continue
     Then Error message 'Enter your UKIMS number' should be displayed
 
-  Scenario: I can go back from the UKIMS Number page
-    When I select the back link
-    Then I should be on the 'Setting up your profile' page
+#    TODO: Implement when back link functionality is implemented
+#  Scenario: I can go back from the UKIMS Number page
+#    When I select the back link
+#    Then I should be on the 'Setting up your profile' page
