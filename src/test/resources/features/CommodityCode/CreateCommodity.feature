@@ -24,5 +24,5 @@ Feature: Trader Goods Profiles Create Commodity code journey tests
 
 #  TODO: Investigate why code fails on pipeline but works locally
   Scenario: I can navigate to Northern Ireland Online Tariff page
-    When I click on the Northern Ireland Online Tariff link
+    When I click on the Northern Ireland Online Tariff Tool link
     Then I should be on the 'Northern Ireland Online Tariff' page
