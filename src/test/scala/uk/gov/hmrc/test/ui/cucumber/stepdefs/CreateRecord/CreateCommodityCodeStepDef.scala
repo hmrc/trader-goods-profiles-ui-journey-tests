@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.CreateRecord.CreateCommodityCodePage
 import uk.gov.hmrc.test.ui.pages.NIOTTPage
 
-class CreateCommodityCodeStepDef extends BaseStepDef with Eventually{
+class CreateCommodityCodeStepDef extends BaseStepDef with Eventually {
   And("""^(?:I )?navigate to the 'commodity code' page$""") { () =>
     CreateCommodityCodePage
       .navigateToPage()
