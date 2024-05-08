@@ -51,6 +51,9 @@ class NIRMSNumberStepDef extends BaseStepDef {
       case "incorrect" =>
         NIRMSNumberPage
           .fillInput("nirmsNumber", "Rms-gb-123456")
+      case "different" =>
+        NIRMSNumberPage
+          .fillInput("nirmsNumber", "RMS-GB-654321")
       case "valid"     =>
         NIRMSNumberPage
           .fillInput("nirmsNumber", "RMS-GB-123456")
@@ -58,5 +61,12 @@ class NIRMSNumberStepDef extends BaseStepDef {
         NIRMSNumberPage
           .fillInput("nirmsNumber", "")
     }
+  }
+
+  Then("""^(?:The NIRMS Number field )?should be prepopulated$""") { () =>
+    UKIMSNumberPage
+      .findById("nirmsNumber")
+      .getAttribute("value")
+      .shouldEqual("RMS-GB-123456")
   }
 }

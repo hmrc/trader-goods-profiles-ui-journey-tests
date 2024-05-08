@@ -38,4 +38,7 @@ class CommonStepDef extends BaseStepDef {
     clickRadioBtn(option)
   }
 
+  Then("""^(?:The radio button field )?should be prepopulated$""") { () =>
+    isRadioBtnSelected("Yes").shouldEqual(true)
+  }
 }
