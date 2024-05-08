@@ -16,11 +16,12 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.CreateRecord
 
+import org.scalatest.concurrent.Eventually
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.CreateRecord.CreateCommodityCodePage
 import uk.gov.hmrc.test.ui.pages.NIOTTPage
 
-class CreateCommodityCodeStepDef extends BaseStepDef {
+class CreateCommodityCodeStepDef extends BaseStepDef with Eventually{
   And("""^(?:I )?navigate to the 'commodity code' page$""") { () =>
     CreateCommodityCodePage
       .navigateToPage()
