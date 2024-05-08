@@ -202,4 +202,26 @@ class CYAStepDef extends BaseStepDef {
           .verifyInput("nirmsNumber", "RMS-GB-654321")
     }
   }
+
+  Then("""^(?:My )?'NIPHL Question' has the (.*) value$""") { (key: String) =>
+    key match {
+      case "same"      =>
+        CYAPage
+          .verifyInput("niphlQuestion", "Yes")
+      case "different" =>
+        CYAPage
+          .verifyInput("niphlQuestion", "No")
+    }
+  }
+
+  Then("""^(?:My )?'NIPHL Number' has the (.*) valid value$""") { (key: String) =>
+    key match {
+      case "same"      =>
+        CYAPage
+          .verifyInput("niphlNumber", "SN12345")
+      case "different" =>
+        CYAPage
+          .verifyInput("niphlNumber", "SN54321")
+    }
+  }
 }

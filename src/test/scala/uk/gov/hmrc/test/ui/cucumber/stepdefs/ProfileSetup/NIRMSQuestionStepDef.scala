@@ -45,10 +45,4 @@ class NIRMSQuestionStepDef extends BaseStepDef {
     NIRMSProductEligibilityPage
       .assertPage()
   }
-
-  Then("""^(?:The radio button field )?should be prepopulated$""") { () =>
-    NIRMSQuestionPage
-      .isRadioBtnSelected("Yes")
-      .shouldEqual(true)
-  }
 }

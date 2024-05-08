@@ -54,6 +54,9 @@ class NIPHLNumberStepDef extends BaseStepDef {
       case "incorrect" =>
         NIPHLNumberPage
           .fillInput("value", "SN123452")
+      case "different" =>
+        NIPHLNumberPage
+          .fillInput("value", "SN54321")
       case "valid"     =>
         NIPHLNumberPage
           .fillInput("value", "SN12345")
@@ -61,5 +64,12 @@ class NIPHLNumberStepDef extends BaseStepDef {
         NIPHLNumberPage
           .fillInput("value", "")
     }
+  }
+
+  Then("""^(?:The NIPHL Number field )?should be prepopulated$""") { () =>
+    UKIMSNumberPage
+      .findById("value")
+      .getAttribute("value")
+      .shouldEqual("SN12345")
   }
 }
