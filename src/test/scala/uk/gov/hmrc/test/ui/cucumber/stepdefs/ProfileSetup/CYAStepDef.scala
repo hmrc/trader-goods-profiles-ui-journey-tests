@@ -18,9 +18,9 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.ProfileSetup
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.AuthorityWizard
-import uk.gov.hmrc.test.ui.pages.ProfileSetup.{CYAPageUKIMS, NIPHLNumberPage, NIPHLQuestionPage, NIRMSNumberPage, NIRMSQuestionPage, UKIMSNumberPage}
+import uk.gov.hmrc.test.ui.pages.ProfileSetup.{CYAPage, NIPHLNumberPage, NIPHLQuestionPage, NIRMSNumberPage, NIRMSQuestionPage, UKIMSNumberPage}
 
-class CYAStepDefUKIMS extends BaseStepDef {
+class CYAStepDef extends BaseStepDef {
   Then("""^(?:I )?(am|should be) on the 'Check Your Answers' page without a NIRMS or NIPHL number$""") {
     (amShould: String) =>
       amShould match {
@@ -41,10 +41,10 @@ class CYAStepDefUKIMS extends BaseStepDef {
             .assertPage()
           clickRadioBtn("No")
           submitPage()
-          CYAPageUKIMS
+          CYAPage
             .assertPage()
         case "should be" =>
-          CYAPageUKIMS
+          CYAPage
             .assertPage()
       }
   }
@@ -66,16 +66,16 @@ class CYAStepDefUKIMS extends BaseStepDef {
           clickRadioBtn("Yes")
           submitPage()
           NIRMSNumberPage
-            .fillInput("value", "RMS-GB-123456")
+            .fillInput("nirmsNumber", "RMS-GB-123456")
           submitPage()
           NIPHLQuestionPage
             .assertPage()
           clickRadioBtn("No")
           submitPage()
-          CYAPageUKIMS
+          CYAPage
             .assertPage()
         case "should be" =>
-          CYAPageUKIMS
+          CYAPage
             .assertPage()
       }
   }
@@ -103,10 +103,10 @@ class CYAStepDefUKIMS extends BaseStepDef {
           NIPHLNumberPage
             .fillInput("value", "SN12345")
           submitPage()
-          CYAPageUKIMS
+          CYAPage
             .assertPage()
         case "should be" =>
-          CYAPageUKIMS
+          CYAPage
             .assertPage()
       }
   }
@@ -128,7 +128,7 @@ class CYAStepDefUKIMS extends BaseStepDef {
           clickRadioBtn("Yes")
           submitPage()
           NIRMSNumberPage
-            .fillInput("value", "RMS-GB-123456")
+            .fillInput("nirmsNumber", "RMS-GB-123456")
           submitPage()
           NIPHLQuestionPage
             .assertPage()
@@ -137,27 +137,69 @@ class CYAStepDefUKIMS extends BaseStepDef {
           NIPHLNumberPage
             .fillInput("value", "SN12345")
           submitPage()
-          CYAPageUKIMS
+          CYAPage
             .assertPage()
         case "should be" =>
-          CYAPageUKIMS
+          CYAPage
             .assertPage()
       }
   }
 
   Then("""^(?:I )?click the UKIMS Number change link$""") { () =>
-    CYAPageUKIMS
+    CYAPage
       .clickChangeLink("1")
+  }
+
+  Then("""^(?:I )?click the NIRMS Question change link$""") { () =>
+    CYAPage
+      .clickChangeLink("2")
+  }
+
+  Then("""^(?:I )?click the NIRMS Number change link$""") { () =>
+    CYAPage
+      .clickChangeLink("3")
+  }
+
+  Then("""^(?:I )?click the NIPHL Question change link$""") { () =>
+    CYAPage
+      .clickChangeLink("3")
+  }
+
+  Then("""^(?:I )?click the NIPHL Number change link$""") { () =>
+    CYAPage
+      .clickChangeLink("4")
   }
 
   Then("""^(?:My )?'UKIMS Number' has the (.*) valid value$""") { (key: String) =>
     key match {
       case "same"      =>
-        CYAPageUKIMS
-          .verifyUKIMSInput("XI47699357400020231115081800")
+        CYAPage
+          .verifyInput("ukimsNumber", "XI47699357400020231115081800")
       case "different" =>
-        CYAPageUKIMS
-          .verifyUKIMSInput("XI47699357400020231115081801")
+        CYAPage
+          .verifyInput("ukimsNumber", "XI47699357400020231115081801")
+    }
+  }
+
+  Then("""^(?:My )?'NIRMS Question' has the (.*) value$""") { (key: String) =>
+    key match {
+      case "same"      =>
+        CYAPage
+          .verifyInput("nirmsQuestion", "Yes")
+      case "different" =>
+        CYAPage
+          .verifyInput("nirmsQuestion", "No")
+    }
+  }
+
+  Then("""^(?:My )?'NIRMS Number' has the (.*) valid value$""") { (key: String) =>
+    key match {
+      case "same"      =>
+        CYAPage
+          .verifyInput("nirmsNumber", "RMS-GB-123456")
+      case "different" =>
+        CYAPage
+          .verifyInput("nirmsNumber", "RMS-GB-654321")
     }
   }
 }

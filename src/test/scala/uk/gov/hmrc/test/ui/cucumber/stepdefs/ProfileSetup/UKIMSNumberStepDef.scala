@@ -53,7 +53,7 @@ class UKIMSNumberStepDef extends BaseStepDef {
     }
   }
 
-  Then("""^(?:The free text field )?should be prepopulated$""") { () =>
+  Then("""^(?:The UKIMS Number field )?should be prepopulated$""") { () =>
     UKIMSNumberPage
       .findById("ukimsNumber")
       .getAttribute("value")

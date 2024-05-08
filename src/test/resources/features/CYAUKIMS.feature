@@ -8,7 +8,7 @@ Feature: Trader Goods Profile setup - CYA page
 
   Scenario: I should see my prepopulated UKIMS Number after navigating from the CYA page
     When I should be on the 'UK internal scheme number' page
-    Then The free text field should be prepopulated
+    Then The UKIMS Number field should be prepopulated
 
   Scenario: I do not change the UKIMS Number
     When I select continue

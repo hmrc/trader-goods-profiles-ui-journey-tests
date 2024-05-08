@@ -82,6 +82,14 @@ trait BasePage extends BrowserDriver with Matchers {
     this
   }
 
+  def isRadioBtnSelected(answer: String): Boolean = {
+    val selected: Boolean = answer match {
+      case "Yes" => findById("value").isSelected
+      case "No"  => findById("value-no").isSelected
+    }
+    selected
+  }
+
   def fillInput(id: String, input: String): this.type = {
     fillInputById(id, input)
     this
