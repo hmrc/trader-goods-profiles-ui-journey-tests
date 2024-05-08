@@ -20,10 +20,10 @@ import org.junit.Assert
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object CYAPage extends Page {
+object ProfileSetupCYAPage extends Page {
 
-  override def title(args: String*): String = "Check Your Answers"
-  override def h1(args: String*): String    = "Check Your Answers"
+  override def title(args: String*): String = "Check your answers"
+  override def h1(args: String*): String    = "Check your answers"
 
   def clickChangeLink(key: String): this.type = {
 

@@ -18,9 +18,9 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.ProfileSetup
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.AuthorityWizard
-import uk.gov.hmrc.test.ui.pages.ProfileSetup.{CYAPage, NIPHLNumberPage, NIPHLQuestionPage, NIRMSNumberPage, NIRMSQuestionPage, UKIMSNumberPage}
+import uk.gov.hmrc.test.ui.pages.ProfileSetup.{NIPHLNumberPage, NIPHLQuestionPage, NIRMSNumberPage, NIRMSQuestionPage, ProfileSetupCYAPage, UKIMSNumberPage}
 
-class CYAStepDef extends BaseStepDef {
+class ProfileSetupCYAStepDef extends BaseStepDef {
   Then("""^(?:I )?(am|should be) on the 'Check Your Answers' page without a NIRMS or NIPHL number$""") {
     (amShould: String) =>
       amShould match {
@@ -41,10 +41,10 @@ class CYAStepDef extends BaseStepDef {
             .assertPage()
           clickRadioBtn("No")
           submitPage()
-          CYAPage
+          ProfileSetupCYAPage
             .assertPage()
         case "should be" =>
-          CYAPage
+          ProfileSetupCYAPage
             .assertPage()
       }
   }
@@ -72,10 +72,10 @@ class CYAStepDef extends BaseStepDef {
             .assertPage()
           clickRadioBtn("No")
           submitPage()
-          CYAPage
+          ProfileSetupCYAPage
             .assertPage()
         case "should be" =>
-          CYAPage
+          ProfileSetupCYAPage
             .assertPage()
       }
   }
@@ -103,10 +103,10 @@ class CYAStepDef extends BaseStepDef {
           NIPHLNumberPage
             .fillInput("value", "SN12345")
           submitPage()
-          CYAPage
+          ProfileSetupCYAPage
             .assertPage()
         case "should be" =>
-          CYAPage
+          ProfileSetupCYAPage
             .assertPage()
       }
   }
@@ -137,46 +137,46 @@ class CYAStepDef extends BaseStepDef {
           NIPHLNumberPage
             .fillInput("value", "SN12345")
           submitPage()
-          CYAPage
+          ProfileSetupCYAPage
             .assertPage()
         case "should be" =>
-          CYAPage
+          ProfileSetupCYAPage
             .assertPage()
       }
   }
 
   Then("""^(?:I )?click the UKIMS Number change link$""") { () =>
-    CYAPage
+    ProfileSetupCYAPage
       .clickChangeLink("1")
   }
 
   Then("""^(?:I )?click the NIRMS Question change link$""") { () =>
-    CYAPage
+    ProfileSetupCYAPage
       .clickChangeLink("2")
   }
 
   Then("""^(?:I )?click the NIRMS Number change link$""") { () =>
-    CYAPage
+    ProfileSetupCYAPage
       .clickChangeLink("3")
   }
 
   Then("""^(?:I )?click the NIPHL Question change link$""") { () =>
-    CYAPage
+    ProfileSetupCYAPage
       .clickChangeLink("3")
   }
 
   Then("""^(?:I )?click the NIPHL Number change link$""") { () =>
-    CYAPage
+    ProfileSetupCYAPage
       .clickChangeLink("4")
   }
 
   Then("""^(?:My )?'UKIMS Number' has the (.*) valid value$""") { (key: String) =>
     key match {
       case "same"      =>
-        CYAPage
+        ProfileSetupCYAPage
           .verifyInput("ukimsNumber", "XI47699357400020231115081800")
       case "different" =>
-        CYAPage
+        ProfileSetupCYAPage
           .verifyInput("ukimsNumber", "XI47699357400020231115081801")
     }
   }
@@ -184,10 +184,10 @@ class CYAStepDef extends BaseStepDef {
   Then("""^(?:My )?'NIRMS Question' has the (.*) value$""") { (key: String) =>
     key match {
       case "same"      =>
-        CYAPage
+        ProfileSetupCYAPage
           .verifyInput("nirmsQuestion", "Yes")
       case "different" =>
-        CYAPage
+        ProfileSetupCYAPage
           .verifyInput("nirmsQuestion", "No")
     }
   }
@@ -195,10 +195,10 @@ class CYAStepDef extends BaseStepDef {
   Then("""^(?:My )?'NIRMS Number' has the (.*) valid value$""") { (key: String) =>
     key match {
       case "same"      =>
-        CYAPage
+        ProfileSetupCYAPage
           .verifyInput("nirmsNumber", "RMS-GB-123456")
       case "different" =>
-        CYAPage
+        ProfileSetupCYAPage
           .verifyInput("nirmsNumber", "RMS-GB-654321")
     }
   }
@@ -206,10 +206,10 @@ class CYAStepDef extends BaseStepDef {
   Then("""^(?:My )?'NIPHL Question' has the (.*) value$""") { (key: String) =>
     key match {
       case "same"      =>
-        CYAPage
+        ProfileSetupCYAPage
           .verifyInput("niphlQuestion", "Yes")
       case "different" =>
-        CYAPage
+        ProfileSetupCYAPage
           .verifyInput("niphlQuestion", "No")
     }
   }
@@ -217,10 +217,10 @@ class CYAStepDef extends BaseStepDef {
   Then("""^(?:My )?'NIPHL Number' has the (.*) valid value$""") { (key: String) =>
     key match {
       case "same"      =>
-        CYAPage
+        ProfileSetupCYAPage
           .verifyInput("niphlNumber", "SN12345")
       case "different" =>
-        CYAPage
+        ProfileSetupCYAPage
           .verifyInput("niphlNumber", "SN54321")
     }
   }
