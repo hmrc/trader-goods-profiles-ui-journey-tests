@@ -16,9 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import org.scalatest.concurrent.Eventually
 import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
-object NIOTTPage extends BasePage {
+object NIOTTPage extends BasePage with Eventually {
 
   def title(): String =
     "Northern Ireland Online Tariff: Look up commodity codes, duty and VAT rates"

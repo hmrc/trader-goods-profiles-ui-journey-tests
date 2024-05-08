@@ -23,6 +23,6 @@ Feature: Trader Goods Profiles Create Commodity code journey tests
     Then Error message 'Enter a commodity code in the correct format' should be displayed
 
 #  TODO: Investigate why code fails on pipeline but works locally
-#  Scenario:I can navigate to Northern Ireland Online Tariff page
-#    When I click on the Northern Ireland Online Tariff link
-#    Then I should be on the 'Northern Ireland Online Tariff' page
+  Scenario:I can navigate to Northern Ireland Online Tariff page
+    When I click on the Northern Ireland Online Tariff link
+    Then I should be on the 'Northern Ireland Online Tariff' page
