@@ -32,6 +32,7 @@ class CommonStepDef extends BaseStepDef {
 
   When("""^(?:I )?click on the (.+) link$""") { (link: String) =>
     clickByPartialLinkText(link)
+    println(driver.getTitle)
   }
 
   When("""^(?:I )?select (.+) for the boolean question""") { (option: String) =>

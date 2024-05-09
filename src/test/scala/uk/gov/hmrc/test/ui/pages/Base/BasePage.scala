@@ -53,7 +53,10 @@ trait BasePage extends BrowserDriver with Matchers {
 
   def clickByClassName(className: String): Unit = click(By.className(className))
 
-  def clickByPartialLinkText(linkText: String): Unit = click(By.linkText(linkText))
+  def clickByPartialLinkText(linkText: String): Unit = {
+    click(By.linkText(linkText))
+    println("Clicked on : "+linkText)
+  }
 
   def submitPage(): Unit = clickByClassName("govuk-button")
 
