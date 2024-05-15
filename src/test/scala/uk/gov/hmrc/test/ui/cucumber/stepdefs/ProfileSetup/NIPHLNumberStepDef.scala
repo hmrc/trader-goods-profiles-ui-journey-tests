@@ -31,7 +31,7 @@ class NIPHLNumberStepDef extends BaseStepDef {
         UKIMSNumberPage
           .assertPage()
         UKIMSNumberPage
-          .fillInput("ukimsNumber", "XI47699357400020231115081800")
+          .fillInput("value", "XIUKIM47699357400020231115081800")
         submitPage()
         NIRMSQuestionPage
           .assertPage()

@@ -34,13 +34,13 @@ class CreateCommodityCodeStepDef extends BaseStepDef {
     commodityCodeValidation match {
       case "incorrect" =>
         CreateCommodityCodePage
-          .fillInput("commodityCode", "ABC543211")
+          .fillInput("value", "ABC543211")
       case "valid"     =>
         CreateCommodityCodePage
-          .fillInput("commodityCode", "9876543211")
+          .fillInput("value", "9876543211")
       case "empty"     =>
         CreateCommodityCodePage
-          .fillInput("commodityCode", "")
+          .fillInput("value", "")
     }
   }
 

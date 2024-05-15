@@ -31,7 +31,7 @@ class ProfileSetupCYAStepDef extends BaseStepDef {
           UKIMSNumberPage
             .assertPage()
           UKIMSNumberPage
-            .fillInput("ukimsNumber", "XI47699357400020231115081800")
+            .fillInput("value", "XIUKIM47699357400020231115081800")
           submitPage()
           NIRMSQuestionPage
             .assertPage()
@@ -59,14 +59,14 @@ class ProfileSetupCYAStepDef extends BaseStepDef {
           UKIMSNumberPage
             .assertPage()
           UKIMSNumberPage
-            .fillInput("ukimsNumber", "XI47699357400020231115081800")
+            .fillInput("value", "XIUKIM47699357400020231115081800")
           submitPage()
           NIRMSQuestionPage
             .assertPage()
           clickRadioBtn("Yes")
           submitPage()
           NIRMSNumberPage
-            .fillInput("nirmsNumber", "RMS-GB-123456")
+            .fillInput("value", "RMS-GB-123456")
           submitPage()
           NIPHLQuestionPage
             .assertPage()
@@ -90,7 +90,7 @@ class ProfileSetupCYAStepDef extends BaseStepDef {
           UKIMSNumberPage
             .assertPage()
           UKIMSNumberPage
-            .fillInput("ukimsNumber", "XI47699357400020231115081800")
+            .fillInput("value", "XIUKIM47699357400020231115081800")
           submitPage()
           NIRMSQuestionPage
             .assertPage()
@@ -121,14 +121,14 @@ class ProfileSetupCYAStepDef extends BaseStepDef {
           UKIMSNumberPage
             .assertPage()
           UKIMSNumberPage
-            .fillInput("ukimsNumber", "XI47699357400020231115081800")
+            .fillInput("value", "XIUKIM47699357400020231115081800")
           submitPage()
           NIRMSQuestionPage
             .assertPage()
           clickRadioBtn("Yes")
           submitPage()
           NIRMSNumberPage
-            .fillInput("nirmsNumber", "RMS-GB-123456")
+            .fillInput("value", "RMS-GB-123456")
           submitPage()
           NIPHLQuestionPage
             .assertPage()
@@ -174,10 +174,10 @@ class ProfileSetupCYAStepDef extends BaseStepDef {
     key match {
       case "same"      =>
         ProfileSetupCYAPage
-          .verifyInput("ukimsNumber", "XI47699357400020231115081800")
+          .verifyInput("ukimsNumber", "XIUKIM47699357400020231115081800")
       case "different" =>
         ProfileSetupCYAPage
-          .verifyInput("ukimsNumber", "XI47699357400020231115081801")
+          .verifyInput("ukimsNumber", "XIUKIM47699357400020231115081801")
     }
   }
 
