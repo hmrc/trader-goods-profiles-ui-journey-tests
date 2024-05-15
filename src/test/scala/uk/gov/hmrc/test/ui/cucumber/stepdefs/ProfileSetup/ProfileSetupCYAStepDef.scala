@@ -177,7 +177,7 @@ class ProfileSetupCYAStepDef extends BaseStepDef {
           .verifyInput("ukimsNumber", "XIUKIM47699357400020231115081800")
       case "different" =>
         ProfileSetupCYAPage
-          .verifyInput("ukimsNumber", "XI47699357400020231115081801")
+          .verifyInput("ukimsNumber", "XIUKIM47699357400020231115081801")
     }
   }
 
