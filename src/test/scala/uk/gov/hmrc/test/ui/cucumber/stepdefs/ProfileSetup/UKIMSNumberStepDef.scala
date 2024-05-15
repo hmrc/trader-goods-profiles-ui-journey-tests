@@ -43,7 +43,7 @@ class UKIMSNumberStepDef extends BaseStepDef {
           .fillInput("value", "INVALID")
       case "different" =>
         UKIMSNumberPage
-          .fillInput("value", "XI47699357400020231115081801")
+          .fillInput("value", "XIUKIM47699357400020231115081801")
       case "valid"     =>
         UKIMSNumberPage
           .fillInput("value", "XIUKIM47699357400020231115081800")
@@ -55,7 +55,7 @@ class UKIMSNumberStepDef extends BaseStepDef {
 
   Then("""^(?:The UKIMS Number field )?should be prepopulated$""") { () =>
     UKIMSNumberPage
-      .findById("ukimsNumber")
+      .findById("value")
       .getAttribute("value")
       .shouldEqual("XIUKIM47699357400020231115081800")
   }
