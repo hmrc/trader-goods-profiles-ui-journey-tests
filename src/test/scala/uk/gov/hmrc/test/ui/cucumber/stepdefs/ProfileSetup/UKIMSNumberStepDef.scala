@@ -40,16 +40,16 @@ class UKIMSNumberStepDef extends BaseStepDef {
     ukimsNumberValidation match {
       case "incorrect" =>
         UKIMSNumberPage
-          .fillInput("ukimsNumber", "INVALID")
+          .fillInput("value", "INVALID")
       case "different" =>
         UKIMSNumberPage
-          .fillInput("ukimsNumber", "XI47699357400020231115081801")
+          .fillInput("value", "XI47699357400020231115081801")
       case "valid"     =>
         UKIMSNumberPage
-          .fillInput("ukimsNumber", "XI47699357400020231115081800")
+          .fillInput("value", "XIUKIM47699357400020231115081800")
       case "empty"     =>
         UKIMSNumberPage
-          .fillInput("ukimsNumber", "")
+          .fillInput("value", "")
     }
   }
 
@@ -57,6 +57,6 @@ class UKIMSNumberStepDef extends BaseStepDef {
     UKIMSNumberPage
       .findById("ukimsNumber")
       .getAttribute("value")
-      .shouldEqual("XI47699357400020231115081800")
+      .shouldEqual("XIUKIM47699357400020231115081800")
   }
 }
