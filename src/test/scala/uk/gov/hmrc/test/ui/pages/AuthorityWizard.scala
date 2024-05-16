@@ -50,6 +50,7 @@ object AuthorityWizard extends BasePage {
     findById("redirectionUrl").sendKeys(redirectionUrl)
     findById("enrolment[0].name").sendKeys("HMRC-CUS-ORG")
     findById("input-0-0-name").sendKeys("EORINumber")
+    findById("input-0-0-value").sendKeys("GB123456789123")
     this
   }
 
