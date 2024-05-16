@@ -16,10 +16,26 @@
 
 package uk.gov.hmrc.test.ui.pages.ProfileSetup
 
-import uk.gov.hmrc.test.ui.pages.Base.Page
+import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
-object HomePage extends Page {
+object HomePage extends BasePage {
 
-  override def title(args: String*): String = "Homepage"
-  override def h1(args: String*): String    = "Trader Goods Profile homepage"
+  def title(): String = "Trader Goods Profile homepage"
+
+  def assertPage(): this.type = {
+    verifyTitle(title())
+    verifyHeader(title())
+    this
+  }
+
+  private def verifyTitle(pageTitle: String): Unit =
+    if (driver.getTitle != s"$pageTitle - GOV.UK")
+      throw PageNotFoundException(
+        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
+      )
+
+  def verifyHeader(h1: String): this.type = {
+    checkHeader(h1)
+    this
+  }
 }
