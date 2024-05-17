@@ -14,28 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.ProfileSetup
+package uk.gov.hmrc.test.ui.pages.Categorisation
 
-import uk.gov.hmrc.test.ui.pages.Base.BasePage
+import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object HomePage extends BasePage {
+object CreatingGoodsRecordPage extends Page {
 
-  def title(): String = "Trader Goods Profile homepage"
-
-  def assertPage(): this.type = {
-    verifyTitle(title())
-    verifyHeader(title())
-    this
-  }
-
-  private def verifyTitle(pageTitle: String): Unit =
-    if (driver.getTitle != s"$pageTitle - GOV.UK")
-      throw PageNotFoundException(
-        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
-      )
-
-  def verifyHeader(h1: String): this.type = {
-    checkHeader(h1)
-    this
-  }
+  override def title(args: String*): String = "Creating a goods record"
+  override def h1(args: String*): String    = "Creating a goods record"
 }

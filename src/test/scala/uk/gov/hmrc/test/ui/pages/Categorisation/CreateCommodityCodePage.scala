@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.CreateRecord
+package uk.gov.hmrc.test.ui.pages.Categorisation
 
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object CreateCommodityCodePage extends Page {
   override def title(args: String*): String = "Commodity code"
-  override def h1(args: String*): String    = "Commodity code"
+
+  override def h1(args: String*): String = "Commodity code"
 
   def navigateToPage(args: String*): this.type = {
     val url: String = TestConfiguration.url("trader-goods-profiles-frontend") + "/commodity-code"

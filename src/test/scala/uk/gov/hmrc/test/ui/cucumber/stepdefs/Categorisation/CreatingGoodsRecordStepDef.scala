@@ -14,15 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.ProfileSetup
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.AuthorityWizard
-import uk.gov.hmrc.test.ui.pages.ProfileSetup._
+import uk.gov.hmrc.test.ui.pages.Categorisation.CreatingGoodsRecordPage
+import uk.gov.hmrc.test.ui.pages.ProfileSetup.{HomePage, NIPHLNumberPage, NIPHLQuestionPage, NIRMSNumberPage, NIRMSQuestionPage, ProfileSetupCYAPage, UKIMSNumberPage}
 
-class HomepageStepDef extends BaseStepDef {
+class CreatingGoodsRecordStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?(am|should be) on the 'Home' page$""") { (amShould: String) =>
+  Then("""^(?:I )?(am|should be) on the 'Creating a goods record' page$""") { (amShould: String) =>
     amShould match {
       case "am"        =>
         AuthorityWizard
@@ -49,12 +50,15 @@ class HomepageStepDef extends BaseStepDef {
         submitPage()
         ProfileSetupCYAPage
           .assertPage()
+        ProfileSetupCYAPage
+          .assertPage()
         submitPage()
         HomePage
           .assertPage()
+        clickByPartialLinkText("Create a new goods record")
       case "should be" =>
-        HomePage
-          .assertPage()
+        CreatingGoodsRecordPage
+          .assertPagexl()
     }
   }
 }

@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.CreateRecord
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.CreateRecord.CreateCommodityCodePage
+import uk.gov.hmrc.test.ui.pages.Categorisation.CreateCommodityCodePage
 import uk.gov.hmrc.test.ui.pages.NIOTTPage
 
 class CreateCommodityCodeStepDef extends BaseStepDef {
