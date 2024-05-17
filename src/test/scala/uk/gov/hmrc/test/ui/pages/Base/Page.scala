@@ -27,12 +27,6 @@ trait Page extends BasePage {
     this
   }
 
-  def assertPagexl(args: String*): this.type = {
-    verifyTitle(title(args: _*))
-    verifyHeaderxl(h1(args: _*))
-    this
-  }
-
   val serviceName: String = "Trader Goods Profile"
 
   private def verifyTitle(pageTitle: String): Unit =
@@ -43,11 +37,6 @@ trait Page extends BasePage {
 
   def verifyHeader(h1: String): this.type = {
     checkHeader(h1)
-    this
-  }
-
-  def verifyHeaderxl(h1: String): this.type = {
-    checkHeaderxl(h1)
     this
   }
 }
