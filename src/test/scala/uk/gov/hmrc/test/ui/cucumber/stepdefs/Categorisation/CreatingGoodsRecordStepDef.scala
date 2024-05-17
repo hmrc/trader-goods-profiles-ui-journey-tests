@@ -58,7 +58,7 @@ class CreatingGoodsRecordStepDef extends BaseStepDef {
         clickByPartialLinkText("Create a new goods record")
       case "should be" =>
         CreatingGoodsRecordPage
-          .assertPagexl()
+          .assertPage()
     }
   }
 }
