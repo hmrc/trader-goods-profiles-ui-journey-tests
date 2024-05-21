@@ -25,7 +25,7 @@ object CreateCommodityCodePage extends Page {
   override def h1(args: String*): String = "Commodity code"
 
   def navigateToPage(args: String*): this.type = {
-    val url: String = TestConfiguration.url("trader-goods-profiles-frontend") + "/commodity-code"
+    val url: String = TestConfiguration.url("trader-goods-profiles-frontend") + "/create-record/commodity-code"
     driver.navigate().to(url)
     super.assertPage(args: _*)
   }

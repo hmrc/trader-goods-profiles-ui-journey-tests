@@ -1,4 +1,4 @@
-@AllTest
+@AllLocal
 
 Feature: Trader Goods Categorisation - Creating A Goods Records page
 
