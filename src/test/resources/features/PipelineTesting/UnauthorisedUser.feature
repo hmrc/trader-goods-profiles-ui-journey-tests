@@ -1,4 +1,4 @@
-@AllTest
+@AllPipeline
 
 Feature: Trader Goods Profiles unauthorised error page journey tests
 

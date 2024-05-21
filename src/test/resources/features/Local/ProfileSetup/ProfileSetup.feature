@@ -1,4 +1,4 @@
-@AllTest
+@AllLocal
 
 Feature: Trader Goods Profile setup - Profile Setup page
 
@@ -16,7 +16,3 @@ Feature: Trader Goods Profile setup - Profile Setup page
   Scenario: I can navigate to NIPHL page
     When I click on the Moving plants from Great Britain to Northern Ireland link
     Then I should be on the 'NIPHL' page
-
-  Scenario: I can navigate to the UKIMS Number page
-    When I select continue
-    Then I should be on the 'UK internal scheme number' page

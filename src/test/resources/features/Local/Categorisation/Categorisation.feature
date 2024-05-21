@@ -1,4 +1,4 @@
-@AllTest
+@AllLocal
 
 Feature: Trader Goods Profiles Categorisation journey tests
 
