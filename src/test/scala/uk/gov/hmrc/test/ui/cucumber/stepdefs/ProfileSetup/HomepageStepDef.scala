@@ -17,44 +17,12 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.ProfileSetup
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.AuthorityWizard
 import uk.gov.hmrc.test.ui.pages.ProfileSetup._
 
 class HomepageStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?(am|should be) on the 'Home' page$""") { (amShould: String) =>
-    amShould match {
-      case "am"        =>
-        AuthorityWizard
-          .validLogin()
-        submitPage()
-        UKIMSNumberPage
-          .assertPage()
-        UKIMSNumberPage
-          .fillInput("value", "XIUKIM47699357400020231115081800")
-        submitPage()
-        NIRMSQuestionPage
-          .assertPage()
-        clickRadioBtn("Yes")
-        submitPage()
-        NIRMSNumberPage
-          .fillInput("value", "RMS-GB-123456")
-        submitPage()
-        NIPHLQuestionPage
-          .assertPage()
-        clickRadioBtn("Yes")
-        submitPage()
-        NIPHLNumberPage
-          .fillInput("value", "SN12345")
-        submitPage()
-        ProfileSetupCYAPage
-          .assertPage()
-        submitPage()
-        HomePage
-          .assertPage()
-      case "should be" =>
-        HomePage
-          .assertPage()
-    }
+  Then("""^(?:I )?should be on the 'Home' page$""") { () =>
+    HomePage
+      .assertPage()
   }
 }

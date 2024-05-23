@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.Unauthorised.UnauthorisedUserPage
 
 class UnauthorisedUserStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'unauthorised error' page$""") { () =>
+  Then("""^(?:I )?should be on the 'There is a Problem' page$""") { () =>
     UnauthorisedUserPage
       .assertPage()
   }

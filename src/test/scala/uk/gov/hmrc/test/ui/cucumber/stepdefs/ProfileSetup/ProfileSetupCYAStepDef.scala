@@ -17,132 +17,13 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.ProfileSetup
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.AuthorityWizard
-import uk.gov.hmrc.test.ui.pages.ProfileSetup.{NIPHLNumberPage, NIPHLQuestionPage, NIRMSNumberPage, NIRMSQuestionPage, ProfileSetupCYAPage, UKIMSNumberPage}
+import uk.gov.hmrc.test.ui.pages.ProfileSetup.ProfileSetupCYAPage
 
 class ProfileSetupCYAStepDef extends BaseStepDef {
-  Then("""^(?:I )?(am|should be) on the 'Check Your Answers' page without a NIRMS or NIPHL number$""") {
-    (amShould: String) =>
-      amShould match {
-        case "am"        =>
-          AuthorityWizard
-            .validLogin()
-          submitPage()
-          UKIMSNumberPage
-            .assertPage()
-          UKIMSNumberPage
-            .fillInput("value", "XIUKIM47699357400020231115081800")
-          submitPage()
-          NIRMSQuestionPage
-            .assertPage()
-          clickRadioBtn("No")
-          submitPage()
-          NIPHLQuestionPage
-            .assertPage()
-          clickRadioBtn("No")
-          submitPage()
-          ProfileSetupCYAPage
-            .assertPage()
-        case "should be" =>
-          ProfileSetupCYAPage
-            .assertPage()
-      }
-  }
 
-  Then("""^(?:I )?(am|should be) on the 'Check Your Answers' page with a NIRMS and without a NIPHL number$""") {
-    (amShould: String) =>
-      amShould match {
-        case "am"        =>
-          AuthorityWizard
-            .validLogin()
-          submitPage()
-          UKIMSNumberPage
-            .assertPage()
-          UKIMSNumberPage
-            .fillInput("value", "XIUKIM47699357400020231115081800")
-          submitPage()
-          NIRMSQuestionPage
-            .assertPage()
-          clickRadioBtn("Yes")
-          submitPage()
-          NIRMSNumberPage
-            .fillInput("value", "RMS-GB-123456")
-          submitPage()
-          NIPHLQuestionPage
-            .assertPage()
-          clickRadioBtn("No")
-          submitPage()
-          ProfileSetupCYAPage
-            .assertPage()
-        case "should be" =>
-          ProfileSetupCYAPage
-            .assertPage()
-      }
-  }
-
-  Then("""^(?:I )?(am|should be) on the 'Check Your Answers' page without a NIRMS and with a NIPHL number$""") {
-    (amShould: String) =>
-      amShould match {
-        case "am"        =>
-          AuthorityWizard
-            .validLogin()
-          submitPage()
-          UKIMSNumberPage
-            .assertPage()
-          UKIMSNumberPage
-            .fillInput("value", "XIUKIM47699357400020231115081800")
-          submitPage()
-          NIRMSQuestionPage
-            .assertPage()
-          clickRadioBtn("No")
-          submitPage()
-          NIPHLQuestionPage
-            .assertPage()
-          clickRadioBtn("Yes")
-          submitPage()
-          NIPHLNumberPage
-            .fillInput("value", "SN12345")
-          submitPage()
-          ProfileSetupCYAPage
-            .assertPage()
-        case "should be" =>
-          ProfileSetupCYAPage
-            .assertPage()
-      }
-  }
-
-  Then("""^(?:I )?(am|should be) on the 'Check Your Answers' page with a NIRMS and NIPHL number$""") {
-    (amShould: String) =>
-      amShould match {
-        case "am"        =>
-          AuthorityWizard
-            .validLogin()
-          submitPage()
-          UKIMSNumberPage
-            .assertPage()
-          UKIMSNumberPage
-            .fillInput("value", "XIUKIM47699357400020231115081800")
-          submitPage()
-          NIRMSQuestionPage
-            .assertPage()
-          clickRadioBtn("Yes")
-          submitPage()
-          NIRMSNumberPage
-            .fillInput("value", "RMS-GB-123456")
-          submitPage()
-          NIPHLQuestionPage
-            .assertPage()
-          clickRadioBtn("Yes")
-          submitPage()
-          NIPHLNumberPage
-            .fillInput("value", "SN12345")
-          submitPage()
-          ProfileSetupCYAPage
-            .assertPage()
-        case "should be" =>
-          ProfileSetupCYAPage
-            .assertPage()
-      }
+  Then("""^(?:I )?should be on the 'Check Your Answers' page$""") { () =>
+    ProfileSetupCYAPage
+      .assertPage()
   }
 
   Then("""^(?:I )?click the UKIMS Number change link$""") { () =>
@@ -162,12 +43,12 @@ class ProfileSetupCYAStepDef extends BaseStepDef {
 
   Then("""^(?:I )?click the NIPHL Question change link$""") { () =>
     ProfileSetupCYAPage
-      .clickChangeLink("3")
+      .clickChangeLink("4")
   }
 
   Then("""^(?:I )?click the NIPHL Number change link$""") { () =>
     ProfileSetupCYAPage
-      .clickChangeLink("4")
+      .clickChangeLink("5")
   }
 
   Then("""^(?:My )?'UKIMS Number' has the (.*) valid value$""") { (key: String) =>

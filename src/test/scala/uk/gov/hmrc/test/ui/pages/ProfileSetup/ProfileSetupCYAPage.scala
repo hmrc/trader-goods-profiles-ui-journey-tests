@@ -37,8 +37,8 @@ object ProfileSetupCYAPage extends Page {
       case "ukimsNumber"   => findBy(By.cssSelector("div:nth-child(1) > dd.govuk-summary-list__value")).getText
       case "nirmsQuestion" => findBy(By.cssSelector("div:nth-child(2) > dd.govuk-summary-list__value")).getText
       case "nirmsNumber"   => findBy(By.cssSelector("div:nth-child(3) > dd.govuk-summary-list__value")).getText
-      case "niphlQuestion" => findBy(By.cssSelector("div:nth-child(3) > dd.govuk-summary-list__value")).getText
-      case "niphlNumber"   => findBy(By.cssSelector("div:nth-child(4) > dd.govuk-summary-list__value")).getText
+      case "niphlQuestion" => findBy(By.cssSelector("div:nth-child(4) > dd.govuk-summary-list__value")).getText
+      case "niphlNumber"   => findBy(By.cssSelector("div:nth-child(5) > dd.govuk-summary-list__value")).getText
     }
 
     Assert.assertEquals("Expected " + expected + " value but found " + actual + " instead.", expected, actual)
