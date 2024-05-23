@@ -49,10 +49,19 @@ Feature: Trader Goods Profile setup journeys
     And The UKIMS Number field should be prepopulated
     When I enter different value of my UKIMS Number in the free text field
     Then I should be on the 'Check Your Answers' page
+    And My 'UKIMS Number' has the different valid value
+    When I click the NIRMS Question change link
+    And I select continue
+    Then I should be on the 'Check Your Answers' page
+    And My 'NIRMS Question' has the same value
     When I click the NIRMS Number change link
     And I select continue
     Then I should be on the 'Check Your Answers' page
     And My 'NIRMS Number' has the same valid value
+    When I click the NIPHL Question change link
+    And I select continue
+    Then I should be on the 'Check Your Answers' page
+    And My 'NIPHL Question' has the same value
     When I click the NIPHL Number change link
     And I select continue
     Then I should be on the 'Check Your Answers' page
