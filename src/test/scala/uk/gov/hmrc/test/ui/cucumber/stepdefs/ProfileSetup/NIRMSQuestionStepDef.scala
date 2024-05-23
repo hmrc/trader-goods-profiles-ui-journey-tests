@@ -17,28 +17,14 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.ProfileSetup
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.{AuthorityWizard, NIRMSProductEligibilityPage}
-import uk.gov.hmrc.test.ui.pages.ProfileSetup.{NIRMSQuestionPage, UKIMSNumberPage}
+import uk.gov.hmrc.test.ui.pages.NIRMSProductEligibilityPage
+import uk.gov.hmrc.test.ui.pages.ProfileSetup.NIRMSQuestionPage
 
 class NIRMSQuestionStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?(am|should be) on the 'Northern Ireland Retail Movement Scheme' page$""") { (amShould: String) =>
-    amShould match {
-      case "am"        =>
-        AuthorityWizard
-          .validLogin()
-        submitPage()
-        UKIMSNumberPage
-          .assertPage()
-        UKIMSNumberPage
-          .fillInput("value", "XIUKIM47699357400020231115081800")
-        submitPage()
-        NIRMSQuestionPage
-          .assertPage()
-      case "should be" =>
-        NIRMSQuestionPage
-          .assertPage()
-    }
+  Then("""^(?:I )?should be on the 'Northern Ireland Retail Movement Scheme' page$""") { () =>
+    NIRMSQuestionPage
+      .assertPage()
   }
 
   Then("""^(?:I )?should be on the 'Northern Ireland Retail Movement Scheme: how the scheme will work' page$""") { () =>

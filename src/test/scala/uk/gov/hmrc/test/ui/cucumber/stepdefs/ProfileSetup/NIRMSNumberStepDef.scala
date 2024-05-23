@@ -17,33 +17,13 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.ProfileSetup
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.AuthorityWizard
-import uk.gov.hmrc.test.ui.pages.ProfileSetup.{NIRMSNumberPage, NIRMSQuestionPage, UKIMSNumberPage}
+import uk.gov.hmrc.test.ui.pages.ProfileSetup.{NIRMSNumberPage, UKIMSNumberPage}
 
 class NIRMSNumberStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?(am|should be) on the 'Northern Ireland Retail Movement Scheme number' page$""") {
-    (amShould: String) =>
-      amShould match {
-        case "am"        =>
-          AuthorityWizard
-            .validLogin()
-          submitPage()
-          UKIMSNumberPage
-            .assertPage()
-          UKIMSNumberPage
-            .fillInput("value", "XIUKIM47699357400020231115081800")
-          submitPage()
-          NIRMSQuestionPage
-            .assertPage()
-          clickRadioBtn("Yes")
-          submitPage()
-          NIRMSNumberPage
-            .assertPage()
-        case "should be" =>
-          NIRMSNumberPage
-            .assertPage()
-      }
+  Then("""^(?:I )?should be on the 'Northern Ireland Retail Movement Scheme number' page$""") { () =>
+    NIRMSNumberPage
+      .assertPage()
   }
 
   Then("""^(?:I )?enter (.*) value of my NIRMS Number in the free text field$""") { (nrimsNumberValidation: String) =>
@@ -51,15 +31,19 @@ class NIRMSNumberStepDef extends BaseStepDef {
       case "incorrect" =>
         NIRMSNumberPage
           .fillInput("value", "Rms-gb-123456")
+        submitPage()
       case "different" =>
         NIRMSNumberPage
           .fillInput("value", "RMS-GB-654321")
+        submitPage()
       case "valid"     =>
         NIRMSNumberPage
           .fillInput("value", "RMS-GB-123456")
+        submitPage()
       case "empty"     =>
         NIRMSNumberPage
           .fillInput("value", "")
+        submitPage()
     }
   }
 

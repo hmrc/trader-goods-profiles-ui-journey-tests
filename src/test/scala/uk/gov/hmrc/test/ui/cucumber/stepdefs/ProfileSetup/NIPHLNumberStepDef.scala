@@ -17,36 +17,14 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.ProfileSetup
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.AuthorityWizard
-import uk.gov.hmrc.test.ui.pages.ProfileSetup.{NIPHLNumberPage, NIPHLQuestionPage, NIRMSQuestionPage, UKIMSNumberPage}
+import uk.gov.hmrc.test.ui.pages.ProfileSetup.{NIPHLNumberPage, UKIMSNumberPage}
 
 class NIPHLNumberStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?(am|should be) on the 'NIPHL registration number' page$""") { (amShould: String) =>
-    amShould match {
-      case "am"        =>
-        AuthorityWizard
-          .validLogin()
-        submitPage()
-        UKIMSNumberPage
-          .assertPage()
-        UKIMSNumberPage
-          .fillInput("value", "XIUKIM47699357400020231115081800")
-        submitPage()
-        NIRMSQuestionPage
-          .assertPage()
-        clickRadioBtn("No")
-        submitPage()
-        NIPHLQuestionPage
-          .assertPage()
-        clickRadioBtn("Yes")
-        submitPage()
-        NIPHLNumberPage
-          .assertPage()
-      case "should be" =>
-        NIPHLNumberPage
-          .assertPage()
-    }
+  Then("""^(?:I )?should be on the 'NIPHL registration number' page$""") { () =>
+    NIPHLNumberPage
+      .assertPage()
+    submitPage()
   }
 
   Then("""^(?:I )?enter (.*) value of my NIPHL Number in the free text field$""") { (niphlNumberValidation: String) =>
@@ -54,15 +32,19 @@ class NIPHLNumberStepDef extends BaseStepDef {
       case "incorrect" =>
         NIPHLNumberPage
           .fillInput("value", "SN123452")
+        submitPage()
       case "different" =>
         NIPHLNumberPage
           .fillInput("value", "SN54321")
+        submitPage()
       case "valid"     =>
         NIPHLNumberPage
           .fillInput("value", "SN12345")
+        submitPage()
       case "empty"     =>
         NIPHLNumberPage
           .fillInput("value", "")
+        submitPage()
     }
   }
 
