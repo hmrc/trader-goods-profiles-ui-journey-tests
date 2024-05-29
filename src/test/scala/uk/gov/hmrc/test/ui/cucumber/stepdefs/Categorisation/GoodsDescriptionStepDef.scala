@@ -17,12 +17,25 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Categorisation.CreatingGoodsRecordPage
+import uk.gov.hmrc.test.ui.pages.Categorisation.GoodsDescriptionPage
 
-class CreatingGoodsRecordStepDef extends BaseStepDef {
+class GoodsDescriptionStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'Creating a goods record' page$""") { () =>
-    CreatingGoodsRecordPage
+  Then("""^(?:I )?should be on the 'Goods description' page$""") { () =>
+    GoodsDescriptionPage
       .assertPage()
+  }
+
+  Then("""^(?:I )?enter (.*) in the Goods description text area$""") { (description: String) =>
+    GoodsDescriptionPage
+      .fillInput("value", description)
+    submitPage()
+  }
+
+  When("""^(?:I )?select (.+) for the Goods boolean question""") { (answer: String) =>
+    answer match {
+      case "Yes" => clickById("value")
+      case "No"  => clickById("value-2")
+    }
   }
 }

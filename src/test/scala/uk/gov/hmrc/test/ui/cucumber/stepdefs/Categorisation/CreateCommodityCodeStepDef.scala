@@ -32,15 +32,18 @@ class CreateCommodityCodeStepDef extends BaseStepDef {
 
   Then("""^(?:I )?enter (.*) value of Commodity code in the free text field$""") { (commodityCodeValidation: String) =>
     commodityCodeValidation match {
-      case "incorrect" =>
+      case "invalid format" =>
         CreateCommodityCodePage
           .fillInput("value", "ABC543211")
-      case "valid"     =>
+        submitPage()
+      case "incorrect"      =>
         CreateCommodityCodePage
-          .fillInput("value", "9876543211")
-      case "empty"     =>
+          .fillInput("value", "1234567892")
+        submitPage()
+      case "valid"          =>
         CreateCommodityCodePage
-          .fillInput("value", "")
+          .fillInput("value", "1234567890")
+        submitPage()
     }
   }
 
