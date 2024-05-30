@@ -3,7 +3,9 @@
 Feature: Trader Goods Categorisation - Create Record journey
 
   Scenario:As a returning user in Trader Goods profile I want to create a record
-    Given I login to TGP Homepage with EORI number GB123456789123
+    Given I am on the 'Home' page
+    And I click on the Sign out link
+    When I login to TGP Homepage with EORI number GB123456789123
     Then I should be on the 'Home' page
     When I click on the Create a new goods record link
     Then I should be on the 'Creating a goods record' page
