@@ -14,21 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.pages.Categorisation
 
-import io.cucumber.junit.{Cucumber, CucumberOptions}
-import org.junit.runner.RunWith
+import uk.gov.hmrc.test.ui.pages.Base.Page
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array(
-    "pretty",
-    "html:target/cucumberReportJourneyTests.html",
-    "json:target/cucumber.json",
-    "junit:target/test-reports/JourneyTestsRunner.xml"
-  ),
-  tags = "@AllLocal"
-)
-class TestRunnerLocal {}
+object CountryOfOriginPage extends Page {
+
+  override def title(args: String*): String = "Country of origin"
+  override def h1(args: String*): String    = "Country of origin"
+}

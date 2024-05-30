@@ -17,12 +17,18 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Categorisation.CreatingGoodsRecordPage
+import uk.gov.hmrc.test.ui.pages.Categorisation.CountryOfOriginPage
 
-class CreatingGoodsRecordStepDef extends BaseStepDef {
+class CountryOfOriginStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'Creating a goods record' page$""") { () =>
-    CreatingGoodsRecordPage
+  Then("""^(?:I )?should be on the 'Country of origin' page$""") { () =>
+    CountryOfOriginPage
       .assertPage()
+  }
+
+  Then("""^(?:I )?enter (.*) in the country text field$""") { (country: String) =>
+    CountryOfOriginPage
+      .fillInput("value", country)
+    submitPage()
   }
 }

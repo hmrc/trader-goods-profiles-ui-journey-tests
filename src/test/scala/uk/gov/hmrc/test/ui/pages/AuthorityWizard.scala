@@ -22,9 +22,9 @@ import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
 object AuthorityWizard extends BasePage {
 
-  def validLogin(): this.type = {
+  def validLogin(eorinumber: String, url: String): this.type = {
     verifyPageTitle()
-    fillInputs()
+    fillInputs(eorinumber, url)
     submitPage()
     this
   }
@@ -45,12 +45,12 @@ object AuthorityWizard extends BasePage {
   def navigateTo(url: String): Unit     = driver.navigate().to(url)
   def findElementBy(by: By): WebElement = driver.findElement(by)
 
-  def fillInputs(): this.type = {
-    val redirectionUrl = TestConfiguration.authorise("trader-goods-profiles-Profile-setup")
-    findById("redirectionUrl").sendKeys(redirectionUrl)
+  def fillInputs(eoriNumber: String, url: String): this.type = {
+
+    findById("redirectionUrl").sendKeys(url)
     findById("enrolment[0].name").sendKeys("HMRC-CUS-ORG")
     findById("input-0-0-name").sendKeys("EORINumber")
-    findById("input-0-0-value").sendKeys("GB123456789123")
+    findById("input-0-0-value").sendKeys(eoriNumber)
     this
   }
 

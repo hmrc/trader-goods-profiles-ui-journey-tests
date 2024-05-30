@@ -14,25 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.pages.Categorisation
 
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
-import uk.gov.hmrc.test.ui.pages.AuthorityWizard
+import uk.gov.hmrc.test.ui.pages.Base.Page
 
-class LoginStepDef extends BaseStepDef {
+object CommodityCodeResultPage extends Page {
+  override def title(args: String*): String = "Results for " + "0702000007"
 
-  And("""^I login to TGP Homepage with EORI number (.*)$""") { (EORINumber: String) =>
-    AuthorityWizard
-      .validLogin(EORINumber, TestConfiguration.authorise("trader-goods-profiles-Home"))
-  }
+  override def h1(args: String*): String = "Results for " + "0702000007"
 
-  And("""^I login to TGP Profile setup with EORI number (.*)$""") { (EORINumber: String) =>
-    AuthorityWizard
-      .validLogin(EORINumber, TestConfiguration.authorise("trader-goods-profiles-Profile-setup"))
-  }
-
-  And("I login to TGP with Invalid details") { () =>
-    AuthorityWizard
-      .invalidLogin()
-  }
 }

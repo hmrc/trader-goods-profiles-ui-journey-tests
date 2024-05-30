@@ -17,12 +17,11 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Categorisation.CreatingGoodsRecordPage
+import uk.gov.hmrc.test.ui.pages.Categorisation.CommodityCodeResultPage
 
-class CreatingGoodsRecordStepDef extends BaseStepDef {
-
-  Then("""^(?:I )?should be on the 'Creating a goods record' page$""") { () =>
-    CreatingGoodsRecordPage
+class CommodityCodeResultStepDef extends BaseStepDef {
+  Then("""^(?:I )?should be on the 'commodity code result' page$""") { () =>
+    CommodityCodeResultPage
       .assertPage()
   }
 }
