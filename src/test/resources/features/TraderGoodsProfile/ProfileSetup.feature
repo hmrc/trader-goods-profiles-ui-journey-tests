@@ -71,7 +71,7 @@ Feature: Trader Goods Profile setup journeys
     And I click on the Sign out link
 
   Scenario: As a UKIMS authorised trader I log on to the trader goods profile service without NIRMS and with NIPHL
-    Given I login to TGP Profile setup with EORI number GB123456789123
+      Given I login to TGP Profile setup with EORI number GB123456789123
     Then I should be on the 'Setting up your profile' page and click Continue
     And I should be on the 'UK internal scheme number' page
     When I enter valid value of my UKIMS Number in the free text field
@@ -98,22 +98,6 @@ Feature: Trader Goods Profile setup journeys
     And I select continue
     Then I should be on the 'Northern Ireland Retail Movement Scheme number' page
     When I enter valid value of my NIRMS Number in the free text field
-    Then I should be on the 'Northern Ireland plant health label' page
-    When I select No for the boolean question
-    And I select continue
-    Then I should be on the 'Check Your Answers' page
-    And I select continue
-    Then I should be on the 'Home' page
-    And I click on the Sign out link
-
-  Scenario: As a UKIMS authorised trader I log on to the trader goods profile service without NIRMS and NIPHL
-    Given I login to TGP Profile setup with EORI number GB123456789123
-    Then I should be on the 'Setting up your profile' page and click Continue
-    And I should be on the 'UK internal scheme number' page
-    When I enter valid value of my UKIMS Number in the free text field
-    Then I should be on the 'Northern Ireland Retail Movement Scheme' page
-    When I select No for the boolean question
-    And I select continue
     Then I should be on the 'Northern Ireland plant health label' page
     When I select No for the boolean question
     And I select continue
