@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Categorisation
+package uk.gov.hmrc.test.ui.pages.ProfileSetup
 
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object CommodityCodeResultPage extends Page {
-  override def title(args: String*): String = "Results for " + "0702000007"
+object UKIMSKickOutPage extends Page {
 
-  override def h1(args: String*): String = "Results for " + "0702000007"
-
+  override def title(args: String*): String = "You need to apply for the UK Internal Market Scheme (UKIMS)"
+  override def h1(args: String*): String    = "You need to apply for the UK Internal Market Scheme (UKIMS)"
 }
