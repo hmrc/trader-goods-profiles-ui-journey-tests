@@ -8,6 +8,10 @@ Feature: Trader Goods Profile setup journeys
     When I login to TGP Profile setup with EORI number GB123456789123
     Then I should be on the 'Setting up your profile' page and click Continue
     And I should be on the 'UK internal scheme number' page
+    When I click on the I am not UKIMS registered link
+    Then I should be on the 'UKIMS kick out' page
+    When I select the back link
+    Then I should be on the 'UK internal scheme number' page
     And I select continue
     Then Error message 'Enter your UKIMS number' should be displayed
     When I enter incorrect value of my UKIMS Number in the free text field
@@ -69,6 +73,7 @@ Feature: Trader Goods Profile setup journeys
     And I select continue
     Then I should be on the 'Home' page
     And I click on the Sign out link
+    Then I should be on the 'Signed Out' page
 
   Scenario: As a UKIMS authorised trader I log on to the trader goods profile service without NIRMS and with NIPHL
       Given I login to TGP Profile setup with EORI number GB123456789123
@@ -87,6 +92,7 @@ Feature: Trader Goods Profile setup journeys
     And I select continue
     Then I should be on the 'Home' page
     And I click on the Sign out link
+    Then I should be on the 'Signed Out' page
 
   Scenario: As a UKIMS authorised trader I log on to the trader goods profile service with NIRMS and without NIPHL
     Given I login to TGP Profile setup with EORI number GB123456789123
@@ -105,3 +111,4 @@ Feature: Trader Goods Profile setup journeys
     And I select continue
     Then I should be on the 'Home' page
     And I click on the Sign out link
+    Then I should be on the 'Signed Out' page

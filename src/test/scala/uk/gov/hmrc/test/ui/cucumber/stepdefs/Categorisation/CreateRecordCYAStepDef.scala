@@ -18,7 +18,6 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Categorisation.CreateRecordCYAPage
-import uk.gov.hmrc.test.ui.pages.ProfileSetup.ProfileSetupCYAPage
 
 class CreateRecordCYAStepDef extends BaseStepDef {
 

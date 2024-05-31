@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Categorisation
+package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object CommodityCodeResultPage extends Page {
-  override def title(args: String*): String = "Results for " + "0702000007"
+object SignedOutPage extends Page {
 
-  override def h1(args: String*): String = "Results for " + "0702000007"
+  override def title(args: String*): String = "You have now signed out"
 
+  override def h1(args: String*): String = "You have now signed out"
 }

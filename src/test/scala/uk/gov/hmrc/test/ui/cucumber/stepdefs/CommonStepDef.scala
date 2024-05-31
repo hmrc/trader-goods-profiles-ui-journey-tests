@@ -16,6 +16,8 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
+import uk.gov.hmrc.test.ui.pages.SignedOutPage
+
 class CommonStepDef extends BaseStepDef {
 
   And("""^(?:I )?select continue$""") { () =>
@@ -40,5 +42,10 @@ class CommonStepDef extends BaseStepDef {
 
   Then("""^(?:The radio button field )?should be prepopulated$""") { () =>
     isRadioBtnSelected("Yes").shouldEqual(true)
+  }
+
+  Then("""^(?:I )?should be on the 'Signed Out' page$""") { () =>
+    SignedOutPage
+      .assertPage()
   }
 }
