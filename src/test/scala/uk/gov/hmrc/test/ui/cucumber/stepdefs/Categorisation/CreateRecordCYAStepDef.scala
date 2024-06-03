@@ -99,7 +99,7 @@ class CreateRecordCYAStepDef extends BaseStepDef {
     key match {
       case "same"      =>
         CreateRecordCYAPage
-          .verifyInput("commodityCode", "1234567890")
+          .verifyInput("commodityCode", "0702000007")
       case "different" =>
         CreateRecordCYAPage
           .verifyInput("commodityCode", "0987654321")
