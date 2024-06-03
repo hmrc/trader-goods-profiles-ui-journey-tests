@@ -42,7 +42,7 @@ class CreateCommodityCodeStepDef extends BaseStepDef {
         submitPage()
       case "valid"          =>
         CreateCommodityCodePage
-          .fillInput("value", "1234567890")
+          .fillInput("value", "0702000007")
         submitPage()
     }
   }
