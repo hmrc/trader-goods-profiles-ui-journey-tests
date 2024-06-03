@@ -69,13 +69,19 @@ Feature: Trader Goods Categorisation - Create Record journey
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page
     And My 'Country Of Origin' has the same value
-#  TODO To be tested on real commodity
-#    When I click the Commodity Code change link
-#    And I select continue
-#    Then I should be on the 'Create Record - Check Your Answers' page
-#    And My 'Commodity Code' has the same valid value
-#    And I select continue
-#    Then I should be on the 'Home' page
+    When I click the Commodity Code change link
+    And I select continue
+    Then I should be on the 'commodity code result' page
+    When I select Yes for the boolean question
+    And I select continue
+    Then I should be on the 'Create Record - Check Your Answers' page
+    And My 'Commodity Code' has the same valid value
+    When I select continue
+    Then I should be on the 'Create record success' page
+    And I click on the Go to homepage link
+    Then I should be on the 'Home' page
+    And I click on the Sign out link
+    Then I should be on the 'Signed Out' page
 
 
 
