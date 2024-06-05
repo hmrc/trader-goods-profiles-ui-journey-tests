@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Categorisation
+package uk.gov.hmrc.test.ui.pages.Accreditation
 
 import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
-object CreateRecordSuccessPage extends BasePage {
+object AccreditationSuccessPage extends BasePage {
 
-  def title(): String = "You've created a goods record"
-  def h1(): String    = "You've created a goods record"
+  def title(): String = "Request for advice complete"
+  def h1(): String    = "Request for advice complete"
 
   def assertPage(): this.type = {
     verifyTitle(title())
