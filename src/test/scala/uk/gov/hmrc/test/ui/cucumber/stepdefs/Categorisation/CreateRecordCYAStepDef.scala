@@ -88,7 +88,7 @@ class CreateRecordCYAStepDef extends BaseStepDef {
     key match {
       case "same"      =>
         CreateRecordCYAPage
-          .verifyInput("countryOfOrigin", "Sweden")
+          .verifyInput("countryOfOrigin", "CN")
       case "different" =>
         CreateRecordCYAPage
           .verifyInput("countryOfOrigin", "Other")
