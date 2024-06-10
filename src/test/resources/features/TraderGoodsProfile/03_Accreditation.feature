@@ -12,7 +12,7 @@ Feature: Trader Goods Categorisation - Accreditation journey
     And I select continue
     Then Error message 'Enter your name' should be displayed
     When I enter long name in the free text field
-    Then Error message 'Enter a name with less than 70 characters' should be displayed
+    Then Error message 'Enter a name with 70 characters or less' should be displayed
     When I select the back link
     Then I should be on the 'What is your name?' page
     When I enter valid name in the free text field
