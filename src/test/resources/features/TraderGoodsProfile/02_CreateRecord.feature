@@ -46,8 +46,8 @@ Feature: Trader Goods Categorisation - Create Record journey
     Then Error message 'Enter a real commodity code' should be displayed
     When I select the back link
     Then I should be on the 'commodity code' page
-    When I enter valid value of Commodity code in the free text field
-    Then I should be on the 'commodity code result' page
+    When I enter 0702000007 value of Commodity code in the free text field
+    Then I should be on the "Results for 0702000007" page
     When I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page
@@ -71,7 +71,7 @@ Feature: Trader Goods Categorisation - Create Record journey
     And My 'Country Of Origin' has the same value
     When I click the Commodity Code change link
     And I select continue
-    Then I should be on the 'commodity code result' page
+    Then I should be on the "Results for 0702000007" page
     When I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page

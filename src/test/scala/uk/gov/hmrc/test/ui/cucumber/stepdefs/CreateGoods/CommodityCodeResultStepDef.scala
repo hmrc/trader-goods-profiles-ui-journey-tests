@@ -14,12 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Categorisation
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.CreateGoods
 
-import uk.gov.hmrc.test.ui.pages.Base.Page
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.CreateGoods.CommodityCodeResultPage
 
-object TraderReferencePage extends Page {
-
-  override def title(args: String*): String = "Trader reference"
-  override def h1(args: String*): String    = "Trader reference"
+class CommodityCodeResultStepDef extends BaseStepDef {
+  Then("""^(?:I )?should be on the "(.+)" page$""") { (title: String) =>
+    CommodityCodeResultPage
+      .assertPage(title)
+  }
 }

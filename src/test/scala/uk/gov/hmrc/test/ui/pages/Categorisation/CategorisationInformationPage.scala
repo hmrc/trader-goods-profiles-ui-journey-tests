@@ -16,11 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.Categorisation
 
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object CommodityCodeResultPage extends Page {
-  override def title(args: String*): String = "Results for " + "0702000007"
+object CategorisationInformationPage extends Page {
 
-  override def h1(args: String*): String = "Results for " + "0702000007"
-
+  override def title(args: String*): String = "Categorisation"
+  override def h1(args: String*): String    = "Categorisation"
 }

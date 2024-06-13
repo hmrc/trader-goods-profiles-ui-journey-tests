@@ -14,12 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Categorisation
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.CreateGoods
 
-import uk.gov.hmrc.test.ui.pages.Base.Page
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.CreateGoods.CreatingGoodsRecordPage
 
-object CreatingGoodsRecordPage extends Page {
+class CreatingGoodsRecordStepDef extends BaseStepDef {
 
-  override def title(args: String*): String = "Creating a goods record"
-  override def h1(args: String*): String    = "Creating a goods record"
+  Then("""^(?:I )?should be on the 'Creating a goods record' page$""") { () =>
+    CreatingGoodsRecordPage
+      .assertPage()
+  }
 }

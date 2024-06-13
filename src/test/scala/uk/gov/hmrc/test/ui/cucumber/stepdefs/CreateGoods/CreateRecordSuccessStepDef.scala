@@ -14,28 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.CreateGoods
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Categorisation.GoodsDescriptionPage
+import uk.gov.hmrc.test.ui.pages.CreateGoods.CreateRecordSuccessPage
 
-class GoodsDescriptionStepDef extends BaseStepDef {
+class CreateRecordSuccessStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'Goods description' page$""") { () =>
-    GoodsDescriptionPage
+  Then("""^(?:I )?should be on the 'Create record success' page$""") { () =>
+    CreateRecordSuccessPage
       .assertPage()
-  }
-
-  Then("""^(?:I )?enter (.*) in the Goods description text area$""") { (description: String) =>
-    GoodsDescriptionPage
-      .fillInput("value", description)
-    submitPage()
-  }
-
-  When("""^(?:I )?select (.+) for the Goods boolean question""") { (answer: String) =>
-    answer match {
-      case "Yes" => clickById("value")
-      case "No"  => clickById("value-2")
-    }
   }
 }

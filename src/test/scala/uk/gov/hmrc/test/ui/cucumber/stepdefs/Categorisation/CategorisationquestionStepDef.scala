@@ -17,11 +17,17 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Categorisation.CommodityCodeResultPage
+import uk.gov.hmrc.test.ui.pages.Categorisation.CategorisationAssessmentPage
 
-class CommodityCodeResultStepDef extends BaseStepDef {
-  Then("""^(?:I )?should be on the 'commodity code result' page$""") { () =>
-    CommodityCodeResultPage
-      .assertPage()
+class CategorisationquestionStepDef extends BaseStepDef {
+
+  Then("""^(?:I )?should be on the 'Category assessment(.+)' page$""") { (number: String) =>
+    CategorisationAssessmentPage
+      .assertPage(number)
+  }
+
+  Then("""^(?:I )?select (.+) option$""") { (option: String) =>
+    clickRadioOpt(option)
+    submitPage()
   }
 }

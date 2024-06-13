@@ -14,21 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
+package uk.gov.hmrc.test.ui.pages.CreateGoods
 
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Categorisation.CountryOfOriginPage
+import uk.gov.hmrc.test.ui.pages.Base.Page
 
-class CountryOfOriginStepDef extends BaseStepDef {
+object TraderReferencePage extends Page {
 
-  Then("""^(?:I )?should be on the 'Country of origin' page$""") { () =>
-    CountryOfOriginPage
-      .assertPage()
-  }
-
-  Then("""^(?:I )?enter (.*) in the country text field$""") { (country: String) =>
-    CountryOfOriginPage
-      .fillInput("value", country)
-    submitPage()
-  }
+  override def title(args: String*): String = "Trader reference"
+  override def h1(args: String*): String    = "Trader reference"
 }
