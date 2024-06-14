@@ -16,13 +16,39 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.CreateGoods
 
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.CreateGoods.CreateRecordSuccessPage
+import uk.gov.hmrc.test.ui.pages.AuthorityWizard
+import uk.gov.hmrc.test.ui.pages.CreateGoods.{CountryOfOriginPage, CreateCommodityCodePage, CreateRecordSuccessPage, TraderReferencePage}
 
 class CreateRecordSuccessStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'Create record success' page$""") { () =>
-    CreateRecordSuccessPage
-      .assertPage()
+  Then("""^(?:I )?(am|should be) on the 'Create record success' page$""") { (amShould: String) =>
+    amShould match {
+      case "am"        =>
+        AuthorityWizard
+          .validLogin("GB123456789098", TestConfiguration.authorise("trader-goods-profiles-Home"))
+        clickByPartialLinkText("Create a new goods record")
+        submitPage()
+        TraderReferencePage
+          .fillInput("value", "Unique value")
+        submitPage()
+        clickById("value")
+        submitPage()
+        CountryOfOriginPage
+          .fillInput("value", "IQ")
+        submitPage()
+        CreateCommodityCodePage
+          .fillInput("value", "9301900000")
+        submitPage()
+        clickRadioBtn("Yes")
+        submitPage()
+        submitPage()
+        CreateRecordSuccessPage
+          .assertPage()
+      case "should be" =>
+        CreateRecordSuccessPage
+          .assertPage()
+    }
   }
 }

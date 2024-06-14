@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages.Categorisation
 
-import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object CategorisationInformationPage extends Page {

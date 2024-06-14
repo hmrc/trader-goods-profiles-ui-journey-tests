@@ -25,23 +25,29 @@ object CategorisationCYAPage extends Page {
   override def title(args: String*): String = "Check your answers"
   override def h1(args: String*): String    = "Check your answers"
 
-  def clickConditionsChangeLink(key: String): this.type = {
+  def clickConditionsChangeLink(ChangelinkNumber: Int): this.type = {
 
-    click(By.cssSelector("dl:nth-child(3) > div:nth-child(" + key + ") > dd.govuk-summary-list__actions > a"))
-
-    this
-  }
-
-  def clickSupplementaryUnitChangeLink(key: String): this.type = {
-
-    click(By.cssSelector("dl:nth-child(5) > div:nth-child(" + key + ") > dd.govuk-summary-list__actions > a"))
+    click(
+      By.cssSelector("dl:nth-child(3) > div:nth-child(" + ChangelinkNumber + ") > dd.govuk-summary-list__actions > a")
+    )
 
     this
   }
 
-  def clickLongerCommodityCodeChangeLink(key: String): this.type = {
+  def clickSupplementaryUnitChangeLink(ChangelinkNumber: Int): this.type = {
 
-    click(By.cssSelector("dl:nth-child(7) > div:nth-child(" + key + ") > dd.govuk-summary-list__actions > a"))
+    click(
+      By.cssSelector("dl:nth-child(5) > div:nth-child(" + ChangelinkNumber + ") > dd.govuk-summary-list__actions > a")
+    )
+
+    this
+  }
+
+  def clickLongerCommodityCodeChangeLink(ChangelinkNumber: Int): this.type = {
+
+    click(
+      By.cssSelector("dl:nth-child(7) > div:nth-child(" + ChangelinkNumber + ") > dd.govuk-summary-list__actions > a")
+    )
 
     this
   }

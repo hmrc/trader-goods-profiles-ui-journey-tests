@@ -87,10 +87,11 @@ trait BasePage extends BrowserDriver with Matchers {
 
   def clickRadioOpt(Option: String): this.type = {
     Option match {
-      case "First"  => clickById("value_0")
-      case "Second" => clickById("value_1")
-      case "Third"  => clickById("value_2")
-      case "Fourth" => clickById("value_3")
+      case "First"             => clickById("value_0")
+      case "Second"            => clickById("value_1")
+      case "Third"             => clickById("value_2")
+      case "Fourth"            => clickById("value_3")
+      case "None of the above" => click(By.xpath("//input[@value=\"none\"]"))
     }
     this
   }

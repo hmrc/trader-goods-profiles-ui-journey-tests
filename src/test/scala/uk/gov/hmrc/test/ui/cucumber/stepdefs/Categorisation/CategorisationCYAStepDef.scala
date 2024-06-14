@@ -28,32 +28,32 @@ class CategorisationCYAStepDef extends BaseStepDef {
 
   Then("""^(?:I )?click the Category assessment 1 of 6 change link$""") { () =>
     CategorisationCYAPage
-      .clickConditionsChangeLink("1")
+      .clickConditionsChangeLink(1)
   }
 
   Then("""^(?:I )?click the Category assessment 2 of 6 change link$""") { () =>
     CategorisationCYAPage
-      .clickConditionsChangeLink("2")
+      .clickConditionsChangeLink(2)
   }
 
   Then("""^(?:I )?click the Category assessment 3 of 6 change link$""") { () =>
     CategorisationCYAPage
-      .clickConditionsChangeLink("3")
+      .clickConditionsChangeLink(3)
   }
 
   Then("""^(?:I )?click the Category assessment 4 of 6 change link$""") { () =>
     CategorisationCYAPage
-      .clickConditionsChangeLink("4")
+      .clickConditionsChangeLink(4)
   }
 
   Then("""^(?:I )?click the Category assessment 5 of 6 change link$""") { () =>
     CategorisationCYAPage
-      .clickConditionsChangeLink("5")
+      .clickConditionsChangeLink(5)
   }
 
   Then("""^(?:I )?click the Category assessment 6 of 6 change link$""") { () =>
     CategorisationCYAPage
-      .clickConditionsChangeLink("6")
+      .clickConditionsChangeLink(6)
   }
 
   Then("""^(?:The )?'Category assessment 5 of 6' has the value (.*)$""") { (value: String) =>
