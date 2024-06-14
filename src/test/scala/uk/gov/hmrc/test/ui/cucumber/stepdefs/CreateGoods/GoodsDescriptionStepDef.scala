@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.CreateGoods
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Categorisation.GoodsDescriptionPage
+import uk.gov.hmrc.test.ui.pages.CreateGoods.GoodsDescriptionPage
 
 class GoodsDescriptionStepDef extends BaseStepDef {
 

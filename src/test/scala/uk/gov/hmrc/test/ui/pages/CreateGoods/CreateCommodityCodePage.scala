@@ -14,12 +14,19 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Categorisation
+package uk.gov.hmrc.test.ui.pages.CreateGoods
 
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object CountryOfOriginPage extends Page {
+object CreateCommodityCodePage extends Page {
+  override def title(args: String*): String = "Commodity code"
 
-  override def title(args: String*): String = "Country of origin"
-  override def h1(args: String*): String    = "Country of origin"
+  override def h1(args: String*): String = "Commodity code"
+
+  def navigateToPage(args: String*): this.type = {
+    val url: String = TestConfiguration.url("trader-goods-profiles-frontend") + "/create-record/commodity-code"
+    driver.navigate().to(url)
+    super.assertPage(args: _*)
+  }
 }

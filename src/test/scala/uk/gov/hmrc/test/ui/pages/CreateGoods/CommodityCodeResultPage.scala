@@ -14,18 +14,27 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
+package uk.gov.hmrc.test.ui.pages.CreateGoods
 
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Categorisation.CategoryGuidancePage
+import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
-class CategoryGuidanceStepDef extends BaseStepDef {
-  Given("""^(?:I )?navigate to the 'categorisation' page$""") { () =>
-    CategoryGuidancePage
-      .navigateToPage()
+object CommodityCodeResultPage extends BasePage {
+  def assertPage(title: String): this.type = {
+    verifyTitle(title)
+    verifyHeader(title)
+    this
   }
-  Then("""^(?:I )?should be on the 'categorisation' page$""") { () =>
-    CategoryGuidancePage
-      .assertPage()
+
+  val serviceName: String = "Trader Goods Profile"
+
+  private def verifyTitle(pageTitle: String): Unit =
+    if (driver.getTitle != s"$pageTitle - $serviceName - GOV.UK")
+      throw PageNotFoundException(
+        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
+      )
+
+  def verifyHeader(h1: String): this.type = {
+    checkHeader(h1)
+    this
   }
 }

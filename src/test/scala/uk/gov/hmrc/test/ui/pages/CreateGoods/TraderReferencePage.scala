@@ -14,19 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Categorisation
+package uk.gov.hmrc.test.ui.pages.CreateGoods
 
-import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object CategoryGuidancePage extends Page {
+object TraderReferencePage extends Page {
 
-  override def title(args: String*): String = "Categorisation"
-  override def h1(args: String*): String    = "Categorisation"
-
-  def navigateToPage(args: String*): this.type = {
-    val url: String = TestConfiguration.url("trader-goods-profiles-frontend") + "/categorisation-start"
-    driver.navigate().to(url)
-    super.assertPage(args: _*)
-  }
+  override def title(args: String*): String = "Trader reference"
+  override def h1(args: String*): String    = "Trader reference"
 }

@@ -14,14 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.CreateGoods
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Categorisation.CommodityCodeResultPage
+import uk.gov.hmrc.test.ui.pages.CreateGoods.CountryOfOriginPage
 
-class CommodityCodeResultStepDef extends BaseStepDef {
-  Then("""^(?:I )?should be on the 'commodity code result' page$""") { () =>
-    CommodityCodeResultPage
+class CountryOfOriginStepDef extends BaseStepDef {
+
+  Then("""^(?:I )?should be on the 'Country of origin' page$""") { () =>
+    CountryOfOriginPage
       .assertPage()
+  }
+
+  Then("""^(?:I )?enter (.*) in the country text field$""") { (country: String) =>
+    CountryOfOriginPage
+      .fillInput("value", country)
+    submitPage()
   }
 }

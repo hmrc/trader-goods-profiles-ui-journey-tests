@@ -18,14 +18,14 @@ package uk.gov.hmrc.test.ui.pages.Categorisation
 
 import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
-object CreateRecordSuccessPage extends BasePage {
+object CategorisationAssessmentPage extends BasePage {
 
-  def title(): String = "You've created a goods record"
-  def h1(): String    = "You've created a goods record"
+  def title(args: String*): String = "Categorisation question"
+  def h1(args: String*): String    = "Category assessment"
 
-  def assertPage(): this.type = {
+  def assertPage(number: String): this.type = {
     verifyTitle(title())
-    verifyHeader(h1())
+    verifyHeader(h1() + number)
     this
   }
 
@@ -38,7 +38,7 @@ object CreateRecordSuccessPage extends BasePage {
       )
 
   def verifyHeader(h1: String): this.type = {
-    checkPanelHeader(h1)
+    checkHeader(h1)
     this
   }
 }

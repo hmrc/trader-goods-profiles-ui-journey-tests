@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Categorisation
+package uk.gov.hmrc.test.ui.pages.CreateGoods
 
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object GoodsDescriptionPage extends Page {
+object CountryOfOriginPage extends Page {
 
-  override def title(args: String*): String = "Goods description"
-  override def h1(args: String*): String    = "Goods description"
+  override def title(args: String*): String = "Country of origin"
+  override def h1(args: String*): String    = "Country of origin"
 }

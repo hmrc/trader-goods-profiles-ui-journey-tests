@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.CreateGoods
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Categorisation.CreateCommodityCodePage
+import uk.gov.hmrc.test.ui.pages.CreateGoods.CreateCommodityCodePage
 import uk.gov.hmrc.test.ui.pages.NIOTTPage
 
 class CreateCommodityCodeStepDef extends BaseStepDef {
@@ -40,9 +40,9 @@ class CreateCommodityCodeStepDef extends BaseStepDef {
         CreateCommodityCodePage
           .fillInput("value", "1234567892")
         submitPage()
-      case "valid"          =>
+      case _                =>
         CreateCommodityCodePage
-          .fillInput("value", "0702000007")
+          .fillInput("value", commodityCodeValidation)
         submitPage()
     }
   }

@@ -18,8 +18,8 @@ package uk.gov.hmrc.test.ui.pages.Categorisation
 
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object TraderReferencePage extends Page {
+object CategorisationInformationPage extends Page {
 
-  override def title(args: String*): String = "Trader reference"
-  override def h1(args: String*): String    = "Trader reference"
+  override def title(args: String*): String = "Categorisation"
+  override def h1(args: String*): String    = "Categorisation"
 }

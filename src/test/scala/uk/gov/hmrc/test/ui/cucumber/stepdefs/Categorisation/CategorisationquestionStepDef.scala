@@ -14,19 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Categorisation
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
 
-import uk.gov.hmrc.test.ui.conf.TestConfiguration
-import uk.gov.hmrc.test.ui.pages.Base.Page
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.Categorisation.CategorisationAssessmentPage
 
-object CreateCommodityCodePage extends Page {
-  override def title(args: String*): String = "Commodity code"
+class CategorisationquestionStepDef extends BaseStepDef {
 
-  override def h1(args: String*): String = "Commodity code"
+  Then("""^(?:I )?should be on the 'Category assessment(.+)' page$""") { (number: String) =>
+    CategorisationAssessmentPage
+      .assertPage(number)
+  }
 
-  def navigateToPage(args: String*): this.type = {
-    val url: String = TestConfiguration.url("trader-goods-profiles-frontend") + "/create-record/commodity-code"
-    driver.navigate().to(url)
-    super.assertPage(args: _*)
+  Then("""^(?:I )?select (.+) option$""") { (option: String) =>
+    clickRadioOpt(option)
+    submitPage()
   }
 }
