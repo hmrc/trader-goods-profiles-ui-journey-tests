@@ -1,6 +1,6 @@
-@AllPipeline
+@AllLocal
 
-Feature: Trader Goods Profile - Create goods and Categorisation journey
+Feature: Trader Goods Categorisation - Categorisation journey
 
   Scenario:As a user, I want to categorise goods using EORI-GB123456789098, Country-IQ and Commodity-9301900000
     Given I am on the 'Create record success' page
