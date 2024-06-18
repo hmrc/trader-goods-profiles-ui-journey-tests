@@ -16,10 +16,8 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.CreateGoods
 
-import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.AuthorityWizard
-import uk.gov.hmrc.test.ui.pages.CreateGoods.{CountryOfOriginPage, CreateCommodityCodePage, CreateRecordSuccessPage, TraderReferencePage}
+import uk.gov.hmrc.test.ui.pages.CreateGoods.CreateRecordSuccessPage
 
 class CreateRecordSuccessStepDef extends BaseStepDef {
 

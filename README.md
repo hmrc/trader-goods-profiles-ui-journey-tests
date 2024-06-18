@@ -24,10 +24,6 @@ Start `TGP_FE>` services as follows:
 sm2 --start TGP_FE
 ```
 
-### Local Selenium Grid
-
-Confirm that [local-selenium-grid](https://github.com/hmrc/local-selenium-grid) is up-to-date and follow the provided [instructions](https://github.com/hmrc/local-selenium-grid/blob/main/README.md).
-
 ## Tests
 
 Run tests as follows:
