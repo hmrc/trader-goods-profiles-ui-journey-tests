@@ -14,20 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.CreateGoods
+package uk.gov.hmrc.test.ui.cucumber.runner
 
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.CreateGoods.CountryOfOriginPage
+import io.cucumber.junit.{Cucumber, CucumberOptions}
+import org.junit.runner.RunWith
 
-class CountryOfOriginStepDef extends BaseStepDef {
-
-  Then("""^(?:I )?should be on the 'Country of origin' page$""") { () =>
-    CountryOfOriginPage
-      .assertPage()
-  }
-
-  Then("""^(?:I )?enter (.*) in the country text field$""") { (country: String) =>
-    CountryOfOriginPage.select(country)
-    submitPage()
-  }
-}
+@RunWith(classOf[Cucumber])
+@CucumberOptions(
+  features = Array("src/test/resources/features"),
+  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
+  plugin = Array(
+    "pretty",
+    "html:target/cucumberReportJourneyTests.html",
+    "json:target/cucumber.json",
+    "junit:target/test-reports/JourneyTestsRunner.xml"
+  ),
+  tags = "@AllLocal"
+)
+class TestRunnerLocal {}

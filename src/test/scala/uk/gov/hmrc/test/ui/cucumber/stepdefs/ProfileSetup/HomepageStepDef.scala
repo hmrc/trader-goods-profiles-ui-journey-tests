@@ -16,9 +16,7 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.ProfileSetup
 
-import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.AuthorityWizard
 import uk.gov.hmrc.test.ui.pages.ProfileSetup._
 
 class HomepageStepDef extends BaseStepDef {
@@ -26,25 +24,6 @@ class HomepageStepDef extends BaseStepDef {
   Then("""^(?:I )?(am|should be) on the 'Home' page$""") { (amShould: String) =>
     amShould match {
       case "am"        =>
-        AuthorityWizard
-          .validLogin("GB123456789123", TestConfiguration.authorise("trader-goods-profiles-Profile-setup"))
-        submitPage()
-        UKIMSNumberPage
-          .assertPage()
-        UKIMSNumberPage
-          .fillInput("value", "XIUKIM47699357400020231115081800")
-        submitPage()
-        NIRMSQuestionPage
-          .assertPage()
-        clickRadioBtn("No")
-        submitPage()
-        NIPHLQuestionPage
-          .assertPage()
-        clickRadioBtn("No")
-        submitPage()
-        ProfileSetupCYAPage
-          .assertPage()
-        submitPage()
         HomePage
           .assertPage()
       case "should be" =>

@@ -14,20 +14,23 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.CreateGoods
+package uk.gov.hmrc.test.ui.pages.Categorisation
 
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.CreateGoods.CountryOfOriginPage
+import org.junit.Assert
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.pages.Base.Page
 
-class CountryOfOriginStepDef extends BaseStepDef {
+object CategorisationResultPage extends Page {
 
-  Then("""^(?:I )?should be on the 'Country of origin' page$""") { () =>
-    CountryOfOriginPage
-      .assertPage()
-  }
+  override def title(args: String*): String = "Categorisation result"
+  override def h1(args: String*): String    = "Category 1 goods"
 
-  Then("""^(?:I )?enter (.*) in the country text field$""") { (country: String) =>
-    CountryOfOriginPage.select(country)
-    submitPage()
+  def verifyResult(expected: String): this.type = {
+    val actual: String = findBy(By.cssSelector("")).getText
+    // needs By logic once page is accessible
+
+    Assert.assertEquals("Expected " + expected + " but found " + actual + " instead.", expected, actual)
+
+    this
   }
 }
