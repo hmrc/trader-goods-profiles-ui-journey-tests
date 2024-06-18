@@ -27,8 +27,7 @@ class CountryOfOriginStepDef extends BaseStepDef {
   }
 
   Then("""^(?:I )?enter (.*) in the country text field$""") { (country: String) =>
-    CountryOfOriginPage
-      .fillInput("value", country)
+    CountryOfOriginPage.select(country)
     submitPage()
   }
 }

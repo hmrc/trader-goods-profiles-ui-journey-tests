@@ -3,10 +3,7 @@
 Feature: Trader Goods Categorisation - Create Record journey
 
   Scenario:As a returning user in Trader Goods profile I want to create a record
-    Given I am on the 'Home' page
-    And I click on the Sign out link
-    Then I should be on the 'Signed Out' page
-    When I login to TGP Homepage with EORI number GB123456789123
+    Given I login to TGP Homepage with EORI number GB123456789123
     Then I should be on the 'Home' page
     When I click on the Create a new goods record link
     Then I should be on the 'Creating a goods record' page
@@ -36,7 +33,7 @@ Feature: Trader Goods Categorisation - Create Record journey
     Then Error message 'Enter the country of origin' should be displayed
     When I select the back link
     Then I should be on the 'Country of origin' page
-    When I enter CN in the country text field
+    When I enter China in the country text field
     Then I should be on the 'commodity code' page
     And I select continue
     Then Error message 'Enter a commodity code' should be displayed
