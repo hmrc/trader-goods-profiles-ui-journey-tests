@@ -60,3 +60,16 @@ Feature: Trader Goods Profile - Create Record And Categorise journey
     And I select None of the above option
     Then I should be on the 'Categorisation - Check Your Answers' page
     And The 'Category assessment 5 of 6' has the value None selected
+    When I select continue
+    Then I should be on the 'Categorisation Result' page
+    And I should have Category 1 goods and not be eligible for SPIMM
+    And I select the back link
+    When I click the Category assessment 5 of 6 change link
+    Then I should be on the 'Category assessment 5' page
+    And I select First option
+    Then I should be on the 'Category assessment 6' page
+    And I select First option
+    Then I should be on the 'Categorisation - Check Your Answers' page
+    And I select continue
+    Then I should be on the 'Categorisation Result' page
+    And I should have standard goods and be eligible for SPIMM
