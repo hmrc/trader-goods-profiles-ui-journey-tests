@@ -16,7 +16,7 @@ Feature: Trader Goods Profile - Profile setup journeys
     And I select continue
     Then I should be on the 'Northern Ireland plant health label' page
     When I select the back link
-    Then I should be on the 'Northern Ireland Retail Movement Scheme number' page
+    Then I should be on the 'Northern Ireland Retail Movement Scheme' page
     When I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Northern Ireland Retail Movement Scheme number' page
