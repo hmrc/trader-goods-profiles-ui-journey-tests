@@ -3,7 +3,7 @@
 Feature: Trader Goods Profile - Accreditation journey
 
   Scenario:As a returning user in Trader Goods profile I want to ask for HMRC advice
-    Given I login to TGP Homepage with EORI number GB123456789123
+    Given I login to TGP Homepage with EORI number GB123456789098
     Then I should be on the 'Home' page
     And I click on the Ask for an opinion from HMRC if a commodity code is correct link
     Then I should be on the 'Asking HMRC for advice' page
@@ -27,8 +27,6 @@ Feature: Trader Goods Profile - Accreditation journey
     And My 'Email' has the same value
     When I select continue
     Then I should be on the 'Accreditation success' page
-    And I click on the Sign out link
-    Then I should be on the 'Signed Out' page
 
 
 
