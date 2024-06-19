@@ -88,7 +88,7 @@ class CreateRecordCYAStepDef extends BaseStepDef {
     key match {
       case "same"      =>
         CreateRecordCYAPage
-          .verifyInput("countryOfOrigin", "China")
+          .verifyInput("countryOfOrigin", "Iraq")
       case "different" =>
         CreateRecordCYAPage
           .verifyInput("countryOfOrigin", "Other")
@@ -99,7 +99,7 @@ class CreateRecordCYAStepDef extends BaseStepDef {
     key match {
       case "same"      =>
         CreateRecordCYAPage
-          .verifyInput("commodityCode", "0702000007")
+          .verifyInput("commodityCode", "9301900000")
       case "different" =>
         CreateRecordCYAPage
           .verifyInput("commodityCode", "0987654321")
