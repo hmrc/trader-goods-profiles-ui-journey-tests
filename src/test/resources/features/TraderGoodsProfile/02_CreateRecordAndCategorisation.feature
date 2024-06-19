@@ -16,7 +16,7 @@ Feature: Trader Goods Profile - Create Record And Categorise journey
     Then I should be on the 'Goods description' page
     When I enter description in the Goods description text area
     Then I should be on the 'Country of origin' page
-    When I enter IQ in the country text field
+    When I enter Iraq in the country text field
     Then I should be on the 'commodity code' page
     When I enter 9301900000 value of Commodity code in the free text field
     Then I should be on the "Results for 9301900000" page

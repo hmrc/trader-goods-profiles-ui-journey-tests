@@ -3,7 +3,7 @@
 Feature: Trader Goods Categorisation - Create Record And Categorisation journey
 
   Scenario:As a returning user in Trader Goods profile I want to create a record
-    Given I login to TGP Homepage with EORI number GB123456789123
+    Given I login to TGP Homepage with EORI number GB123456789098
     Then I should be on the 'Home' page
     When I click on the Create a new goods record link
     Then I should be on the 'Creating a goods record' page
@@ -33,7 +33,7 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Then Error message 'Enter the country of origin' should be displayed
     When I select the back link
     Then I should be on the 'Country of origin' page
-    When I enter China in the country text field
+    When I enter Iraq in the country text field
     Then I should be on the 'commodity code' page
     And I select continue
     Then Error message 'Enter a commodity code' should be displayed
@@ -43,8 +43,8 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Then Error message 'Enter a real commodity code' should be displayed
     When I select the back link
     Then I should be on the 'commodity code' page
-    When I enter 0702000007 value of Commodity code in the free text field
-    Then I should be on the "Results for 0702000007" page
+    When I enter 9301900000 value of Commodity code in the free text field
+    Then I should be on the "Results for 9301900000" page
     When I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page
@@ -68,7 +68,7 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     And My 'Country Of Origin' has the same value
     When I click the Commodity Code change link
     And I select continue
-    Then I should be on the "Results for 0702000007" page
+    Then I should be on the "Results for 9301900000" page
     When I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page

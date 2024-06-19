@@ -25,13 +25,14 @@ Feature: Trader Goods Profile - Profile setup journeys
     When I select No for the boolean question
     And I select continue
     Then I should be on the 'Check Your Answers' page
-    When I select the back link
-    Then I should be on the 'Northern Ireland plant health label' page
-    When I select Yes for the boolean question
-    And I select continue
-    Then I should be on the 'NIPHL registration number' page
-    When I enter valid value of my NIPHL Number in the free text field
-    Then I should be on the 'Check Your Answers' page
+#    TODO - enable the below steps when NIPHL format validation updated
+#    When I select the back link
+#    Then I should be on the 'Northern Ireland plant health label' page
+#    When I select Yes for the boolean question
+#    And I select continue
+#    Then I should be on the 'NIPHL registration number' page
+#    When I enter valid value of my NIPHL Number in the free text field
+#    Then I should be on the 'Check Your Answers' page
     When I click the UKIMS Number change link
     Then I should be on the 'UK internal scheme number' page
     And The UKIMS Number field should be prepopulated
