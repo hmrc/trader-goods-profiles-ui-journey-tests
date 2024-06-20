@@ -56,8 +56,28 @@ class CategorisationCYAStepDef extends BaseStepDef {
       .clickConditionsChangeLink(6)
   }
 
+  Then("""^(?:I )?click the 'Has Supplementary Unit' change link$""") { () =>
+    CategorisationCYAPage
+      .clickSupplementaryUnitChangeLink(1)
+  }
+
+  Then("""^(?:I )?click the 'Supplementary Unit' change link$""") { () =>
+    CategorisationCYAPage
+      .clickSupplementaryUnitChangeLink(2)
+  }
+
   Then("""^(?:The )?'Category assessment 5 of 6' has the value (.*)$""") { (value: String) =>
     CategorisationCYAPage
       .verifyConditionsInput("Category assessment 5 of 6", value)
+  }
+
+  Then("""^(?:The )?'Has Supplementary Unit' has the value (.*)$""") { (value: String) =>
+    CategorisationCYAPage
+      .verifySupplementaryUnitInput("Has Supplementary Unit", value)
+  }
+
+  Then("""^(?:The )?'Supplementary Unit' has the value (.*)$""") { (value: String) =>
+    CategorisationCYAPage
+      .verifySupplementaryUnitInput("Supplementary Unit", value)
   }
 }
