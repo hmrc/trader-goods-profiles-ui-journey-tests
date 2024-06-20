@@ -60,6 +60,29 @@ Feature: Trader Goods Profile - Create Record And Categorise journey
     And I select None of the above option
     Then I should be on the 'Categorisation - Check Your Answers' page
     And The 'Category assessment 5 of 6' has the value None selected
+    When I select continue
+    Then I should be on the 'Categorisation complete' page
+    And I navigate to the 'Supplementary Unit' page
+    Then I should be on the 'Supplementary Unit' page
+    And I select Yes for the boolean question
+    And I select continue
+    Then I should be on the 'Goods Supplementary Unit' page
+    And I enter 12345.0432 value of Goods Supplementary Unit
+    Then I should be on the 'Categorisation - Check Your Answers' page
+    When I click the 'Has Supplementary Unit' change link
+    Then I should be on the 'Supplementary Unit' page
+    And I select continue
+    Then I should be on the 'Categorisation - Check Your Answers' page
+    And The 'Has Supplementary Unit' has the value Yes
+    When I click the 'Supplementary Unit' change link
+    Then I should be on the 'Goods Supplementary Unit' page
+    And I select continue
+    Then I should be on the 'Categorisation - Check Your Answers' page
+    And The 'Supplementary Unit' has the value 12345.0432
+    When I select continue
+    Then I should be on the 'Categorisation complete' page
+    And I click on the Sign out link
+    Then I should be on the 'Signed Out' page
 #    When I select continue
 #    Then I should be on the 'Categorisation Result' page
 #    And I should have Category 1 goods and not be eligible for SPIMM
