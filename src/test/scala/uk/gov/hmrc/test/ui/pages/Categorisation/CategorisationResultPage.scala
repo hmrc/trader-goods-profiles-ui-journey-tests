@@ -22,12 +22,23 @@ import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object CategorisationResultPage extends Page {
 
-  override def title(args: String*): String = "Categorisation result"
-  override def h1(args: String*): String    = "Category 1 goods"
+  override def title(args: String*): String = "Categorisation complete"
+  override def h1(args: String*): String    = "Categorisation complete"
+
+  override def assertPage(args: String*): this.type = {
+    verifyTitle(title())
+    checkPanelHeader(h1())
+    this
+  }
+
+  private def verifyTitle(pageTitle: String): Unit =
+    if (driver.getTitle != s"$pageTitle - $serviceName - GOV.UK")
+      throw PageNotFoundException(
+        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
+      )
 
   def verifyResult(expected: String): this.type = {
-    val actual: String = findBy(By.cssSelector("")).getText
-    // needs By logic once page is accessible
+    val actual: String = findBy(By.cssSelector("div.govuk-panel.govuk-panel--confirmation > div > p")).getText
 
     Assert.assertEquals("Expected " + expected + " but found " + actual + " instead.", expected, actual)
 

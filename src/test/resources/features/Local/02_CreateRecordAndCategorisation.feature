@@ -127,7 +127,18 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     And I select continue
     Then I should be on the 'Categorisation - Check Your Answers' page
     And The 'Supplementary Unit' has the value 12345.0432
-    When I select continue
-    Then I should be on the 'Categorisation complete' page
+    And I select continue
+    Then I should be on the 'Categorisation Result' page
+    And I should have Category 1 goods and not be eligible for SPIMM
+    And I select the back link
+    When I click the Category assessment 5 of 6 change link
+    Then I should be on the 'Category assessment 5' page
+    And I select First option
+    Then I should be on the 'Category assessment 6' page
+    And I select First option
+    Then I should be on the 'Categorisation - Check Your Answers' page
+    And I select continue
+    Then I should be on the 'Categorisation Result' page
+    And I should have standard goods and be eligible for SPIMM
     And I click on the Sign out link
     Then I should be on the 'Signed Out' page
