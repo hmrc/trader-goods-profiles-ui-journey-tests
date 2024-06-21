@@ -18,10 +18,10 @@ package uk.gov.hmrc.test.ui.pages.Categorisation
 
 import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
-object CategorisationResultPage extends BasePage {
+object CategorisationCompletePage extends BasePage {
 
-  def title(): String = "Categorisation result"
-  def h1(): String    = "Categorisation result"
+  def title(): String = "Categorisation complete"
+  def h1(): String    = "Categorisation complete"
 
   def assertPage(): this.type = {
     verifyTitle(title())
