@@ -17,12 +17,12 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Categorisation.CategorisationResultPage
+import uk.gov.hmrc.test.ui.pages.Categorisation.CategorisationCompletePage
 
 class CategorisationCompleteStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'Categorisation result' page$""") { () =>
-    CategorisationResultPage
+  Then("""^(?:I )?should be on the 'Categorisation complete' page$""") { () =>
+    CategorisationCompletePage
       .assertPage()
   }
 }
