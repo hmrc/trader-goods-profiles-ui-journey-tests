@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.ProfileSetup
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Categorisation.CategorisationResultPage
+import uk.gov.hmrc.test.ui.pages.ProfileSetup.PreviousMovementRecordsPage
 
-class CategorisationCompleteStepDef extends BaseStepDef {
+class PreviousMovementRecordsStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'Categorisation result' page$""") { () =>
-    CategorisationResultPage
+  Then("""^(?:I )?should be on the 'Previous movement records' page$""") { () =>
+    PreviousMovementRecordsPage
       .assertPage()
   }
 }
