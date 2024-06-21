@@ -1,6 +1,6 @@
 @AllLocal
 
-Feature: Trader Goods Profile setup journeys
+Feature: Trader Goods Profile setup and Previous movement records journey
 
   Scenario: As a UKIMS authorised trader I log on to the trader goods profile service with NIRMS and NIPHL
     Given I login to TGP with Invalid details
@@ -71,6 +71,10 @@ Feature: Trader Goods Profile setup journeys
     Then I should be on the 'Check Your Answers' page
     And My 'NIPHL Number' has the same valid value
     And I select continue
+    Then I should be on the 'Home' page
+    When I click on the View or update your goods records link
+    Then I should be on the 'Previous movement records' page
+    And I select the back link
     Then I should be on the 'Home' page
     And I click on the Sign out link
     Then I should be on the 'Signed Out' page

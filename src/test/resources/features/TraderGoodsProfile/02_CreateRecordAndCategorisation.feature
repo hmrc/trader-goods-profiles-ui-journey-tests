@@ -61,7 +61,7 @@ Feature: Trader Goods Profile - Create Record And Categorise journey
     Then I should be on the 'Categorisation - Check Your Answers' page
     And The 'Category assessment 5 of 6' has the value None selected
     When I select continue
-    Then I should be on the 'Categorisation complete' page
+    Then I should be on the 'Categorisation result' page
     And I navigate to the 'Supplementary Unit' page
     Then I should be on the 'Supplementary Unit' page
     And I select Yes for the boolean question
@@ -80,7 +80,7 @@ Feature: Trader Goods Profile - Create Record And Categorise journey
     Then I should be on the 'Categorisation - Check Your Answers' page
     And The 'Supplementary Unit' has the value 12345.0432
     When I select continue
-    Then I should be on the 'Categorisation complete' page
+    Then I should be on the 'Categorisation result' page
     And I click on the Sign out link
     Then I should be on the 'Signed Out' page
 #    When I select continue

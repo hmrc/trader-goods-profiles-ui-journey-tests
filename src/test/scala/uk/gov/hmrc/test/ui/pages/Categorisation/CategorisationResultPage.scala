@@ -16,21 +16,29 @@
 
 package uk.gov.hmrc.test.ui.pages.Categorisation
 
-import org.junit.Assert
-import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.pages.Base.Page
+import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
-object CategorisationResultPage extends Page {
+object CategorisationResultPage extends BasePage {
 
-  override def title(args: String*): String = "Categorisation result"
-  override def h1(args: String*): String    = "Category 1 goods"
+  def title(): String = "Categorisation result"
+  def h1(): String    = "Categorisation result"
 
-  def verifyResult(expected: String): this.type = {
-    val actual: String = findBy(By.cssSelector("")).getText
-    // needs By logic once page is accessible
+  def assertPage(): this.type = {
+    verifyTitle(title())
+    verifyHeader(h1())
+    this
+  }
 
-    Assert.assertEquals("Expected " + expected + " but found " + actual + " instead.", expected, actual)
+  val serviceName: String = "Trader Goods Profile"
 
+  private def verifyTitle(pageTitle: String): Unit =
+    if (driver.getTitle != s"$pageTitle - $serviceName - GOV.UK")
+      throw PageNotFoundException(
+        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
+      )
+
+  def verifyHeader(h1: String): this.type = {
+    checkPanelHeader(h1)
     this
   }
 }

@@ -14,15 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
+package uk.gov.hmrc.test.ui.pages.ProfileSetup
 
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Categorisation.CategorisationResultPage
+import uk.gov.hmrc.test.ui.pages.Base.Page
 
-class CategorisationCompleteStepDef extends BaseStepDef {
+object PreviousMovementRecordsPage extends Page {
 
-  Then("""^(?:I )?should be on the 'Categorisation result' page$""") { () =>
-    CategorisationResultPage
-      .assertPage()
-  }
+  override def title(args: String*): String = "Previous movement records"
+  override def h1(args: String*): String    = "Previous movement records"
 }
