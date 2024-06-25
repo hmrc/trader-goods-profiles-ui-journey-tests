@@ -2,7 +2,7 @@
 
 Feature: Trader Goods Profile - Create Record And Categorise journey
 
-  Scenario:As a returning user in Trader Goods profile I want to create a record
+  Scenario:As a returning user, I want to create a record and categorise
     Given I login to TGP Homepage with EORI number GB123456789098
     Then I should be on the 'Home' page
     When I click on the Create a new goods record link
@@ -49,7 +49,11 @@ Feature: Trader Goods Profile - Create Record And Categorise journey
     Then I should be on the 'Category assessment 5' page
     And I select First option
     Then I should be on the 'Category assessment 6' page
-    And I select None of the above option
+    And I select First option
+    Then I should be on the 'Categorisation - Check Your Answers' page
+    When I select continue
+    Then I should be on the 'Categorisation complete' with Standard content page
+    When I select the back link
     Then I should be on the 'Categorisation - Check Your Answers' page
     When I click the Category assessment 3 of 6 change link
     Then I should be on the 'Category assessment 3' page
@@ -61,7 +65,7 @@ Feature: Trader Goods Profile - Create Record And Categorise journey
     Then I should be on the 'Categorisation - Check Your Answers' page
     And The 'Category assessment 5 of 6' has the value None selected
     When I select continue
-    Then I should be on the 'Categorisation complete' page
+    Then I should be on the 'Categorisation complete' with Category1 content page
     And I navigate to the 'Supplementary Unit' page
     Then I should be on the 'Supplementary Unit' page
     And I select Yes for the boolean question
@@ -80,19 +84,36 @@ Feature: Trader Goods Profile - Create Record And Categorise journey
     Then I should be on the 'Categorisation - Check Your Answers' page
     And The 'Supplementary Unit' has the value 12345.0432
     When I select continue
-    Then I should be on the 'Categorisation complete' page
+    Then I should be on the 'Categorisation complete' with Category1 content page
+    When I click on the Go to homepage link
+    Then I should be on the 'Home' page
     And I click on the Sign out link
     Then I should be on the 'Signed Out' page
-#    When I select continue
-#    Then I should be on the 'Categorisation complete' page
-#    And I should have Category 1 goods and not be eligible for SPIMM
-#    And I select the back link
-#    When I click the Category assessment 5 of 6 change link
-#    Then I should be on the 'Category assessment 5' page
-#    And I select First option
-#    Then I should be on the 'Category assessment 6' page
-#    And I select First option
-#    Then I should be on the 'Categorisation - Check Your Answers' page
-#    And I select continue
-#    Then I should be on the 'Categorisation complete' page
-#    And I should have standard goods and be eligible for SPIMM
+
+  Scenario:As a returning user, I want to create a Category2 record and categorise
+    Given I am on the 'Home' page
+    When I click on the Create a new goods record link
+    And I select continue
+    Then I enter Unique Trader reference in the text area
+    And I select Yes for the boolean question
+    Then I select continue
+    And I enter United Kingdom in the country text field
+    When I enter 1601001011 value of Commodity code in the free text field
+    Then I select Yes for the boolean question
+    And I select continue
+    Then I should be on the 'Create Record - Check Your Answers' page
+    When I select continue
+    And I click on the Categorise goods now link
+    Then I select continue
+    Then I should be on the 'Category assessment 1' page
+    And I select First option
+    Then I should be on the 'Category assessment 2' page
+    And I select First option
+    Then I should be on the 'Category assessment 3' page
+    And I select None of the above option
+    Then I should be on the 'Categorisation - Check Your Answers' page
+    When I select continue
+    Then I should be on the 'Categorisation complete' with Category2 content page
+    When I click on the Go to homepage link
+    And I click on the Sign out link
+    Then I should be on the 'Signed Out' page
