@@ -21,8 +21,26 @@ import uk.gov.hmrc.test.ui.pages.Categorisation.CategorisationCompletePage
 
 class CategorisationCompleteStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'Categorisation complete' page$""") { () =>
-    CategorisationCompletePage
-      .assertPage()
+  Then("""^(?:I )?should be on the 'Categorisation complete' with (.+) page$""") { (panelBody: String) =>
+    panelBody match {
+      case "Standard content"  =>
+        CategorisationCompletePage
+          .assertPage()
+          .verifyPanelContent(
+            "Your goods are standard goods and eligible for Simplified Process for Internal Market Movements (SPIMM)."
+          )
+      case "Category1 content" =>
+        CategorisationCompletePage
+          .assertPage()
+          .verifyPanelContent(
+            "Your goods are Category 1 goods and are not eligible for Simplified Process for Internal Market Movements (SPIMM)."
+          )
+      case "Category2 content" =>
+        CategorisationCompletePage
+          .assertPage()
+          .verifyPanelContent(
+            "Your goods are Category 2 goods and are eligible for Simplified Process for Internal Market Movements (SPIMM)."
+          )
+    }
   }
 }

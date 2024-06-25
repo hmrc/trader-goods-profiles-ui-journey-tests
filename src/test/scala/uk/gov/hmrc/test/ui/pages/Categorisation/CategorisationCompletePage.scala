@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages.Categorisation
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
 object CategorisationCompletePage extends BasePage {
@@ -41,4 +42,7 @@ object CategorisationCompletePage extends BasePage {
     checkPanelHeader(h1)
     this
   }
+
+  def verifyPanelContent(body: String): Unit =
+    findBy(By.className("govuk-panel__body")).getText.shouldEqual(body)
 }
