@@ -22,4 +22,5 @@ object CreatingGoodsRecordPage extends Page {
 
   override def title(args: String*): String = "Creating a goods record"
   override def h1(args: String*): String    = "Creating a goods record"
+  override def url(args: String*): String    = "/create-record/create-record-start"
 }

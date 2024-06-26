@@ -22,4 +22,5 @@ object AdviceStartPage extends Page {
 
   override def title(args: String*): String = "Asking HMRC for advice"
   override def h1(args: String*): String    = "Asking HMRC for advice"
+  override def url(args: String*): String    = "/advice-start"
 }

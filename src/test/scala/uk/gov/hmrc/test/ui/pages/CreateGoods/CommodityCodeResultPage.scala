@@ -16,12 +16,16 @@
 
 package uk.gov.hmrc.test.ui.pages.CreateGoods
 
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
 object CommodityCodeResultPage extends BasePage {
+
+  def url: String    = "/create-record/commodity-code-result"
   def assertPage(title: String): this.type = {
     verifyTitle(title)
     verifyHeader(title)
+    validateUrl(url)
     this
   }
 
@@ -35,6 +39,11 @@ object CommodityCodeResultPage extends BasePage {
 
   def verifyHeader(h1: String): this.type = {
     checkHeader(h1)
+    this
+  }
+
+  def validateUrl(url: String): this.type = {
+    checkURL(TestConfiguration.url("trader-goods-profiles-frontend") + url)
     this
   }
 }

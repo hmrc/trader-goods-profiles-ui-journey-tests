@@ -22,4 +22,5 @@ object NIPHLQuestionPage extends Page {
 
   override def title(args: String*): String = "Northern Ireland plant health label (NIPHL)"
   override def h1(args: String*): String    = "Northern Ireland plant health label (NIPHL)"
+  override def url(args: String*): String    = "/niphl-question"
 }

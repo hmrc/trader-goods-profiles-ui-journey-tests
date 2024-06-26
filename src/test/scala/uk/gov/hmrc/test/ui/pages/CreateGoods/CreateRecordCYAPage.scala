@@ -24,6 +24,7 @@ object CreateRecordCYAPage extends Page {
 
   override def title(args: String*): String = "Check your answers"
   override def h1(args: String*): String    = "Check your answers"
+  override def url(args: String*): String    = "/create-record/cya-create-record"
 
   def clickChangeLink(key: String): this.type = {
 

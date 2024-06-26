@@ -16,16 +16,12 @@
 
 package uk.gov.hmrc.test.ui.pages.ProfileSetup
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object NIRMSNumberPage extends Page {
 
   override def title(args: String*): String = "Northern Ireland Retail Movement Scheme number"
   override def h1(args: String*): String    = "What is your NIRMS number?"
+  override def url(args: String*): String    = "/nirms-number"
 
-  override def verifyHeader(h1: String): this.type = {
-    findBy(By.className("govuk-label--l")).getText.shouldEqual(h1)
-    this
-  }
 }

@@ -21,10 +21,6 @@ import uk.gov.hmrc.test.ui.pages.CreateGoods.CreateCommodityCodePage
 import uk.gov.hmrc.test.ui.pages.NIOTTPage
 
 class CreateCommodityCodeStepDef extends BaseStepDef {
-  And("""^(?:I )?navigate to the 'commodity code' page$""") { () =>
-    CreateCommodityCodePage
-      .navigateToPage()
-  }
   Then("""^(?:I )?should be on the 'commodity code' page$""") { () =>
     CreateCommodityCodePage
       .assertPage()

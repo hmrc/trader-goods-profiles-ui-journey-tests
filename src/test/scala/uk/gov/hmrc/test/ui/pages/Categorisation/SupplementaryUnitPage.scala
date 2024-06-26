@@ -23,6 +23,7 @@ object SupplementaryUnitPage extends Page {
   override def title(args: String*): String = "Supplementary unit"
 
   override def h1(args: String*): String = "Supplementary unit"
+  override def url(args: String*): String    = "/update/b2fa315b-2d31-4629-90fc-a7b1a5119873/supplementary-unit"
 
   def navigateToPage(args: String*): this.type = {
     val url: String = TestConfiguration.url(

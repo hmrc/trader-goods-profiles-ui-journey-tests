@@ -23,4 +23,5 @@ object AskEmailPage extends Page {
   override def title(args: String*): String = "What is your email address?"
 
   override def h1(args: String*): String = "What is your email address?"
+  override def url(args: String*): String    = "/advice/email"
 }

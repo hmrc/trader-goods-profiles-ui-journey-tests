@@ -22,4 +22,5 @@ object NIPHLNumberPage extends Page {
 
   override def title(args: String*): String = "NIPHL registration number"
   override def h1(args: String*): String    = "NIPHL registration number"
+  override def url(args: String*): String    = "/niphl-number"
 }
