@@ -21,13 +21,14 @@ import uk.gov.hmrc.test.ui.pages.CreateGoods.CreateCommodityCodePage
 import uk.gov.hmrc.test.ui.pages.NIOTTPage
 
 class CreateCommodityCodeStepDef extends BaseStepDef {
-  And("""^(?:I )?navigate to the 'commodity code' page$""") { () =>
-    CreateCommodityCodePage
-      .navigateToPage()
-  }
   Then("""^(?:I )?should be on the 'commodity code' page$""") { () =>
     CreateCommodityCodePage
       .assertPage()
+  }
+
+  Then("""^(?:I )?should be on the check 'commodity code' page$""") { () =>
+    CreateCommodityCodePage
+      .assertCheckPage()
   }
 
   Then("""^(?:I )?enter (.*) value of Commodity code in the free text field$""") { (commodityCodeValidation: String) =>

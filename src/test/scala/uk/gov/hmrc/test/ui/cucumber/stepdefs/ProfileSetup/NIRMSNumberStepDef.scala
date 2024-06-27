@@ -26,6 +26,11 @@ class NIRMSNumberStepDef extends BaseStepDef {
       .assertPage()
   }
 
+  Then("""^(?:I )?should be on the check 'Northern Ireland Retail Movement Scheme number' page$""") { () =>
+    NIRMSNumberPage
+      .assertCheckPage()
+  }
+
   Then("""^(?:I )?enter (.*) value of my NIRMS Number in the free text field$""") { (nrimsNumberValidation: String) =>
     nrimsNumberValidation match {
       case "incorrect" =>

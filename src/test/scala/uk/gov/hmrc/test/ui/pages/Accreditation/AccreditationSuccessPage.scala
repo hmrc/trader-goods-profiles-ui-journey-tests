@@ -16,16 +16,19 @@
 
 package uk.gov.hmrc.test.ui.pages.Accreditation
 
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
 object AccreditationSuccessPage extends BasePage {
 
-  def title(): String = "Request for advice complete"
-  def h1(): String    = "Request for advice complete"
+  def title: String = "Request for advice complete"
+  def h1: String    = "Request for advice complete"
+  def url: String   = "/advice/success"
 
   def assertPage(): this.type = {
-    verifyTitle(title())
-    verifyHeader(h1())
+    verifyTitle(title)
+    verifyHeader(h1)
+    validateUrl(url)
     this
   }
 
@@ -39,6 +42,11 @@ object AccreditationSuccessPage extends BasePage {
 
   def verifyHeader(h1: String): this.type = {
     checkPanelHeader(h1)
+    this
+  }
+
+  def validateUrl(url: String): this.type = {
+    checkURL(TestConfiguration.url("trader-goods-profiles-frontend") + url)
     this
   }
 }

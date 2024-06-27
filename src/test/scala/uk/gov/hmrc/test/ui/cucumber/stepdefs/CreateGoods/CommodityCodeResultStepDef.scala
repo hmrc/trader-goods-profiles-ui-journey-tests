@@ -24,4 +24,9 @@ class CommodityCodeResultStepDef extends BaseStepDef {
     CommodityCodeResultPage
       .assertPage(title)
   }
+
+  Then("""^(?:I )?should be on the check "(.+)" page$""") { (title: String) =>
+    CommodityCodeResultPage
+      .assertCheckPage(title)
+  }
 }

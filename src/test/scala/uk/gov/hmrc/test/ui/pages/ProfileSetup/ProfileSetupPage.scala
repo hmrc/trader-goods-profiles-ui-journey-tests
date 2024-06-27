@@ -22,6 +22,7 @@ object ProfileSetupPage extends Page {
 
   override def title(args: String*): String = "Setting up your profile"
   override def h1(args: String*): String    = "Setting up your profile"
+  override def url(args: String*): String   = "/profile-setup"
   def clickOnLink(link: String): this.type  = {
     link match {
       case "who can apply to UKIMS"                               =>

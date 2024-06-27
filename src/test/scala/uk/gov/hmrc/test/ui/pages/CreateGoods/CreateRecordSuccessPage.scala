@@ -16,16 +16,19 @@
 
 package uk.gov.hmrc.test.ui.pages.CreateGoods
 
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
 object CreateRecordSuccessPage extends BasePage {
 
-  def title(): String = "You've created a goods record"
-  def h1(): String    = "You've created a goods record"
+  def title: String = "You've created a goods record"
+  def h1: String    = "You've created a goods record"
+  def url: String   = "/create-record/create-record-success/b2fa315b-2d31-4629-90fc-a7b1a5119873"
 
   def assertPage(): this.type = {
-    verifyTitle(title())
-    verifyHeader(h1())
+    verifyTitle(title)
+    verifyHeader(h1)
+    validateUrl(url)
     this
   }
 
@@ -39,6 +42,11 @@ object CreateRecordSuccessPage extends BasePage {
 
   def verifyHeader(h1: String): this.type = {
     checkPanelHeader(h1)
+    this
+  }
+
+  def validateUrl(url: String): this.type = {
+    checkURL(TestConfiguration.url("trader-goods-profiles-frontend") + url)
     this
   }
 }

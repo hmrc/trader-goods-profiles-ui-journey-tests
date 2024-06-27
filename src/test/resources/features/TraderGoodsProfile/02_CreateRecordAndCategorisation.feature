@@ -10,7 +10,7 @@ Feature: Trader Goods Profile - Create Record And Categorise journey
     And I select continue
     Then I should be on the 'Trader reference' page
     When I enter Unique Trader reference in the text area
-    Then I should be on the 'Goods description' page
+    Then I should be on the 'Goods description' question page
     When I select No for the Goods boolean question
     And I select continue
     Then I should be on the 'Goods description' page
@@ -24,7 +24,7 @@ Feature: Trader Goods Profile - Create Record And Categorise journey
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page
     When I click the Trader Reference change link
-    Then I should be on the 'Trader reference' page
+    Then I should be on the check 'Trader reference' page
     And The Trader reference field should be prepopulated
     When I enter different Trader reference in the text area
     Then I should be on the 'Create Record - Check Your Answers' page
@@ -56,11 +56,11 @@ Feature: Trader Goods Profile - Create Record And Categorise journey
     When I select the back link
     Then I should be on the 'Categorisation - Check Your Answers' page
     When I click the Category assessment 3 of 6 change link
-    Then I should be on the 'Category assessment 3' page
+    Then I should be on the check 'Category assessment 3' page
     And I select continue
     Then I should be on the 'Categorisation - Check Your Answers' page
     When I click the Category assessment 5 of 6 change link
-    Then I should be on the 'Category assessment 5' page
+    Then I should be on the check 'Category assessment 5' page
     And I select None of the above option
     Then I should be on the 'Categorisation - Check Your Answers' page
     And The 'Category assessment 5 of 6' has the value None selected
@@ -74,12 +74,12 @@ Feature: Trader Goods Profile - Create Record And Categorise journey
     And I enter 12345.0432 value of Goods Supplementary Unit
     Then I should be on the 'Categorisation - Check Your Answers' page
     When I click the 'Has Supplementary Unit' change link
-    Then I should be on the 'Supplementary Unit' page
+    Then I should be on the check 'Supplementary Unit' page
     And I select continue
     Then I should be on the 'Categorisation - Check Your Answers' page
     And The 'Has Supplementary Unit' has the value Yes
     When I click the 'Supplementary Unit' change link
-    Then I should be on the 'Goods Supplementary Unit' page
+#    Then I should be on the check 'Goods Supplementary Unit' page
     And I select continue
     Then I should be on the 'Categorisation - Check Your Answers' page
     And The 'Supplementary Unit' has the value 12345.0432

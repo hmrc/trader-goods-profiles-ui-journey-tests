@@ -16,14 +16,25 @@
 
 package uk.gov.hmrc.test.ui.pages.Base
 
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
+
 trait Page extends BasePage {
 
   def title(args: String*): String
   def h1(args: String*): String
+  def url(args: String*): String
 
   def assertPage(args: String*): this.type = {
     verifyTitle(title(args: _*))
     verifyHeader(h1(args: _*))
+    validateUrl(url(args: _*))
+    this
+  }
+
+  def assertCheckPage(args: String*): this.type = {
+    verifyTitle(title(args: _*))
+    verifyHeader(h1(args: _*))
+    validateUrl(url(args: _*) + "/check")
     this
   }
 
@@ -37,6 +48,11 @@ trait Page extends BasePage {
 
   def verifyHeader(h1: String): this.type = {
     checkHeader(h1)
+    this
+  }
+
+  def validateUrl(url: String): this.type = {
+    checkURL(TestConfiguration.url("trader-goods-profiles-frontend") + url)
     this
   }
 }

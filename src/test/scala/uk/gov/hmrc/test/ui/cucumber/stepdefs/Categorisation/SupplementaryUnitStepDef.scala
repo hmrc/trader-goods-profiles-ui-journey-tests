@@ -24,8 +24,14 @@ class SupplementaryUnitStepDef extends BaseStepDef {
     SupplementaryUnitPage
       .navigateToPage()
   }
+
   Then("""^(?:I )?should be on the 'Supplementary Unit' page$""") { () =>
     SupplementaryUnitPage
       .assertPage()
+  }
+
+  Then("""^(?:I )?should be on the check 'Supplementary Unit' page$""") { () =>
+    SupplementaryUnitPage
+      .assertCheckPage()
   }
 }

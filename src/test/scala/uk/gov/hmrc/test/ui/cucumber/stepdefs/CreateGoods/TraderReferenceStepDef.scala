@@ -26,6 +26,11 @@ class TraderReferenceStepDef extends BaseStepDef {
       .assertPage()
   }
 
+  Then("""^(?:I )?should be on the check 'Trader reference' page$""") { () =>
+    TraderReferencePage
+      .assertCheckPage()
+  }
+
   Then("""^(?:I )?enter (.*) Trader reference in the text area$""") { (traderReference: String) =>
     traderReference match {
       case "Non unique" =>

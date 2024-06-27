@@ -16,16 +16,25 @@
 
 package uk.gov.hmrc.test.ui.pages.Categorisation
 
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
 object CategorisationAssessmentPage extends BasePage {
 
-  def title(args: String*): String = "Categorisation question"
-  def h1(args: String*): String    = "Category assessment"
-
+  def title: String                         = "Categorisation question"
+  def h1: String                            = "Category assessment"
+  def url: String                           = "/update/b2fa315b-2d31-4629-90fc-a7b1a5119873/category-assessment/"
   def assertPage(number: String): this.type = {
-    verifyTitle(title())
-    verifyHeader(h1() + number)
+    verifyTitle(title)
+    verifyHeader(h1 + number)
+    validateUrl(url + (Integer.parseInt(number.trim) - 1))
+    this
+  }
+
+  def assertCheckPage(number: String): this.type = {
+    verifyTitle(title)
+    verifyHeader(h1 + number)
+    validateUrl(url + (Integer.parseInt(number.trim) - 1) + "/check")
     this
   }
 
@@ -39,6 +48,11 @@ object CategorisationAssessmentPage extends BasePage {
 
   def verifyHeader(h1: String): this.type = {
     checkHeader(h1)
+    this
+  }
+
+  def validateUrl(url: String): this.type = {
+    checkURL(TestConfiguration.url("trader-goods-profiles-frontend") + url)
     this
   }
 }

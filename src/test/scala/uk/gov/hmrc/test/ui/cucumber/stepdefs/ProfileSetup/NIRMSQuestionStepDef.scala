@@ -27,6 +27,11 @@ class NIRMSQuestionStepDef extends BaseStepDef {
       .assertPage()
   }
 
+  Then("""^(?:I )?should be on the check 'Northern Ireland Retail Movement Scheme' page$""") { () =>
+    NIRMSQuestionPage
+      .assertCheckPage()
+  }
+
   Then("""^(?:I )?should be on the 'Northern Ireland Retail Movement Scheme: how the scheme will work' page$""") { () =>
     NIRMSProductEligibilityPage
       .assertPage()

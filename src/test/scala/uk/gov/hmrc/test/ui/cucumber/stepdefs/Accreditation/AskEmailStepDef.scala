@@ -26,6 +26,11 @@ class AskEmailStepDef extends BaseStepDef {
       .assertPage()
   }
 
+  Then("""^(?:I )?should be on the check 'What is your email address\?' page$""") { () =>
+    AskEmailPage
+      .assertCheckPage()
+  }
+
   Then("""^(?:I )?enter (.*) email in the free text field$""") { (email: String) =>
     email match {
       case "invalid" =>

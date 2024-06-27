@@ -16,17 +16,12 @@
 
 package uk.gov.hmrc.test.ui.pages.Unauthorised
 
-import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object UnauthorisedUserPage extends Page {
 
   override def title(args: String*): String = "There is a problem"
   override def h1(args: String*): String    = "There is a problem"
+  override def url(args: String*): String   = "/unauthorised"
 
-  def navigateToPage(args: String*): this.type = {
-    val url: String = TestConfiguration.url("trader-goods-profiles-frontend") + "/unauthorised"
-    driver.navigate().to(url)
-    super.assertPage(args: _*)
-  }
 }
