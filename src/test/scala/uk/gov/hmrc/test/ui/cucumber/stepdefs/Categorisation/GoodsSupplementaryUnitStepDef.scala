@@ -25,6 +25,11 @@ class GoodsSupplementaryUnitStepDef extends BaseStepDef {
       .assertPage()
   }
 
+  Then("""^(?:I )?should be on the check 'Goods Supplementary Unit' page$""") { () =>
+    GoodsSupplementaryUnitPage
+      .assertCheckPage()
+  }
+
   Then("""^(?:I )?enter (.*) value of Goods Supplementary Unit$""") { (Goodsunit: String) =>
     Goodsunit match {
       case "invalid format" =>

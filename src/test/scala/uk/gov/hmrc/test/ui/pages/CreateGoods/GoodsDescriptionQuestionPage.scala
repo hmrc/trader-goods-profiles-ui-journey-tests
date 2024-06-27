@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Accreditation
+package uk.gov.hmrc.test.ui.pages.CreateGoods
 
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object AskNamePage extends Page {
+object GoodsDescriptionQuestionPage extends Page {
 
-  override def title(args: String*): String = "What is your name?"
-  override def h1(args: String*): String    = "What is your name?"
-  override def url(args: String*): String   = "/advice/name"
+  override def title(args: String*): String = "Goods description"
+  override def h1(args: String*): String    = "Goods description"
+  override def url(args: String*): String   = "/create-record/goods-description-question"
 }

@@ -22,5 +22,5 @@ object PreviousMovementRecordsPage extends Page {
 
   override def title(args: String*): String = "Previous movement records"
   override def h1(args: String*): String    = "Previous movement records"
-  override def url(args: String*): String    = "/previous-movement-records"
+  override def url(args: String*): String   = "/previous-movement-records"
 }

@@ -21,9 +21,14 @@ import uk.gov.hmrc.test.ui.pages.Categorisation.CategorisationAssessmentPage
 
 class CategorisationquestionStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'Category assessment(.+)' page$""") { (number: Int) =>
+  Then("""^(?:I )?should be on the 'Category assessment(.+)' page$""") { (number: String) =>
     CategorisationAssessmentPage
       .assertPage(number)
+  }
+
+  Then("""^(?:I )?should be on the check 'Category assessment(.+)' page$""") { (number: String) =>
+    CategorisationAssessmentPage
+      .assertCheckPage(number)
   }
 
   Then("""^(?:I )?select (.+) option$""") { (option: String) =>

@@ -27,7 +27,14 @@ trait Page extends BasePage {
   def assertPage(args: String*): this.type = {
     verifyTitle(title(args: _*))
     verifyHeader(h1(args: _*))
-    validateUrl(url(args:_*))
+    validateUrl(url(args: _*))
+    this
+  }
+
+  def assertCheckPage(args: String*): this.type = {
+    verifyTitle(title(args: _*))
+    verifyHeader(h1(args: _*))
+    validateUrl(url(args: _*) + "/check")
     this
   }
 

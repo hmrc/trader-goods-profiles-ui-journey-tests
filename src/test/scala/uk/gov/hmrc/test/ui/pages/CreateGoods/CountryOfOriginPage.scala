@@ -22,5 +22,5 @@ object CountryOfOriginPage extends Page {
 
   override def title(args: String*): String = "Country of origin"
   override def h1(args: String*): String    = "Country of origin"
-  override def url(args: String*): String    = "/create-record/country-of-origin"
+  override def url(args: String*): String   = "/create-record/country-of-origin"
 }

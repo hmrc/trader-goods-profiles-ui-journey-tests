@@ -17,13 +17,28 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.CreateGoods
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.CreateGoods.GoodsDescriptionPage
+import uk.gov.hmrc.test.ui.pages.CreateGoods.{GoodsDescriptionPage, GoodsDescriptionQuestionPage}
 
 class GoodsDescriptionStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the 'Goods description' page$""") { () =>
     GoodsDescriptionPage
       .assertPage()
+  }
+
+  Then("""^(?:I )?should be on the check 'Goods description' page$""") { () =>
+    GoodsDescriptionPage
+      .assertCheckPage()
+  }
+
+  Then("""^(?:I )?should be on the 'Goods description' question page$""") { () =>
+    GoodsDescriptionQuestionPage
+      .assertPage()
+  }
+
+  Then("""^(?:I )?should be on the check 'Goods description' question page$""") { () =>
+    GoodsDescriptionQuestionPage
+      .assertCheckPage()
   }
 
   Then("""^(?:I )?enter (.*) in the Goods description text area$""") { (description: String) =>

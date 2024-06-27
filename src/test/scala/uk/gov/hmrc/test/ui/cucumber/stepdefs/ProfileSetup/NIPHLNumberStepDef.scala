@@ -24,7 +24,11 @@ class NIPHLNumberStepDef extends BaseStepDef {
   Then("""^(?:I )?should be on the 'NIPHL registration number' page$""") { () =>
     NIPHLNumberPage
       .assertPage()
-    submitPage()
+  }
+
+  Then("""^(?:I )?should be on the check 'NIPHL registration number' page$""") { () =>
+    NIPHLNumberPage
+      .assertCheckPage()
   }
 
   Then("""^(?:I )?enter (.*) value of my NIPHL Number in the free text field$""") { (niphlNumberValidation: String) =>

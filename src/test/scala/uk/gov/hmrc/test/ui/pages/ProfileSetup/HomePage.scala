@@ -22,7 +22,7 @@ import uk.gov.hmrc.test.ui.pages.Base.BasePage
 object HomePage extends BasePage {
 
   def title(): String = "Trader Goods Profile homepage"
-  def url: String = "/homepage"
+  def url: String     = "/homepage"
 
   def assertPage(): this.type = {
     verifyTitle(title())

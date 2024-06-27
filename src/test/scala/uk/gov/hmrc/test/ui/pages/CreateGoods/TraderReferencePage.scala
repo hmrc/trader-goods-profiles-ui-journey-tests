@@ -22,5 +22,5 @@ object TraderReferencePage extends Page {
 
   override def title(args: String*): String = "Trader reference"
   override def h1(args: String*): String    = "Trader reference"
-  override def url(args: String*): String    = "/create/trader-reference"
+  override def url(args: String*): String   = "/create/trader-reference"
 }

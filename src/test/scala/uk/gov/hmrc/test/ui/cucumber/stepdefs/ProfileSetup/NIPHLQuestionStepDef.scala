@@ -24,4 +24,9 @@ class NIPHLQuestionStepDef extends BaseStepDef {
     NIPHLQuestionPage
       .assertPage()
   }
+
+  Then("""^(?:I )?should be on the check 'Northern Ireland plant health label' page$""") { () =>
+    NIPHLQuestionPage
+      .assertCheckPage()
+  }
 }

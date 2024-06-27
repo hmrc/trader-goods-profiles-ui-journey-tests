@@ -22,5 +22,5 @@ object UKIMSNumberPage extends Page {
 
   override def title(args: String*): String = "UK Internal Market Scheme number"
   override def h1(args: String*): String    = "UK Internal Market Scheme number"
-  override def url(args: String*): String    = "/ukims-number"
+  override def url(args: String*): String   = "/ukims-number"
 }

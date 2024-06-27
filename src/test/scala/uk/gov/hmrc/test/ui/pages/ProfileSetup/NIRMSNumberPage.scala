@@ -22,6 +22,6 @@ object NIRMSNumberPage extends Page {
 
   override def title(args: String*): String = "Northern Ireland Retail Movement Scheme number"
   override def h1(args: String*): String    = "What is your NIRMS number?"
-  override def url(args: String*): String    = "/nirms-number"
+  override def url(args: String*): String   = "/nirms-number"
 
 }

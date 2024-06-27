@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.Base.Page
 object CreateCommodityCodePage extends Page {
   override def title(args: String*): String = "Commodity code"
 
-  override def h1(args: String*): String = "Commodity code"
-  override def url(args: String*): String    = "/create-record/commodity-code"
+  override def h1(args: String*): String  = "Commodity code"
+  override def url(args: String*): String = "/create-record/commodity-code"
 
 }

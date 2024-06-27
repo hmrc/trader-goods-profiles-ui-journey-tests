@@ -74,9 +74,8 @@ trait BasePage extends BrowserDriver with Matchers {
   def checkHeader(content: String): Unit =
     findBy(By.className("govuk-heading-l")).getText.shouldEqual(content)
 
-  def checkURL(url: String): Unit = {
+  def checkURL(url: String): Unit =
     driver.getCurrentUrl.shouldEqual(url)
-  }
 
   def checkPanelHeader(content: String): Unit =
     findBy(By.className("govuk-panel__title")).getText.shouldEqual(content)

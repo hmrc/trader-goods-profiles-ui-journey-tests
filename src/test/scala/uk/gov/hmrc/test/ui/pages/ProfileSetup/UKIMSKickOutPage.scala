@@ -22,5 +22,5 @@ object UKIMSKickOutPage extends Page {
 
   override def title(args: String*): String = "You need to apply for the UK Internal Market Scheme (UKIMS)"
   override def h1(args: String*): String    = "You need to apply for the UK Internal Market Scheme (UKIMS)"
-  override def url(args: String*): String    = "/ukims-kick-out"
+  override def url(args: String*): String   = "/ukims-kick-out"
 }

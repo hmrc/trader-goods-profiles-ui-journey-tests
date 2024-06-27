@@ -26,6 +26,11 @@ class UKIMSNumberStepDef extends BaseStepDef {
       .assertPage()
   }
 
+  Then("""^(?:I )?should be on the check 'UK internal scheme number' page$""") { () =>
+    UKIMSNumberPage
+      .assertCheckPage()
+  }
+
   Then("""^(?:I )?enter (.*) value of my UKIMS Number in the free text field$""") { (ukimsNumberValidation: String) =>
     ukimsNumberValidation match {
       case "incorrect" =>

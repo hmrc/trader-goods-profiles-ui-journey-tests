@@ -21,11 +21,18 @@ import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
 object CommodityCodeResultPage extends BasePage {
 
-  def url: String    = "/create-record/commodity-code-result"
+  def url: String                          = "/create-record/commodity-code-result"
   def assertPage(title: String): this.type = {
     verifyTitle(title)
     verifyHeader(title)
     validateUrl(url)
+    this
+  }
+
+  def assertCheckPage(title: String): this.type = {
+    verifyTitle(title)
+    verifyHeader(title)
+    validateUrl(url + "/check")
     this
   }
 

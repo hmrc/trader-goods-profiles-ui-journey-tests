@@ -33,7 +33,7 @@ Feature: Trader Goods Profile - Profile setup and Previous movement records jour
     When I enter valid value of my NIPHL Number in the free text field
     Then I should be on the 'Check Your Answers' page
     When I click the UKIMS Number change link
-    Then I should be on the 'UK internal scheme number' page
+    Then I should be on the check 'UK internal scheme number' page
     And The UKIMS Number field should be prepopulated
     When I enter different value of my UKIMS Number in the free text field
     Then I should be on the 'Check Your Answers' page
