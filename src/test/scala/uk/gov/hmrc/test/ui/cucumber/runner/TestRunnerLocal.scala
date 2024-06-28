@@ -29,6 +29,6 @@ import org.junit.runner.RunWith
     "json:target/cucumber.json",
     "junit:target/test-reports/JourneyTestsRunner.xml"
   ),
-  tags = "@wip"
+  tags = "AllLocal"
 )
 class TestRunnerLocal {}
