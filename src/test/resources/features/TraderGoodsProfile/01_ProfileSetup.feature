@@ -1,5 +1,5 @@
 @AllPipeline
-
+@wip
 Feature: Trader Goods Profile - Profile setup and Previous movement records journey
 
   Scenario: As a UKIMS authorised trader I log on to the trader goods profile service with NIRMS and NIPHL
