@@ -25,19 +25,19 @@ class CategorisationCompleteStepDef extends BaseStepDef {
     panelBody match {
       case "Standard content"  =>
         CategorisationCompletePage
-          .assertPage("standard")
+          .assertPage()
           .verifyPanelContent(
             "Your goods are standard goods and eligible for Simplified Process for Internal Market Movements (SPIMM)."
           )
       case "Category1 content" =>
         CategorisationCompletePage
-          .assertPage("category-1")
+          .assertPage()
           .verifyPanelContent(
             "Your goods are Category 1 goods and are not eligible for Simplified Process for Internal Market Movements (SPIMM)."
           )
       case "Category2 content" =>
         CategorisationCompletePage
-          .assertPage("category-2")
+          .assertPage()
           .verifyPanelContent(
             "Your goods are Category 2 goods and are eligible for Simplified Process for Internal Market Movements (SPIMM)."
           )

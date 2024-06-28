@@ -24,12 +24,12 @@ object CategorisationCompletePage extends BasePage {
 
   def title: String = "Categorisation complete"
   def h1: String    = "Categorisation complete"
-  def url: String   = "/categorisation-result/b2fa315b-2d31-4629-90fc-a7b1a5119873/"
+  def url: String   = "/update/b2fa315b-2d31-4629-90fc-a7b1a5119873/categorisation-result"
 
-  def assertPage(Cat: String): this.type = {
+  def assertPage(): this.type = {
     verifyTitle(title)
     verifyHeader(h1)
-    validateUrl(url + Cat)
+    validateUrl(url)
     this
   }
 
