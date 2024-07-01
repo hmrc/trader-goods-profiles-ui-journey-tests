@@ -26,7 +26,7 @@ class GoodsProfileStepDef extends BaseStepDef {
       .assertPage()
   }
 
-  Then("""^(?:I )?should be on the 'Goods profile' query page (.*) page$""") { (pageNumber: String) =>
+  Then("""^(?:I )?should be on the 'Goods profile' page (.*) results$""") { (pageNumber: String) =>
     GoodsProfileQueryPage
       .assertQueryPage(pageNumber.trim)
   }
