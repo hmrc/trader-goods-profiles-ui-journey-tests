@@ -24,7 +24,7 @@ object ProfileSetupCYAPage extends Page {
 
   override def title(args: String*): String = "Check your answers"
   override def h1(args: String*): String    = "Check your answers"
-  override def url(args: String*): String   = "/create-profile/cya-nirms-niphl"
+  override def url(args: String*): String   = "/create-profile/check-your-answers"
 
   def clickChangeLink(key: String): this.type = {
 

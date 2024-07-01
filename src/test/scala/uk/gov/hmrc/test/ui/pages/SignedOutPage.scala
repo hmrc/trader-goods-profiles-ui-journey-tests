@@ -22,5 +22,5 @@ object SignedOutPage extends Page {
 
   override def title(args: String*): String = "You have now signed out"
   override def h1(args: String*): String    = "You have now signed out"
-  override def url(args: String*): String   = "/problem/signed-out"
+  override def url(args: String*): String   = "/signed-out"
 }
