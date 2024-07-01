@@ -38,6 +38,13 @@ trait Page extends BasePage {
     this
   }
 
+  def assertQueryPage(args: String*): this.type = {
+    verifyTitle(title(args: _*))
+    verifyHeader(h1(args: _*))
+    validateUrl(url(args: _*) + args(0))
+    this
+  }
+
   val serviceName: String = "Trader Goods Profile"
 
   private def verifyTitle(pageTitle: String): Unit =

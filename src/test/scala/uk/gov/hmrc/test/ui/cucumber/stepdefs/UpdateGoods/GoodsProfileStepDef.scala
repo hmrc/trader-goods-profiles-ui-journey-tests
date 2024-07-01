@@ -14,15 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.ProfileSetup
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.UpdateGoods
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.ProfileSetup.PreviousMovementRecordsPage
+import uk.gov.hmrc.test.ui.pages.UpdateGoods.{GoodsProfileNoRecordsPage, GoodsProfileQueryPage}
 
-class PreviousMovementRecordsStepDef extends BaseStepDef {
+class GoodsProfileStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'Previous movement records' page$""") { () =>
-    PreviousMovementRecordsPage
+  Then("""^(?:I )?should be on the 'Goods profile' page$""") { () =>
+    GoodsProfileNoRecordsPage
       .assertPage()
+  }
+
+  Then("""^(?:I )?should be on the 'Goods profile' query page (.*) page$""") { (pageNumber: String) =>
+    GoodsProfileQueryPage
+      .assertQueryPage(pageNumber.trim)
   }
 }
