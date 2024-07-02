@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.ProfileSetup
+package uk.gov.hmrc.test.ui.pages.UpdateGoods
 
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object PreviousMovementRecordsPage extends Page {
+object GoodsProfileNoRecordsPage extends Page {
 
-  override def title(args: String*): String = "Previous movement records"
-  override def h1(args: String*): String    = "Previous movement records"
-  override def url(args: String*): String   = "/previous-movement-records"
+  override def title(args: String*): String = "Goods profile"
+  override def h1(args: String*): String    = "Goods profile"
+  override def url(args: String*): String   = "/goods-profile/no-record"
 }

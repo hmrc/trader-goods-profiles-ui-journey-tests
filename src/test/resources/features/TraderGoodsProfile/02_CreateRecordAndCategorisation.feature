@@ -91,7 +91,7 @@ Feature: Trader Goods Profile - Create Record And Categorise journey
     Then I should be on the 'Signed Out' page
 
   Scenario:As a returning user, I want to create a Category2 record and categorise
-    Given I am on the 'Home' page
+    Given I am on the 'Home' page with EORI GB123456789097
     When I click on the Create a new goods record link
     And I select continue
     Then I enter Unique Trader reference in the text area
