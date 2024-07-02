@@ -23,7 +23,7 @@ object CategorisationAssessmentPage extends BasePage {
 
   def title: String                         = "Categorisation question"
   def h1: String                            = "Category assessment"
-  def url: String                           = "/update/b2fa315b-2d31-4629-90fc-a7b1a5119873/category-assessment/"
+  def url: String                           = "/update-record/b2fa315b-2d31-4629-90fc-a7b1a5119873/categorisation/category-assessment/"
   def assertPage(number: String): this.type = {
     verifyTitle(title)
     verifyHeader(h1 + number)

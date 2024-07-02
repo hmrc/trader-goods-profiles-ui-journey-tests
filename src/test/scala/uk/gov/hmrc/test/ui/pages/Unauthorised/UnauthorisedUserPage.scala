@@ -22,6 +22,6 @@ object UnauthorisedUserPage extends Page {
 
   override def title(args: String*): String = "There is a problem"
   override def h1(args: String*): String    = "There is a problem"
-  override def url(args: String*): String   = "/unauthorised"
+  override def url(args: String*): String   = "/problem/unauthorised-sign-in"
 
 }

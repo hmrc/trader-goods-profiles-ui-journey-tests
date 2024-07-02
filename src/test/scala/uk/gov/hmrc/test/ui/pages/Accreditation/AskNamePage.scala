@@ -22,5 +22,5 @@ object AskNamePage extends Page {
 
   override def title(args: String*): String = "What is your name?"
   override def h1(args: String*): String    = "What is your name?"
-  override def url(args: String*): String   = "/advice/name"
+  override def url(args: String*): String   = "/create/advice-name"
 }

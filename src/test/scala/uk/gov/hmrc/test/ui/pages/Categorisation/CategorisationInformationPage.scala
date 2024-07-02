@@ -22,5 +22,5 @@ object CategorisationInformationPage extends Page {
 
   override def title(args: String*): String = "Categorisation"
   override def h1(args: String*): String    = "Categorisation"
-  override def url(args: String*): String   = "/update/b2fa315b-2d31-4629-90fc-a7b1a5119873/categorisation-start"
+  override def url(args: String*): String   = "/update-record/b2fa315b-2d31-4629-90fc-a7b1a5119873/categorisation/start"
 }

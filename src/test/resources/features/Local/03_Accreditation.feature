@@ -1,4 +1,4 @@
-@AllLocal
+
 
 Feature: Trader Goods Categorisation - Accreditation journey
 

@@ -24,7 +24,7 @@ object AccreditationCYAPage extends Page {
 
   override def title(args: String*): String = "Check your answers before sending your request for advice"
   override def h1(args: String*): String    = "Check your answers before sending your request for advice"
-  override def url(args: String*): String   = "/advice/check-your-answers"
+  override def url(args: String*): String   = "/create/cya-advice"
 
   def clickChangeLink(key: String): this.type = {
 
