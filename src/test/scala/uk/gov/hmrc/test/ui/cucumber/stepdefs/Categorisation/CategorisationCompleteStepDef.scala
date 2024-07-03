@@ -23,19 +23,31 @@ class CategorisationCompleteStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the 'Categorisation complete' with (.+) page$""") { (panelBody: String) =>
     panelBody match {
-      case "Standard content"  =>
+      case "Standard content"                 =>
         CategorisationCompletePage
           .assertPage("standard")
           .verifyPanelContent(
             "Your goods are standard goods and eligible for Simplified Process for Internal Market Movements (SPIMM)."
           )
-      case "Category1 content" =>
+      case "standard-no-assessments content"  =>
+        CategorisationCompletePage
+          .assertPage("standard-no-assessments")
+          .verifyPanelContent(
+            "Your goods are standard goods and eligible for Simplified Process for Internal Market Movements (SPIMM)."
+          )
+      case "category-1-no-exemptions content" =>
+        CategorisationCompletePage
+          .assertPage("category-1-no-exemptions")
+          .verifyPanelContent(
+            "Your goods are Category 1 goods and are not eligible for Simplified Process for Internal Market Movements (SPIMM)."
+          )
+      case "Category1 content"                =>
         CategorisationCompletePage
           .assertPage("category-1")
           .verifyPanelContent(
             "Your goods are Category 1 goods and are not eligible for Simplified Process for Internal Market Movements (SPIMM)."
           )
-      case "Category2 content" =>
+      case "Category2 content"                =>
         CategorisationCompletePage
           .assertPage("category-2")
           .verifyPanelContent(
