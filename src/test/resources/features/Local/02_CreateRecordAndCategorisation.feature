@@ -165,3 +165,35 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     When I click on the Go to homepage link
     And I click on the Sign out link
     Then I should be on the 'Signed Out' page
+
+  Scenario:As a returning user, I want to create a Category 3 Goods with no assessments and categorise
+    Given I am on the 'Home' page with EORI GB123456789094
+    When I click on the Create a new goods record link
+    And I select continue
+    Then I enter Unique Trader reference in the text area
+    And I select Yes for the boolean question
+    Then I select continue
+    And I enter France in the country text field
+    When I enter 6321323000 value of Commodity code in the free text field
+    Then I select Yes for the boolean question
+    And I select continue
+    Then I should be on the 'Create Record - Check Your Answers' page
+    When I select continue
+    And I click on the Categorise goods now link
+    Then I should be on the 'Categorisation complete' with standard-no-assessments content page
+
+  Scenario:As a returning user, I want to create Goods with no Exemptions and categorise
+    Given I am on the 'Home' page with EORI GB123456789093
+    When I click on the Create a new goods record link
+    And I select continue
+    Then I enter Unique Trader reference in the text area
+    And I select Yes for the boolean question
+    Then I select continue
+    And I enter France in the country text field
+    When I enter 0208402002 value of Commodity code in the free text field
+    Then I select Yes for the boolean question
+    And I select continue
+    Then I should be on the 'Create Record - Check Your Answers' page
+    When I select continue
+    And I click on the Categorise goods now link
+    Then I should be on the 'Categorisation complete' with category-1-no-exemptions content page
