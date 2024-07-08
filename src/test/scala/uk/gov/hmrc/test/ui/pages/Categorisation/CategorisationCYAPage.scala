@@ -25,7 +25,7 @@ object CategorisationCYAPage extends Page {
   override def title(args: String*): String = "Check your answers"
   override def h1(args: String*): String    = "Check your answers"
   override def url(args: String*): String   =
-    "/update-record/b2fa315b-2d31-4629-90fc-a7b1a5119873/categorisation/check-your-answers"
+    "/update-record/" + recordId + "/categorisation/check-your-answers"
 
   def clickConditionsChangeLink(ChangelinkNumber: Int): this.type = {
 

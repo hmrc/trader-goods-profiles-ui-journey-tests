@@ -27,6 +27,16 @@ import scala.collection.mutable
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
 trait BasePage extends BrowserDriver with Matchers {
+  var recordId = ""
+  def getRecordId(): Unit = {
+    val recordIdPattern = """[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}""".r
+    val url             = driver.getCurrentUrl
+    recordIdPattern.findFirstIn(url) match {
+      case Some(draft) =>
+        recordId = draft
+      case _           => None
+    }
+  }
 
   private lazy val fluentWait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
     .withTimeout(Duration.ofSeconds(config.getInt("wait.timeout.seconds")))

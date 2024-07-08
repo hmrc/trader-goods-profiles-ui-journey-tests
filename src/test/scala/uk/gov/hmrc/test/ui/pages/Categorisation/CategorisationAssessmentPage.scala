@@ -23,8 +23,9 @@ object CategorisationAssessmentPage extends BasePage {
 
   def title: String                         = "Categorisation question"
   def h1: String                            = "Category assessment"
-  def url: String                           = "/update-record/b2fa315b-2d31-4629-90fc-a7b1a5119873/categorisation/category-assessment/"
+  def url: String                           = "/update-record/" + recordId + "/categorisation/category-assessment/"
   def assertPage(number: String): this.type = {
+    getRecordId()
     verifyTitle(title)
     verifyHeader(h1 + number)
     validateUrl(url + (Integer.parseInt(number.trim) - 1))
@@ -32,6 +33,7 @@ object CategorisationAssessmentPage extends BasePage {
   }
 
   def assertCheckPage(number: String): this.type = {
+    getRecordId()
     verifyTitle(title)
     verifyHeader(h1 + number)
     validateUrl(url + (Integer.parseInt(number.trim) - 1) + "/check")

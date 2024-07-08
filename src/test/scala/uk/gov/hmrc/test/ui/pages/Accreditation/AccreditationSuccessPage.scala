@@ -23,9 +23,10 @@ object AccreditationSuccessPage extends BasePage {
 
   def title: String = "Request for advice complete"
   def h1: String    = "Request for advice complete"
-  def url: String   = "/create/advice-success"
+  def url: String   = "/update-record/" + recordId + "/create-advice/success"
 
   def assertPage(): this.type = {
+    getRecordId()
     verifyTitle(title)
     verifyHeader(h1)
     validateUrl(url)

@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Categorisation
+package uk.gov.hmrc.test.ui.pages.UpdateGoods
 
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object SupplementaryUnitPage extends Page {
-  override def title(args: String*): String = "Supplementary unit"
+object RemovingGoodsRecordPage extends Page {
 
-  override def h1(args: String*): String  = "Supplementary unit"
-  override def url(args: String*): String =
-    "/update-record/" + recordId + "/categorisation/supplementary-unit-question"
+  override def title(args: String*): String = "Removing goods record"
+  override def h1(args: String*): String    = "Removing goods record"
+  override def url(args: String*): String   = "/remove-record/" + recordId + "/goods-profile"
 
-  def navigateToPage(args: String*): this.type = {
-    val url: String = TestConfiguration.url(
-      "trader-goods-profiles-frontend"
-    ) + "/update-record/b2fa315b-2d31-4629-90fc-a7b1a5119873/categorisation/supplementary-unit-question"
-    driver.navigate().to(url)
-    super.assertPage(args: _*)
-  }
+//  def navigateToPage(args: String*): this.type = {
+//    val url: String = TestConfiguration.url(
+//      "trader-goods-profiles-frontend"
+//    ) + "/remove-record/dbb3da6c-e42e-4830-89f7-6d6692dfae52/goods-profile"
+//    driver.navigate().to(url)
+//    super.assertPage(args: _*)
+//  }
 }

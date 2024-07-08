@@ -23,9 +23,10 @@ object CreateRecordSuccessPage extends BasePage {
 
   def title: String = "You've created a goods record"
   def h1: String    = "You've created a goods record"
-  def url: String   = "/create-record/b2fa315b-2d31-4629-90fc-a7b1a5119873/success"
+  def url: String   = "/create-record/" + recordId + "/success"
 
   def assertPage(): this.type = {
+    getRecordId()
     verifyTitle(title)
     verifyHeader(h1)
     validateUrl(url)
