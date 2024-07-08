@@ -1,11 +1,17 @@
-
+@AllPipeline
 
 Feature: Trader Goods Profile - Accreditation journey
 
   Scenario:As a returning user in Trader Goods profile I want to ask for HMRC advice
     Given I login to TGP Homepage with EORI number GB123456789098
     Then I should be on the 'Home' page
-    And I click on the Ask for an opinion from HMRC if a commodity code is correct link
+    When I click on the View or update your goods records link
+    Then I should be on the 'Previous movement records' page
+    And I select continue
+    Then I should be on the 'Goods profile' page 1 results
+    When I click on the Change link
+#    Then I should be on the 'Goods record' page
+    And I click on the Ask for advice link
     Then I should be on the 'Asking HMRC for advice' page
     And I select continue
     Then I should be on the 'What is your name?' page

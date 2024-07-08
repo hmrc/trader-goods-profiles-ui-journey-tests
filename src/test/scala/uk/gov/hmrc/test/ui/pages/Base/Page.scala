@@ -25,6 +25,7 @@ trait Page extends BasePage {
   def url(args: String*): String
 
   def assertPage(args: String*): this.type = {
+    getRecordId()
     verifyTitle(title(args: _*))
     verifyHeader(h1(args: _*))
     validateUrl(url(args: _*))
@@ -32,6 +33,7 @@ trait Page extends BasePage {
   }
 
   def assertCheckPage(args: String*): this.type = {
+    getRecordId()
     verifyTitle(title(args: _*))
     verifyHeader(h1(args: _*))
     validateUrl(url(args: _*) + "/check")
@@ -39,6 +41,7 @@ trait Page extends BasePage {
   }
 
   def assertQueryPage(args: String*): this.type = {
+    getRecordId()
     verifyTitle(title(args: _*))
     verifyHeader(h1(args: _*))
     validateUrl(url(args: _*) + args(0))

@@ -14,13 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Categorisation
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.UpdateGoods
 
-import uk.gov.hmrc.test.ui.pages.Base.Page
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.UpdateGoods.UpdateGoodsDescriptionPage
 
-object CategorisationInformationPage extends Page {
+class UpdateGoodsDescriptionStepDef extends BaseStepDef {
 
-  override def title(args: String*): String = "Categorisation"
-  override def h1(args: String*): String    = "Categorisation"
-  override def url(args: String*): String   = "/update-record/" + recordId + "/categorisation/start"
+  Then("""^(?:I )?should be on the 'Goods description' update page$""") { () =>
+    UpdateGoodsDescriptionPage
+      .assertPage()
+  }
 }

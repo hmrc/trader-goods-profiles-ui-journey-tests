@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Categorisation
+package uk.gov.hmrc.test.ui.pages.UpdateGoods
 
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object CategorisationInformationPage extends Page {
+object UpdateTraderReferencePage extends Page {
 
-  override def title(args: String*): String = "Categorisation"
-  override def h1(args: String*): String    = "Categorisation"
-  override def url(args: String*): String   = "/update-record/" + recordId + "/categorisation/start"
+  override def title(args: String*): String = "Trader reference"
+  override def h1(args: String*): String    = "Trader reference"
+  override def url(args: String*): String   = "/update-record/" + recordId + "/trader-reference"
 }
