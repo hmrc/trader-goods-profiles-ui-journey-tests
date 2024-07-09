@@ -111,6 +111,16 @@ Feature: Trader Goods Profile - Create Record And Categorise journey
     And I select First option
     Then I should be on the 'Category assessment 3' page
     And I select None of the above option
+    And I navigate to the 'Supplementary Unit' page
+    Then I should be on the 'Supplementary Unit' page
+    And I select Yes for the boolean question
+    And I select continue
+    Then I should be on the 'Goods Supplementary Unit' page
+    And I enter 12345.0432 value of Goods Supplementary Unit
+    Then I should be on the 'Categorisation - Check Your Answers' page
+    When I click the 'Has Supplementary Unit' change link
+    Then I should be on the check 'Supplementary Unit' page
+    And I select continue
     Then I should be on the 'Categorisation - Check Your Answers' page
     When I select continue
     Then I should be on the 'Categorisation complete' with Category2 content page
