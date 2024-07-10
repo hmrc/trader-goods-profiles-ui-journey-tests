@@ -24,6 +24,7 @@ import uk.gov.hmrc.test.ui.pages.Base.BasePage
 object Hooks extends ScalaDsl with EN with Browser with BasePage {
 
   BeforeAll {
+    dropCollections()
     startBrowser()
   }
 

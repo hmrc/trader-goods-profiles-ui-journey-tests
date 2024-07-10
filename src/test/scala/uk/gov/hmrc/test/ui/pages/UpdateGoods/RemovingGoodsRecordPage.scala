@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages.UpdateGoods
 
-import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object RemovingGoodsRecordPage extends Page {
@@ -24,12 +23,4 @@ object RemovingGoodsRecordPage extends Page {
   override def title(args: String*): String = "Removing goods record"
   override def h1(args: String*): String    = "Removing goods record"
   override def url(args: String*): String   = "/remove-record/" + recordId + "/goods-profile"
-
-//  def navigateToPage(args: String*): this.type = {
-//    val url: String = TestConfiguration.url(
-//      "trader-goods-profiles-frontend"
-//    ) + "/remove-record/dbb3da6c-e42e-4830-89f7-6d6692dfae52/goods-profile"
-//    driver.navigate().to(url)
-//    super.assertPage(args: _*)
-//  }
 }

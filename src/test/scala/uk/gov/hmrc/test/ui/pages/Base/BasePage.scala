@@ -16,18 +16,38 @@
 
 package uk.gov.hmrc.test.ui.pages.Base
 
+import org.mongodb.scala.MongoClient
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait}
-import org.openqa.selenium.{By, JavascriptExecutor, Keys, WebDriver, WebElement}
+import org.openqa.selenium._
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.conf.TestConfiguration.config
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
 import java.time.Duration
 import scala.collection.mutable
+import scala.concurrent.Await
+import scala.concurrent.duration.DurationInt
 import scala.jdk.CollectionConverters.CollectionHasAsScala
+import scala.language.postfixOps
 
 trait BasePage extends BrowserDriver with Matchers {
   var recordId = ""
+
+  private lazy val mongoClient: MongoClient = MongoClient()
+
+  def dropCollections(): Unit = {
+    println("============================Dropping Collection")
+
+    def dropCollection(dbName: String, collectionName: String): Unit =
+      Await.result(
+        mongoClient.getDatabase(dbName).getCollection(collectionName).drop().toFuture(),
+        10 seconds
+      )
+
+    dropCollection("trader-goods-profiles-data-store", "profiles")
+    dropCollection("trader-goods-profiles-data-store", "checkRecords")
+    dropCollection("trader-goods-profiles-data-store", "goodsItemRecords")
+  }
   def getRecordId(): Unit = {
     val recordIdPattern = """[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}""".r
     val url             = driver.getCurrentUrl

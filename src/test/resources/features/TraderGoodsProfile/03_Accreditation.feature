@@ -10,7 +10,7 @@ Feature: Trader Goods Profile - Accreditation journey
     And I select continue
     Then I should be on the 'Goods profile' page 1 results
     When I click on the Change link
-#    Then I should be on the 'Goods record' page
+    Then I should be on the 'Goods record' page
     And I click on the Ask for advice link
     Then I should be on the 'Asking HMRC for advice' page
     And I select continue
@@ -20,7 +20,7 @@ Feature: Trader Goods Profile - Accreditation journey
     When I enter valid email in the free text field
     Then I should be on the 'Accreditation - Check Your Answers' page
     When I click the Name change link
-#    Then I should be on the check 'What is your name?' page
+    Then I should be on the check 'What is your name?' page
     And The Name field should be prepopulated
     When I enter different name in the free text field
     Then I should be on the 'Accreditation - Check Your Answers' page
@@ -28,7 +28,7 @@ Feature: Trader Goods Profile - Accreditation journey
     When I click the Email change link
     Then I should be on the check 'What is your email address?' page
     And The Email field should be prepopulated
-    And I select continue
+    When I select continue
     Then I should be on the 'Accreditation - Check Your Answers' page
     And My 'Email' has the same value
     When I select continue

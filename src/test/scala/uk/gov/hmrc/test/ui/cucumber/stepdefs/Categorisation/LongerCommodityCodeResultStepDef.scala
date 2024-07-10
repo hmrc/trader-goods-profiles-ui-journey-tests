@@ -14,25 +14,19 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.UpdateGoods
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.UpdateGoods.{UpdateCountryOfOriginCYAPage, UpdateCountryOfOriginPage, UpdateCountryOfOriginWarningPage}
+import uk.gov.hmrc.test.ui.pages.Categorisation.LongerCommodityCodeResultPage
 
-class UpdateCountryOfOriginStepDef extends BaseStepDef {
-
-  Then("""^(?:I )?should be on the 'Country of origin' update page$""") { () =>
-    UpdateCountryOfOriginPage
-      .assertPage()
+class LongerCommodityCodeResultStepDef extends BaseStepDef {
+  Then("""^(?:I )?should be on the Longer Commodity "(.+)" page$""") { (title: String) =>
+    LongerCommodityCodeResultPage
+      .assertPage(title)
   }
 
-  Then("""^(?:I )?should be on the Goods record Country Of Origin warning page$""") { () =>
-    UpdateCountryOfOriginWarningPage
-      .assertPage()
-  }
-
-  Then("""^(?:I )?should be on the 'Country of origin' CYA page$""") { () =>
-    UpdateCountryOfOriginCYAPage
-      .assertPage()
+  Then("""^(?:I )?should be on the check Longer Commodity "(.+)" page$""") { (title: String) =>
+    LongerCommodityCodeResultPage
+      .assertCheckPage(title)
   }
 }

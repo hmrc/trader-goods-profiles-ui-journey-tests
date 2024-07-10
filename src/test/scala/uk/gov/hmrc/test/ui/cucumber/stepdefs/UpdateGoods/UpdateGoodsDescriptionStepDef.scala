@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.UpdateGoods
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.UpdateGoods.UpdateGoodsDescriptionPage
+import uk.gov.hmrc.test.ui.pages.UpdateGoods.{UpdateGoodsDescriptionCYAPage, UpdateGoodsDescriptionPage, UpdateGoodsDescriptionWarningPage}
 
 class UpdateGoodsDescriptionStepDef extends BaseStepDef {
 
@@ -25,4 +25,15 @@ class UpdateGoodsDescriptionStepDef extends BaseStepDef {
     UpdateGoodsDescriptionPage
       .assertPage()
   }
+
+  Then("""^(?:I )?should be on the Goods record Goods Description warning page$""") { () =>
+    UpdateGoodsDescriptionWarningPage
+      .assertPage()
+  }
+
+  Then("""^(?:I )?should be on the 'Goods description' CYA page$""") { () =>
+    UpdateGoodsDescriptionCYAPage
+      .assertPage()
+  }
+
 }
