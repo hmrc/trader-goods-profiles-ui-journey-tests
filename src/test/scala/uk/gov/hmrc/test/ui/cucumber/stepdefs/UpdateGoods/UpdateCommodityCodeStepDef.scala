@@ -17,11 +17,32 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.UpdateGoods
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.UpdateGoods.UpdateCommodityCodePage
+import uk.gov.hmrc.test.ui.pages.UpdateGoods.{UpdateCommodityCodeCYAPage, UpdateCommodityCodePage, UpdateCommodityCodeResultPage, UpdateCommodityCodeWarningPage}
 
 class UpdateCommodityCodeStepDef extends BaseStepDef {
   Then("""^(?:I )?should be on the 'commodity code' update page$""") { () =>
     UpdateCommodityCodePage
+      .assertPage()
+  }
+
+  Then("""^(?:I )?enter (.*) in the Commodity code text field$""") { (commodityCode: String) =>
+    UpdateCommodityCodePage
+      .fillInput("value", commodityCode)
+    submitPage()
+  }
+
+  Then("""^(?:I )?should be on the Goods record Commodity Code warning page$""") { () =>
+    UpdateCommodityCodeWarningPage
+      .assertPage()
+  }
+
+  Then("""^(?:I )?should be on the update 'commodity code' result page$""") { () =>
+    UpdateCommodityCodeResultPage
+      .assertPage()
+  }
+
+  Then("""^(?:I )?should be on the update 'commodity code' CYA page$""") { () =>
+    UpdateCommodityCodeCYAPage
       .assertPage()
   }
 }

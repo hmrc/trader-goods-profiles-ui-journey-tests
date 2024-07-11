@@ -14,23 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.UpdateGoods
+package uk.gov.hmrc.test.ui.pages.Categorisation
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object GoodsRecordPage extends Page {
+object LongerCommodityCodePage extends Page {
+  override def title(args: String*): String = "You need to enter a longer commodity code"
 
-  override def title(args: String*): String = "Goods record"
-
-  override def h1(args: String*): String = "Goods record"
-
-  override def url(args: String*): String = "/goods-record/" + recordId
-
-  def clickChangeLink(key: String): this.type = {
-
-    click(By.cssSelector("dl:nth-child(5) > div:nth-child(" + key + ") > dd.govuk-summary-list__actions > a"))
-
-    this
-  }
+  override def h1(args: String*): String  = "You need to enter a longer commodity code"
+  override def url(args: String*): String =
+    "/update-record/" + recordId + "/categorisation/longer-commodity-code"
 }

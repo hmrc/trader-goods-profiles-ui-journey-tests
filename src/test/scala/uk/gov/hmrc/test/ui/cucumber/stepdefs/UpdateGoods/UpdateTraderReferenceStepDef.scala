@@ -17,12 +17,17 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.UpdateGoods
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.UpdateGoods.UpdateTraderReferencePage
+import uk.gov.hmrc.test.ui.pages.UpdateGoods.{UpdateTraderReferenceCYAPage, UpdateTraderReferencePage}
 
 class UpdateTraderReferenceStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the 'Trader reference' update page$""") { () =>
     UpdateTraderReferencePage
+      .assertPage()
+  }
+
+  Then("""^(?:I )?should be on the 'Trader reference' CYA page$""") { () =>
+    UpdateTraderReferenceCYAPage
       .assertPage()
   }
 }

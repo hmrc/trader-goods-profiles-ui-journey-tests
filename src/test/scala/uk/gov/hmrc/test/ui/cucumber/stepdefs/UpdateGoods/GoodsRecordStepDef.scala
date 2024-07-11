@@ -25,4 +25,24 @@ class GoodsRecordStepDef extends BaseStepDef {
     GoodsRecordPage
       .assertPage()
   }
+
+  Then("""^(?:I )?click the Goods record Trader Reference change link$""") { () =>
+    GoodsRecordPage
+      .clickChangeLink("1")
+  }
+
+  Then("""^(?:I )?click the Goods record Goods Description change link$""") { () =>
+    GoodsRecordPage
+      .clickChangeLink("2")
+  }
+
+  Then("""^(?:I )?click the Goods record Country Of Origin change link$""") { () =>
+    GoodsRecordPage
+      .clickChangeLink("3")
+  }
+
+  Then("""^(?:I )?click the Goods record Commodity Code change link$""") { () =>
+    GoodsRecordPage
+      .clickChangeLink("4")
+  }
 }

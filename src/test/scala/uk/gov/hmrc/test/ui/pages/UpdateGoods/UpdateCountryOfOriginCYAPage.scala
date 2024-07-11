@@ -16,21 +16,13 @@
 
 package uk.gov.hmrc.test.ui.pages.UpdateGoods
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object GoodsRecordPage extends Page {
+object UpdateCountryOfOriginCYAPage extends Page {
 
-  override def title(args: String*): String = "Goods record"
+  override def title(args: String*): String = "Check your answers"
 
-  override def h1(args: String*): String = "Goods record"
+  override def h1(args: String*): String = "Check your answers"
 
-  override def url(args: String*): String = "/goods-record/" + recordId
-
-  def clickChangeLink(key: String): this.type = {
-
-    click(By.cssSelector("dl:nth-child(5) > div:nth-child(" + key + ") > dd.govuk-summary-list__actions > a"))
-
-    this
-  }
+  override def url(args: String*): String = "/update-record/" + recordId + "/check-your-answers/country-of-origin"
 }
