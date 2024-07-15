@@ -116,3 +116,24 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     Then I should be on the 'Home' page
     And I click on the Sign out link
     Then I should be on the 'Signed Out' page
+
+  Scenario: As a returning user, I want to update my user profile to reflect changes
+    Given I login to TGP Homepage with EORI number GB123456789098
+    Then I should be on the 'Home' page
+    When I click on the Manage your profile details link
+    Then I should be on the 'Profile details' page
+    When I click the NIPHL Question change link
+    And I select Yes for the boolean question
+    Then I enter valid value of my NIPHL Number in the free text field
+    Then I should be on the 'Profile details' page
+    And My 'NIPHL Question' has the value Yes
+    And My 'NIPHL Number' has the value SN12345
+    When I click the NIPHL Question change link
+    And I select No for the boolean question
+    Then I should be on the 'Removing NIPHL details' page
+    And I select No for the boolean question
+    Then I should be on the 'Profile details' page
+    And My 'NIRMS Question' has the value Yes
+    And My 'NIPHL Number' has the value SN12345
+    And I click on the Sign out link
+    Then I should be on the 'Signed Out' page
