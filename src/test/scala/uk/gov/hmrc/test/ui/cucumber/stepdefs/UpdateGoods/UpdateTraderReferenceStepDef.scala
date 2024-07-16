@@ -19,6 +19,8 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.UpdateGoods
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.UpdateGoods.{UpdateTraderReferenceCYAPage, UpdateTraderReferencePage}
 
+import java.util.UUID
+
 class UpdateTraderReferenceStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the 'Trader reference' update page$""") { () =>
@@ -26,8 +28,25 @@ class UpdateTraderReferenceStepDef extends BaseStepDef {
       .assertPage()
   }
 
-  Then("""^(?:I )?should be on the 'Trader reference' CYA page$""") { () =>
+  Then("""^(?:I )?should be on the 'Trader reference' update CYA page$""") { () =>
     UpdateTraderReferenceCYAPage
       .assertPage()
+  }
+
+  Then("""^(?:I )?enter (.*) Trader reference in update text area$""") { (traderReference: String) =>
+    traderReference match {
+      case "Non unique" =>
+        UpdateTraderReferenceCYAPage
+          .fillInput("value", "ABC543211")
+        submitPage()
+      case "Unique" =>
+        UpdateTraderReferenceCYAPage
+          .fillInput("value", "Trader" + UUID.randomUUID().toString())
+        submitPage()
+      case "different" =>
+        UpdateTraderReferenceCYAPage
+          .fillInput("value", "different value")
+        submitPage()
+    }
   }
 }

@@ -20,8 +20,8 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the 'Goods record' page
     When I click the Goods record Trader Reference change link
     Then I should be on the 'Trader reference' update page
-    And I select continue
-    Then I should be on the 'Trader reference' CYA page
+    And I enter Unique Trader reference in update text area
+    Then I should be on the 'Trader reference' update CYA page
     And I select continue
     Then I should be on the 'Goods record' page
     When I click the Goods record Goods Description change link

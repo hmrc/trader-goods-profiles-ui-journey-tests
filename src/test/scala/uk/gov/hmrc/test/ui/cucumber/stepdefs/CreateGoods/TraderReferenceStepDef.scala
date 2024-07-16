@@ -19,6 +19,8 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.CreateGoods
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.CreateGoods.TraderReferencePage
 
+import java.util.UUID
+
 class TraderReferenceStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the 'Trader reference' page$""") { () =>
@@ -39,11 +41,11 @@ class TraderReferenceStepDef extends BaseStepDef {
         submitPage()
       case "Unique"     =>
         TraderReferencePage
-          .fillInput("value", "Unique value")
+          .fillInput("value", "Trader"+UUID.randomUUID().toString())
         submitPage()
       case "different"  =>
         TraderReferencePage
-          .fillInput("value", "different value")
+          .fillInput("value", "different value"+UUID.randomUUID().toString())
         submitPage()
     }
   }
