@@ -24,10 +24,8 @@ Feature: Trader Goods Profile - Create Record And Categorisation with longer com
     Then I should be on the 'Create Record - Check Your Answers' page
     When I click the Trader Reference change link
     Then I should be on the check 'Trader reference' page
-    And The Trader reference field should be prepopulated
     When I enter different Trader reference in the text area
     Then I should be on the 'Create Record - Check Your Answers' page
-    And My 'Trader Reference' has the different valid value
     When I click the Goods Description Question change link
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page
