@@ -29,7 +29,8 @@ object GoodsRecordPage extends Page {
 
   def clickChangeLink(key: String): this.type = {
 
-    click(By.cssSelector("dl:nth-child(5) > div:nth-child(" + key + ") > dd.govuk-summary-list__actions > a"))
+    val changeLinkSelector = s"dl.govuk-summary-list > div:nth-child($key) > dd.govuk-summary-list__actions > a"
+    click(By.cssSelector(changeLinkSelector))
 
     this
   }
