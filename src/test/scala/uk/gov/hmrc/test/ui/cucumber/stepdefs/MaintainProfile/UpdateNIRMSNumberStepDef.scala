@@ -26,7 +26,7 @@ class UpdateNIRMSNumberStepDef extends BaseStepDef {
       .assertPage()
   }
 
-  Then("""^(?:The NIRMS Number field )?should be prepopulated$""") { () =>
+  Then("""^(?:The update NIRMS Number field )?should be prepopulated$""") { () =>
     UpdateNIRMSNumberPage
       .findById("value")
       .getAttribute("value")

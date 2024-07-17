@@ -26,7 +26,7 @@ class UpdateNIPHLNumberStepDef extends BaseStepDef {
       .assertPage()
   }
 
-  Then("""^(?:The NIPHL Number field )?should be prepopulated$""") { () =>
+  Then("""^(?:The update NIPHL Number field )?should be prepopulated$""") { () =>
     UpdateNIPHLNumberPage
       .findById("value")
       .getAttribute("value")
