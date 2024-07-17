@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
 object LongerCommodityCodeResultPage extends BasePage {
 
-  def url: String = "/update-record/"+recordId+"/categorisation/longer-commodity-code-result"
+  def url: String = "/update-record/" + recordId + "/categorisation/longer-commodity-code-result"
 
   def assertPage(title: String): this.type = {
     getRecordId()
