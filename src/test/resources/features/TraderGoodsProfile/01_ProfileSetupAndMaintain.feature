@@ -52,7 +52,7 @@ Feature: Trader Goods Profile - Profile setup and Previous movement records jour
     Then I should be on the 'Profile details' page
     When I click the UKIMS Number change link
     Then I should be on the update 'UK internal scheme number' page
-    And The UKIMS Number field should be prepopulated
+    And The update UKIMS Number field should be prepopulated
     When I enter different value of my UKIMS Number in the free text field
     Then I should be on the 'Profile details' page
     And My 'UKIMS Number' has the value XIUKIM47699357400020231115081801

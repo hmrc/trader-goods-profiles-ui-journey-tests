@@ -48,7 +48,7 @@ trait BasePage extends BrowserDriver with Matchers {
     dropCollection("trader-goods-profiles-data-store", "checkRecords")
     dropCollection("trader-goods-profiles-data-store", "goodsItemRecords")
   }
-  def getRecordId(): Unit = {
+  def getRecordId(): Unit     = {
     val recordIdPattern = """[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}""".r
     val url             = driver.getCurrentUrl
     recordIdPattern.findFirstIn(url) match {
