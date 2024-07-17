@@ -39,11 +39,11 @@ class UpdateTraderReferenceStepDef extends BaseStepDef {
         UpdateTraderReferenceCYAPage
           .fillInput("value", "ABC543211")
         submitPage()
-      case "Unique" =>
+      case "Unique"     =>
         UpdateTraderReferenceCYAPage
           .fillInput("value", "Trader" + UUID.randomUUID().toString())
         submitPage()
-      case "different" =>
+      case "different"  =>
         UpdateTraderReferenceCYAPage
           .fillInput("value", "different value")
         submitPage()
