@@ -41,11 +41,11 @@ class TraderReferenceStepDef extends BaseStepDef {
         submitPage()
       case "Unique"     =>
         TraderReferencePage
-          .fillInput("value", "Trader"+UUID.randomUUID().toString())
+          .fillInput("value", "Trader" + UUID.randomUUID().toString())
         submitPage()
       case "different"  =>
         TraderReferencePage
-          .fillInput("value", "different value"+UUID.randomUUID().toString())
+          .fillInput("value", "different value" + UUID.randomUUID().toString())
         submitPage()
     }
   }
