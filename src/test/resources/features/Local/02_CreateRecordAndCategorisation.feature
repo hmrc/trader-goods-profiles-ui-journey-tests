@@ -79,17 +79,23 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Then I should be on the 'Categorisation Information' page
     And I select continue
     Then I should be on the 'Category assessment 1' page
-    And I select First option
+        And I select Yes for the boolean question
+        And I select continue
     Then I should be on the 'Category assessment 2' page
-    And I select First option
+    And I select Yes for the boolean question
+            And I select continue
     Then I should be on the 'Category assessment 3' page
-    And I select First option
+    And I select Yes for the boolean question
+            And I select continue
     Then I should be on the 'Category assessment 4' page
-    And I select First option
+    And I select Yes for the boolean question
+            And I select continue
     Then I should be on the 'Category assessment 5' page
-    And I select First option
+    And I select Yes for the boolean question
+            And I select continue
     Then I should be on the 'Category assessment 6' page
-    And I select First option
+    And I select Yes for the boolean question
+            And I select continue
     Then I should be on the 'Categorisation - Check Your Answers' page
     When I select continue
     Then I should be on the 'Categorisation complete' with Standard content page
@@ -154,11 +160,14 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     And I click on the Categorise goods now link
     Then I select continue
     Then I should be on the 'Category assessment 1' page
-    And I select First option
+    And I select Yes for the boolean question
+    And I select continue
     Then I should be on the 'Category assessment 2' page
-    And I select First option
+    And I select Yes for the boolean question
+    And I select continue
     Then I should be on the 'Category assessment 3' page
-    And I select None of the above option
+    And I select No for the boolean question
+    And I select continue
     Then I should be on the 'Categorisation - Check Your Answers' page
     When I select continue
     Then I should be on the 'Categorisation complete' with Category2 content page

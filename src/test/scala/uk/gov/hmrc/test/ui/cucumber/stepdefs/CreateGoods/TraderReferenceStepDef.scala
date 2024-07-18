@@ -33,6 +33,9 @@ class TraderReferenceStepDef extends BaseStepDef {
       .assertCheckPage()
   }
 
+  var uniqueId: String    = ""
+  var differentId: String = ""
+
   Then("""^(?:I )?enter (.*) Trader reference in the text area$""") { (traderReference: String) =>
     traderReference match {
       case "Non unique" =>
@@ -40,10 +43,12 @@ class TraderReferenceStepDef extends BaseStepDef {
           .fillInput("value", "ABC543211")
         submitPage()
       case "Unique"     =>
+        uniqueId = "Trader" + UUID.randomUUID().toString()
         TraderReferencePage
-          .fillInput("value", "Trader" + UUID.randomUUID().toString())
+          .fillInput("value", uniqueId)
         submitPage()
       case "different"  =>
+        differentId = "different value" + UUID.randomUUID().toString()
         TraderReferencePage
           .fillInput("value", "different value" + UUID.randomUUID().toString())
         submitPage()
@@ -54,6 +59,6 @@ class TraderReferenceStepDef extends BaseStepDef {
     TraderReferencePage
       .findById("value")
       .getAttribute("value")
-      .shouldEqual("Unique value")
+      .shouldEqual(uniqueId)
   }
 }
