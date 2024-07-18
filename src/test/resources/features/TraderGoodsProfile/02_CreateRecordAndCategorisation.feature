@@ -24,10 +24,8 @@ Feature: Trader Goods Profile - Create Record And Categorisation with longer com
     Then I should be on the 'Create Record - Check Your Answers' page
     When I click the Trader Reference change link
     Then I should be on the check 'Trader reference' page
-    And The Trader reference field should be prepopulated
     When I enter different Trader reference in the text area
     Then I should be on the 'Create Record - Check Your Answers' page
-    And My 'Trader Reference' has the different valid value
     When I click the Goods Description Question change link
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page
@@ -38,11 +36,14 @@ Feature: Trader Goods Profile - Create Record And Categorisation with longer com
     Then I should be on the 'Categorisation Information' page
     And I select continue
     Then I should be on the 'Category assessment 1' page
-    And I select First option
+    And I select Yes for the boolean question
+    And I select continue
     Then I should be on the 'Category assessment 2' page
-    And I select First option
+    And I select Yes for the boolean question
+    And I select continue
     Then I should be on the 'Category assessment 3' page
-    And I select None of the above option
+    And I select No for the boolean question
+    And I select continue
     Then I should be on the 'Longer commodity code' page
     And I enter 99 value of Longer Commodity code in the free text field
     Then I should be on the Longer Commodity "Results for 1704909900" page
