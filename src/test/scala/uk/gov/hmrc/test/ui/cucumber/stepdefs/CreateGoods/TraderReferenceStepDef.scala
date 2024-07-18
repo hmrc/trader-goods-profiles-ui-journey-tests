@@ -33,6 +33,9 @@ class TraderReferenceStepDef extends BaseStepDef {
       .assertCheckPage()
   }
 
+  var validUuid     = "EMPTY"
+  var differentUuid = "EMPTY"
+
   Then("""^(?:I )?enter (.*) Trader reference in the text area$""") { (traderReference: String) =>
     traderReference match {
       case "Non unique" =>
@@ -40,20 +43,36 @@ class TraderReferenceStepDef extends BaseStepDef {
           .fillInput("value", "ABC543211")
         submitPage()
       case "Unique"     =>
+        validUuid = "Trader" + UUID.randomUUID().toString()
         TraderReferencePage
-          .fillInput("value", "Trader" + UUID.randomUUID().toString())
+          .fillInput("value", validUuid)
         submitPage()
       case "different"  =>
+        differentUuid = "different value" + UUID.randomUUID().toString()
         TraderReferencePage
-          .fillInput("value", "different value" + UUID.randomUUID().toString())
+          .fillInput("value", "different value")
         submitPage()
     }
   }
 
-  Then("""^(?:The Trader reference field )?should be prepopulated$""") { () =>
+  Then("""^(?:The Trader reference field )?should be prepopulated $""") { () =>
     TraderReferencePage
       .findById("value")
       .getAttribute("value")
       .shouldEqual("Unique value")
+  }
+
+  Then("""^(?:The Trader reference field )?should be prepopulated with valid$""") { () =>
+    TraderReferencePage
+      .findById("value")
+      .getAttribute("value")
+      .shouldEqual(validUuid)
+  }
+
+  Then("""^(?:The Trader reference field )?should be prepopulated with different$""") { () =>
+    TraderReferencePage
+      .findById("value")
+      .getAttribute("value")
+      .shouldEqual(differentUuid)
   }
 }

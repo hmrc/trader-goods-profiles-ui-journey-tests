@@ -202,8 +202,8 @@ db.getSiblingDB("trader-goods-profiles-hawk-stub").getCollection("goodsItemRecor
   {
     "recordId": "3b1c558c-3ae6-11ef-a611-325096b39f47",
     "goodsItem": {
-      "eori": "GB000012340004",
-      "actorId": "GB000012340004",
+      "eori": "GB123456789099",
+      "actorId": "GB123456789099",
       "traderRef": "GB - 0101291000 - For slaughter",
       "comcode": "101291000",
       "goodsDescription": "For slaughter",
@@ -226,8 +226,8 @@ db.getSiblingDB("trader-goods-profiles-hawk-stub").getCollection("goodsItemRecor
   {
     "recordId": "3b1c5654-3ae6-11ef-9541-325096b39f47",
     "goodsItem": {
-      "eori": "GB000012340004",
-      "actorId": "GB000012340004",
+      "eori": "GB123456789099",
+      "actorId": "GB123456789099",
       "traderRef": "GB - 11032050 - Of rice",
       "comcode": "11032050",
       "goodsDescription": "Of rice",

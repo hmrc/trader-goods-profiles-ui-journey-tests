@@ -7,7 +7,7 @@ Feature: Trader Goods Profile - View or Update record journey
     When I click on the View or update your goods records link
     Then I should be on the 'Goods profile' page
 
-  Scenario: As a returning user, with historic data, View and update records
+  Scenario: As a new user, with historic data, View and update records
     Given I am on the 'Home' page with EORI GB123456789099
     When I click on the View or update your goods records link
     Then I should be on the 'Previous movement records' page
