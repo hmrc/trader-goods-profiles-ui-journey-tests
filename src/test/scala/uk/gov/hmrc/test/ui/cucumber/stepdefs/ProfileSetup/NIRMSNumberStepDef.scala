@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.ProfileSetup
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.ProfileSetup.{NIRMSNumberPage, UKIMSNumberPage}
+import uk.gov.hmrc.test.ui.pages.ProfileSetup.NIRMSNumberPage
 
 class NIRMSNumberStepDef extends BaseStepDef {
 
@@ -53,7 +53,7 @@ class NIRMSNumberStepDef extends BaseStepDef {
   }
 
   Then("""^(?:The NIRMS Number field )?should be prepopulated$""") { () =>
-    UKIMSNumberPage
+    NIRMSNumberPage
       .findById("value")
       .getAttribute("value")
       .shouldEqual("RMS-GB-123456")

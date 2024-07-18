@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.ProfileSetup
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.ProfileSetup.{NIPHLNumberPage, UKIMSNumberPage}
+import uk.gov.hmrc.test.ui.pages.ProfileSetup.NIPHLNumberPage
 
 class NIPHLNumberStepDef extends BaseStepDef {
 
@@ -53,7 +53,7 @@ class NIPHLNumberStepDef extends BaseStepDef {
   }
 
   Then("""^(?:The NIPHL Number field )?should be prepopulated$""") { () =>
-    UKIMSNumberPage
+    NIPHLNumberPage
       .findById("value")
       .getAttribute("value")
       .shouldEqual("SN12345")
