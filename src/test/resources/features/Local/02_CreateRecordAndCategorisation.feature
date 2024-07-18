@@ -137,7 +137,7 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
 #    Then I should be on the check 'Goods Supplementary Unit' page
     And I select continue
     Then I should be on the 'Categorisation - Check Your Answers' page
-    And The 'Supplementary Unit' has the value 12345.0432
+    And The 'Supplementary Unit' has the value 12345.0432 grams
     When I select continue
     Then I should be on the 'Categorisation complete' with Category1 content page
     When I click on the Go to homepage link
