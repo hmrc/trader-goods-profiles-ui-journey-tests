@@ -3,13 +3,13 @@ db.getSiblingDB("trader-goods-profiles-data-store").getCollection("goodsItemReco
 db.getSiblingDB("trader-goods-profiles-data-store").getCollection("profiles").deleteMany({})
 db.getSiblingDB("trader-goods-profiles-hawk-stub").getCollection("traderProfiles").deleteMany({})
 db.getSiblingDB("trader-goods-profiles-hawk-stub").getCollection("goodsItemRecords").deleteMany({})
-db.getSiblingDB("trader-goods-profiles-hawk-stub").getCollection("traderProfiles").insertMany(
-[{
-  "eori": "GB000012340002",
-  "actorId": "GB000012340002",
-  "ukimsNumber": "XIUKIM00001234000220240207140148",
-  "lastUpdated": new ISODate("2024-07-05T15:23:43.134Z")
-},
+db.getSiblingDB("trader-goods-profiles-hawk-stub").getCollection("traderProfiles").insertMany([
+  {
+    "eori": "GB000012340002",
+    "actorId": "GB000012340002",
+    "ukimsNumber": "XIUKIM00001234000220240207140148",
+    "lastUpdated": new ISODate("2024-07-05T15:23:43.134Z")
+  },
   {
     "eori": "GB000012340003",
     "actorId": "GB000012340003",
@@ -27,36 +27,13 @@ db.getSiblingDB("trader-goods-profiles-hawk-stub").getCollection("traderProfiles
     "actorId": "GB000012340005",
     "ukimsNumber": "XIUKIM00001234000520240212142805",
     "lastUpdated": new ISODate("2024-07-05T15:23:43.134Z")
-  }])
+  }
+])
 
 db.getSiblingDB("trader-goods-profiles-hawk-stub").getCollection("goodsItemRecords").insertMany(
 [
   {
     "recordId": "3b1c50e6-3ae6-11ef-a2ec-325096b39f47",
-    "goodsItem": {
-      "eori": "GB123456789098",
-      "actorId": "GB123456789098",
-      "traderRef": "GB - 22030001 - In bottles",
-      "comcode": "22030001",
-      "goodsDescription": "In bottles",
-      "countryOfOrigin": "GB",
-      "category": 1,
-      "comcodeEffectiveFromDate": new ISODate("2023-01-01T00:00:00.000Z"),
-      "comcodeEffectiveToDate": new ISODate("2030-01-01T00:00:00.000Z")
-    },
-    "metadata": {
-      "accreditationStatus": "Not Requested",
-      "version": 1,
-      "active": true,
-      "locked": false,
-      "toReview": false,
-      "srcSystemName": "MDTP",
-      "createdDateTime": new ISODate("2024-07-05T15:38:38.010Z"),
-      "updatedDateTime": new ISODate("2024-07-05T15:38:38.010Z")
-    }
-  },
-  {
-    "recordId": "3b1c52d0-3ae6-11ef-995b-325096b39f47",
     "goodsItem": {
       "eori": "GB123456789098",
       "actorId": "GB123456789098",
