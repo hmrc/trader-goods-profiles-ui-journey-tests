@@ -124,16 +124,16 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     Then I should be on the 'Profile details' page
     When I click the NIPHL Question change link
     And I select Yes for the boolean question
-    Then I enter valid value of my NIPHL Number in the free text field
+    And I select continue
     Then I should be on the 'Profile details' page
     And My 'NIPHL Question' has the value Yes
     And My 'NIPHL Number' has the value SN12345
     When I click the NIPHL Question change link
     And I select No for the boolean question
+    And I select continue
     Then I should be on the 'Removing NIPHL details' page
-    And I select No for the boolean question
+    And I select the Yes option of two
     Then I should be on the 'Profile details' page
-    And My 'NIRMS Question' has the value Yes
-    And My 'NIPHL Number' has the value SN12345
+    And My 'NIPHL Question' has the value No
     And I click on the Sign out link
     Then I should be on the 'Signed Out' page

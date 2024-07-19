@@ -8,6 +8,8 @@ if [ -z "$BROWSER_TYPE" ]; then
     echo ""
 fi
 
+mongosh --eval "load('mongo-db-setup.js')"
+
 # Scalafmt checks have been separated from the test command to avoid OutOfMemoryError in Jenkins
 sbt scalafmtSbt
 sbt scalafmtAll

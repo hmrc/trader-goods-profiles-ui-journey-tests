@@ -50,7 +50,7 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Then I should be on the 'Create Record - Check Your Answers' page
     When I click the Trader Reference change link
     Then I should be on the check 'Trader reference' page
-    And The Trader reference field should be prepopulated
+    And The Trader reference field should be prepopulated with valid
     When I enter different Trader reference in the text area
     Then I should be on the 'Create Record - Check Your Answers' page
     And My 'Trader Reference' has the different valid value
@@ -79,20 +79,26 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Then I should be on the 'Categorisation Information' page
     And I select continue
     Then I should be on the 'Category assessment 1' page
-    And I select First option
+     And I select Yes for the boolean question
+        And I select continue
     Then I should be on the 'Category assessment 2' page
-    And I select First option
+     And I select Yes for the boolean question
+        And I select continue
     Then I should be on the 'Category assessment 3' page
-    And I select First option
+     And I select Yes for the boolean question
+        And I select continue
     Then I should be on the 'Category assessment 4' page
-    And I select First option
+     And I select Yes for the boolean question
+        And I select continue
     Then I should be on the 'Category assessment 5' page
-    And I select First option
+     And I select Yes for the boolean question
+        And I select continue
     Then I should be on the 'Category assessment 6' page
-    And I select First option
+     And I select Yes for the boolean question
+        And I select continue
     Then I should be on the 'Categorisation - Check Your Answers' page
     When I select continue
-    Then I should be on the 'Categorisation complete' with Standard content page
+    Then I should be on the 'Categorisation complete' with Category2 content page
     When I select the back link
     Then I should be on the 'Categorisation - Check Your Answers' page
     When I click the Category assessment 3 of 6 change link
@@ -101,9 +107,10 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Then I should be on the 'Categorisation - Check Your Answers' page
     When I click the Category assessment 5 of 6 change link
     Then I should be on the check 'Category assessment 5' page
-    And I select None of the above option
+         And I select No for the boolean question
+            And I select continue
     Then I should be on the 'Categorisation - Check Your Answers' page
-    And The 'Category assessment 5 of 6' has the value None selected
+    And The 'Category assessment 5 of 6' has the value No
     When I select continue
     Then I should be on the 'Categorisation complete' with Category1 content page
     And I navigate to the 'Supplementary Unit' page
@@ -130,7 +137,7 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
 #    Then I should be on the check 'Goods Supplementary Unit' page
     And I select continue
     Then I should be on the 'Categorisation - Check Your Answers' page
-    And The 'Supplementary Unit' has the value 12345.0432
+    And The 'Supplementary Unit' has the value 12345.0432 grams
     When I select continue
     Then I should be on the 'Categorisation complete' with Category1 content page
     When I click on the Go to homepage link
@@ -154,11 +161,11 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     And I click on the Categorise goods now link
     Then I select continue
     Then I should be on the 'Category assessment 1' page
-    And I select First option
+        Then I select Yes for the boolean question
+        And I select continue
     Then I should be on the 'Category assessment 2' page
-    And I select First option
-    Then I should be on the 'Category assessment 3' page
-    And I select None of the above option
+        Then I select Yes for the boolean question
+        And I select continue
     Then I should be on the 'Categorisation - Check Your Answers' page
     When I select continue
     Then I should be on the 'Categorisation complete' with Category2 content page

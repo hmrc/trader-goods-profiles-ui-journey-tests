@@ -8,4 +8,6 @@ if [ -z "$BROWSER_TYPE" ]; then
     echo ""
 fi
 
+mongosh --eval "load('mongo-db-setup.js')"
+
 sbt -Dbrowser="${BROWSER_TYPE:=$DEFAULT_BROWSER}" -Denvironment="${ENV:=local}" -Dbrowser.option.headless=false -Daccessibility.assessment="false" "testOnly uk.gov.hmrc.test.ui.cucumber.runner.TestRunner" testReport
