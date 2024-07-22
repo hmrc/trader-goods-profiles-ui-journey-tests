@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages.Base
 
+import com.mongodb.DBObject
 import org.mongodb.scala.MongoClient
 import org.mongodb.scala.bson.collection.mutable.Document
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait}
@@ -23,8 +24,9 @@ import org.openqa.selenium._
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.conf.TestConfiguration.config
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.models.{GoodsItem, GoodsItemRecord, TraderProfile}
 
-import java.time.Duration
+import java.time.{Duration, Instant}
 import scala.collection.mutable
 import scala.concurrent.Await
 import scala.concurrent.duration.DurationInt
@@ -53,6 +55,17 @@ trait BasePage extends BrowserDriver with Matchers {
 
   def loadGoodsItemRecords(): Unit = {
     println("============================Loading Goods Item Records")
+
+    val traderProfile = TraderProfile(
+      "eori",
+      "actorId",
+      Some("ukimsNumber"),
+      Some("nirmsNumber"),
+      Some("niphlNumber"),
+      Instant.now()
+    )
+
+    mongoClient.getDatabase("trader-goods-profiles-hawk-stub").getCollection("traderProfiles").insertOne(traderProfile)
 
     val r: Runtime = Runtime.getRuntime()
 

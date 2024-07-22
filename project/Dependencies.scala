@@ -13,7 +13,8 @@ object Dependencies {
     "com.typesafe"         % "config"                 % "1.4.2",
     "org.mongodb.scala"   %% "mongo-scala-driver"     % "4.9.0",
     "com.typesafe.play"   %% "play-ahc-ws-standalone" % "2.1.10",
-    "com.typesafe.play"   %% "play-json"              % "2.9.4"
+    "com.typesafe.play"   %% "play-json"              % "2.9.4",
+    "uk.gov.hmrc.mongo"   %% "hmrc-mongo-play-30"     % "1.9.0"
   ).map(_ % Test)
 
 }
