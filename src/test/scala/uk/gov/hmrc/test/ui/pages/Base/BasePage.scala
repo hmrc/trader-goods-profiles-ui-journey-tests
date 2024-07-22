@@ -16,8 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages.Base
 
-import org.mongodb.scala.MongoClient
-import org.mongodb.scala.bson.collection.mutable.Document
+import org.mongodb.scala.{Document, MongoClient}
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait}
 import org.openqa.selenium._
 import org.scalatest.matchers.should.Matchers
@@ -25,6 +24,7 @@ import uk.gov.hmrc.test.ui.conf.TestConfiguration.config
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
 import java.time.Duration
+import java.util.Date
 import scala.collection.mutable
 import scala.concurrent.Await
 import scala.concurrent.duration.DurationInt
@@ -51,24 +51,138 @@ trait BasePage extends BrowserDriver with Matchers {
     dropCollection("trader-goods-profiles-data-store", "goodsItemRecords")
   }
 
+  def loadTraderProfiles(): Unit = {
+    println("============================Loading Goods Trader Profiles")
+
+    Await.result(
+      mongoClient
+        .getDatabase("trader-goods-profiles-hawk-stub")
+        .getCollection("traderProfiles")
+        .insertMany(
+          Seq(
+            Document(
+              "eori"        -> "GB000012340002",
+              "actorId"     -> "GB000012340002",
+              "ukimsNumber" -> "XIUKIM00001234000220240207140148",
+              "lastUpdated" -> new Date()
+            )
+          )
+        )
+        .toFuture(),
+      10 seconds
+    )
+  }
+
   def loadGoodsItemRecords(): Unit = {
     println("============================Loading Goods Item Records")
 
-    val r: Runtime = Runtime.getRuntime()
-
-    val command =
-      "mongoimport --db trader-goods-profiles-hawk-stub --collection goodsItemRecords --file goods-item-records-setup.json --jsonArray"
-    r.exec(command)
-  }
-
-  def loadTraderProfiles(): Unit = {
-    println("============================Loading Trader Profiles")
-
-    val r: Runtime = Runtime.getRuntime()
-
-    val command =
-      "mongoimport --db trader-goods-profiles-hawk-stub --collection traderProfiles --file trader-profiles-setup.json --jsonArray"
-    r.exec(command)
+    Await.result(
+      mongoClient
+        .getDatabase("trader-goods-profiles-hawk-stub")
+        .getCollection("goodsItemRecords")
+        .insertMany(
+          Seq(
+            Document(
+              "recordId"  -> "3b1c50e6-3ae6-11ef-a2ec-325096b39f47",
+              "goodsItem" -> Document(
+                "eori"                     -> "GB123456789098",
+                "actorId"                  -> "GB123456789098",
+                "traderRef"                -> "GB - 22030001 - In bottles",
+                "comcode"                  -> "22030001",
+                "goodsDescription"         -> "In bottles",
+                "countryOfOrigin"          -> "GB",
+                "category"                 -> 1,
+                "comcodeEffectiveFromDate" -> new Date(),
+                "comcodeEffectiveToDate"   -> new Date()
+              ),
+              "metadata"  -> Document(
+                "accreditationStatus" -> "Not Requested",
+                "version"             -> 1,
+                "active"              -> true,
+                "locked"              -> false,
+                "toReview"            -> false,
+                "srcSystemName"       -> "MDTP",
+                "createdDateTime"     -> new Date(),
+                "updatedDateTime"     -> new Date()
+              )
+            ),
+            Document(
+              "recordId"  -> "3b1c50e6-3ae6-11ef-a2ec-325096b39f42",
+              "goodsItem" -> Document(
+                "eori"                     -> "GB123456789098",
+                "actorId"                  -> "GB123456789098",
+                "traderRef"                -> "GB - 22030001 - In bottles 2",
+                "comcode"                  -> "22030001",
+                "goodsDescription"         -> "In bottles",
+                "countryOfOrigin"          -> "GB",
+                "category"                 -> 1,
+                "comcodeEffectiveFromDate" -> new Date(),
+                "comcodeEffectiveToDate"   -> new Date()
+              ),
+              "metadata"  -> Document(
+                "accreditationStatus" -> "Not Requested",
+                "version"             -> 1,
+                "active"              -> true,
+                "locked"              -> false,
+                "toReview"            -> false,
+                "srcSystemName"       -> "MDTP",
+                "createdDateTime"     -> new Date(),
+                "updatedDateTime"     -> new Date()
+              )
+            ),
+            Document(
+              "recordId"  -> "3b1c558c-3ae6-11ef-a611-325096b39f45",
+              "goodsItem" -> Document(
+                "eori"                     -> "GB123456789099",
+                "actorId"                  -> "GB123456789099",
+                "traderRef"                -> "GB - 0101291000 - For slaughter",
+                "comcode"                  -> "101291000",
+                "goodsDescription"         -> "For slaughter",
+                "countryOfOrigin"          -> "GB",
+                "category"                 -> 1,
+                "comcodeEffectiveFromDate" -> new Date(),
+                "comcodeEffectiveToDate"   -> new Date()
+              ),
+              "metadata"  -> Document(
+                "accreditationStatus" -> "Not Requested",
+                "version"             -> 1,
+                "active"              -> true,
+                "locked"              -> false,
+                "toReview"            -> false,
+                "srcSystemName"       -> "MDTP",
+                "createdDateTime"     -> new Date(),
+                "updatedDateTime"     -> new Date()
+              )
+            ),
+            Document(
+              "recordId"  -> "3b1c5654-3ae6-11ef-9541-325096b39s90",
+              "goodsItem" -> Document(
+                "eori"                     -> "GB123456789099",
+                "actorId"                  -> "GB123456789099",
+                "traderRef"                -> "GB - 11032050 - Of rice",
+                "comcode"                  -> "11032050",
+                "goodsDescription"         -> "Of rice",
+                "countryOfOrigin"          -> "GB",
+                "category"                 -> 1,
+                "comcodeEffectiveFromDate" -> new Date(),
+                "comcodeEffectiveToDate"   -> new Date()
+              ),
+              "metadata"  -> Document(
+                "accreditationStatus" -> "Not Requested",
+                "version"             -> 1,
+                "active"              -> true,
+                "locked"              -> false,
+                "toReview"            -> false,
+                "srcSystemName"       -> "MDTP",
+                "createdDateTime"     -> new Date(),
+                "updatedDateTime"     -> new Date()
+              )
+            )
+          )
+        )
+        .toFuture(),
+      10 seconds
+    )
   }
 
   def getRecordId(): Unit = {
