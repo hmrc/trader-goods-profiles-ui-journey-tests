@@ -24,15 +24,10 @@ import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.conf.TestConfiguration.config
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
-import java.nio.charset.StandardCharsets
-import java.nio.file.{Files, Paths}
-import javax.script.ScriptEngineManager
 import java.time.Duration
 import scala.collection.mutable
 import scala.concurrent.Await
 import scala.concurrent.duration.DurationInt
-import scala.io.Source
-import sys.process._
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 import scala.language.postfixOps
 
