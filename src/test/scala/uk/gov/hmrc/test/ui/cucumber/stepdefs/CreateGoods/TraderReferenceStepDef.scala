@@ -33,8 +33,7 @@ class TraderReferenceStepDef extends BaseStepDef {
       .assertCheckPage()
   }
 
-  var validUuid     = "EMPTY"
-  var differentUuid = "EMPTY"
+  var validUuid = "EMPTY"
 
   Then("""^(?:I )?enter (.*) Trader reference in the text area$""") { (traderReference: String) =>
     traderReference match {
@@ -48,7 +47,6 @@ class TraderReferenceStepDef extends BaseStepDef {
           .fillInput("value", validUuid)
         submitPage()
       case "different"  =>
-        differentUuid = "different value" + UUID.randomUUID().toString()
         TraderReferencePage
           .fillInput("value", "different value")
         submitPage()
@@ -67,12 +65,5 @@ class TraderReferenceStepDef extends BaseStepDef {
       .findById("value")
       .getAttribute("value")
       .shouldEqual(validUuid)
-  }
-
-  Then("""^(?:The Trader reference field )?should be prepopulated with different$""") { () =>
-    TraderReferencePage
-      .findById("value")
-      .getAttribute("value")
-      .shouldEqual(differentUuid)
   }
 }
