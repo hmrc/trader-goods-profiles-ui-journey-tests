@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.pages.Base
 
 import org.mongodb.scala.MongoClient
+import org.mongodb.scala.bson.collection.mutable.Document
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait}
 import org.openqa.selenium._
 import org.scalatest.matchers.should.Matchers
@@ -43,12 +44,34 @@ trait BasePage extends BrowserDriver with Matchers {
         mongoClient.getDatabase(dbName).getCollection(collectionName).drop().toFuture(),
         10 seconds
       )
-
+    dropCollection("trader-goods-profiles-hawk-stub", "traderProfiles")
+    dropCollection("trader-goods-profiles-hawk-stub", "goodsItemRecords")
     dropCollection("trader-goods-profiles-data-store", "profiles")
     dropCollection("trader-goods-profiles-data-store", "checkRecords")
     dropCollection("trader-goods-profiles-data-store", "goodsItemRecords")
   }
-  def getRecordId(): Unit     = {
+
+  def loadGoodsItemRecords(): Unit = {
+    println("============================Loading Goods Item Records")
+
+    val r: Runtime = Runtime.getRuntime()
+
+    val command =
+      "mongoimport --db trader-goods-profiles-hawk-stub --collection goodsItemRecords --file goods-item-records-setup.json --jsonArray"
+    r.exec(command)
+  }
+
+  def loadTraderProfiles(): Unit = {
+    println("============================Loading Trader Profiles")
+
+    val r: Runtime = Runtime.getRuntime()
+
+    val command =
+      "mongoimport --db trader-goods-profiles-hawk-stub --collection traderProfiles --file trader-profiles-setup.json --jsonArray"
+    r.exec(command)
+  }
+
+  def getRecordId(): Unit = {
     val recordIdPattern = """[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}""".r
     val url             = driver.getCurrentUrl
     recordIdPattern.findFirstIn(url) match {
