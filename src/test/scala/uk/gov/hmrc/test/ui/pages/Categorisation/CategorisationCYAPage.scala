@@ -30,7 +30,7 @@ object CategorisationCYAPage extends Page {
   def clickConditionsChangeLink(ChangelinkNumber: Int): this.type = {
 
     click(
-      By.cssSelector("dl:nth-child(4) > div:nth-child(" + (ChangelinkNumber) + ") > dd.govuk-summary-list__actions > a")
+      By.cssSelector("dl:nth-child(4) > div:nth-child(" + ChangelinkNumber + ") > dd.govuk-summary-list__actions > a")
     )
 
     this
