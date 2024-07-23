@@ -30,7 +30,7 @@ object CategorisationCYAPage extends Page {
   def clickConditionsChangeLink(ChangelinkNumber: Int): this.type = {
 
     click(
-      By.cssSelector("dl:nth-child(3) > div:nth-child(" + ChangelinkNumber + ") > dd.govuk-summary-list__actions > a")
+      By.cssSelector("dl:nth-child(4) > div:nth-child(" + (ChangelinkNumber) + ") > dd.govuk-summary-list__actions > a")
     )
 
     this
@@ -39,7 +39,7 @@ object CategorisationCYAPage extends Page {
   def clickSupplementaryUnitChangeLink(ChangelinkNumber: Int): this.type = {
 
     click(
-      By.cssSelector("dl:nth-child(5) > div:nth-child(" + ChangelinkNumber + ") > dd.govuk-summary-list__actions > a")
+      By.cssSelector("dl:nth-child(6) > div:nth-child(" + ChangelinkNumber + ") > dd.govuk-summary-list__actions > a")
     )
 
     this
@@ -48,7 +48,7 @@ object CategorisationCYAPage extends Page {
   def clickLongerCommodityCodeChangeLink(ChangelinkNumber: Int): this.type = {
 
     click(
-      By.cssSelector("dl:nth-child(7) > div:nth-child(" + ChangelinkNumber + ") > dd.govuk-summary-list__actions > a")
+      By.cssSelector("dl:nth-child(8) > div:nth-child(" + ChangelinkNumber + ") > dd.govuk-summary-list__actions > a")
     )
 
     this
@@ -57,17 +57,17 @@ object CategorisationCYAPage extends Page {
   def verifyConditionsInput(field: String, expected: String): this.type = {
     val actual = field match {
       case "Category assessment 1 of 6" =>
-        findBy(By.cssSelector("dl:nth-child(3) > div:nth-child(1) > dd.govuk-summary-list__value")).getText
+        findBy(By.cssSelector("dl:nth-child(4) > div:nth-child(1) > dd.govuk-summary-list__value")).getText
       case "Category assessment 2 of 6" =>
-        findBy(By.cssSelector("dl:nth-child(3) > div:nth-child(2) > dd.govuk-summary-list__value")).getText
+        findBy(By.cssSelector("dl:nth-child(4) > div:nth-child(2) > dd.govuk-summary-list__value")).getText
       case "Category assessment 3 of 6" =>
-        findBy(By.cssSelector("dl:nth-child(3) > div:nth-child(3) > dd.govuk-summary-list__value")).getText
+        findBy(By.cssSelector("dl:nth-child(4) > div:nth-child(3) > dd.govuk-summary-list__value")).getText
       case "Category assessment 4 of 6" =>
-        findBy(By.cssSelector("dl:nth-child(3) > div:nth-child(4) > dd.govuk-summary-list__value")).getText
+        findBy(By.cssSelector("dl:nth-child(4) > div:nth-child(4) > dd.govuk-summary-list__value")).getText
       case "Category assessment 5 of 6" =>
-        findBy(By.cssSelector("dl:nth-child(3) > div:nth-child(5) > dd.govuk-summary-list__value")).getText
+        findBy(By.cssSelector("dl:nth-child(4) > div:nth-child(5) > dd.govuk-summary-list__value")).getText
       case "Category assessment 6 of 6" =>
-        findBy(By.cssSelector("dl:nth-child(3) > div:nth-child(6) > dd.govuk-summary-list__value")).getText
+        findBy(By.cssSelector("dl:nth-child(4) > div:nth-child(6) > dd.govuk-summary-list__value")).getText
     }
 
     Assert.assertEquals("Expected " + expected + " value but found " + actual + " instead.", expected, actual)
@@ -77,9 +77,9 @@ object CategorisationCYAPage extends Page {
   def verifySupplementaryUnitInput(field: String, expected: String): this.type = {
     val actual = field match {
       case "Has Supplementary Unit" =>
-        findBy(By.cssSelector("dl:nth-child(5) > div:nth-child(1) > dd.govuk-summary-list__value")).getText
+        findBy(By.cssSelector("dl:nth-child(6) > div:nth-child(1) > dd.govuk-summary-list__value")).getText
       case "Supplementary Unit"     =>
-        findBy(By.cssSelector("dl:nth-child(5) > div:nth-child(2) > dd.govuk-summary-list__value")).getText
+        findBy(By.cssSelector("dl:nth-child(6) > div:nth-child(2) > dd.govuk-summary-list__value")).getText
     }
 
     Assert.assertEquals("Expected " + expected + " value but found " + actual + " instead.", expected, actual)
@@ -87,7 +87,7 @@ object CategorisationCYAPage extends Page {
   }
 
   def verifyLongerCommodityCodeInput(expected: String): this.type = {
-    val actual = findBy(By.cssSelector("dl:nth-child(7) > div:nth-child(1) > dd.govuk-summary-list__value")).getText
+    val actual = findBy(By.cssSelector("dl:nth-child(6) > div:nth-child(1) > dd.govuk-summary-list__value")).getText
 
     Assert.assertEquals("Expected " + expected + " value but found " + actual + " instead.", expected, actual)
     this
