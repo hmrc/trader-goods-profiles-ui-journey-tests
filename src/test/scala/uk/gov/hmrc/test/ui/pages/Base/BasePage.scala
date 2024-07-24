@@ -251,6 +251,7 @@ trait BasePage extends BrowserDriver with Matchers {
     answer match {
       case "Yes" => clickById("value")
       case "No"  => clickById("value-no")
+      case "No2" => clickById("value-2")
     }
     this
   }

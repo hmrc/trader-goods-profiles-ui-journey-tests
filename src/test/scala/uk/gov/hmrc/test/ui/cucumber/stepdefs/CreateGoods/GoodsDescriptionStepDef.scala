@@ -42,9 +42,19 @@ class GoodsDescriptionStepDef extends BaseStepDef {
   }
 
   Then("""^(?:I )?enter (.*) in the Goods description text area$""") { (description: String) =>
-    GoodsDescriptionPage
-      .fillInput("value", description)
-    submitPage()
+    description match {
+      case "description" =>
+        GoodsDescriptionPage
+          .fillInput("value", description)
+        submitPage()
+      case "long text"   =>
+        GoodsDescriptionPage
+          .fillInput(
+            "value",
+            "This is a really looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong text input."
+          )
+        submitPage()
+    }
   }
 
   When("""^(?:I )?select (.+) for the Goods boolean question""") { (answer: String) =>

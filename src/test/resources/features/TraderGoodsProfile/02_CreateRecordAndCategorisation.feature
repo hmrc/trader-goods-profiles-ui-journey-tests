@@ -1,6 +1,6 @@
 @AllPipeline
 
-Feature: Trader Goods Profile - Create Record And Categorisation with longer commodity and supplimentary unit journey
+Feature: Trader Goods Profile - Create Record And Categorisation with longer commodity and supplementary unit journey
 
   Scenario:As a returning user, I want to create a record and categorise
     Given I am on the 'Home' page with EORI GB123456789085

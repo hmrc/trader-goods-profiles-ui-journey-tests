@@ -45,7 +45,7 @@ Feature: Trader Goods Profile - Profile setup and Previous movement records jour
     When I select continue
     Then I should be on the 'Home' page
     When I click on the View or update your goods records link
-    Then I should be on the 'Previous movement records' page
+    Then I should be on the 'Goods profile' page
     And I select the back link
     Then I should be on the 'Home' page
     When I click on the Manage your profile details link

@@ -73,7 +73,7 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     And I select continue
     Then I should be on the 'Home' page
     When I click on the View or update your goods records link
-    Then I should be on the 'Previous movement records' page
+    Then I should be on the 'Goods profile' page
     And I select the back link
     Then I should be on the 'Home' page
     And I click on the Sign out link
@@ -122,8 +122,60 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     Then I should be on the 'Home' page
     When I click on the Manage your profile details link
     Then I should be on the 'Profile details' page
+    When I click the UKIMS Number change link
+    Then I should be on the update 'UK internal scheme number' page
+    And The update UKIMS Number field should be prepopulated
+    When I enter empty value of my UKIMS Number in the free text field
+    Then Error message 'Enter your UKIMS number' should be displayed
+    When I enter incorrect value of my UKIMS Number in the free text field
+    Then Error message 'Enter your UKIMS number in the correct format' should be displayed
+    When I select the back link
+    Then I should be on the update 'UK internal scheme number' page
+    When I enter different value of my UKIMS Number in the free text field
+    Then I should be on the 'Profile details' page
+    And My 'UKIMS Number' has the value XIUKIM47699357400020231115081801
+    When I click the NIRMS Question change link
+    Then I should be on the update 'Northern Ireland Retail Movement Scheme' page
+    When I select No for the boolean question
+    And I select continue
+    Then I should be on the 'Removing NIRMS details' page
+    When I select continue
+    Then Error message 'Confirm if you want to remove your NIRMS details' should be displayed
+    When I select the back link
+    Then I should be on the 'Removing NIRMS details' page
+    When I select No2 for the boolean question
+    # ^ this should be updated by devs
+    And I select continue
+    Then I should be on the 'Profile details' page
+    And My 'NIRMS Question' has the value Yes
+    And My 'NIRMS Number' has the value RMS-GB-123456
+    When I click the NIRMS Question change link
+    And I select No for the boolean question
+    And I select continue
+    Then I should be on the 'Removing NIRMS details' page
+    When I select Yes for the boolean question
+    And I select continue
+    Then I should be on the 'Profile details' page
+    And My 'NIRMS Question' has the value No
+    When I click the NIRMS Question change link
+    Then I should be on the update 'Northern Ireland Retail Movement Scheme' page
+    When I select Yes for the boolean question
+    And I select continue
+    Then I should be on the update 'Northern Ireland Retail Movement Scheme number' page
+    When I select continue
+    Then Error message 'Enter your NIRMS number' should be displayed
+    When I enter incorrect value of my NIRMS Number in the free text field
+    Then Error message 'Enter your NIRMS number in the correct format' should be displayed
+    When I enter valid value of my NIRMS Number in the free text field
+    Then I should be on the 'Profile details' page
+    And My 'NIRMS Question' has the value Yes
+    And My 'NIRMS Number' has the value RMS-GB-123456
+    When I click the NIRMS Number change link
+    Then I should be on the update 'Northern Ireland Retail Movement Scheme number' page
+    And The update NIRMS Number field should be prepopulated
+    When I enter different value of my NIRMS Number in the free text field
+    Then My 'NIRMS Number' has the value RMS-GB-654321
     When I click the NIPHL Question change link
-    And I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Profile details' page
     And My 'NIPHL Question' has the value Yes
@@ -132,7 +184,33 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     And I select No for the boolean question
     And I select continue
     Then I should be on the 'Removing NIPHL details' page
-    And I select the Yes option of two
+    When I select continue
+    Then Error message 'Confirm if you want to remove your NIPHL details' should be displayed
+    When I select the back link
+    Then I should be on the 'Removing NIPHL details' page
+    When I select No for the boolean question
+    And I select continue
+    Then I should be on the 'Profile details' page
+    And My 'NIPHL Question' has the value Yes
+    And My 'NIPHL Number' has the value SN12345
+    When I click the NIPHL Number change link
+    Then I should be on the update 'NIPHL registration number' page
+    And The update NIPHL Number field should be prepopulated
+    When I enter empty value of my NIPHL Number in the free text field
+    Then Error message 'Enter your NIPHL registration number' should be displayed
+    When I enter incorrect value of my NIPHL Number in the free text field
+    Then Error message 'Enter your NIPHL registration number in the correct format' should be displayed
+    When I select the back link
+    Then I should be on the update 'NIPHL registration number' page
+    When I enter different value of my NIPHL Number in the free text field
+    Then I should be on the 'Profile details' page
+    And My 'NIPHL Number' has the value SN54321
+    When I click the NIPHL Question change link
+    And I select No for the boolean question
+    And I select continue
+    Then I should be on the 'Removing NIPHL details' page
+    When I select Yes for the boolean question
+    And I select continue
     Then I should be on the 'Profile details' page
     And My 'NIPHL Question' has the value No
     And I click on the Sign out link
