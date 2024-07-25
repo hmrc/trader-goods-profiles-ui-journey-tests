@@ -23,7 +23,7 @@ class CategorisationCompleteStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the 'Categorisation complete' with (.+) page$""") { (panelBody: String) =>
     panelBody match {
-      case "Standard content"                 =>
+      case "standard content"                 =>
         CategorisationCompletePage
           .assertPage("standard")
           .verifyPanelContent(

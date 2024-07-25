@@ -39,7 +39,7 @@ class TraderReferenceStepDef extends BaseStepDef {
     traderReference match {
       case "none unique" =>
         TraderReferencePage
-          .fillInput("value", "ABC543211")
+          .fillInput("value", "not unique code 5")
         submitPage()
       case "long"        =>
         TraderReferencePage
@@ -67,10 +67,10 @@ class TraderReferenceStepDef extends BaseStepDef {
       .shouldEqual("Unique value")
   }
 
-  Then("""^(?:The Trader reference field )?should be prepopulated with valid$""") { () =>
+  Then("""^(?:The Trader reference field )?should be prepopulated$""") { () =>
     TraderReferencePage
       .findById("value")
       .getAttribute("value")
-      .shouldEqual(validUuid)
+      .shouldEqual("not unique code 5")
   }
 }

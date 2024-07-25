@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Categorisation.CategorisationAssessmentPage
 
-class CategorisationquestionStepDef extends BaseStepDef {
+class CategorisationQuestionStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the 'Category assessment(.+)' page$""") { (number: String) =>
     CategorisationAssessmentPage
