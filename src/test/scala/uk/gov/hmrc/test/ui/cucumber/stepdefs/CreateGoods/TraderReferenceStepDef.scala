@@ -39,7 +39,7 @@ class TraderReferenceStepDef extends BaseStepDef {
     traderReference match {
       case "none unique" =>
         TraderReferencePage
-          .fillInput("value", "not unique code 5")
+          .fillInput("value", "not a unique reference")
         submitPage()
       case "long"        =>
         TraderReferencePage
@@ -71,6 +71,6 @@ class TraderReferenceStepDef extends BaseStepDef {
     TraderReferencePage
       .findById("value")
       .getAttribute("value")
-      .shouldEqual("not unique code 5")
+      .shouldEqual("not a unique reference")
   }
 }

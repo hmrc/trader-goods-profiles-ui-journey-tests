@@ -3,7 +3,7 @@
 Feature: Trader Goods Categorisation - Create Record And Categorisation journey
 
   Scenario:As a returning user, I want to create a record and categorise
-    Given I login to TGP Homepage with EORI number GB123456789123
+    Given I login to TGP Homepage with EORI number GB123456789098
     Then I should be on the 'Home' page
     When I click on the Create a new goods record link
     Then I should be on the 'Creating a goods record' page
@@ -128,7 +128,7 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Then I should be on the 'Signed Out' page
 
   Scenario:As a returning user, I want to create a record with a longer commodity code and add supplementary units
-    Given I login to TGP Homepage with EORI number GB123456789123
+    Given I login to TGP Homepage with EORI number GB123456789098
     Then I should be on the 'Home' page
     When I click on the Create a new goods record link
     And I select continue

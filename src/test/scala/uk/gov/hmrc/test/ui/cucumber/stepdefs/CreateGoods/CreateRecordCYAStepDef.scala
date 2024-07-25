@@ -53,7 +53,7 @@ class CreateRecordCYAStepDef extends BaseStepDef {
 
   Then("""^(?:My )?'Trader Reference' has the same value$""") { () =>
     CreateRecordCYAPage
-      .verifyInput("traderReference", "not unique code 5")
+      .verifyInput("traderReference", "not a unique reference")
   }
 
   Then("""^(?:My )?'Goods Description Question' has the (.*) value$""") { (key: String) =>
