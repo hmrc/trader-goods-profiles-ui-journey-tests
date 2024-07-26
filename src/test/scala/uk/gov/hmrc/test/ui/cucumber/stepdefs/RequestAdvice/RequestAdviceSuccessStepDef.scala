@@ -14,13 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Accreditation
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.RequestAdvice
 
-import uk.gov.hmrc.test.ui.pages.Base.Page
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.RequestAdvice.RequestAdviceSuccessPage
 
-object AskNamePage extends Page {
+class RequestAdviceSuccessStepDef extends BaseStepDef {
 
-  override def title(args: String*): String = "What is your name?"
-  override def h1(args: String*): String    = "What is your name?"
-  override def url(args: String*): String   = "/update-record/" + recordId + "/create-advice/name"
+  Then("""^(?:I )?should be on the 'Request Advice success' page$""") { () =>
+    RequestAdviceSuccessPage
+      .assertPage()
+  }
 }

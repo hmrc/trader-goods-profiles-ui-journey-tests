@@ -14,35 +14,35 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.Accreditation
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.RequestAdvice
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Accreditation.AccreditationCYAPage
+import uk.gov.hmrc.test.ui.pages.RequestAdvice.RequestAdviceCYAPage
 
-class AccreditationCYAStepDef extends BaseStepDef {
+class RequestAdviceCYAStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'Accreditation - Check Your Answers' page$""") { () =>
-    AccreditationCYAPage
+  Then("""^(?:I )?should be on the 'Request Advice - Check Your Answers' page$""") { () =>
+    RequestAdviceCYAPage
       .assertPage()
   }
 
   Then("""^(?:I )?click the Name change link$""") { () =>
-    AccreditationCYAPage
+    RequestAdviceCYAPage
       .clickChangeLink("1")
   }
 
   Then("""^(?:I )?click the Email change link$""") { () =>
-    AccreditationCYAPage
+    RequestAdviceCYAPage
       .clickChangeLink("2")
   }
 
   Then("""^(?:My )?'Name' has the (.*) valid value$""") { (key: String) =>
     key match {
       case "same"      =>
-        AccreditationCYAPage
+        RequestAdviceCYAPage
           .verifyInput("Name", "Testfirstname Testlastname")
       case "different" =>
-        AccreditationCYAPage
+        RequestAdviceCYAPage
           .verifyInput("Name", "different name")
     }
   }
@@ -50,10 +50,10 @@ class AccreditationCYAStepDef extends BaseStepDef {
   Then("""^(?:My )?'Email' has the (.*) value$""") { (key: String) =>
     key match {
       case "same"      =>
-        AccreditationCYAPage
+        RequestAdviceCYAPage
           .verifyInput("Email", "test@test.com")
       case "different" =>
-        AccreditationCYAPage
+        RequestAdviceCYAPage
           .verifyInput("Email", "different@test.com")
     }
   }
