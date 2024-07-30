@@ -73,7 +73,7 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     And I select continue
     Then I should be on the 'Home' page
     When I click on the View or update your goods records link
-    Then I should be on the 'Goods profile' page
+    Then I should be on the 'Goods profile' page 1 results
     And I select the back link
     Then I should be on the 'Home' page
     And I click on the Sign out link
