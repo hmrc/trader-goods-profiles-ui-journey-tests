@@ -3,7 +3,7 @@
 Feature: Trader Goods Profile - Request Advice journey
 
   Scenario:As a returning user in Trader Goods profile I want to ask for HMRC advice
-    Given I login to TGP Homepage with EORI number GB123456789098
+    Given I login to TGP Homepage with EORI number GB123456789085
     Then I should be on the 'Home' page
     When I click on the View or update your goods records link
     Then I should be on the 'Previous movement records' page
