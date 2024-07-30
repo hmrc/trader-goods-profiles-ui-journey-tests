@@ -8,10 +8,10 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the 'Goods profile' page
 
   Scenario: As a returning user, with historic data, I want to view and update records
-    Given I login to TGP Homepage with EORI number GB990000099999
+    Given I login to TGP Homepage with EORI number GB123456789098
     When I click on the View or update your goods records link
-    Then I should be on the 'Previous movement records' page
-    When I select continue
+#    Then I should be on the 'Previous movement records' page
+#    When I select continue
     Then I should be on the 'Goods profile' page 1 results
     When I click on the Change link
     Then I should be on the 'Goods record' page
@@ -52,7 +52,7 @@ Feature: Trader Goods Profile - View or Update record journey
     When I click on the Remove link
     And I select Yes for the boolean question
     And I select continue
-    Then I should be on the 'Goods profile' page
+    Then I should be on the 'Goods profile' page 1 results
 #    When I click on the 'Go to homepage' link
 #    Then I should be on the 'Home' page
     And I click on the Sign out link

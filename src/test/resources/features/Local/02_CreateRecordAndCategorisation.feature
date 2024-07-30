@@ -128,7 +128,7 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Then I should be on the 'Signed Out' page
 
   Scenario:As a returning user, I want to create a record with a longer commodity code and add supplementary units
-    Given I am on the 'Home' page with EORI GB990000099999
+    Given I login to TGP Homepage with EORI number GB123456789098
     Then I should be on the 'Home' page
     When I click on the Create a new goods record link
     And I select continue

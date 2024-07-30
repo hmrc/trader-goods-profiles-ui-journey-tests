@@ -143,8 +143,7 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     Then Error message 'Confirm if you want to remove your NIRMS details' should be displayed
     When I select the back link
     Then I should be on the 'Removing NIRMS details' page
-    When I select No2 for the boolean question
-    # ^ this should be updated by devs
+    When I select No for the boolean question
     And I select continue
     Then I should be on the 'Profile details' page
     And My 'NIRMS Question' has the value Yes
