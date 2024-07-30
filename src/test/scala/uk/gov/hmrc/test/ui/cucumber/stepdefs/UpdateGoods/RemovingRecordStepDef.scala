@@ -23,7 +23,6 @@ class RemovingRecordStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the 'Removing goods record' page$""") { () =>
     RemovingGoodsRecordPage
-//      .navigateToPage()
       .assertPage()
   }
 }

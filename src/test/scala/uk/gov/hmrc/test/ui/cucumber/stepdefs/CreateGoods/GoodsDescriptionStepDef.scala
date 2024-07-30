@@ -47,6 +47,10 @@ class GoodsDescriptionStepDef extends BaseStepDef {
         GoodsDescriptionPage
           .fillInput("value", description)
         submitPage()
+      case "different"   =>
+        GoodsDescriptionPage
+          .fillInput("value", "different")
+        submitPage()
       case "long text"   =>
         GoodsDescriptionPage
           .fillInput(
