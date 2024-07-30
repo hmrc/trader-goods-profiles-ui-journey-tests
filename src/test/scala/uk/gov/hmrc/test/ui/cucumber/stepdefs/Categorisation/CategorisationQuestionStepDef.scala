@@ -14,15 +14,25 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.Accreditation
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Accreditation.AdviceStartPage
+import uk.gov.hmrc.test.ui.pages.Categorisation.CategorisationAssessmentPage
 
-class AdviceStartStepDef extends BaseStepDef {
+class CategorisationQuestionStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'Asking HMRC for advice' page$""") { () =>
-    AdviceStartPage
-      .assertPage()
+  Then("""^(?:I )?should be on the 'Category assessment(.+)' page$""") { (number: String) =>
+    CategorisationAssessmentPage
+      .assertPage(number)
+  }
+
+  Then("""^(?:I )?should be on the check 'Category assessment(.+)' page$""") { (number: String) =>
+    CategorisationAssessmentPage
+      .assertCheckPage(number)
+  }
+
+  Then("""^(?:I )?select (.+) option$""") { (option: String) =>
+    clickRadioOpt(option)
+    submitPage()
   }
 }

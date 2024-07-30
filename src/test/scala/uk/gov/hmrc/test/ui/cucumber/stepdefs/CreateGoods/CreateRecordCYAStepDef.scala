@@ -51,15 +51,9 @@ class CreateRecordCYAStepDef extends BaseStepDef {
       .clickChangeLink("5")
   }
 
-  Then("""^(?:My )?'Trader Reference' has the (.*) valid value$""") { (key: String) =>
-    key match {
-      case "same"      =>
-        CreateRecordCYAPage
-          .verifyInput("traderReference", "Unique value")
-      case "different" =>
-        CreateRecordCYAPage
-          .verifyInput("traderReference", "different value")
-    }
+  Then("""^(?:My )?'Trader Reference' has the same value$""") { () =>
+    CreateRecordCYAPage
+      .verifyInput("traderReference", "not a unique reference")
   }
 
   Then("""^(?:My )?'Goods Description Question' has the (.*) value$""") { (key: String) =>

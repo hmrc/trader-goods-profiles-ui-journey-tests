@@ -48,4 +48,12 @@ class LongerCommodityCodeStepDef extends BaseStepDef {
     LongerCommodityCodePage
       .assertCheckPage()
   }
+
+  Then("""^(?:The longer commodity code field )?should be prepopulated$""") { () =>
+    LongerCommodityCodePage
+      .findById("value")
+      .getAttribute("value")
+      .shouldEqual("99")
+  }
+
 }

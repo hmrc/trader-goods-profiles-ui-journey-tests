@@ -71,6 +71,11 @@ class CategorisationCYAStepDef extends BaseStepDef {
       .verifyConditionsInput("Category assessment 5 of 6", value)
   }
 
+  Then("""^(?:The )?'Category assessment 6 of 6' has the value (.*)$""") { (value: String) =>
+    CategorisationCYAPage
+      .verifyConditionsInput("Category assessment 6 of 6", value)
+  }
+
   Then("""^(?:The )?'Has Supplementary Unit' has the value (.*)$""") { (value: String) =>
     CategorisationCYAPage
       .verifySupplementaryUnitInput("Has Supplementary Unit", value)

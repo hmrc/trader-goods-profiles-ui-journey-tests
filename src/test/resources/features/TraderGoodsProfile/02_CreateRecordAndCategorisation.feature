@@ -1,6 +1,6 @@
 @AllPipeline
 
-Feature: Trader Goods Profile - Create Record And Categorisation with longer commodity and supplimentary unit journey
+Feature: Trader Goods Profile - Create Record And Categorisation with longer commodity and supplementary unit journey
 
   Scenario:As a returning user, I want to create a record and categorise
     Given I am on the 'Home' page with EORI GB123456789085
@@ -8,7 +8,7 @@ Feature: Trader Goods Profile - Create Record And Categorisation with longer com
     Then I should be on the 'Creating a goods record' page
     And I select continue
     Then I should be on the 'Trader reference' page
-    When I enter Unique Trader reference in the text area
+    When I enter unique Trader reference in the text area
     Then I should be on the 'Goods description' question page
     When I select No for the Goods boolean question
     And I select continue

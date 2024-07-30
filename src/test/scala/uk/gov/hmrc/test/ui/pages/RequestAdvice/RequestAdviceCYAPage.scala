@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Accreditation
+package uk.gov.hmrc.test.ui.pages.RequestAdvice
 
 import org.junit.Assert
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object AccreditationCYAPage extends Page {
+object RequestAdviceCYAPage extends Page {
 
   override def title(args: String*): String = "Check your answers before sending your request for advice"
   override def h1(args: String*): String    = "Check your answers before sending your request for advice"

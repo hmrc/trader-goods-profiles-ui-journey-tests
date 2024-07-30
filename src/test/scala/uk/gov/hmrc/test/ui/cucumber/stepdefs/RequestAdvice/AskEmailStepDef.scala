@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.Accreditation
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.RequestAdvice
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Accreditation.AskEmailPage
+import uk.gov.hmrc.test.ui.pages.RequestAdvice.AskEmailPage
 
 class AskEmailStepDef extends BaseStepDef {
 

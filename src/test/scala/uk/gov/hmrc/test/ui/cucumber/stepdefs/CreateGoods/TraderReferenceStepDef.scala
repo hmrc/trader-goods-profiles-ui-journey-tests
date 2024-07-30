@@ -37,16 +37,23 @@ class TraderReferenceStepDef extends BaseStepDef {
 
   Then("""^(?:I )?enter (.*) Trader reference in the text area$""") { (traderReference: String) =>
     traderReference match {
-      case "Non unique" =>
+      case "none unique" =>
         TraderReferencePage
-          .fillInput("value", "ABC543211")
+          .fillInput("value", "not a unique reference")
         submitPage()
-      case "Unique"     =>
+      case "long"        =>
+        TraderReferencePage
+          .fillInput(
+            "value",
+            "This is a really looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong text input."
+          )
+        submitPage()
+      case "unique"      =>
         validUuid = "Trader" + UUID.randomUUID().toString()
         TraderReferencePage
           .fillInput("value", validUuid)
         submitPage()
-      case "different"  =>
+      case "different"   =>
         TraderReferencePage
           .fillInput("value", "different value")
         submitPage()
@@ -60,10 +67,10 @@ class TraderReferenceStepDef extends BaseStepDef {
       .shouldEqual("Unique value")
   }
 
-  Then("""^(?:The Trader reference field )?should be prepopulated with valid$""") { () =>
+  Then("""^(?:The Trader reference field )?should be prepopulated$""") { () =>
     TraderReferencePage
       .findById("value")
       .getAttribute("value")
-      .shouldEqual(validUuid)
+      .shouldEqual("not a unique reference")
   }
 }

@@ -45,9 +45,4 @@ class ProfileDetailsStepDef extends BaseStepDef {
           .verifyInput("nirmsNumber", value)
     }
   }
-
-  Then("""^(?:I )?select the (.+) option of two$""") { (option: String) =>
-    clickRadioBtn(option)
-    submitPage()
-  }
 }

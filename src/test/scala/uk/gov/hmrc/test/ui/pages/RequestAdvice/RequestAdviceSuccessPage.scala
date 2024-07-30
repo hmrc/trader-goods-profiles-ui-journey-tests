@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Accreditation
+package uk.gov.hmrc.test.ui.pages.RequestAdvice
 
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
-object AccreditationSuccessPage extends BasePage {
+object RequestAdviceSuccessPage extends BasePage {
 
   def title: String = "Request for advice complete"
   def h1: String    = "Request for advice complete"

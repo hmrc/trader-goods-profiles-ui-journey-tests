@@ -3,16 +3,9 @@
 Feature: Trader Goods Profile - View or Update record journey
 
   Scenario: As a returning user, with historic data, View and update records
-    Given I login to TGP Homepage with EORI number GB123456789098
+    Given I login to TGP Homepage with EORI number GB123456789085
     Then I should be on the 'Home' page
     When I click on the View or update your goods records link
-    Then I should be on the 'Goods profile' page 1 results
-    When I click on the Remove link
-    Then I should be on the 'Removing goods record' page
-    And I select continue
-    Then Error message 'Select yes if you want to remove this goods record' should be displayed
-    When I select Yes for the boolean question
-    And I select continue
     Then I should be on the 'Goods profile' page 1 results
     When I click on the Change link
     Then I should be on the 'Goods record' page
@@ -52,3 +45,12 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the update 'commodity code' CYA page
     And I select continue
     Then I should be on the 'Goods record' page
+    When I click on the Go to goods profile link
+    Then I should be on the 'Goods profile' page 1 results
+    When I click on the Remove link
+    Then I should be on the 'Removing goods record' page
+    And I select continue
+    Then Error message 'Select yes if you want to remove this goods record' should be displayed
+    When I select Yes for the boolean question
+    And I select continue
+    Then I should be on the 'Goods profile' page 1 results
