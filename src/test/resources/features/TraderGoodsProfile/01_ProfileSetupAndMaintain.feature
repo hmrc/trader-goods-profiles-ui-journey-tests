@@ -44,6 +44,10 @@ Feature: Trader Goods Profile - Profile setup and Previous movement records jour
     And My 'NIRMS Question' has the same value
     When I select continue
     Then I should be on the 'Home' page
+    When I click on the View or update your goods records link
+    Then I should be on the 'Previous movement records' page
+    And I select the back link
+    Then I should be on the 'Home' page
     When I click on the Manage your profile details link
     Then I should be on the 'Profile details' page
     When I click the UKIMS Number change link
