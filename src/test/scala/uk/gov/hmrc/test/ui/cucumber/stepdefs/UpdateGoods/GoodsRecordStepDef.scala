@@ -45,4 +45,14 @@ class GoodsRecordStepDef extends BaseStepDef {
     GoodsRecordPage
       .clickChangeLink("4")
   }
+
+  Then("""^(?:I )?click the Goods record 'Supplementary Unit Question' change link$""") { () =>
+    GoodsRecordPage
+      .clickChangeLink("6")
+  }
+
+  Then("""^(?:I )?click the Goods record 'Goods Supplementary Unit' change link$""") { () =>
+    GoodsRecordPage
+      .clickChangeLink("7")
+  }
 }

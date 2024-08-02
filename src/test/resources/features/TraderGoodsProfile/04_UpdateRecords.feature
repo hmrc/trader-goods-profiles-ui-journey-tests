@@ -35,6 +35,19 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the 'Country of origin' CYA page
     And I select continue
     Then I should be on the 'Goods record' page
+    When I click the Goods record 'Goods Supplementary Unit' change link
+    Then I should be on the 'Goods Supplementary Unit' update page
+    When I enter 54321.4302 value of Goods Supplementary Unit
+    Then I should be on the update 'Supplementary Unit' CYA page
+    And My 'Supplementary Unit' has the updated value 54321.4302
+    When I click the Goods record 'Supplementary Unit Question' change link
+    Then I should be on the 'Supplementary Unit' update page
+    When I select No for the boolean question
+    And I select continue
+    Then I should be on the update 'Supplementary Unit' CYA page
+    And My 'Supplementary Unit' has the updated value No
+    And I select continue
+    Then I should be on the 'Goods record' page
     When I click the Goods record Commodity Code change link
     Then I should be on the Goods record Commodity Code warning page
     And I select Yes for the boolean question
