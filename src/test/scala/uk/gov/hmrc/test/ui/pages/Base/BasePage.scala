@@ -183,7 +183,7 @@ trait BasePage extends BrowserDriver with Matchers {
               "goodsItem" -> Document(
                 "eori" -> "GB123456789098",
                 "actorId" -> "GB123456789098",
-                "traderRef" -> "GB - 22030001 - In bottles",
+                "traderRef" -> "GB - Reason: measure - In bottles",
                 "comcode" -> "22030001",
                 "goodsDescription" -> "In bottles",
                 "countryOfOrigin" -> "GB",
@@ -208,7 +208,7 @@ trait BasePage extends BrowserDriver with Matchers {
               "goodsItem" -> Document(
                 "eori" -> "GB123456789098",
                 "actorId" -> "GB123456789098",
-                "traderRef" -> "GB - 22030001 - In bottles",
+                "traderRef" -> "GB - Reason: mismatch - In bottles",
                 "comcode" -> "22030001",
                 "goodsDescription" -> "In bottles",
                 "countryOfOrigin" -> "GB",
@@ -233,7 +233,7 @@ trait BasePage extends BrowserDriver with Matchers {
               "goodsItem" -> Document(
                 "eori" -> "GB123456789098",
                 "actorId" -> "GB123456789098",
-                "traderRef" -> "GB - 22030001 - In bottles",
+                "traderRef" -> "GB - Reason: unclear - In bottles",
                 "comcode" -> "22030001",
                 "goodsDescription" -> "In bottles",
                 "countryOfOrigin" -> "GB",
@@ -258,7 +258,7 @@ trait BasePage extends BrowserDriver with Matchers {
               "goodsItem" -> Document(
                 "eori" -> "GB123456789098",
                 "actorId" -> "GB123456789098",
-                "traderRef" -> "GB - 22030001 - In bottles",
+                "traderRef" -> "GB - Reason: inadequate - In bottles",
                 "comcode" -> "22030001",
                 "goodsDescription" -> "In bottles",
                 "countryOfOrigin" -> "GB",
@@ -283,7 +283,7 @@ trait BasePage extends BrowserDriver with Matchers {
               "goodsItem" -> Document(
                 "eori" -> "GB123456789098",
                 "actorId" -> "GB123456789098",
-                "traderRef" -> "GB - 22030001 - In bottles",
+                "traderRef" -> "GB - Reason: commodity - In bottles",
                 "comcode" -> "22030001",
                 "goodsDescription" -> "In bottles",
                 "countryOfOrigin" -> "GB",
