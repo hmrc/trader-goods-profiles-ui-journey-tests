@@ -37,10 +37,7 @@ class UpdateSupplementaryUnitStepDef extends BaseStepDef {
   }
 
   Then("""^(?:My )?'(.*)' has the updated value (.*)$""") { (key: String, value: String) =>
-    key match {
-      case "Supplementary Unit"      =>
-        UpdateSupplementaryUnitCYAPage
-          .verifyInput(key, value)
-    }
+    UpdateSupplementaryUnitCYAPage
+      .verifyInput(key, value)
   }
 }

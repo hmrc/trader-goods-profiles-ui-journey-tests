@@ -24,7 +24,8 @@ object UpdateSupplementaryUnitCYAPage extends Page {
 
   override def title(args: String*): String = "Check your answers"
   override def h1(args: String*): String    = "Check your answers"
-  override def url(args: String*): String   = "/update-record/" + recordId + "/check-your-answers/supplementary-unit"
+  override def url(args: String*): String   =
+    "/update-record/" + recordId + "/categorisation/check-your-answers/supplementary-unit"
 
   def clickChangeLink(key: String): this.type = {
 
@@ -35,7 +36,11 @@ object UpdateSupplementaryUnitCYAPage extends Page {
 
   def verifyInput(field: String, expected: String): this.type = {
     val actual = field match {
-      case "Supplementary Unit"   => findBy(By.cssSelector("div:nth-child(1) > dd.govuk-summary-list__value")).getText
+      case "Supplementary Unit"                  => findBy(By.cssSelector("div:nth-child(1) > dd.govuk-summary-list__value")).getText
+      case "Supplementary Unit without question" =>
+        findBy(By.cssSelector("div:nth-child(1) > dd.govuk-summary-list__value")).getText
+      case "Supplementary Unit with question"    =>
+        findBy(By.cssSelector("div:nth-child(2) > dd.govuk-summary-list__value")).getText
     }
 
     Assert.assertEquals("Expected " + expected + " value but found " + actual + " instead.", expected, actual)

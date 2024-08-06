@@ -22,5 +22,6 @@ object UpdateSupplementaryUnitPage extends Page {
 
   override def title(args: String*): String = "Supplementary unit"
   override def h1(args: String*): String    = "Supplementary unit"
-  override def url(args: String*): String   = "/update-record/" + recordId + "/categorisation/supplementary-unit-question/update/"
+  override def url(args: String*): String   =
+    "/update-record/" + recordId + "/categorisation/supplementary-unit-question/update"
 }

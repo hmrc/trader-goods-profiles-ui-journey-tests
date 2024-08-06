@@ -37,7 +37,23 @@ object GoodsRecordPage extends Page {
 
   def clickSuppUnitChangeLink(key: String): this.type = {
 
-    val changeLinkSelector = s"dl.nth-child(9) > div:nth-child($key) > dd.govuk-summary-list__actions > a"
+    val changeLinkSelector = s"dl:nth-child(9) > div:nth-child($key) > dd.govuk-summary-list__actions > a"
+    click(By.cssSelector(changeLinkSelector))
+
+    this
+  }
+
+  def clickSuppQuestionChangeLink(): this.type = {
+
+    val changeLinkSelector = s"dl:nth-child(10) > div > dd.govuk-summary-list__actions > a"
+    click(By.cssSelector(changeLinkSelector))
+
+    this
+  }
+
+  def clickLocalSuppQuestionChangeLink(): this.type = {
+
+    val changeLinkSelector = s"dl:nth-child(9) > div > dd.govuk-summary-list__actions > a"
     click(By.cssSelector(changeLinkSelector))
 
     this
