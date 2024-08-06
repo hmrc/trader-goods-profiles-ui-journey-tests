@@ -19,13 +19,6 @@ Feature: Trader Goods Profile - View or Update record journey
     And I select continue
     Then I should be on the 'Goods record' page
     When I click the Goods record Goods Description change link
-    Then I should be on the Goods record Goods Description warning page
-    And I select continue
-    Then Error message 'Select if you want to change the goods description' should be displayed
-    When I select the back link
-    Then I should be on the Goods record Goods Description warning page
-    And I select Yes for the boolean question
-    When I select continue
     Then I should be on the 'Goods description' update page
     When I enter long text in the Goods description text area
     Then Error message 'The goods description must be 512 characters or less' should be displayed
