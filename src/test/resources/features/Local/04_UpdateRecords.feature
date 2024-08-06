@@ -3,7 +3,7 @@
 Feature: Trader Goods Profile - View or Update record journey
 
   Scenario: As a returning user, with historic data, I want to view and update records
-    Given I login to TGP Homepage with EORI number GB123456789098
+    Given I login to TGP Homepage with EORI number GB123456789088
     When I click on the View or update your goods records link
     Then I should be on the 'Previous movement records' page
     And I select continue
@@ -26,6 +26,38 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the 'Goods description' update page
     When I enter different in the Goods description text area
     Then I should be on the 'Goods description' CYA page
+    And I select continue
+    Then I should be on the 'Goods record' page
+    When I click the Goods record Country Of Origin change link
+    Then I should be on the Goods record Country Of Origin warning page
+    And I select Yes for the boolean question
+    When I select continue
+    Then I should be on the 'Country of origin' update page
+    And I select continue
+    Then I should be on the 'Country of origin' CYA page
+    And I select continue
+    Then I should be on the 'Goods record' page
+    When I click the local Goods record 'Supplementary Unit Question' change link
+    Then I should be on the 'Supplementary Unit' update page
+    When I select Yes for the boolean question
+    And I select continue
+    Then I should be on the 'Goods Supplementary Unit' update page
+    When I select continue
+    Then Error message 'Enter the goods supplementary unit' should be displayed
+    When I select the back link
+    Then I should be on the 'Goods Supplementary Unit' update page
+    When I enter invalid format value of Goods Supplementary Unit
+    Then Error message 'Enter a supplementary unit in the correct format' should be displayed
+    When I enter 54321.4302 value of Goods Supplementary Unit
+    Then I should be on the update 'Supplementary Unit' CYA page
+    And My 'Supplementary Unit with question' has the updated value 54321.4302 grams
+    And I select continue
+    When I click the Goods record 'Supplementary Unit Question' change link
+    Then I should be on the 'Supplementary Unit' update page
+    When I select No for the boolean question
+    And I select continue
+    Then I should be on the update 'Supplementary Unit' CYA page
+    And My 'Supplementary Unit' has the updated value No
     And I select continue
     Then I should be on the 'Goods record' page
     When I click on the Go to goods profile link

@@ -128,13 +128,11 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Then I should be on the 'Signed Out' page
 
   Scenario:As a returning user, I want to create a record with a longer commodity code and add supplementary units
-    Given I login to TGP Homepage with EORI number GB123456789098
+    Given I am on the 'Home' page with EORI GB123456789088
     Then I should be on the 'Home' page
     When I click on the Create a new goods record link
     And I select continue
     Then I should be on the 'Trader reference' page
-    When I enter none unique Trader reference in the text area
-    Then Error message 'This trader reference is already in your TGP. Enter a unique trader reference.' should be displayed
     When I enter unique Trader reference in the text area
     Then I should be on the 'Goods description' question page
     When I select Yes for the Goods boolean question
@@ -236,10 +234,12 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Then I should be on the 'Signed Out' page
 
   Scenario:As a returning user, I want to create a Category 3 Goods with no assessments and categorise
-    Given I am on the 'Home' page with EORI GB991000000008
+    Given I login to TGP Homepage with EORI number GB123456789098
     When I click on the Create a new goods record link
     And I select continue
-    Then I enter unique Trader reference in the text area
+    When I enter none unique Trader reference in the text area
+    Then Error message 'This trader reference is already in your TGP. Enter a unique trader reference.' should be displayed
+    When I enter unique Trader reference in the text area
     And I select Yes for the boolean question
     Then I select continue
     And I enter France in the country text field
