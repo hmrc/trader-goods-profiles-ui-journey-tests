@@ -18,9 +18,6 @@ Feature: Trader Goods Profile - View or Update record journey
     And I select continue
     Then I should be on the 'Goods record' page
     When I click the Goods record Goods Description change link
-    Then I should be on the Goods record Goods Description warning page
-    And I select Yes for the boolean question
-    When I select continue
     Then I should be on the 'Goods description' update page
     And I select continue
     Then I should be on the 'Goods description' CYA page
