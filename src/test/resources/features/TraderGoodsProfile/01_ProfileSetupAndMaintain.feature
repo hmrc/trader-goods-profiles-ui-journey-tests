@@ -43,6 +43,8 @@ Feature: Trader Goods Profile - Profile setup and Previous movement records jour
     Then I should be on the 'Check Your Answers' page
     And My 'NIRMS Question' has the same value
     When I select continue
+    Then I should be on the 'Create Profile Success' page
+    And I click on the Go to homepage link
     Then I should be on the 'Home' page
     When I click on the View or update your goods records link
     Then I should be on the 'Previous movement records' page
