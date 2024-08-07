@@ -71,6 +71,8 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     Then I should be on the 'Check Your Answers' page
     And My 'NIPHL Number' has the same valid value
     And I select continue
+    Then I should be on the 'Create Profile Success' page
+    And I click on the Go to homepage link
     Then I should be on the 'Home' page
     When I click on the View or update your goods records link
     Then I should be on the 'Previous movement records' page
@@ -98,6 +100,8 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     When I enter valid value of my NIPHL Number in the free text field
     Then I should be on the 'Check Your Answers' page
     And I select continue
+    Then I should be on the 'Create Profile Success' page
+    And I click on the Go to homepage link
     Then I should be on the 'Home' page
     And I click on the Sign out link
     Then I should be on the 'Signed Out' page
@@ -117,6 +121,8 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     And I select continue
     Then I should be on the 'Check Your Answers' page
     And I select continue
+    Then I should be on the 'Create Profile Success' page
+    And I click on the Go to homepage link
     Then I should be on the 'Home' page
     And I click on the Sign out link
     Then I should be on the 'Signed Out' page
