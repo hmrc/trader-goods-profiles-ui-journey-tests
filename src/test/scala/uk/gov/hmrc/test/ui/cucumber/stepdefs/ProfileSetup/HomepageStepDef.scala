@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.ProfileSetup
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.AuthorityWizard
@@ -40,6 +41,8 @@ class HomepageStepDef extends BaseStepDef {
     clickRadioBtn("No")
     submitPage()
     submitPage()
+    CreateProfileSuccessPage.assertPage()
+    click(By.partialLinkText("Go to homepage"))
     HomePage
       .assertPage()
   }
