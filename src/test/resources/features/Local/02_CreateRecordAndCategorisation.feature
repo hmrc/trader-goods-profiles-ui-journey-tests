@@ -21,7 +21,7 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Then Error message 'Confirm if you want to use your trader reference as the goods description' should be displayed
     When I select the back link
     Then I should be on the 'Goods description' question page
-    When I select No for the Goods boolean question
+    When I select No for the boolean question
     And I select continue
     Then I should be on the 'Goods description' page
     When I select continue
@@ -135,7 +135,7 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Then I should be on the 'Trader reference' page
     When I enter unique Trader reference in the text area
     Then I should be on the 'Goods description' question page
-    When I select Yes for the Goods boolean question
+    When I select Yes for the boolean question
     And I select continue
     And I enter Iraq in the country text field
     And I enter 170490 value of Commodity code in the free text field

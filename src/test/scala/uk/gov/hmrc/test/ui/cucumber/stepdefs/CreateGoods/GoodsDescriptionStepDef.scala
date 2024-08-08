@@ -61,10 +61,4 @@ class GoodsDescriptionStepDef extends BaseStepDef {
     }
   }
 
-  When("""^(?:I )?select (.+) for the Goods boolean question""") { (answer: String) =>
-    answer match {
-      case "Yes" => clickById("value")
-      case "No"  => clickById("value-2")
-    }
-  }
 }

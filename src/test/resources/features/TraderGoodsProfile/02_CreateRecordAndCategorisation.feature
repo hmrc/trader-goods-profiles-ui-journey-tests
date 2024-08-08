@@ -10,7 +10,7 @@ Feature: Trader Goods Profile - Create Record And Categorisation with longer com
     Then I should be on the 'Trader reference' page
     When I enter unique Trader reference in the text area
     Then I should be on the 'Goods description' question page
-    When I select No for the Goods boolean question
+    When I select No for the boolean question
     And I select continue
     Then I should be on the 'Goods description' page
     When I enter description in the Goods description text area
