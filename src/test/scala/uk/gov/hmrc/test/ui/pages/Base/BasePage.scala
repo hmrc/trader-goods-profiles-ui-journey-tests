@@ -179,128 +179,128 @@ trait BasePage extends BrowserDriver with Matchers {
               )
             ),
             Document(
-              "recordId" -> "000c50e6-3ae6-11ef-a2ec-325096b39f47",
+              "recordId"  -> "000c50e6-3ae6-11ef-a2ec-325096b39f47",
               "goodsItem" -> Document(
-                "eori" -> "GB123456789098",
-                "actorId" -> "GB123456789098",
-                "traderRef" -> "GB - Reason: measure - In bottles",
-                "comcode" -> "22030001",
-                "goodsDescription" -> "In bottles",
-                "countryOfOrigin" -> "GB",
-                "category" -> 1,
+                "eori"                     -> "GB123456789098",
+                "actorId"                  -> "GB123456789098",
+                "traderRef"                -> "GB - Reason: measure - In bottles",
+                "comcode"                  -> "22030001",
+                "goodsDescription"         -> "In bottles",
+                "countryOfOrigin"          -> "GB",
+                "category"                 -> 1,
                 "comcodeEffectiveFromDate" -> new Date(),
-                "comcodeEffectiveToDate" -> new Date()
+                "comcodeEffectiveToDate"   -> new Date()
               ),
-              "metadata" -> Document(
+              "metadata"  -> Document(
                 "accreditationStatus" -> "Not Requested",
-                "version" -> 1,
-                "active" -> true,
-                "locked" -> false,
-                "toReview" -> true,
-                "reviewReason" -> "measure",
-                "srcSystemName" -> "MDTP",
-                "createdDateTime" -> new Date(),
-                "updatedDateTime" -> new Date()
+                "version"             -> 1,
+                "active"              -> true,
+                "locked"              -> false,
+                "toReview"            -> true,
+                "reviewReason"        -> "measure",
+                "srcSystemName"       -> "MDTP",
+                "createdDateTime"     -> new Date(),
+                "updatedDateTime"     -> new Date()
               )
             ),
             Document(
-              "recordId" -> "001c50e6-3ae6-11ef-a2ec-325096b39f47",
+              "recordId"  -> "001c50e6-3ae6-11ef-a2ec-325096b39f47",
               "goodsItem" -> Document(
-                "eori" -> "GB123456789098",
-                "actorId" -> "GB123456789098",
-                "traderRef" -> "GB - Reason: mismatch - In bottles",
-                "comcode" -> "22030001",
-                "goodsDescription" -> "In bottles",
-                "countryOfOrigin" -> "GB",
-                "category" -> 1,
+                "eori"                     -> "GB123456789098",
+                "actorId"                  -> "GB123456789098",
+                "traderRef"                -> "GB - Reason: mismatch - In bottles",
+                "comcode"                  -> "22030001",
+                "goodsDescription"         -> "In bottles",
+                "countryOfOrigin"          -> "GB",
+                "category"                 -> 1,
                 "comcodeEffectiveFromDate" -> new Date(),
-                "comcodeEffectiveToDate" -> new Date()
+                "comcodeEffectiveToDate"   -> new Date()
               ),
-              "metadata" -> Document(
+              "metadata"  -> Document(
                 "accreditationStatus" -> "Not Requested",
-                "version" -> 1,
-                "active" -> true,
-                "locked" -> false,
-                "toReview" -> true,
-                "reviewReason" -> "mismatch",
-                "srcSystemName" -> "MDTP",
-                "createdDateTime" -> new Date(),
-                "updatedDateTime" -> new Date()
+                "version"             -> 1,
+                "active"              -> true,
+                "locked"              -> false,
+                "toReview"            -> true,
+                "reviewReason"        -> "mismatch",
+                "srcSystemName"       -> "MDTP",
+                "createdDateTime"     -> new Date(),
+                "updatedDateTime"     -> new Date()
               )
             ),
             Document(
-              "recordId" -> "002c50e6-3ae6-11ef-a2ec-325096b39f47",
+              "recordId"  -> "002c50e6-3ae6-11ef-a2ec-325096b39f47",
               "goodsItem" -> Document(
-                "eori" -> "GB123456789098",
-                "actorId" -> "GB123456789098",
-                "traderRef" -> "GB - Reason: unclear - In bottles",
-                "comcode" -> "22030001",
-                "goodsDescription" -> "In bottles",
-                "countryOfOrigin" -> "GB",
-                "category" -> 1,
+                "eori"                     -> "GB123456789098",
+                "actorId"                  -> "GB123456789098",
+                "traderRef"                -> "GB - Reason: unclear - In bottles",
+                "comcode"                  -> "22030001",
+                "goodsDescription"         -> "In bottles",
+                "countryOfOrigin"          -> "GB",
+                "category"                 -> 1,
                 "comcodeEffectiveFromDate" -> new Date(),
-                "comcodeEffectiveToDate" -> new Date()
+                "comcodeEffectiveToDate"   -> new Date()
               ),
-              "metadata" -> Document(
+              "metadata"  -> Document(
                 "accreditationStatus" -> "Not Requested",
-                "version" -> 1,
-                "active" -> true,
-                "locked" -> false,
-                "toReview" -> true,
-                "reviewReason" -> "unclear",
-                "srcSystemName" -> "MDTP",
-                "createdDateTime" -> new Date(),
-                "updatedDateTime" -> new Date()
+                "version"             -> 1,
+                "active"              -> true,
+                "locked"              -> false,
+                "toReview"            -> true,
+                "reviewReason"        -> "unclear",
+                "srcSystemName"       -> "MDTP",
+                "createdDateTime"     -> new Date(),
+                "updatedDateTime"     -> new Date()
               )
             ),
             Document(
-              "recordId" -> "003c50e6-3ae6-11ef-a2ec-325096b39f47",
+              "recordId"  -> "003c50e6-3ae6-11ef-a2ec-325096b39f47",
               "goodsItem" -> Document(
-                "eori" -> "GB123456789098",
-                "actorId" -> "GB123456789098",
-                "traderRef" -> "GB - Reason: inadequate - In bottles",
-                "comcode" -> "22030001",
-                "goodsDescription" -> "In bottles",
-                "countryOfOrigin" -> "GB",
-                "category" -> 1,
+                "eori"                     -> "GB123456789098",
+                "actorId"                  -> "GB123456789098",
+                "traderRef"                -> "GB - Reason: inadequate - In bottles",
+                "comcode"                  -> "22030001",
+                "goodsDescription"         -> "In bottles",
+                "countryOfOrigin"          -> "GB",
+                "category"                 -> 1,
                 "comcodeEffectiveFromDate" -> new Date(),
-                "comcodeEffectiveToDate" -> new Date()
+                "comcodeEffectiveToDate"   -> new Date()
               ),
-              "metadata" -> Document(
+              "metadata"  -> Document(
                 "accreditationStatus" -> "Not Requested",
-                "version" -> 1,
-                "active" -> true,
-                "locked" -> false,
-                "toReview" -> true,
-                "reviewReason" -> "inadequate",
-                "srcSystemName" -> "MDTP",
-                "createdDateTime" -> new Date(),
-                "updatedDateTime" -> new Date()
+                "version"             -> 1,
+                "active"              -> true,
+                "locked"              -> false,
+                "toReview"            -> true,
+                "reviewReason"        -> "inadequate",
+                "srcSystemName"       -> "MDTP",
+                "createdDateTime"     -> new Date(),
+                "updatedDateTime"     -> new Date()
               )
             ),
             Document(
-              "recordId" -> "004c50e6-3ae6-11ef-a2ec-325096b39f47",
+              "recordId"  -> "004c50e6-3ae6-11ef-a2ec-325096b39f47",
               "goodsItem" -> Document(
-                "eori" -> "GB123456789098",
-                "actorId" -> "GB123456789098",
-                "traderRef" -> "GB - Reason: commodity - In bottles",
-                "comcode" -> "22030001",
-                "goodsDescription" -> "In bottles",
-                "countryOfOrigin" -> "GB",
-                "category" -> 1,
+                "eori"                     -> "GB123456789098",
+                "actorId"                  -> "GB123456789098",
+                "traderRef"                -> "GB - Reason: commodity - In bottles",
+                "comcode"                  -> "22030001",
+                "goodsDescription"         -> "In bottles",
+                "countryOfOrigin"          -> "GB",
+                "category"                 -> 1,
                 "comcodeEffectiveFromDate" -> new Date(),
-                "comcodeEffectiveToDate" -> new Date()
+                "comcodeEffectiveToDate"   -> new Date()
               ),
-              "metadata" -> Document(
+              "metadata"  -> Document(
                 "accreditationStatus" -> "Not Requested",
-                "version" -> 1,
-                "active" -> true,
-                "locked" -> false,
-                "toReview" -> true,
-                "reviewReason" -> "commodity",
-                "srcSystemName" -> "MDTP",
-                "createdDateTime" -> new Date(),
-                "updatedDateTime" -> new Date()
+                "version"             -> 1,
+                "active"              -> true,
+                "locked"              -> false,
+                "toReview"            -> true,
+                "reviewReason"        -> "commodity",
+                "srcSystemName"       -> "MDTP",
+                "createdDateTime"     -> new Date(),
+                "updatedDateTime"     -> new Date()
               )
             )
           )
@@ -346,6 +346,9 @@ trait BasePage extends BrowserDriver with Matchers {
   def clickByClassName(className: String): Unit = click(By.className(className))
 
   def clickByPartialLinkText(linkText: String): Unit = click(By.partialLinkText(linkText))
+
+  def clickChangeLink(key: String): Unit =
+    click(By.xpath(s"(//a[text()='Change'])[$key]"))
 
   def submitPage(): Unit = clickByClassName("govuk-button")
 
