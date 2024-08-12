@@ -120,7 +120,7 @@ trait BasePage extends BrowserDriver with Matchers {
                 "comcodeEffectiveToDate"   -> new Date()
               ),
               "metadata"  -> Document(
-                "accreditationStatus" -> "Not Requested",
+                "accreditationStatus" -> "Requested",
                 "version"             -> 1,
                 "active"              -> true,
                 "locked"              -> false,
@@ -144,7 +144,7 @@ trait BasePage extends BrowserDriver with Matchers {
                 "comcodeEffectiveToDate"   -> new Date()
               ),
               "metadata"  -> Document(
-                "accreditationStatus" -> "Not Requested",
+                "accreditationStatus" -> "In progress",
                 "version"             -> 1,
                 "active"              -> true,
                 "locked"              -> false,
@@ -168,7 +168,7 @@ trait BasePage extends BrowserDriver with Matchers {
                 "comcodeEffectiveToDate"   -> new Date()
               ),
               "metadata"  -> Document(
-                "accreditationStatus" -> "Not Requested",
+                "accreditationStatus" -> "In progress",
                 "version"             -> 1,
                 "active"              -> true,
                 "locked"              -> false,
@@ -192,7 +192,7 @@ trait BasePage extends BrowserDriver with Matchers {
                 "comcodeEffectiveToDate"   -> new Date()
               ),
               "metadata"  -> Document(
-                "accreditationStatus" -> "Not Requested",
+                "accreditationStatus" -> "Information Requested",
                 "version"             -> 1,
                 "active"              -> true,
                 "locked"              -> false,
@@ -217,7 +217,7 @@ trait BasePage extends BrowserDriver with Matchers {
                 "comcodeEffectiveToDate"   -> new Date()
               ),
               "metadata"  -> Document(
-                "accreditationStatus" -> "Not Requested",
+                "accreditationStatus" -> "Withdrawn",
                 "version"             -> 1,
                 "active"              -> true,
                 "locked"              -> false,
@@ -242,7 +242,7 @@ trait BasePage extends BrowserDriver with Matchers {
                 "comcodeEffectiveToDate"   -> new Date()
               ),
               "metadata"  -> Document(
-                "accreditationStatus" -> "Not Requested",
+                "accreditationStatus" -> "Approved",
                 "version"             -> 1,
                 "active"              -> true,
                 "locked"              -> false,
@@ -267,7 +267,7 @@ trait BasePage extends BrowserDriver with Matchers {
                 "comcodeEffectiveToDate"   -> new Date()
               ),
               "metadata"  -> Document(
-                "accreditationStatus" -> "Not Requested",
+                "accreditationStatus" -> "Rejected",
                 "version"             -> 1,
                 "active"              -> true,
                 "locked"              -> false,
