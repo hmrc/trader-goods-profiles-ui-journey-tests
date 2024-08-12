@@ -27,13 +27,6 @@ object UpdateSupplementaryUnitCYAPage extends Page {
   override def url(args: String*): String   =
     "/update-record/" + recordId + "/categorisation/check-your-answers/supplementary-unit"
 
-  def clickChangeLink(key: String): this.type = {
-
-    click(By.cssSelector("div:nth-child(" + key + ") > dd.govuk-summary-list__actions > a"))
-
-    this
-  }
-
   def verifyInput(field: String, expected: String): this.type = {
     val actual = field match {
       case "Supplementary Unit"                  => findBy(By.cssSelector("div:nth-child(1) > dd.govuk-summary-list__value")).getText

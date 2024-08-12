@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages.UpdateGoods
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object GoodsRecordPage extends Page {
@@ -27,35 +26,4 @@ object GoodsRecordPage extends Page {
 
   override def url(args: String*): String = "/goods-record/" + recordId
 
-  def clickChangeLink(key: String): this.type = {
-
-    val changeLinkSelector = s"dl.govuk-summary-list > div:nth-child($key) > dd.govuk-summary-list__actions > a"
-    click(By.cssSelector(changeLinkSelector))
-
-    this
-  }
-
-  def clickSuppUnitChangeLink(key: String): this.type = {
-
-    val changeLinkSelector = s"dl:nth-child(9) > div:nth-child($key) > dd.govuk-summary-list__actions > a"
-    click(By.cssSelector(changeLinkSelector))
-
-    this
-  }
-
-  def clickSuppQuestionChangeLink(): this.type = {
-
-    val changeLinkSelector = s"dl:nth-child(10) > div > dd.govuk-summary-list__actions > a"
-    click(By.cssSelector(changeLinkSelector))
-
-    this
-  }
-
-  def clickLocalSuppQuestionChangeLink(): this.type = {
-
-    val changeLinkSelector = s"dl:nth-child(9) > div > dd.govuk-summary-list__actions > a"
-    click(By.cssSelector(changeLinkSelector))
-
-    this
-  }
 }

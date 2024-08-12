@@ -26,13 +26,6 @@ object CreateRecordCYAPage extends Page {
   override def h1(args: String*): String    = "Check your answers"
   override def url(args: String*): String   = "/create-record/check-your-answers"
 
-  def clickChangeLink(key: String): this.type = {
-
-    click(By.cssSelector("div:nth-child(" + key + ") > dd.govuk-summary-list__actions > a"))
-
-    this
-  }
-
   def verifyInput(field: String, expected: String): this.type = {
     val actual = field match {
       case "traderReference"          => findBy(By.cssSelector("div:nth-child(1) > dd.govuk-summary-list__value")).getText

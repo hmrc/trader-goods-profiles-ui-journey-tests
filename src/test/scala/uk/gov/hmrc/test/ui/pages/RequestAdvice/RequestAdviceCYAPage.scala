@@ -26,13 +26,6 @@ object RequestAdviceCYAPage extends Page {
   override def h1(args: String*): String    = "Check your answers before sending your request for advice"
   override def url(args: String*): String   = "/update-record/" + recordId + "/create-advice/check-your-answers"
 
-  def clickChangeLink(key: String): this.type = {
-
-    click(By.cssSelector("div:nth-child(" + key + ") > dd.govuk-summary-list__actions > a"))
-
-    this
-  }
-
   def verifyInput(field: String, expected: String): this.type = {
     val actual = field match {
       case "Name"  => findBy(By.cssSelector("div:nth-child(1) > dd.govuk-summary-list__value")).getText
