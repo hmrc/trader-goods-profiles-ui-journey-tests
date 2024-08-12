@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages.Categorisation
 
-import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object SupplementaryUnitPage extends Page {
@@ -25,12 +24,4 @@ object SupplementaryUnitPage extends Page {
   override def h1(args: String*): String  = "Supplementary unit"
   override def url(args: String*): String =
     "/update-record/" + recordId + "/categorisation/supplementary-unit-question/create"
-
-  def navigateToPage(args: String*): this.type = {
-    val url: String = TestConfiguration.url(
-      "trader-goods-profiles-frontend"
-    ) + "/update-record/b2fa315b-2d31-4629-90fc-a7b1a5119873/categorisation/supplementary-unit-question/create"
-    driver.navigate().to(url)
-    super.assertPage(args: _*)
-  }
 }

@@ -8,6 +8,10 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     When I login to TGP Profile setup with EORI number GB123456789098
     Then I should be on the 'Setting up your profile' page and click Continue
     And I should be on the 'UK internal scheme number' page
+    When I navigate to the 'Incorrect' page
+    Then I should be on the 'Page not found' page
+    And I select the back link
+    Then I should be on the 'UK internal scheme number' page
     When I click on the I am not UKIMS registered link
     Then I should be on the 'UKIMS kick out' page
     When I select the back link
