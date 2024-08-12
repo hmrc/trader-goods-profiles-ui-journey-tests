@@ -120,7 +120,7 @@ trait BasePage extends BrowserDriver with Matchers {
                 "comcodeEffectiveToDate"   -> new Date()
               ),
               "metadata"  -> Document(
-                "accreditationStatus" -> "Not Requested",
+                "accreditationStatus" -> "Requested",
                 "version"             -> 1,
                 "active"              -> true,
                 "locked"              -> false,
@@ -144,7 +144,7 @@ trait BasePage extends BrowserDriver with Matchers {
                 "comcodeEffectiveToDate"   -> new Date()
               ),
               "metadata"  -> Document(
-                "accreditationStatus" -> "Not Requested",
+                "accreditationStatus" -> "In progress",
                 "version"             -> 1,
                 "active"              -> true,
                 "locked"              -> false,
@@ -168,7 +168,7 @@ trait BasePage extends BrowserDriver with Matchers {
                 "comcodeEffectiveToDate"   -> new Date()
               ),
               "metadata"  -> Document(
-                "accreditationStatus" -> "Not Requested",
+                "accreditationStatus" -> "In progress",
                 "version"             -> 1,
                 "active"              -> true,
                 "locked"              -> false,
@@ -179,7 +179,7 @@ trait BasePage extends BrowserDriver with Matchers {
               )
             ),
             Document(
-              "recordId" -> "000c50e6-3ae6-11ef-a2ec-325096b39f47",
+              "recordId"  -> "000c50e6-3ae6-11ef-a2ec-325096b39f47",
               "goodsItem" -> Document(
                 "eori" -> "GB123456789098",
                 "actorId" -> "GB123456789098",
@@ -192,7 +192,7 @@ trait BasePage extends BrowserDriver with Matchers {
                 "comcodeEffectiveToDate" -> new Date()
               ),
               "metadata" -> Document(
-                "accreditationStatus" -> "Not Requested",
+                "accreditationStatus" -> "Information Requested",
                 "version" -> 1,
                 "active" -> true,
                 "locked" -> false,
@@ -217,7 +217,7 @@ trait BasePage extends BrowserDriver with Matchers {
                 "comcodeEffectiveToDate" -> new Date()
               ),
               "metadata" -> Document(
-                "accreditationStatus" -> "Not Requested",
+                "accreditationStatus" -> "Withdrawn",
                 "version" -> 1,
                 "active" -> true,
                 "locked" -> false,
@@ -242,7 +242,7 @@ trait BasePage extends BrowserDriver with Matchers {
                 "comcodeEffectiveToDate" -> new Date()
               ),
               "metadata" -> Document(
-                "accreditationStatus" -> "Not Requested",
+                "accreditationStatus" -> "Approved",
                 "version" -> 1,
                 "active" -> true,
                 "locked" -> false,
@@ -267,7 +267,7 @@ trait BasePage extends BrowserDriver with Matchers {
                 "comcodeEffectiveToDate" -> new Date()
               ),
               "metadata" -> Document(
-                "accreditationStatus" -> "Not Requested",
+                "accreditationStatus" -> "Rejected",
                 "version" -> 1,
                 "active" -> true,
                 "locked" -> false,
@@ -301,6 +301,31 @@ trait BasePage extends BrowserDriver with Matchers {
                 "srcSystemName" -> "MDTP",
                 "createdDateTime" -> new Date(),
                 "updatedDateTime" -> new Date()
+              )
+            ),
+            Document(
+              "recordId"  -> "004c50e6-3ae6-11ef-a2ec-325096b39f48",
+              "goodsItem" -> Document(
+                "eori"                     -> "GB123456789098",
+                "actorId"                  -> "GB123456789098",
+                "traderRef"                -> "GB - Reason: commodity - In bottles",
+                "comcode"                  -> "22030001",
+                "goodsDescription"         -> "In bottles",
+                "countryOfOrigin"          -> "GB",
+                "category"                 -> 1,
+                "comcodeEffectiveFromDate" -> new Date(),
+                "comcodeEffectiveToDate"   -> new Date()
+              ),
+              "metadata"  -> Document(
+                "accreditationStatus" -> "In progress",
+                "version"             -> 1,
+                "active"              -> true,
+                "locked"              -> false,
+                "toReview"            -> true,
+                "reviewReason"        -> "commodity",
+                "srcSystemName"       -> "MDTP",
+                "createdDateTime"     -> new Date(),
+                "updatedDateTime"     -> new Date()
               )
             )
           )
