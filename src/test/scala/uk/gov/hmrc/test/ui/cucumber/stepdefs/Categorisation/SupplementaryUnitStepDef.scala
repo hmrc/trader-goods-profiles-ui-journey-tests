@@ -20,10 +20,6 @@ import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Categorisation.SupplementaryUnitPage
 
 class SupplementaryUnitStepDef extends BaseStepDef {
-  And("""^(?:I )?navigate to the 'Supplementary Unit' page$""") { () =>
-    SupplementaryUnitPage
-      .navigateToPage()
-  }
 
   Then("""^(?:I )?should be on the 'Supplementary Unit' page$""") { () =>
     SupplementaryUnitPage

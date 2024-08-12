@@ -14,25 +14,22 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.Unauthorised
+package uk.gov.hmrc.test.ui.pages.Unauthorised
 
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Unauthorised._
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
+import uk.gov.hmrc.test.ui.pages.Base.Page
 
-class UnauthorisedUserStepDef extends BaseStepDef {
+object PageNotFoundPage extends Page {
 
-  Then("""^(?:I )?should be on the 'There is a Problem' page$""") { () =>
-    UnauthorisedUserPage
-      .assertPage()
-  }
+  override def title(args: String*): String = "Page not found"
+  override def h1(args: String*): String    = "Page not found"
+  override def url(args: String*): String   = "/home"
 
-  And("""^(?:I )?navigate to the 'Incorrect' page$""") { () =>
-    PageNotFoundPage
-      .navigateToPage()
-  }
-
-  Then("""^(?:I )?should be on the 'Page not found' page$""") { () =>
-    PageNotFoundPage
-      .assertPage()
+  def navigateToPage(args: String*): this.type = {
+    val url: String = TestConfiguration.url(
+      "trader-goods-profiles-frontend"
+    ) + "/home"
+    driver.navigate().to(url)
+    super.assertPage(args: _*)
   }
 }
