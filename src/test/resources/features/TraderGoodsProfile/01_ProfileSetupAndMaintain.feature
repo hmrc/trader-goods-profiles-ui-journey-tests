@@ -83,5 +83,8 @@ Feature: Trader Goods Profile - Profile setup and Previous movement records jour
     Then I should be on the 'Profile details' page
     When I click on the Go to homepage link
     Then I should be on the 'Home' page
+    When I click on the Manage your profile details link
+    And I click on the Back to homepage link
+    Then I should be on the 'Home' page
     And I click on the Sign out link
     Then I should be on the 'Signed Out' page

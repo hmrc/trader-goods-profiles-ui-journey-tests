@@ -226,5 +226,7 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     And I select continue
     Then I should be on the 'Profile details' page
     And My 'NIPHL Question' has the value No
+    And I click on the Back to homepage link
+    Then I should be on the 'Home' page
     And I click on the Sign out link
     Then I should be on the 'Signed Out' page
