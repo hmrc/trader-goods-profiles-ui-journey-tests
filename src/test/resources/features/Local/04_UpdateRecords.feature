@@ -18,6 +18,10 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the 'Trader reference' update CYA page
     And I select continue
     Then I should be on the 'Goods record' page
+    When I click on the Back to goods profile link
+    Then I should be on the 'Goods profile' page 1 results
+    And I select the back link
+    Then I should be on the 'Goods record' page
     When I click the Goods record Goods Description change link
     Then I should be on the 'Goods description' update page
     When I enter long text in the Goods description text area
