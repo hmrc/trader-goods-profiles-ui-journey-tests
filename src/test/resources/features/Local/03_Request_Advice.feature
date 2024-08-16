@@ -59,7 +59,6 @@ Feature: Trader Goods Categorisation - Request Advice journey
     Then I should be on the 'Goods profile' page 1 results
     When I search for Locked goods record
     And I click on the Change link
-#    And I select continue
     Then I should be on the 'Goods record' page
     When I click on the Withdraw request link
     Then I should be on the 'Withdrawing your request' page
