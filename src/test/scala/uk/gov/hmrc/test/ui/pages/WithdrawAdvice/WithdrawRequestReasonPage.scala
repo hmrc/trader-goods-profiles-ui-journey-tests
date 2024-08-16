@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.CreateGoods
+package uk.gov.hmrc.test.ui.pages.WithdrawAdvice
 
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object CreateCommodityCodePage extends Page {
+object WithdrawRequestReasonPage extends Page {
 
-  override def title(args: String*): String = "Commodity code"
-  override def h1(args: String*): String    = "Commodity code"
-  override def url(args: String*): String   = "/create-record/commodity-code"
-
+  override def title(args: String*): String = "Can you tell us why you're withdrawing your request for advice?"
+  override def h1(args: String*): String    = "Can you tell us why you're withdrawing your request for advice?"
+  override def url(args: String*): String   = "/update-record/" + recordId + "/withdraw-request/reason"
 }

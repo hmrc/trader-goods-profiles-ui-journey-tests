@@ -50,5 +50,32 @@ Feature: Trader Goods Categorisation - Request Advice journey
     And I click on the Sign out link
     Then I should be on the 'Signed Out' page
 
-
+  Scenario:As a returning user in Trader Goods profile I want to withdraw my request for HMRC advice
+    Given I login to TGP Homepage with EORI number GB123456789098
+    Then I should be on the 'Home' page
+    When I click on the View or update your goods records link
+    Then I should be on the 'Previous movement records' page
+    And I select continue
+    Then I should be on the 'Goods profile' page 1 results
+    When I search for Locked goods record
+    And I click on the Change link
+#    And I select continue
+    Then I should be on the 'Goods record' page
+    When I click on the Withdraw request link
+    Then I should be on the 'Withdrawing your request' page
+    When I select continue
+    Then Error message 'Select if you want to withdraw your request for advice' should be displayed
+    When I select the back link
+    Then I should be on the 'Withdrawing your request' page
+    When I select Yes for the boolean question
+    And I select continue
+    Then I should be on the 'Can you tell us why you're withdrawing your request for advice' page
+    When I enter Long text in the free text field
+    Then Error message 'The reason must be 512 characters or less' should be displayed
+    When I select the back link
+    Then I should be on the 'Can you tell us why you're withdrawing your request for advice' page
+    When I enter Valid text in the free text field
+    Then I should be on the 'Request for advice withdrawn' page
+    When I click on the Go to goods record link
+    Then I should be on the 'Goods record' page
 

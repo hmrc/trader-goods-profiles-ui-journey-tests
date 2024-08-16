@@ -30,4 +30,13 @@ class GoodsProfileStepDef extends BaseStepDef {
     GoodsProfileQueryPage
       .assertQueryPage(pageNumber.trim)
   }
+
+  Then("""^(?:I )?search for (.*) goods record$""") { (search: String) =>
+    search match {
+      case "Locked" =>
+        GoodsProfileNoRecordsPage
+          .fillInput("value", "GB - 22030001 - In bottles 2")
+          .submitPage()
+    }
+  }
 }
