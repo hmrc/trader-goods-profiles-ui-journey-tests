@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.CreateGoods
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.WithdrawAdvice
 
-import uk.gov.hmrc.test.ui.pages.Base.Page
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.WithdrawAdvice.WithdrawRequestPage
 
-object CreateCommodityCodePage extends Page {
+class WithdrawRequestStepDef extends BaseStepDef {
 
-  override def title(args: String*): String = "Commodity code"
-  override def h1(args: String*): String    = "Commodity code"
-  override def url(args: String*): String   = "/create-record/commodity-code"
-
+  Then("""^(?:I )?should be on the 'Withdrawing your request' page$""") { () =>
+    WithdrawRequestPage
+      .assertPage()
+  }
 }
