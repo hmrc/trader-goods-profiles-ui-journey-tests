@@ -40,6 +40,16 @@ object CategorisationAssessmentPage extends BasePage {
     this
   }
 
+  def assertRecategoriseCheckPage(number: String): this.type = {
+    getRecordId()
+    verifyTitle(title)
+    verifyHeader(h1 + number)
+    validateUrl(
+      s"/update-record/$recordId/recategorise/category-assessment/" + (Integer.parseInt(number.trim) - 1) + "/check"
+    )
+    this
+  }
+
   val serviceName: String = "Trader Goods Profile"
 
   private def verifyTitle(pageTitle: String): Unit =

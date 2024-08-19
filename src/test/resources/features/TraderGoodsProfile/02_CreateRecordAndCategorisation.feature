@@ -46,7 +46,7 @@ Feature: Trader Goods Profile - Create Record And Categorisation with longer com
     And I select continue
     Then I should be on the 'Longer commodity code' page
     And I enter 99 value of Longer Commodity code in the free text field
-    Then I should be on the Longer Commodity "Results for 1704909900" page
+    Then I should be on the Longer Commodity "Results for 17049099" page
     When I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Supplementary Unit' page
@@ -56,16 +56,14 @@ Feature: Trader Goods Profile - Create Record And Categorisation with longer com
     And I enter 12345.0432 value of Goods Supplementary Unit
     Then I should be on the 'Categorisation - Check Your Answers' page
     When I click the Category assessment 3 of 6 change link
-    Then I should be on the check 'Category assessment 3' page
-    And I select continue
-    Then I should be on the check 'Supplementary Unit' page
+    Then I should be on the check 'Category assessment 3' page for Longer Commodity code
     And I select continue
     Then I should be on the 'Categorisation - Check Your Answers' page
     When I click the 'Supplementary Unit' change link
     Then I should be on the check 'Goods Supplementary Unit' page
     And I select continue
     Then I should be on the 'Categorisation - Check Your Answers' page
-    And The 'Supplementary Unit' has the value 12345.0432 grams
+    And The 'Supplementary Unit' has the value 12345.0432 litres
     When I select continue
     Then I should be on the 'Categorisation complete' with Category2 content page
     When I click on the Go to homepage link

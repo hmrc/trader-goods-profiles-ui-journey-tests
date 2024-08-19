@@ -161,11 +161,11 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     When I enter incorrect value of Longer Commodity code in the free text field
     Then Error message 'Enter a real commodity code' should be displayed
     When I enter 99 value of Longer Commodity code in the free text field
-    Then I should be on the Longer Commodity "Results for 1704909900" page
+    Then I should be on the Longer Commodity "Results for 17049099" page
     When I select continue
     Then Error message 'Select if these are the correct goods' should be displayed
     When I select the back link
-    Then I should be on the Longer Commodity "Results for 1704909900" page
+    Then I should be on the Longer Commodity "Results for 17049099" page
     When I select No for the boolean question
     And I select continue
     Then I should be on the 'Longer commodity code' page
@@ -195,7 +195,7 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Then I should be on the check 'Goods Supplementary Unit' page
     And I select continue
     Then I should be on the 'Categorisation - Check Your Answers' page
-    And The 'Supplementary Unit' has the value 12345.0432 grams
+    And The 'Supplementary Unit' has the value 12345.0432 litres
     When I click the 'Has Supplementary Unit' change link
     Then I should be on the check 'Supplementary Unit' page
     And I select No for the boolean question
