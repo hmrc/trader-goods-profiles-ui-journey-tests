@@ -14,26 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.UpdateGoods
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.DownloadData
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.UpdateGoods.{GoodsProfileNoRecordsPage, GoodsProfileQueryPage}
+import uk.gov.hmrc.test.ui.pages.DownloadData.DownloadRequestPage
 
-class GoodsProfileStepDef extends BaseStepDef {
+class DownloadRequestStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'Goods profile' page$""") { () =>
-    GoodsProfileNoRecordsPage
+  Then("""^(?:I )?should be on the 'Making a request to download your TGP data' page$""") { () =>
+    DownloadRequestPage
       .assertPage()
-  }
-
-  Then("""^(?:I )?should be on the 'Goods profile' page (.*) results$""") { (pageNumber: String) =>
-    GoodsProfileQueryPage
-      .assertQueryPage(pageNumber.trim)
-  }
-
-  Then("""^(?:I )?search for (.*) goods record$""") { (search: String) =>
-    GoodsProfileNoRecordsPage
-      .fillInput("value", search)
-      .submitPage()
   }
 }

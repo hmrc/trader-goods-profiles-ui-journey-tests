@@ -2,13 +2,16 @@
 
 Feature: Trader Goods Categorisation - Request Advice journey
 
-  Scenario:As a returning user in Trader Goods profile I want to ask for HMRC advice
+  Background: As a returning user in Trader Goods profile
     Given I login to TGP Homepage with EORI number GB123456789098
     Then I should be on the 'Home' page
     When I click on the View or update your goods records link
     Then I should be on the 'Previous movement records' page
     And I select continue
     Then I should be on the 'Goods profile' page 1 results
+
+  Scenario: I want to ask for HMRC advice
+    When I search for 6321323000 goods record
     When I click on the Change link
     Then I should be on the 'Goods record' page
     And I click on the Ask for advice link
@@ -50,14 +53,8 @@ Feature: Trader Goods Categorisation - Request Advice journey
     And I click on the Sign out link
     Then I should be on the 'Signed Out' page
 
-  Scenario:As a returning user in Trader Goods profile I want to withdraw my request for HMRC advice
-    Given I login to TGP Homepage with EORI number GB123456789098
-    Then I should be on the 'Home' page
-    When I click on the View or update your goods records link
-    Then I should be on the 'Previous movement records' page
-    And I select continue
-    Then I should be on the 'Goods profile' page 1 results
-    When I search for Locked goods record
+  Scenario: I want to withdraw my request for HMRC advice
+    When I search for GB - 22030001 - In bottles 2 goods record
     And I click on the Change link
     Then I should be on the 'Goods record' page
     When I click on the Withdraw request link
@@ -77,4 +74,25 @@ Feature: Trader Goods Categorisation - Request Advice journey
     Then I should be on the 'Request for advice withdrawn' page
     When I click on the Go to goods record link
     Then I should be on the 'Goods record' page
+
+  Scenario: I want to download my TGP data
+#  Request a file of your TGP records
+    When I click on the Request a file of your TGP records link
+    Then I should be on the 'Making a request to download your TGP data' page
+    And I select continue
+    Then I should be on the 'We've received your request for a file of your TGP data' page
+    When I click on the Go to goods profile link
+    Then I should be on the 'Goods profile' page 1 results
+#  Get an update on your TGP records file or request a new file
+    And I click on the Get an update on your TGP records file or request a new file link
+    Then I should be on the 'We're still preparing your file' page
+    When I click on the Go to goods profile link
+    Then I should be on the 'Goods profile' page 1 results
+#  Download your TGP records file or request a new file
+    And I click on the Download your TGP records file or request a new file link
+    Then I should be on the 'Your file is ready to download' page
+    And I click on the Go to homepage link
+    Then I should be on the 'Home' page
+    And I click on the Sign out link
+    Then I should be on the 'Signed Out' page
 
