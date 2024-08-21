@@ -81,7 +81,7 @@ Feature: Trader Goods Profile - Profile setup and Previous movement records jour
     Then I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Profile details' page
-    When I click on the Go to homepage link
+    When I click on the Go back to homepage link
     Then I should be on the 'Home' page
     And I click on the Sign out link
     Then I should be on the 'Signed Out' page
