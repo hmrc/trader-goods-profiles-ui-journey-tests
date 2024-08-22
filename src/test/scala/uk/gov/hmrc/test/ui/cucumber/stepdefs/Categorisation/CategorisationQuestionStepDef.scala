@@ -31,6 +31,12 @@ class CategorisationQuestionStepDef extends BaseStepDef {
       .assertCheckPage(number)
   }
 
+  Then("""^(?:I )?should be on the check 'Category assessment(.+)' page for Longer Commodity code$""") {
+    (number: String) =>
+      CategorisationAssessmentPage
+        .assertRecategoriseCheckPage(number)
+  }
+
   Then("""^(?:I )?select (.+) option$""") { (option: String) =>
     clickRadioOpt(option)
     submitPage()

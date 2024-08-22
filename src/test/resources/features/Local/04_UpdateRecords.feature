@@ -64,7 +64,7 @@ Feature: Trader Goods Profile - View or Update record journey
     And My 'Supplementary Unit' has the updated value No
     And I select continue
     Then I should be on the 'Goods record' page
-    When I click on the Go to goods profile link
+    When I click on the Go back to goods profile link
     Then I should be on the 'Goods profile' page 1 results
     When I click on the Remove link
     Then I should be on the 'Removing goods record' page
