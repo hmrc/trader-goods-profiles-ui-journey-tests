@@ -122,7 +122,7 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     And The 'Category assessment 6 of 6' has the value Yes
     When I select continue
     Then I should be on the 'Categorisation complete' with standard content page
-    When I click on the Go to homepage link
+    When I click on the Go back to homepage link
     Then I should be on the 'Home' page
     And I click on the Sign out link
     Then I should be on the 'Signed Out' page
@@ -229,7 +229,7 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Then I should be on the 'Categorisation - Check Your Answers' page
     When I select continue
     Then I should be on the 'Categorisation complete' with Category2 content page
-    When I click on the Go to homepage link
+    When I click on the Go back to homepage link
     And I click on the Sign out link
     Then I should be on the 'Signed Out' page
 

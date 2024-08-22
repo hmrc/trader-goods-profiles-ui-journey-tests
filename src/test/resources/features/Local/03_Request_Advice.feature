@@ -45,7 +45,7 @@ Feature: Trader Goods Categorisation - Request Advice journey
     And My 'Email' has the same value
     When I select continue
     Then I should be on the 'Request Advice success' page
-    And I click on the Go to homepage link
+    And I click on the Go back to homepage link
     Then I should be on the 'Home' page
     And I click on the Sign out link
     Then I should be on the 'Signed Out' page
@@ -75,6 +75,6 @@ Feature: Trader Goods Categorisation - Request Advice journey
     Then I should be on the 'Can you tell us why you're withdrawing your request for advice' page
     When I enter Valid text in the free text field
     Then I should be on the 'Request for advice withdrawn' page
-    When I click on the Go to goods record link
+    When I click on the Go back to goods record link
     Then I should be on the 'Goods record' page
 
