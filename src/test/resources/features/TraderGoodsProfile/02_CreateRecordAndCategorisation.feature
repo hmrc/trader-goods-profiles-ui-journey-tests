@@ -66,7 +66,7 @@ Feature: Trader Goods Profile - Create Record And Categorisation with longer com
     And The 'Supplementary Unit' has the value 12345.0432 litres
     When I select continue
     Then I should be on the 'Categorisation complete' with Category2 content page
-    When I click on the Go to homepage link
+    When I click on the Go back to homepage link
     Then I should be on the 'Home' page
     And I click on the Sign out link
     Then I should be on the 'Signed Out' page
