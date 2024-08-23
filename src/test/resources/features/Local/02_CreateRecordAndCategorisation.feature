@@ -46,16 +46,16 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Then Error message 'Enter a real commodity code' should be displayed
     When I select the back link
     Then I should be on the 'commodity code' page
-    When I enter 9301900000 value of Commodity code in the free text field
-    Then I should be on the "Results for 9301900000" page
+    When I enter 170490 value of Commodity code in the free text field
+    Then I should be on the "Results for 1704900000" page
     When I select continue
     Then Error message 'Select if these are the correct goods' should be displayed
     When I select the back link
-    Then I should be on the "Results for 9301900000" page
+    Then I should be on the "Results for 1704900000" page
     When I select No for the boolean question
     And I select continue
     Then I should be on the 'commodity code' page
-    And The commodity code field should be prepopulated
+    And The commodity code field should be prepopulated with 170490
     When I select continue
     And I select Yes for the boolean question
     And I select continue
@@ -80,7 +80,7 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     And My 'Country Of Origin' has the same value
     When I click the Commodity Code change link
     And I select continue
-    Then I should be on the check "Results for 9301900000" page
+    Then I should be on the check "Results for 1704900000" page
     When I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page
@@ -92,36 +92,39 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     And I select continue
     Then I should be on the 'Category assessment 1' page
     When I select continue
-    Then Error message 'Select yes if you meet the condition' should be displayed
+    Then Error message 'Select yes if you meet the exclusion' should be displayed
     When I select the back link
     Then I should be on the 'Category assessment 1' page
-     And I select Yes for the boolean question
-        And I select continue
+    And I select Yes for the boolean question
+    And I select continue
     Then I should be on the 'Category assessment 2' page
-     And I select Yes for the boolean question
-        And I select continue
+    And I select Yes for the boolean question
+    And I select continue
     Then I should be on the 'Category assessment 3' page
-     And I select Yes for the boolean question
-        And I select continue
+    When I select continue
+    Then Error message 'Select yes if you meet any of the exclusions' should be displayed
+    When I select the back link
+    Then I should be on the 'Category assessment 3' page
+    And I select Yes for the boolean question
+    And I select continue
     Then I should be on the 'Category assessment 4' page
-     And I select Yes for the boolean question
-        And I select continue
+    And I select Yes for the boolean question
+    And I select continue
     Then I should be on the 'Category assessment 5' page
-     And I select Yes for the boolean question
-        And I select continue
+    And I select Yes for the boolean question
+    And I select continue
     Then I should be on the 'Category assessment 6' page
-     And I select No for the boolean question
-        And I select continue
-    Then I should be on the 'Categorisation - Check Your Answers' page
-    And The 'Category assessment 6 of 6' has the value No
-    When I click the Category assessment 6 of 6 change link
-    Then I should be on the check 'Category assessment 6' page
-    When I select Yes for the boolean question
+    And I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Categorisation - Check Your Answers' page
-    And The 'Category assessment 6 of 6' has the value Yes
+    When I click the Category assessment 2 of 6 change link
+    Then I should be on the check 'Category assessment 2' page
+    When I select No for the boolean question
+    And I select continue
+    Then I should be on the 'Categorisation - Check Your Answers' page
+    And The 'Category assessment 2 of 6' has the value No
     When I select continue
-    Then I should be on the 'Categorisation complete' with standard content page
+    Then I should be on the 'Categorisation complete' with Category1 content page
     When I click on the Go back to homepage link
     Then I should be on the 'Home' page
     And I click on the Sign out link
@@ -221,11 +224,11 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     And I click on the Categorise goods now link
     Then I select continue
     Then I should be on the 'Category assessment 1' page
-        Then I select Yes for the boolean question
-        And I select continue
+    Then I select Yes for the boolean question
+    And I select continue
     Then I should be on the 'Category assessment 2' page
-        Then I select Yes for the boolean question
-        And I select continue
+    Then I select Yes for the boolean question
+    And I select continue
     Then I should be on the 'Categorisation - Check Your Answers' page
     When I select continue
     Then I should be on the 'Categorisation complete' with Category2 content page
