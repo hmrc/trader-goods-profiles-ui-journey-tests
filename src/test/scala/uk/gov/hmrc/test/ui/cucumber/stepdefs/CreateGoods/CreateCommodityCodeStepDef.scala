@@ -53,11 +53,11 @@ class CreateCommodityCodeStepDef extends BaseStepDef {
       .assertPage()
   }
 
-  Then("""^(?:The commodity code field )?should be prepopulated$""") { () =>
+  Then("""^(?:The commodity code field )?should be prepopulated with (.+)$""") { (value: String) =>
     CreateCommodityCodePage
       .findById("value")
       .getAttribute("value")
-      .shouldEqual("9301900000")
+      .shouldEqual(value)
 
   }
 
