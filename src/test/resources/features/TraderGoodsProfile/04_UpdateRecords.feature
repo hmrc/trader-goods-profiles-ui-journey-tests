@@ -40,7 +40,7 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the 'Goods Supplementary Unit' update page
     When I enter 54321.4302 value of Goods Supplementary Unit
     Then I should be on the update 'Supplementary Unit' CYA page
-    And My 'Supplementary Unit' has the updated value 54321.4302 grams
+    And My 'Supplementary Unit' has the updated value 54321.4302 squares
     And I select continue
     When I click the Goods record 'Supplementary Unit Question' change link
     Then I should be on the 'Supplementary Unit' update page
