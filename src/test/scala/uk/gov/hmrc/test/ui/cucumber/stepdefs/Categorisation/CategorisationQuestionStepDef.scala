@@ -31,6 +31,11 @@ class CategorisationQuestionStepDef extends BaseStepDef {
       .assertCheckPage(number)
   }
 
+  Then("""^(?:I )?should be on the 'Category assessment(.+)' page for Longer Commodity code$""") { (number: String) =>
+    CategorisationAssessmentPage
+      .assertRecategorisePage(number)
+  }
+
   Then("""^(?:I )?should be on the check 'Category assessment(.+)' page for Longer Commodity code$""") {
     (number: String) =>
       CategorisationAssessmentPage

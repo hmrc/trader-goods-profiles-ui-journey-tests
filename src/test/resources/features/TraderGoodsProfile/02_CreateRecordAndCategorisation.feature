@@ -49,7 +49,7 @@ Feature: Trader Goods Profile - Create Record And Categorisation with longer com
     Then I should be on the Longer Commodity "Results for 1704909912" page
     When I select Yes for the boolean question
     And I select continue
-    Then I should be on the check 'Category assessment 3' page for Longer Commodity code
+    Then I should be on the 'Category assessment 3' page for Longer Commodity code
     When I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Supplementary Unit' page
