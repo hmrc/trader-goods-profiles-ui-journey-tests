@@ -131,6 +131,23 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     And I click on the Sign out link
     Then I should be on the 'Signed Out' page
 
+  Scenario: As a UKIMS authorised trader who already has a UKIMS number, I log into TGP and can confirm my UKIMS details
+    When I login to TGP Profile setup with EORI number GB000012340002
+    And I should be on the 'Setting up your profile' page and click Continue
+    Then I should be on the existing 'UK internal scheme number' page
+    When I select continue
+    Then Error message 'Select if this is the correct UKIMS number' should be displayed
+    When I select the back link
+    Then I should be on the existing 'UK internal scheme number' page
+    And The existing UKIMS Number should be XIUKIM00001234000220240207140148
+    When I select Yes for the boolean question
+    And I select continue
+    Then I should be on the 'Northern Ireland Retail Movement Scheme' page
+    When I select the back link
+    And I select No for the boolean question
+    And I select continue
+    Then I should be on the 'UK internal scheme number' page
+
   Scenario: As a returning user, I want to update my user profile to reflect changes
     Given I login to TGP Homepage with EORI number GB123456789098
     Then I should be on the 'Home' page

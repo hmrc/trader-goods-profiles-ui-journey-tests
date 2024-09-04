@@ -3,8 +3,20 @@
 Feature: Trader Goods Profile - Profile setup and Previous movement records journey
 
   Scenario: As a UKIMS authorised trader I log on to the trader goods profile service with NIRMS and NIPHL
-    Given I login to TGP Profile setup with EORI number GB123456789098
+    Given I login to TGP Profile setup with EORI number GB000012340002
     Then I should be on the 'Setting up your profile' page and click Continue
+    Then I should be on the existing 'UK internal scheme number' page
+    When I select continue
+    Then Error message 'Select if this is the correct UKIMS number' should be displayed
+    When I select the back link
+    Then I should be on the existing 'UK internal scheme number' page
+    And The existing UKIMS Number should be XIUKIM00001234000220240207140148
+    When I select Yes for the boolean question
+    And I select continue
+    Then I should be on the 'Northern Ireland Retail Movement Scheme' page
+    When I select the back link
+    And I select No for the boolean question
+    And I select continue
     And I should be on the 'UK internal scheme number' page
     When I click on the I am not UKIMS registered link
     Then I should be on the 'UKIMS kick out' page
