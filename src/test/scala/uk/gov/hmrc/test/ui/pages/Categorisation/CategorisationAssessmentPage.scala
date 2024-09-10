@@ -28,7 +28,7 @@ object CategorisationAssessmentPage extends BasePage {
     getRecordId()
     verifyTitle(title)
     verifyHeader(h1 + number)
-    validateUrl(url + (Integer.parseInt(number.trim) - 1))
+    validateUrl(url + (Integer.parseInt(number.trim)))
     this
   }
 
@@ -36,7 +36,7 @@ object CategorisationAssessmentPage extends BasePage {
     getRecordId()
     verifyTitle(title)
     verifyHeader(h1 + number)
-    validateUrl(url + (Integer.parseInt(number.trim) - 1) + "/check")
+    validateUrl(url + (Integer.parseInt(number.trim)) + "/check")
     this
   }
 
@@ -45,7 +45,7 @@ object CategorisationAssessmentPage extends BasePage {
     verifyTitle(title)
     verifyHeader(h1 + number)
     validateUrl(
-      s"/update-record/$recordId/recategorise/category-assessment/" + (Integer.parseInt(number.trim) - 1)
+      s"/update-record/$recordId/recategorise/category-assessment/" + (Integer.parseInt(number.trim))
     )
     this
   }
@@ -55,7 +55,7 @@ object CategorisationAssessmentPage extends BasePage {
     verifyTitle(title)
     verifyHeader(h1 + number)
     validateUrl(
-      s"/update-record/$recordId/recategorise/category-assessment/" + (Integer.parseInt(number.trim) - 1) + "/check"
+      s"/update-record/$recordId/recategorise/category-assessment/" + (Integer.parseInt(number.trim)) + "/check"
     )
     this
   }
