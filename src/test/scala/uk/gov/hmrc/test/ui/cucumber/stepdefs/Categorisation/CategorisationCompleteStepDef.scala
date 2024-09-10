@@ -17,23 +17,23 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Categorisation.CategorisationCompletePage
+import uk.gov.hmrc.test.ui.pages.Categorisation.{CategorisationCompletePage, CategorisationStandardGoodsCompletePage}
 
 class CategorisationCompleteStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the 'Categorisation complete' with (.+) page$""") { (panelBody: String) =>
     panelBody match {
       case "standard content"                 =>
-        CategorisationCompletePage
+        CategorisationStandardGoodsCompletePage
           .assertPage("standard")
-          .verifyPanelContent(
-            "Your goods are standard goods and eligible for Simplified Process for Internal Market Movements (SPIMM)."
+          .checkForContent(
+            "Your goods have been categorised and are eligible for Simplified Process for Internal Market Movements (SPIMM)."
           )
       case "standard-no-assessments content"  =>
-        CategorisationCompletePage
+        CategorisationStandardGoodsCompletePage
           .assertPage("standard-no-assessments")
-          .verifyPanelContent(
-            "Your goods are standard goods and eligible for Simplified Process for Internal Market Movements (SPIMM)."
+          .checkForContent(
+            "Your goods have been categorised and are eligible for Simplified Process for Internal Market Movements (SPIMM). There are no category assessments needed."
           )
       case "category-1-no-exemptions content" =>
         CategorisationCompletePage
