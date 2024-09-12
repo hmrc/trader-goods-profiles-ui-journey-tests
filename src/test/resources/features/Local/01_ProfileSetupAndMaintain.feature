@@ -185,6 +185,14 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     Then I should be on the 'Removing NIRMS details' page
     When I select Yes for the boolean question
     And I select continue
+    Then I should be on the update 'NIRMS Question Check your answers' page
+    When I click the NIRMS registered change link
+    Then I should be on the update 'Northern Ireland Retail Movement Scheme' check page
+    And I select continue
+    And I select continue
+    Then I should be on the update 'NIRMS Question Check your answers' page
+    And My 'NIRMS Question CYA' has the No value
+    And I select continue
     Then I should be on the 'Profile details' page
     And My 'NIRMS Question' has the value No
     When I click the NIRMS Question change link

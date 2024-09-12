@@ -77,6 +77,8 @@ Feature: Trader Goods Profile - Profile setup and Previous movement records jour
     Then I should be on the 'Removing NIRMS details' page
     And I select Yes for the boolean question
     And I select continue
+    Then I should be on the update 'NIRMS Question Check your answers' page
+    And I select continue
     Then I should be on the 'Profile details' page
     And My 'NIRMS Question' has the value No
     When I click the NIRMS Question change link
