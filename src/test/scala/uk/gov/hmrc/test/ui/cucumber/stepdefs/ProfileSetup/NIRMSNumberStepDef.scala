@@ -35,7 +35,7 @@ class NIRMSNumberStepDef extends BaseStepDef {
     nrimsNumberValidation match {
       case "incorrect" =>
         NIRMSNumberPage
-          .fillInput("value", "Rms-gb-123456")
+          .fillInput("value", "Rms-gb-123")
         submitPage()
       case "different" =>
         NIRMSNumberPage

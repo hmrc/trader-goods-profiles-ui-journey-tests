@@ -25,7 +25,7 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     When I enter valid value of my UKIMS Number in the free text field
     Then I should be on the 'Northern Ireland Retail Movement Scheme' page
     And I select continue
-    Then Error message 'Select if you are NIRMS registered' should be displayed
+    Then Error message 'Select yes, if you are Northern Ireland Retail Movement Scheme registered' should be displayed
     When I select the back link
     Then I should be on the 'Northern Ireland Retail Movement Scheme' page
     When I select Yes for the boolean question
