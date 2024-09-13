@@ -18,7 +18,7 @@ Feature: Trader Goods Profile - Create Record And Categorisation with longer com
     When I enter Germany in the country text field
     Then I should be on the 'commodity code' page
     When I enter 170490 value of Commodity code in the free text field
-    Then I should be on the "Results for 1704900000" page
+    Then I should be on the "Results for 170490" page
     When I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page
