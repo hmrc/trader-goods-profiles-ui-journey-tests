@@ -80,7 +80,7 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     And My 'Country Of Origin' has the same value
     When I click the Commodity Code change link
     And I select continue
-    Then I should be on the check "Results for 1704900000" page
+    Then I should be on the check "Results for 170490" page
     When I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page
