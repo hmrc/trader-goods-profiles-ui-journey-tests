@@ -47,11 +47,11 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     When I select the back link
     Then I should be on the 'commodity code' page
     When I enter 170490 value of Commodity code in the free text field
-    Then I should be on the "Results for 1704900000" page
+    Then I should be on the "Results for 170490" page
     When I select continue
     Then Error message 'Select if these are the correct goods' should be displayed
     When I select the back link
-    Then I should be on the "Results for 1704900000" page
+    Then I should be on the "Results for 170490" page
     When I select No for the boolean question
     And I select continue
     Then I should be on the 'commodity code' page
