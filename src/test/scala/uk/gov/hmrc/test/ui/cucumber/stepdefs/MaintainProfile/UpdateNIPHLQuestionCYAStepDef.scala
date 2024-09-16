@@ -17,21 +17,21 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.MaintainProfile
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.MaintainProfile.UpdateNIPHLSQuestionCYAPage
+import uk.gov.hmrc.test.ui.pages.MaintainProfile.UpdateNIPHLQuestionCYAPage
 
-class UpdateNIPHLSQuestionCYAStepDef extends BaseStepDef {
+class UpdateNIPHLQuestionCYAStepDef extends BaseStepDef {
   Then("""^(?:I )?should be on the update 'NIPHLS Question Check your answers' page$""") { () =>
-    UpdateNIPHLSQuestionCYAPage
+    UpdateNIPHLQuestionCYAPage
       .assertPage()
   }
 
   Then("""^(?:I )?click the NIPHLS registered change link$""") { () =>
-    UpdateNIPHLSQuestionCYAPage
+    UpdateNIPHLQuestionCYAPage
       .clickChangeLink("1")
   }
 
   Then("""^(?:My )?'NIPHLS Question CYA' has the (.*) value$""") { (key: String) =>
-    UpdateNIPHLSQuestionCYAPage
-      .verifyInput("niphlsQuestion", key)
+    UpdateNIPHLQuestionCYAPage
+      .verifyInput("niphlQuestion", key)
   }
 }
