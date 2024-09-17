@@ -31,7 +31,7 @@ class UpdateNIRMSQuestionCYADef extends BaseStepDef {
   }
 
   Then("""^(?:My )?'NIRMS Question CYA' has the (.*) value$""") { (key: String) =>
-        UpdateNirmsQuestionCYAPage
-          .verifyInput("nirmsQuestion", key)
+    UpdateNirmsQuestionCYAPage
+      .verifyInput("nirmsQuestion", key)
   }
 }
