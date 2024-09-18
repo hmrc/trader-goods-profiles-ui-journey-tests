@@ -25,13 +25,19 @@ class UpdateNirmsNumberCYADef extends BaseStepDef {
       .assertPage()
   }
 
-  Then("""^(?:I )?click the NIRMS number change link$""") { () =>
+  Then("""^(?:I )?click the NIRMS Number change link in the summary list$""") { () =>
     UpdateNirmsNumberCYAPage
-      .clickChangeLink("1")
+      .clickChangeLink("2")
   }
 
-  Then("""^(?:My )?'NIRMS number CYA' has the (.*) value$""") { (key: String) =>
-    UpdateNirmsNumberCYAPage
-      .verifyInput("nirms", key)
+  Then("""^(?:My )?'NIRMS number' has the (.*) value""") { (key: String) =>
+    key match {
+      case "different" =>
+        UpdateNirmsNumberCYAPage
+          .verifyInput("value", "RMS-GB-654321")
+      case "valid" =>
+        UpdateNirmsNumberCYAPage
+          .verifyInput("value", "RMS-GB-123456")
+    }
   }
 }

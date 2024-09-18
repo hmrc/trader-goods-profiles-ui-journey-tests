@@ -16,24 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.MaintainProfile
 
-import org.junit.Assert
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object UpdateNirmsNumberCYAPage extends Page {
-  override def title(args: String*): String = "Check your answers"
+object UpdateNirmsNumberCheckPage extends Page {
 
-  override def h1(args: String*): String = "Check your answers"
-
-  override def url(args: String*): String = "/update-profile/check-your-answers/nirms-number"
-
-  def verifyInput(field: String, expected: String): this.type = {
-    val actual = field match {
-      case "value" => findBy(By.cssSelector("div:nth-child(2) > dd.govuk-summary-list__value")).getText
-    }
-
-    Assert.assertEquals("Expected " + expected + " value but found " + actual + " instead.", expected, actual)
-    this
-  }
-
+  override def title(args: String*): String = "Northern Ireland Retail Movement Scheme number"
+  override def h1(args: String*): String    = "What is your NIRMS number?"
+  override def url(args: String*): String   = "/update-profile/nirms-number/check"
 }

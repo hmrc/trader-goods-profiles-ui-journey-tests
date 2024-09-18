@@ -17,12 +17,17 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.MaintainProfile
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.MaintainProfile.UpdateNIRMSNumberPage
+import uk.gov.hmrc.test.ui.pages.MaintainProfile.{UpdateNIRMSNumberPage, UpdateNirmsNumberCheckPage}
 
 class UpdateNIRMSNumberStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the update 'Northern Ireland Retail Movement Scheme number' page$""") { () =>
     UpdateNIRMSNumberPage
+      .assertPage()
+  }
+
+  Then("""^(?:I )?should be on the check update 'Northern Ireland Retail Movement Scheme number' page$""") { () =>
+    UpdateNirmsNumberCheckPage
       .assertPage()
   }
 
