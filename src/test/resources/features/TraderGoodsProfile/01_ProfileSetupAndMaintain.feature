@@ -89,7 +89,8 @@ Feature: Trader Goods Profile - Profile setup and Previous movement records jour
     And I select continue
     Then I should be on the update 'Northern Ireland Retail Movement Scheme number' page
     And I enter valid value of my NIRMS Number in the free text field
-    Then I should be on the 'Profile details' page
+    Then I should be on the update 'NIRMS number Check your answers' page
+    And I select continue
     And My 'NIRMS Question' has the value Yes
     And My 'NIRMS Number' has the value RMS-GB-123456
     When I click the NIPHL Question change link
