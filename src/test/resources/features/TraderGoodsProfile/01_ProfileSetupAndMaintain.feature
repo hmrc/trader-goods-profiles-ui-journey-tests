@@ -91,14 +91,10 @@ Feature: Trader Goods Profile - Profile setup and Previous movement records jour
     And I enter valid value of my NIRMS Number in the free text field
     Then I should be on the update 'NIRMS number Check your answers' page
     And My 'NIRMS number' has the valid value
-    When I click the NIRMS Number change link in the summary list
-    Then I should be on the check update 'Northern Ireland Retail Movement Scheme number' page
-    And I enter different value of my NIRMS Number in the free text field
-    Then I should be on the update 'NIRMS number Check your answers' page
-    And My 'NIRMS number' has the different value
     And I select continue
+    Then I should be on the 'Profile details' page
     And My 'NIRMS Question' has the value Yes
-    And My 'NIRMS Number' has the value RMS-GB-654321
+    And My 'NIRMS Number' has the value RMS-GB-123456
     When I click the NIPHL Question change link
     And I should be on the update 'Northern Ireland plant health label' page
     Then I select Yes for the boolean question

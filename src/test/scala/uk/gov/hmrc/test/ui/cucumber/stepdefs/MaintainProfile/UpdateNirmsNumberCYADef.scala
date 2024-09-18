@@ -35,7 +35,7 @@ class UpdateNirmsNumberCYADef extends BaseStepDef {
       case "different" =>
         UpdateNirmsNumberCYAPage
           .verifyInput("value", "RMS-GB-654321")
-      case "valid" =>
+      case "valid"     =>
         UpdateNirmsNumberCYAPage
           .verifyInput("value", "RMS-GB-123456")
     }

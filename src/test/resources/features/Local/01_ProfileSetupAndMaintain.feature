@@ -207,6 +207,14 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     When I enter incorrect value of my NIRMS Number in the free text field
     Then Error message 'Enter your NIRMS number in the correct format' should be displayed
     When I enter valid value of my NIRMS Number in the free text field
+    Then I should be on the update 'NIRMS number Check your answers' page
+    And My 'NIRMS number' has the valid value
+    When I click the NIRMS Number change link in the summary list
+    Then I should be on the check update 'Northern Ireland Retail Movement Scheme number' page
+    And I enter valid value of my NIRMS Number in the free text field
+    Then I should be on the update 'NIRMS number Check your answers' page
+    And My 'NIRMS number' has the valid value
+    And I select continue
     Then I should be on the 'Profile details' page
     And My 'NIRMS Question' has the value Yes
     And My 'NIRMS Number' has the value RMS-GB-123456
@@ -214,6 +222,7 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     Then I should be on the update 'Northern Ireland Retail Movement Scheme number' page
     And The update NIRMS Number field should be prepopulated
     When I enter different value of my NIRMS Number in the free text field
+    And I select continue
     Then My 'NIRMS Number' has the value RMS-GB-654321
     When I click the NIPHL Question change link
     And I select continue
