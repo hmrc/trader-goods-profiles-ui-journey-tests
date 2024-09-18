@@ -163,6 +163,8 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     When I select the back link
     Then I should be on the update 'UK internal scheme number' page
     When I enter different value of my UKIMS Number in the free text field
+    Then I should be on the update 'UKIMS Check your answers' page
+    And I select continue
     Then I should be on the 'Profile details' page
     And My 'UKIMS Number' has the value XIUKIM47699357400020231115081801
     When I click the NIRMS Question change link

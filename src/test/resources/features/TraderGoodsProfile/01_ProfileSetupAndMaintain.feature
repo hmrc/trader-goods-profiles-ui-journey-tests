@@ -68,6 +68,8 @@ Feature: Trader Goods Profile - Profile setup and Previous movement records jour
     Then I should be on the update 'UK internal scheme number' page
     And The update UKIMS Number field should be prepopulated
     When I update value of my UKIMS Number in the free text field
+    Then I should be on the update 'UKIMS Check your answers' page
+    And I select continue
     Then I should be on the 'Profile details' page
     And My 'UKIMS Number' has the value XIUKIM47699357400020231115081800
     When I click the NIRMS Question change link

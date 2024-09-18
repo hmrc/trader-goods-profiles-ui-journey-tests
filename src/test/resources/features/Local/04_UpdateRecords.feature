@@ -79,3 +79,39 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the 'Goods profile' page 1 results
     And I click on the Sign out link
     Then I should be on the 'Signed Out' page
+
+  Scenario: As a returning user, I want to create a goods record and begin editing the record and categorising from the goods profile
+    Given I am on the 'Home' page with EORI GB999000000009
+    When I click on the Create a new goods record link
+    And I select continue
+    Then I enter unique Trader reference in the text area
+    And I select Yes for the boolean question
+    Then I select continue
+    And I enter United Kingdom in the country text field
+    When I enter 1601001011 value of Commodity code in the free text field
+    Then I select Yes for the boolean question
+    And I select continue
+    Then I should be on the 'Create Record - Check Your Answers' page
+    When I select continue
+    And I click on the Go back to goods profile link
+    Then I should be on the 'Goods profile' page 1 results
+    When I click on the Change link
+    Then I should be on the 'Goods record' page
+    When I click the Goods record Country Of Origin change link
+    Then I should be on the 'Country of origin' update page
+    And I select continue
+    Then I should be on the 'Country of origin' CYA page
+    And I select continue
+    Then I should be on the 'Goods record' page
+    When I click the Goods record Commodity Code change link
+    Then I should be on the 'commodity code' update page
+    And I select continue
+    And I select Yes for the boolean question
+    And I select continue
+    Then I should be on the update 'commodity code' CYA page
+    And I select continue
+    Then I should be on the 'Goods record' page
+    When I click on the Categorise this good link
+    Then I should be on the 'Categorisation Information' page
+    And I select the back link
+    Then I should be on the 'Goods record' page
