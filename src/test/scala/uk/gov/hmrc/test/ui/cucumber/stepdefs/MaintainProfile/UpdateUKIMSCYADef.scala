@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.MaintainProfile
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.MaintainProfile.{UpdateNirmsQuestionCYAPage, UpdateUkimsCYAPage}
+import uk.gov.hmrc.test.ui.pages.MaintainProfile.UpdateUkimsCYAPage
 
 class UpdateUKIMSCYADef extends BaseStepDef {
   Then("""^(?:I )?should be on the update 'UKIMS Check your answers' page$""") { () =>
