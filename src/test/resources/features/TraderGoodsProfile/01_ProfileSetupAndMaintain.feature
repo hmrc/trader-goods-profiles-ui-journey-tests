@@ -92,10 +92,6 @@ Feature: Trader Goods Profile - Profile setup and Previous movement records jour
     Then I should be on the 'Profile details' page
     And My 'NIRMS Question' has the value Yes
     And My 'NIRMS Number' has the value RMS-GB-123456
-    When I click the NIPHL Question change link
-    And I should be on the update 'Northern Ireland plant health label' page
-    Then I select Yes for the boolean question
-    And I select continue
     Then I should be on the 'Profile details' page
     When I click on the Go back to homepage link
     Then I should be on the 'Home' page
