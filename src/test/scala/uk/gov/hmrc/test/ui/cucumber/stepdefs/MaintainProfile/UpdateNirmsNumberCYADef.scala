@@ -17,24 +17,27 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.MaintainProfile
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.MaintainProfile.{UpdateNIRMSNumberPage, UpdateNirmsNumberCheckPage}
+import uk.gov.hmrc.test.ui.pages.MaintainProfile.UpdateNirmsNumberCYAPage
 
-class UpdateNIRMSNumberStepDef extends BaseStepDef {
-
-  Then("""^(?:I )?should be on the update 'Northern Ireland Retail Movement Scheme number' page$""") { () =>
-    UpdateNIRMSNumberPage
+class UpdateNirmsNumberCYADef extends BaseStepDef {
+  Then("""^(?:I )?should be on the update 'NIRMS number Check your answers' page$""") { () =>
+    UpdateNirmsNumberCYAPage
       .assertPage()
   }
 
-  Then("""^(?:I )?should be on the check update 'Northern Ireland Retail Movement Scheme number' page$""") { () =>
-    UpdateNirmsNumberCheckPage
-      .assertPage()
+  Then("""^(?:I )?click the NIRMS Number change link in the summary list$""") { () =>
+    UpdateNirmsNumberCYAPage
+      .clickChangeLink("2")
   }
 
-  Then("""^(?:The update NIRMS Number field )?should be prepopulated$""") { () =>
-    UpdateNIRMSNumberPage
-      .findById("value")
-      .getAttribute("value")
-      .shouldEqual("RMS-GB-123456")
+  Then("""^(?:My )?'NIRMS number' has the (.*) value""") { (key: String) =>
+    key match {
+      case "different" =>
+        UpdateNirmsNumberCYAPage
+          .verifyInput("value", "RMS-GB-654321")
+      case "valid"     =>
+        UpdateNirmsNumberCYAPage
+          .verifyInput("value", "RMS-GB-123456")
+    }
   }
 }
