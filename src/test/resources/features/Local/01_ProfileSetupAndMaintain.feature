@@ -227,6 +227,8 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     When I click the NIPHL Question change link
     And I select continue
     And I select continue
+    Then I should be on the update 'NIPHL Question Check your answers' page
+    And I select continue
     Then I should be on the 'Profile details' page
     And My 'NIPHL Question' has the value Yes
     And My 'NIPHL Number' has the value SN12345
@@ -244,15 +246,18 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     And My 'NIPHL Question' has the value Yes
     And My 'NIPHL Number' has the value SN12345
     When I click the NIPHL Number change link
-    Then I should be on the update 'NIPHL registration number' page
+    Then I should be on the update 'NIPHL registration number' check page
     And The update NIPHL Number field should be prepopulated
     When I enter empty value of my NIPHL Number in the free text field
     Then Error message 'Enter your NIPHL registration number' should be displayed
     When I enter incorrect value of my NIPHL Number in the free text field
     Then Error message 'Enter your NIPHL registration number in the correct format' should be displayed
     When I select the back link
-    Then I should be on the update 'NIPHL registration number' page
+    Then I should be on the update 'NIPHL registration number' check page
     When I enter different value of my NIPHL Number in the free text field
+    Then I should be on the update 'NIPHL registration number Check your answers' page
+    And My 'NIPHL Number CYA' has the different value
+    And I select continue
     Then I should be on the 'Profile details' page
     And My 'NIPHL Number' has the value SN54321
     When I click the NIPHL Question change link
@@ -261,13 +266,13 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     Then I should be on the 'Removing NIPHL details' page
     When I select Yes for the boolean question
     And I select continue
-    Then I should be on the update 'NIPHLS Question Check your answers' page
-    When I click the NIPHLS registered change link
+    Then I should be on the update 'NIPHL Question Check your answers' page
+    When I click the NIPHL registered change link
     Then I should be on the update 'Northern Ireland plant health label' check page
     And I select continue
     And I select continue
-    Then I should be on the update 'NIPHLS Question Check your answers' page
-    And My 'NIPHLS Question CYA' has the No value
+    Then I should be on the update 'NIPHL Question Check your answers' page
+    And My 'NIPHL Question CYA' has the No value
     And I select continue
     Then I should be on the 'Profile details' page
     And My 'NIPHL Question' has the value No

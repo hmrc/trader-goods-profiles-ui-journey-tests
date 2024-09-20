@@ -17,21 +17,27 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.MaintainProfile
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.MaintainProfile.UpdateUKIMSCYAPage
+import uk.gov.hmrc.test.ui.pages.MaintainProfile.UpdateNIRMSNumberCYAPage
 
-class UpdateUKIMSCYADef extends BaseStepDef {
-  Then("""^(?:I )?should be on the update 'UKIMS Check your answers' page$""") { () =>
-    UpdateUKIMSCYAPage
+class UpdateNIRMSNumberCYADef extends BaseStepDef {
+  Then("""^(?:I )?should be on the update 'NIRMS number Check your answers' page$""") { () =>
+    UpdateNIRMSNumberCYAPage
       .assertPage()
   }
 
-  Then("""^(?:I )?click the UKIMS change link$""") { () =>
-    UpdateUKIMSCYAPage
-      .clickChangeLink("1")
+  Then("""^(?:I )?click the NIRMS Number change link in the summary list$""") { () =>
+    UpdateNIRMSNumberCYAPage
+      .clickChangeLink("2")
   }
 
-  Then("""^(?:My )?'UKIMS CYA' has the (.*) value$""") { (key: String) =>
-    UpdateUKIMSCYAPage
-      .verifyInput("ukims", key)
+  Then("""^(?:My )?'NIRMS number' has the (.*) value""") { (key: String) =>
+    key match {
+      case "different" =>
+        UpdateNIRMSNumberCYAPage
+          .verifyInput("value", "RMS-GB-654321")
+      case "valid"     =>
+        UpdateNIRMSNumberCYAPage
+          .verifyInput("value", "RMS-GB-123456")
+    }
   }
 }
