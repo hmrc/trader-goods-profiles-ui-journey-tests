@@ -178,6 +178,7 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     Then I should be on the 'Removing NIRMS details' page
     When I select No for the boolean question
     And I select continue
+    And I select continue
     Then I should be on the 'Profile details' page
     And My 'NIRMS Question' has the value Yes
     And My 'NIRMS Number' has the value RMS-GB-123456

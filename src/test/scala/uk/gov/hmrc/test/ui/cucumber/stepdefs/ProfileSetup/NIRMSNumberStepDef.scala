@@ -39,11 +39,11 @@ class NIRMSNumberStepDef extends BaseStepDef {
         submitPage()
       case "different" =>
         NIRMSNumberPage
-          .fillInput("value", "RMS-GB-654321")
+          .fillInput("value", "RMS   -GB------654321")
         submitPage()
       case "valid"     =>
         NIRMSNumberPage
-          .fillInput("value", "RMS-GB-123456")
+          .fillInput("value", "R  M  S-G  B-123  45  6")
         submitPage()
       case "empty"     =>
         NIRMSNumberPage
