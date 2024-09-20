@@ -26,7 +26,7 @@ object UpdateNIPHLQuestionCYAPage extends Page {
 
   override def h1(args: String*): String = "Check your answers"
 
-  override def url(args: String*): String = "/update-profile/check-your-answers/niphls-registered"
+  override def url(args: String*): String = "/update-profile/check-your-answers/niphl-registered"
 
   def verifyInput(field: String, expected: String): this.type = {
     val actual = field match {
