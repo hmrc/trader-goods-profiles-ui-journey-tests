@@ -21,12 +21,12 @@ import uk.gov.hmrc.test.ui.pages.ProfileSetup.NIRMSNumberPage
 
 class NIRMSNumberStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'Northern Ireland Retail Movement Scheme number' page$""") { () =>
+  Then("""^(?:I )?should be on the 'What is your NIRMS number\?' page$""") { () =>
     NIRMSNumberPage
       .assertPage()
   }
 
-  Then("""^(?:I )?should be on the check 'Northern Ireland Retail Movement Scheme number' page$""") { () =>
+  Then("""^(?:I )?should be on the check 'What is your NIRMS number\?' page$""") { () =>
     NIRMSNumberPage
       .assertCheckPage()
   }
