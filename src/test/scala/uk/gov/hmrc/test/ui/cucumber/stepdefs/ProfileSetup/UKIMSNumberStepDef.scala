@@ -39,11 +39,11 @@ class UKIMSNumberStepDef extends BaseStepDef {
         submitPage()
       case "different" =>
         UKIMSNumberPage
-          .fillInput("value", "XIUKIM47699357400020231115081801")
+          .fillInput("value", "XIUKIM 47699357400020231115081801")
         submitPage()
       case "valid"     =>
         UKIMSNumberPage
-          .fillInput("value", "XIUKIM47699357400020231115081800")
+          .fillInput("value", "XIUKIM-47699357400020231115081800")
         submitPage()
       case "empty"     =>
         UKIMSNumberPage
