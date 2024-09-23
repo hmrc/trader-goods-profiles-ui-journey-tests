@@ -30,13 +30,13 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     Then I should be on the 'Northern Ireland Retail Movement Scheme' page
     When I select Yes for the boolean question
     And I select continue
-    Then I should be on the 'Northern Ireland Retail Movement Scheme number' page
+    Then I should be on the 'What is your NIRMS number?' page
     And I select continue
     Then Error message 'Enter your NIRMS number' should be displayed
     When I enter incorrect value of my NIRMS Number in the free text field
     Then Error message 'Enter your NIRMS number in the correct format' should be displayed
     When I select the back link
-    Then I should be on the 'Northern Ireland Retail Movement Scheme number' page
+    Then I should be on the 'What is your NIRMS number?' page
     When I enter valid value of my NIRMS Number in the free text field
     Then I should be on the 'Northern Ireland plant health label' page
     And I select continue
@@ -118,7 +118,7 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     Then I should be on the 'Northern Ireland Retail Movement Scheme' page
     When I select Yes for the boolean question
     And I select continue
-    Then I should be on the 'Northern Ireland Retail Movement Scheme number' page
+    Then I should be on the 'What is your NIRMS number?' page
     When I enter valid value of my NIRMS Number in the free text field
     Then I should be on the 'Northern Ireland plant health label' page
     When I select No for the boolean question

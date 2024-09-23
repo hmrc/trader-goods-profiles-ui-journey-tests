@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object UpdateNirmsNumberCheckPage extends Page {
 
-  override def title(args: String*): String = "Northern Ireland Retail Movement Scheme number"
+  override def title(args: String*): String = "What is your NIRMS number?"
   override def h1(args: String*): String    = "What is your NIRMS number?"
   override def url(args: String*): String   = "/update-profile/nirms-number/check"
 }
