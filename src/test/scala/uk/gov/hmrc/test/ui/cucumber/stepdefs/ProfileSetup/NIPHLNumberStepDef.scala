@@ -39,11 +39,11 @@ class NIPHLNumberStepDef extends BaseStepDef {
         submitPage()
       case "different" =>
         NIPHLNumberPage
-          .fillInput("value", "SN54321")
+          .fillInput("value", "SN  5432  1")
         submitPage()
       case "valid"     =>
         NIPHLNumberPage
-          .fillInput("value", "SN12345")
+          .fillInput("value", "S-N-1-2-3-4-5")
         submitPage()
       case "empty"     =>
         NIPHLNumberPage
