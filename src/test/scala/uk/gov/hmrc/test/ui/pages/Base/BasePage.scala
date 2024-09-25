@@ -369,6 +369,9 @@ trait BasePage extends BrowserDriver with Matchers {
   def checkHeader(content: String): Unit =
     findBy(By.className("govuk-heading-l")).getText.shouldEqual(content)
 
+  def checkSecondaryHeader(content: String): Unit =
+    findBy(By.className("govuk-label--l")).getText.shouldEqual(content)
+
   def checkURL(url: String): Unit =
     driver.getCurrentUrl.shouldEqual(url)
 
