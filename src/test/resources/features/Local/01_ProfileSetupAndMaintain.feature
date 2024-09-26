@@ -243,6 +243,8 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     Then I should be on the 'Removing NIPHL details' page
     When I select No for the boolean question
     And I select continue
+    Then I should be on the update 'NIPHL registration number Check your answers' page
+    And I select continue
     Then I should be on the 'Profile details' page
     And My 'NIPHL Question' has the value Yes
     And My 'NIPHL Number' has the value SN12345
