@@ -23,4 +23,9 @@ object AskNamePage extends Page {
   override def title(args: String*): String = "What is your name?"
   override def h1(args: String*): String    = "What is your name?"
   override def url(args: String*): String   = "/update-record/" + recordId + "/create-advice/name"
+
+  override def verifyHeader(h1: String): this.type = {
+    checkSecondaryHeader(h1)
+    this
+  }
 }
