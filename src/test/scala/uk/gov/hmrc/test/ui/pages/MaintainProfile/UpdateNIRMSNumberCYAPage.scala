@@ -20,16 +20,16 @@ import org.junit.Assert
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object UpdateUkimsCYAPage extends Page {
+object UpdateNIRMSNumberCYAPage extends Page {
   override def title(args: String*): String = "Check your answers"
 
   override def h1(args: String*): String = "Check your answers"
 
-  override def url(args: String*): String = "/update-profile/check-your-answers/ukims-number"
+  override def url(args: String*): String = "/update-profile/check-your-answers/nirms-number"
 
   def verifyInput(field: String, expected: String): this.type = {
     val actual = field match {
-      case "ukims" => findBy(By.cssSelector("div:nth-child(1) > dd.govuk-summary-list__value")).getText
+      case "value" => findBy(By.cssSelector("div:nth-child(2) > dd.govuk-summary-list__value")).getText
     }
 
     Assert.assertEquals("Expected " + expected + " value but found " + actual + " instead.", expected, actual)

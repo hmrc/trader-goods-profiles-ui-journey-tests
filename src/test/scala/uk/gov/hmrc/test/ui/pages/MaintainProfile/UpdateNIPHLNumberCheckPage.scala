@@ -16,25 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.MaintainProfile
 
-import org.junit.Assert
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object UpdateNIPHLQuestionCYAPage extends Page {
+object UpdateNIPHLNumberCheckPage extends Page {
 
-  override def title(args: String*): String = "Check your answers"
-
-  override def h1(args: String*): String = "Check your answers"
-
-  override def url(args: String*): String = "/update-profile/check-your-answers/niphl-registered"
-
-  def verifyInput(field: String, expected: String): this.type = {
-    val actual = field match {
-      case "niphlQuestion" => findBy(By.cssSelector("div:nth-child(1) > dd.govuk-summary-list__value")).getText
-    }
-
-    Assert.assertEquals("Expected " + expected + " value but found " + actual + " instead.", expected, actual)
-    this
-  }
-
+  override def title(args: String*): String = "NIPHL registration number"
+  override def h1(args: String*): String    = "NIPHL registration number"
+  override def url(args: String*): String   = "/update-profile/niphl-number/check"
 }

@@ -16,25 +16,16 @@
 
 package uk.gov.hmrc.test.ui.pages.MaintainProfile
 
-import org.junit.Assert
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object UpdateNIPHLQuestionCYAPage extends Page {
+object UpdateNIRMSNumberCheckPage extends Page {
 
-  override def title(args: String*): String = "Check your answers"
+  override def title(args: String*): String = "What is your NIRMS number?"
+  override def h1(args: String*): String    = "What is your NIRMS number?"
+  override def url(args: String*): String   = "/update-profile/nirms-number/check"
 
-  override def h1(args: String*): String = "Check your answers"
-
-  override def url(args: String*): String = "/update-profile/check-your-answers/niphl-registered"
-
-  def verifyInput(field: String, expected: String): this.type = {
-    val actual = field match {
-      case "niphlQuestion" => findBy(By.cssSelector("div:nth-child(1) > dd.govuk-summary-list__value")).getText
-    }
-
-    Assert.assertEquals("Expected " + expected + " value but found " + actual + " instead.", expected, actual)
+  override def verifyHeader(h1: String): this.type = {
+    checkSecondaryHeader(h1)
     this
   }
-
 }
