@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Categorisation.{CategorisationCategory1CompletePage, CategorisationCompletePage, CategorisationStandardGoodsCompletePage}
+import uk.gov.hmrc.test.ui.pages.Categorisation.{CategorisationCategory1CompletePage, CategorisationCategory2CompletePage, CategorisationStandardGoodsCompletePage}
 
 class CategorisationCompleteStepDef extends BaseStepDef {
 
@@ -48,10 +48,10 @@ class CategorisationCompleteStepDef extends BaseStepDef {
             "Your goods have been categorised and are not eligible for Simplified Process for Internal Market Movements (SPIMM)."
           )
       case "Category2 content"                =>
-        CategorisationCompletePage
+        CategorisationCategory2CompletePage
           .assertPage("category-2")
-          .verifyPanelContent(
-            "Your goods are Category 2 goods and are eligible for Simplified Process for Internal Market Movements (SPIMM)."
+          .checkForContent(
+            "Your goods have been categorised and are eligible for Simplified Process for Internal Market Movements (SPIMM)."
           )
     }
   }
