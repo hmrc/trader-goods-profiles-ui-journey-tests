@@ -102,7 +102,7 @@ Feature: Trader Goods Profile - Profile setup and Previous movement records jour
     Then I should be on the 'Removing NIPHL details' page
     And I select Yes for the boolean question
     And I select continue
-    Then I should be on the update 'NIPHLS Question Check your answers' page
+    Then I should be on the update 'NIPHL Question Check your answers' page
     And I select continue
     Then I should be on the 'Profile details' page
     When I click on the Go back to homepage link

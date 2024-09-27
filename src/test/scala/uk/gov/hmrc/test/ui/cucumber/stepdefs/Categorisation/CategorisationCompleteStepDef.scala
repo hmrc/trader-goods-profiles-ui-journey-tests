@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Categorisation
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Categorisation.{CategorisationCat1CompletePage, CategorisationCat2CompletePage, CategorisationCompletePage, CategorisationStandardGoodsCompletePage}
+import uk.gov.hmrc.test.ui.pages.Categorisation.{CategorisationCategory1CompletePage, CategorisationCategory2CompletePage, CategorisationStandardGoodsCompletePage}
 
 class CategorisationCompleteStepDef extends BaseStepDef {
 
@@ -36,21 +36,21 @@ class CategorisationCompleteStepDef extends BaseStepDef {
             "Your goods have been categorised and are eligible for Simplified Process for Internal Market Movements (SPIMM). There are no category assessments needed."
           )
       case "category-1-no-exemptions content" =>
-        CategorisationCat1CompletePage
+        CategorisationCategory1CompletePage
           .assertPage("category-1-no-exemptions")
-          .verifyBodyContent(
+          .checkForContent(
             "Your goods have been categorised and are not eligible for Simplified Process for Internal Market Movements (SPIMM). There are no available exclusions to change the category."
           )
       case "Category1 content"                =>
-        CategorisationCat1CompletePage
+        CategorisationCategory1CompletePage
           .assertPage("category-1")
-          .verifyBodyContent(
+          .checkForContent(
             "Your goods have been categorised and are not eligible for Simplified Process for Internal Market Movements (SPIMM)."
           )
       case "Category2 content"                =>
-        CategorisationCat2CompletePage
+        CategorisationCategory2CompletePage
           .assertPage("category-2")
-          .verifyBodyContent(
+          .checkForContent(
             "Your goods have been categorised and are eligible for Simplified Process for Internal Market Movements (SPIMM)."
           )
     }

@@ -16,16 +16,14 @@
 
 package uk.gov.hmrc.test.ui.pages.Categorisation
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
-object CategorisationCat2CompletePage extends BasePage{
-  def title: String = "Category 2"
+object CategorisationCategory1CompletePage extends BasePage {
 
-  def h1: String = "Category 2"
-
-  def url: String = "/update-record/" + recordId + "/categorisation/result/"
+  def title: String = "Category 1"
+  def h1: String    = "Category 1"
+  def url: String   = "/update-record/" + recordId + "/categorisation/result/"
 
   def assertPage(Cat: String): this.type = {
     getRecordId()
@@ -44,16 +42,13 @@ object CategorisationCat2CompletePage extends BasePage{
       )
 
   def verifyHeader(h1: String): this.type = {
-    checkPanelHeader(h1)
+//    checkPanelHeader(h1)
+    checkHeader(h1)
     this
   }
-
-  def verifyBodyContent(body: String): Unit =
-    findBy(By.className("govuk-body")).getText.shouldEqual(body)
 
   def validateUrl(url: String): this.type = {
     checkURL(TestConfiguration.url("trader-goods-profiles-frontend") + url)
     this
   }
-
 }

@@ -20,12 +20,12 @@ import org.junit.Assert
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
-object UpdateNirmsNumberCYAPage extends Page {
+object UpdateNIPHLNumberCYAPage extends Page {
   override def title(args: String*): String = "Check your answers"
 
   override def h1(args: String*): String = "Check your answers"
 
-  override def url(args: String*): String = "/update-profile/check-your-answers/nirms-number"
+  override def url(args: String*): String = "/update-profile/check-your-answers/niphl-number"
 
   def verifyInput(field: String, expected: String): this.type = {
     val actual = field match {

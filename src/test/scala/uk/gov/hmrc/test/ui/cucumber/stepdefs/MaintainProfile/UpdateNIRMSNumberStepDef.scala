@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.MaintainProfile
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.MaintainProfile.{UpdateNIRMSNumberPage, UpdateNirmsNumberCheckPage}
+import uk.gov.hmrc.test.ui.pages.MaintainProfile.{UpdateNIRMSNumberCheckPage, UpdateNIRMSNumberPage}
 
 class UpdateNIRMSNumberStepDef extends BaseStepDef {
 
@@ -27,7 +27,7 @@ class UpdateNIRMSNumberStepDef extends BaseStepDef {
   }
 
   Then("""^(?:I )?should be on the check update 'What is your NIRMS number\?' page$""") { () =>
-    UpdateNirmsNumberCheckPage
+    UpdateNIRMSNumberCheckPage
       .assertPage()
   }
 
