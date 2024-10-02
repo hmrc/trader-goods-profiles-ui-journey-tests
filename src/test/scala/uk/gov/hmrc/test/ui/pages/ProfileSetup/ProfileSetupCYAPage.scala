@@ -22,8 +22,8 @@ import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object ProfileSetupCYAPage extends Page {
 
-  override def title(args: String*): String = "Check your answers"
-  override def h1(args: String*): String    = "Check your answers"
+  override def title(args: String*): String = "Check your answers for setting up your profile"
+  override def h1(args: String*): String    = "Check your answers for setting up your profile"
   override def url(args: String*): String   = "/create-profile/check-your-answers"
 
   def verifyInput(field: String, expected: String): this.type = {

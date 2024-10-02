@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object UpdateTraderReferenceCYAPage extends Page {
 
-  override def title(args: String*): String = "Check your answers"
-  override def h1(args: String*): String    = "Check your answers"
+  override def title(args: String*): String = "Check your answers for changing the trader reference"
+  override def h1(args: String*): String    = "Check your answers for changing the trader reference"
   override def url(args: String*): String   = "/update-record/" + recordId + "/check-your-answers/trader-reference"
 }

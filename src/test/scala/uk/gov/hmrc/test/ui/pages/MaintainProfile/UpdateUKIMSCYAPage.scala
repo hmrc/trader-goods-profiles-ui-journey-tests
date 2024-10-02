@@ -21,9 +21,9 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object UpdateUKIMSCYAPage extends Page {
-  override def title(args: String*): String = "Check your answers"
+  override def title(args: String*): String = "Check your answers for changing your UKIMS number"
 
-  override def h1(args: String*): String = "Check your answers"
+  override def h1(args: String*): String = "Check your answers for changing your UKIMS number"
 
   override def url(args: String*): String = "/update-profile/check-your-answers/ukims-number"
 
