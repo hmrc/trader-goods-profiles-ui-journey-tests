@@ -20,9 +20,9 @@ import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object UpdateCountryOfOriginCYAPage extends Page {
 
-  override def title(args: String*): String = "Check your answers"
+  override def title(args: String*): String = "Check your answers for changing the country of origin"
 
-  override def h1(args: String*): String = "Check your answers"
+  override def h1(args: String*): String = "Check your answers for changing the country of origin"
 
   override def url(args: String*): String = "/update-record/" + recordId + "/check-your-answers/country-of-origin"
 }

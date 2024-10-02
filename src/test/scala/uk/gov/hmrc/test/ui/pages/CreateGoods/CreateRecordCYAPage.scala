@@ -22,8 +22,8 @@ import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object CreateRecordCYAPage extends Page {
 
-  override def title(args: String*): String = "Check your answers"
-  override def h1(args: String*): String    = "Check your answers"
+  override def title(args: String*): String = "Check your answers for creating a record"
+  override def h1(args: String*): String    = "Check your answers for creating a record"
   override def url(args: String*): String   = "/create-record/check-your-answers"
 
   def verifyInput(field: String, expected: String): this.type = {

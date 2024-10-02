@@ -21,9 +21,9 @@ import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object UpdateNIRMSNumberCYAPage extends Page {
-  override def title(args: String*): String = "Check your answers"
+  override def title(args: String*): String = "Check your answers for changing your NIRMS number"
 
-  override def h1(args: String*): String = "Check your answers"
+  override def h1(args: String*): String = "Check your answers for changing your NIRMS number"
 
   override def url(args: String*): String = "/update-profile/check-your-answers/nirms-number"
 

@@ -22,8 +22,8 @@ import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object UpdateSupplementaryUnitCYAPage extends Page {
 
-  override def title(args: String*): String = "Check your answers"
-  override def h1(args: String*): String    = "Check your answers"
+  override def title(args: String*): String = "Check your answers for changing the supplementary unit"
+  override def h1(args: String*): String    = "Check your answers for changing the supplementary unit"
   override def url(args: String*): String   =
     "/update-record/" + recordId + "/categorisation/check-your-answers/supplementary-unit"
 
