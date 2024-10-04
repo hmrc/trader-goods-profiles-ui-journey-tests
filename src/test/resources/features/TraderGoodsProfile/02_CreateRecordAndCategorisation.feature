@@ -9,9 +9,6 @@ Feature: Trader Goods Profile - Create Record And Categorisation with longer com
     And I select continue
     Then I should be on the 'Trader reference' page
     When I enter unique Trader reference in the text area
-    Then I should be on the 'Goods description' question page
-    When I select No for the boolean question
-    And I select continue
     Then I should be on the 'Goods description' page
     When I enter description in the Goods description text area
     Then I should be on the 'Country of origin' page
@@ -26,10 +23,6 @@ Feature: Trader Goods Profile - Create Record And Categorisation with longer com
     Then I should be on the check 'Trader reference' page
     When I enter different Trader reference in the text area
     Then I should be on the 'Create Record - Check Your Answers' page
-    When I click the Goods Description Question change link
-    And I select continue
-    Then I should be on the 'Create Record - Check Your Answers' page
-    And My 'Goods Description Question' has the same value
     When I select continue
     Then I should be on the 'Create record success' page
     When I click on the Categorise goods now link

@@ -85,8 +85,8 @@ Feature: Trader Goods Profile - View or Update record journey
     When I click on the Create a new goods record link
     And I select continue
     Then I enter unique Trader reference in the text area
-    And I select Yes for the boolean question
-    Then I select continue
+    Then I should be on the 'Goods description' page
+    When I enter description in the Goods description text area
     And I enter United Kingdom in the country text field
     When I enter 1601001011 value of Commodity code in the free text field
     Then I select Yes for the boolean question
