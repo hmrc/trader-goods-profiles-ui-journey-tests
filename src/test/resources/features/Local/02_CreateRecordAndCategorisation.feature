@@ -16,13 +16,6 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     When I enter long Trader reference in the text area
     Then Error message 'Trader reference must be 512 characters or less' should be displayed
     When I enter none unique Trader reference in the text area
-    Then I should be on the 'Goods description' question page
-    And I select continue
-    Then Error message 'Confirm if you want to use your trader reference as the goods description' should be displayed
-    When I select the back link
-    Then I should be on the 'Goods description' question page
-    When I select No for the boolean question
-    And I select continue
     Then I should be on the 'Goods description' page
     When I select continue
     Then Error message 'Enter the goods description' should be displayed
@@ -66,10 +59,6 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     When I select continue
     Then I should be on the 'Create Record - Check Your Answers' page
     And My 'Trader Reference' has the same value
-    When I click the Goods Description Question change link
-    And I select continue
-    Then I should be on the 'Create Record - Check Your Answers' page
-    And My 'Goods Description Question' has the same value
     When I click the Goods Description change link
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page
@@ -137,9 +126,8 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     And I select continue
     Then I should be on the 'Trader reference' page
     When I enter unique Trader reference in the text area
-    Then I should be on the 'Goods description' question page
-    When I select Yes for the boolean question
-    And I select continue
+    Then I should be on the 'Goods description' page
+    When I enter description in the Goods description text area
     And I enter Iraq in the country text field
     And I enter 170490 value of Commodity code in the free text field
     When I select Yes for the boolean question
@@ -213,8 +201,7 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     When I click on the Create a new goods record link
     And I select continue
     Then I enter unique Trader reference in the text area
-    And I select Yes for the boolean question
-    Then I select continue
+    When I enter description in the Goods description text area
     And I enter United Kingdom in the country text field
     When I enter 1601001011 value of Commodity code in the free text field
     Then I select Yes for the boolean question
@@ -243,8 +230,8 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     When I enter none unique Trader reference in the text area
     Then Error message 'This trader reference is already in your TGP. Enter a unique trader reference.' should be displayed
     When I enter unique Trader reference in the text area
-    And I select Yes for the boolean question
-    Then I select continue
+    Then I should be on the 'Goods description' page
+    When I enter description in the Goods description text area
     And I enter France in the country text field
     When I enter 6321323000 value of Commodity code in the free text field
     Then I select Yes for the boolean question
@@ -259,8 +246,8 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     When I click on the Create a new goods record link
     And I select continue
     Then I enter unique Trader reference in the text area
-    And I select Yes for the boolean question
-    Then I select continue
+    Then I should be on the 'Goods description' page
+    When I enter description in the Goods description text area
     And I enter France in the country text field
     When I enter 0208402002 value of Commodity code in the free text field
     Then I select Yes for the boolean question

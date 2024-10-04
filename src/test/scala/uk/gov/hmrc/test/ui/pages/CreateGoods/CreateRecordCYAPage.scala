@@ -28,12 +28,10 @@ object CreateRecordCYAPage extends Page {
 
   def verifyInput(field: String, expected: String): this.type = {
     val actual = field match {
-      case "traderReference"          => findBy(By.cssSelector("div:nth-child(1) > dd.govuk-summary-list__value")).getText
-      case "goodsDescriptionQuestion" =>
-        findBy(By.cssSelector("div:nth-child(2) > dd.govuk-summary-list__value")).getText
-      case "goodsDescription"         => findBy(By.cssSelector("div:nth-child(3) > dd.govuk-summary-list__value")).getText.trim
-      case "countryOfOrigin"          => findBy(By.cssSelector("div:nth-child(4) > dd.govuk-summary-list__value")).getText
-      case "commodityCode"            => findBy(By.cssSelector("div:nth-child(5) > dd.govuk-summary-list__value")).getText
+      case "traderReference"  => findBy(By.cssSelector("div:nth-child(1) > dd.govuk-summary-list__value")).getText
+      case "goodsDescription" => findBy(By.cssSelector("div:nth-child(2) > dd.govuk-summary-list__value")).getText.trim
+      case "countryOfOrigin"  => findBy(By.cssSelector("div:nth-child(3) > dd.govuk-summary-list__value")).getText
+      case "commodityCode"    => findBy(By.cssSelector("div:nth-child(4) > dd.govuk-summary-list__value")).getText
     }
 
     Assert.assertEquals("Expected " + expected + " value but found " + actual + " instead.", expected, actual)

@@ -31,40 +31,24 @@ class CreateRecordCYAStepDef extends BaseStepDef {
       .clickChangeLink("1")
   }
 
-  Then("""^(?:I )?click the Goods Description Question change link$""") { () =>
+  Then("""^(?:I )?click the Goods Description change link$""") { () =>
     CreateRecordCYAPage
       .clickChangeLink("2")
   }
 
-  Then("""^(?:I )?click the Goods Description change link$""") { () =>
+  Then("""^(?:I )?click the Country Of Origin change link$""") { () =>
     CreateRecordCYAPage
       .clickChangeLink("3")
   }
 
-  Then("""^(?:I )?click the Country Of Origin change link$""") { () =>
-    CreateRecordCYAPage
-      .clickChangeLink("4")
-  }
-
   Then("""^(?:I )?click the Commodity Code change link$""") { () =>
     CreateRecordCYAPage
-      .clickChangeLink("5")
+      .clickChangeLink("4")
   }
 
   Then("""^(?:My )?'Trader Reference' has the same value$""") { () =>
     CreateRecordCYAPage
       .verifyInput("traderReference", "not a unique reference")
-  }
-
-  Then("""^(?:My )?'Goods Description Question' has the (.*) value$""") { (key: String) =>
-    key match {
-      case "same"      =>
-        CreateRecordCYAPage
-          .verifyInput("goodsDescriptionQuestion", "No, I want to enter a different goods description")
-      case "different" =>
-        CreateRecordCYAPage
-          .verifyInput("goodsDescriptionQuestion", "Yes, use my trader reference as my goods description")
-    }
   }
 
   Then("""^(?:My )?'Goods Description' has the (.*) valid value$""") { (key: String) =>
