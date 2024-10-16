@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.Base.Page
 object UpdateCommodityCodeWarningPage extends Page {
   override def title(args: String*): String = "Change record information"
 
-  override def h1(args: String*): String  = "Changing the commodity code"
+  override def h1(args: String*): String  = "Change record information"
   override def url(args: String*): String = "/update-record/" + recordId + "/change-record-warning/commodity-code"
 
 }

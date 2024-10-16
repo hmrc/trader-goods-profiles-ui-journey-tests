@@ -21,6 +21,6 @@ import uk.gov.hmrc.test.ui.pages.Base.Page
 object UpdateGoodsDescriptionWarningPage extends Page {
 
   override def title(args: String*): String = "Change record information"
-  override def h1(args: String*): String    = "Changing the goods description"
+  override def h1(args: String*): String    = "Change record information"
   override def url(args: String*): String   = "/update-record/" + recordId + "/change-record-warning/goods-description"
 }
