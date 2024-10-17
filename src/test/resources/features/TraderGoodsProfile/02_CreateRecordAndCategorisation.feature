@@ -50,15 +50,15 @@ Feature: Trader Goods Profile - Create Record And Categorisation with longer com
     When I select continue
     Then I should be on the 'Goods Supplementary Unit' page
     And I enter 12345.0432 value of Goods Supplementary Unit
-    Then I should be on the 'Categorisation - Check Your Answers' page
+    Then I should be on the Categorisation "Check your category assessment answers for 1704909912" page
     When I click the Category assessment 4 of 6 change link
     Then I should be on the check 'Category assessment 4' page for Longer Commodity code
     And I select continue
-    Then I should be on the 'Categorisation - Check Your Answers' page
+    Then I should be on the Categorisation "Check your category assessment answers for 1704909912" page
     When I click the 'Supplementary Unit' change link
     Then I should be on the check 'Goods Supplementary Unit' page
     And I select continue
-    Then I should be on the 'Categorisation - Check Your Answers' page
+    Then I should be on the Categorisation "Check your category assessment answers for 1704909912" page
     And The 'Supplementary Unit' has the value 12345.0432 litres
     When I select continue
     Then I should be on the 'Categorisation complete' with Category2 content page

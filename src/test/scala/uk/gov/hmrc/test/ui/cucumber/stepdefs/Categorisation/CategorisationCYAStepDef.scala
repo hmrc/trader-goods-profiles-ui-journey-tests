@@ -21,9 +21,9 @@ import uk.gov.hmrc.test.ui.pages.Categorisation.CategorisationCYAPage
 
 class CategorisationCYAStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'Categorisation - Check Your Answers' page$""") { () =>
+  Then("""^(?:I )?should be on the Categorisation "(.+)" page$""") { (title: String) =>
     CategorisationCYAPage
-      .assertPage()
+      .assertPage(title)
   }
 
   Then("""^(?:I )?click the Category assessment 1 of 6 change link$""") { () =>

@@ -105,12 +105,12 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Then I should be on the 'Category assessment 6' page
     And I select Yes for the boolean question
     And I select continue
-    Then I should be on the 'Categorisation - Check Your Answers' page
+    Then I should be on the Categorisation "Check your category assessment answers for 170490" page
     When I click the Category assessment 2 of 6 change link
     Then I should be on the check 'Category assessment 2' page
     When I select No for the boolean question
     And I select continue
-    Then I should be on the 'Categorisation - Check Your Answers' page
+    Then I should be on the Categorisation "Check your category assessment answers for 170490" page
     And The 'Category assessment 2 of 6' has the value No
     When I select continue
     Then I should be on the 'Categorisation complete' with Category1 content page
@@ -181,17 +181,17 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     When I select the back link
     Then I should be on the 'Goods Supplementary Unit' page
     And I enter 12345.0432 value of Goods Supplementary Unit
-    Then I should be on the 'Categorisation - Check Your Answers' page
+    Then I should be on the Categorisation "Check your category assessment answers for 17049099" page
     When I click the 'Supplementary Unit' change link
     Then I should be on the check 'Goods Supplementary Unit' page
     And I select continue
-    Then I should be on the 'Categorisation - Check Your Answers' page
+    Then I should be on the Categorisation "Check your category assessment answers for 17049099" page
     And The 'Supplementary Unit' has the value 12345.0432 litres
     When I click the 'Has Supplementary Unit' change link
     Then I should be on the check 'Supplementary Unit' page
     And I select No for the boolean question
     And I select continue
-    Then I should be on the 'Categorisation - Check Your Answers' page
+    Then I should be on the Categorisation "Check your category assessment answers for 17049099" page
     And The 'Has Supplementary Unit' has the value No
     When I select continue
     Then I should be on the 'Categorisation complete' with Category2 content page
@@ -216,7 +216,7 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Then I should be on the 'Category assessment 2' page
     Then I select Yes for the boolean question
     And I select continue
-    Then I should be on the 'Categorisation - Check Your Answers' page
+    Then I should be on the Categorisation "Check your category assessment answers for 1601001011" page
     When I select continue
     Then I should be on the 'Categorisation complete' with Category2 content page
     When I click on the Go back to homepage link
