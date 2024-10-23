@@ -26,22 +26,21 @@ class LongerCommodityCodeStepDef extends BaseStepDef {
       .assertPage()
   }
 
-  Then("""^(?:I )?enter (.*) value of Longer Commodity code in the free text field$""") {
-    (commodityCodeValidation: String) =>
-      commodityCodeValidation match {
-        case "invalid format" =>
-          LongerCommodityCodePage
-            .fillInput("value", "123AB")
-          submitPage()
-        case "incorrect"      =>
-          LongerCommodityCodePage
-            .fillInput("value", "22")
-          submitPage()
-        case _                =>
-          LongerCommodityCodePage
-            .fillInput("value", commodityCodeValidation)
-          submitPage()
-      }
+  Then("""^(?:I )?enter (.*) 'Longer Commodity code' and select Continue$""") { (commodityCodeValidation: String) =>
+    commodityCodeValidation match {
+      case "invalid format" =>
+        LongerCommodityCodePage
+          .fillInput("value", "123AB")
+        submitPage()
+      case "incorrect"      =>
+        LongerCommodityCodePage
+          .fillInput("value", "22")
+        submitPage()
+      case _                =>
+        LongerCommodityCodePage
+          .fillInput("value", commodityCodeValidation)
+        submitPage()
+    }
   }
 
   Then("""^(?:I )?should be on the check 'Longer commodity code' page$""") { () =>

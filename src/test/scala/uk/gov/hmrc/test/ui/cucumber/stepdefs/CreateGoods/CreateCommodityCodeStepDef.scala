@@ -31,7 +31,7 @@ class CreateCommodityCodeStepDef extends BaseStepDef {
       .assertCheckPage()
   }
 
-  Then("""^(?:I )?enter (.*) value of Commodity code in the free text field$""") { (commodityCodeValidation: String) =>
+  Then("""^(?:I )?enter (.*) Commodity code and select Continue$""") { (commodityCodeValidation: String) =>
     commodityCodeValidation match {
       case "invalid format" =>
         CreateCommodityCodePage

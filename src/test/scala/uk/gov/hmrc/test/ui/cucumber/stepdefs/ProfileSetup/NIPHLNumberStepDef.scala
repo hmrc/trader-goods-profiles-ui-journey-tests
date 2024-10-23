@@ -31,7 +31,7 @@ class NIPHLNumberStepDef extends BaseStepDef {
       .assertCheckPage()
   }
 
-  Then("""^(?:I )?enter (.*) value of my NIPHL Number in the free text field$""") { (niphlNumberValidation: String) =>
+  Then("""^(?:I )?enter (.*) value of my NIPHL Number and select Continue$""") { (niphlNumberValidation: String) =>
     niphlNumberValidation match {
       case "incorrect" =>
         NIPHLNumberPage

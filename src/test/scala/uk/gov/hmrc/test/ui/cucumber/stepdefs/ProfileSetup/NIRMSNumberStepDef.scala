@@ -31,7 +31,7 @@ class NIRMSNumberStepDef extends BaseStepDef {
       .assertCheckPage()
   }
 
-  Then("""^(?:I )?enter (.*) value of my NIRMS Number in the free text field$""") { (nrimsNumberValidation: String) =>
+  Then("""^(?:I )?enter (.*) value of my NIRMS Number and select Continue$""") { (nrimsNumberValidation: String) =>
     nrimsNumberValidation match {
       case "incorrect" =>
         NIRMSNumberPage

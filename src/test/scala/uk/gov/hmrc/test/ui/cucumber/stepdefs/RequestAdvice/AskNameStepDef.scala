@@ -31,7 +31,7 @@ class AskNameStepDef extends BaseStepDef {
       .assertCheckPage()
   }
 
-  Then("""^(?:I )?enter (.*) name in the free text field$""") { (name: String) =>
+  Then("""^(?:I )?enter (.*) name and select Continue$""") { (name: String) =>
     name match {
       case "long"      =>
         AskNamePage

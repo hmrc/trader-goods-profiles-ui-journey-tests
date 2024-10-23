@@ -41,7 +41,7 @@ class GoodsDescriptionStepDef extends BaseStepDef {
       .assertCheckPage()
   }
 
-  Then("""^(?:I )?enter (.*) in the Goods description text area$""") { (description: String) =>
+  Then("""^(?:I )?enter (.*) in Goods description and select Continue$""") { (description: String) =>
     description match {
       case "description" =>
         GoodsDescriptionPage

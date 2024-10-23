@@ -13,33 +13,33 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Then Error message 'Enter the trader reference' should be displayed
     When I select the back link
     Then I should be on the 'Trader reference' page
-    When I enter long Trader reference in the text area
+    When I enter long Trader reference and select Continue
     Then Error message 'Trader reference must be 512 characters or less' should be displayed
-    When I enter none unique Trader reference in the text area
+    When I enter none unique Trader reference and select Continue
     Then I should be on the 'Goods description' page
     When I select continue
     Then Error message 'Enter the goods description' should be displayed
     When I select the back link
     Then I should be on the 'Goods description' page
-    When I enter long text in the Goods description text area
+    When I enter long text in Goods description and select Continue
     Then Error message 'The goods description must be 512 characters or less' should be displayed
-    When I enter description in the Goods description text area
+    When I enter description in Goods description and select Continue
     Then I should be on the 'Country of origin' page
     And I select continue
     Then Error message 'Enter the country of origin' should be displayed
     When I select the back link
     Then I should be on the 'Country of origin' page
-    When I enter Iraq in the country text field
+    When I enter Iraq in country and select Continue
     Then I should be on the 'commodity code' page
     And I select continue
     Then Error message 'Enter a commodity code' should be displayed
-    When I enter invalid format value of Commodity code in the free text field
+    When I enter invalid format Commodity code and select Continue
     Then Error message 'Enter a commodity code in the correct format' should be displayed
-    When I enter incorrect value of Commodity code in the free text field
+    When I enter incorrect Commodity code and select Continue
     Then Error message 'Enter a real commodity code' should be displayed
     When I select the back link
     Then I should be on the 'commodity code' page
-    When I enter 170490 value of Commodity code in the free text field
+    When I enter 170490 Commodity code and select Continue
     Then I should be on the "Results for 170490" page
     When I select continue
     Then Error message 'Select if these are the correct goods' should be displayed
@@ -111,7 +111,8 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     When I select No for the boolean question
     And I select continue
     Then I should be on the Categorisation "Check your category assessment answers for 170490" page
-    And The 'Category assessment 2 of 6' has the value No
+#    TODO - uncomment after TGP-2725
+#    And The 'Category assessment 2 of 6' has the value No
     When I select continue
     Then I should be on the 'Categorisation complete' with Category1 content page
     When I click on the Go back to homepage link
@@ -125,11 +126,11 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     When I click on the Create a new goods record link
     And I select continue
     Then I should be on the 'Trader reference' page
-    When I enter unique Trader reference in the text area
+    When I enter unique Trader reference and select Continue
     Then I should be on the 'Goods description' page
-    When I enter description in the Goods description text area
-    And I enter Iraq in the country text field
-    And I enter 170490 value of Commodity code in the free text field
+    When I enter description in Goods description and select Continue
+    And I enter Iraq in country and select Continue
+    And I enter 170490 Commodity code and select Continue
     When I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page
@@ -147,11 +148,11 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Then Error message 'Enter 2 or 4 digits' should be displayed
     When I select the back link
     Then I should be on the 'Longer commodity code' page
-    When I enter invalid format value of Longer Commodity code in the free text field
+    When I enter invalid format 'Longer Commodity code' and select Continue
     Then Error message 'Enter a commodity code in the correct format' should be displayed
-    When I enter incorrect value of Longer Commodity code in the free text field
+    When I enter incorrect 'Longer Commodity code' and select Continue
     Then Error message 'Enter a real commodity code' should be displayed
-    When I enter 99 value of Longer Commodity code in the free text field
+    When I enter 99 'Longer Commodity code' and select Continue
     Then I should be on the Longer Commodity "Results for 17049099" page
     When I select continue
     Then Error message 'Select if these are the correct goods' should be displayed
@@ -174,13 +175,13 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Then I should be on the 'Goods Supplementary Unit' page
     When I select continue
     Then Error message 'Enter the goods supplementary unit' should be displayed
-    When I enter invalid format value of Goods Supplementary Unit
+    When I enter invalid format  in Goods Supplementary Unit and select Continue
     Then Error message 'Enter a supplementary unit in the correct format' should be displayed
-    When I enter incorrect value of Goods Supplementary Unit
+    When I enter incorrect  in Goods Supplementary Unit and select Continue
     Then Error message 'Enter a supplementary unit in the correct format' should be displayed
     When I select the back link
     Then I should be on the 'Goods Supplementary Unit' page
-    And I enter 12345.0432 value of Goods Supplementary Unit
+    And I enter 12345.0432  in Goods Supplementary Unit and select Continue
     Then I should be on the Categorisation "Check your category assessment answers for 17049099" page
     When I click the 'Supplementary Unit' change link
     Then I should be on the check 'Goods Supplementary Unit' page
@@ -200,10 +201,10 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Given I am on the 'Home' page with EORI GB990000000008
     When I click on the Create a new goods record link
     And I select continue
-    Then I enter unique Trader reference in the text area
-    When I enter description in the Goods description text area
-    And I enter United Kingdom in the country text field
-    When I enter 1601001011 value of Commodity code in the free text field
+    Then I enter unique Trader reference and select Continue
+    When I enter description in Goods description and select Continue
+    And I enter United Kingdom in country and select Continue
+    When I enter 1601001011 Commodity code and select Continue
     Then I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page
@@ -227,13 +228,13 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Given I login to TGP Homepage with EORI number GB123456789098
     When I click on the Create a new goods record link
     And I select continue
-    When I enter none unique Trader reference in the text area
+    When I enter none unique Trader reference and select Continue
     Then Error message 'This trader reference is already in your TGP. Enter a unique trader reference.' should be displayed
-    When I enter unique Trader reference in the text area
+    When I enter unique Trader reference and select Continue
     Then I should be on the 'Goods description' page
-    When I enter description in the Goods description text area
-    And I enter France in the country text field
-    When I enter 6321323000 value of Commodity code in the free text field
+    When I enter description in Goods description and select Continue
+    And I enter France in country and select Continue
+    When I enter 6321323000 Commodity code and select Continue
     Then I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page
@@ -245,11 +246,11 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Given I am on the 'Home' page with EORI GB992000000008
     When I click on the Create a new goods record link
     And I select continue
-    Then I enter unique Trader reference in the text area
+    Then I enter unique Trader reference and select Continue
     Then I should be on the 'Goods description' page
-    When I enter description in the Goods description text area
-    And I enter France in the country text field
-    When I enter 0208402002 value of Commodity code in the free text field
+    When I enter description in Goods description and select Continue
+    And I enter France in country and select Continue
+    When I enter 0208402002 Commodity code and select Continue
     Then I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page

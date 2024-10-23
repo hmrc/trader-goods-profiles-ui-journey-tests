@@ -6,7 +6,7 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     Given I login to TGP with Invalid details
     Then I should be on the 'There is a Problem' page
     When I login to TGP Profile setup with EORI number GB123456789098
-    Then I should be on the 'Setting up your profile' page and click Continue
+    Then I am on the 'Setting up your profile' page and click Continue
     And I should be on the 'UK internal scheme number' page
     When I navigate to the 'Incorrect' page
     Then I should be on the 'Page not found' page
@@ -18,11 +18,11 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     Then I should be on the 'UK internal scheme number' page
     And I select continue
     Then Error message 'Enter your UKIMS number' should be displayed
-    When I enter incorrect value of my UKIMS Number in the free text field
+    When I enter incorrect value of my UKIMS Number and select Continue
     Then Error message 'Enter your UKIMS number in the correct format' should be displayed
     When I select the back link
     Then I should be on the 'UK internal scheme number' page
-    When I enter valid value of my UKIMS Number in the free text field
+    When I enter valid value of my UKIMS Number and select Continue
     Then I should be on the 'Northern Ireland Retail Movement Scheme' page
     And I select continue
     Then Error message 'Select yes, if you are Northern Ireland Retail Movement Scheme registered' should be displayed
@@ -33,11 +33,11 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     Then I should be on the 'What is your NIRMS number?' page
     And I select continue
     Then Error message 'Enter your NIRMS number' should be displayed
-    When I enter incorrect value of my NIRMS Number in the free text field
+    When I enter incorrect value of my NIRMS Number and select Continue
     Then Error message 'Enter your NIRMS number in the correct format' should be displayed
     When I select the back link
     Then I should be on the 'What is your NIRMS number?' page
-    When I enter valid value of my NIRMS Number in the free text field
+    When I enter valid value of my NIRMS Number and select Continue
     Then I should be on the 'Northern Ireland plant health label' page
     And I select continue
     Then Error message 'Select if you are NIPHL registered' should be displayed
@@ -46,16 +46,16 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     Then I should be on the 'NIPHL registration number' page
     And I select continue
     Then Error message 'Enter your NIPHL registration number' should be displayed
-    When I enter incorrect value of my NIPHL Number in the free text field
+    When I enter incorrect value of my NIPHL Number and select Continue
     Then Error message 'Enter your NIPHL registration number in the correct format' should be displayed
     And I select the back link
     Then I should be on the 'NIPHL registration number' page
-    When I enter valid value of my NIPHL Number in the free text field
+    When I enter valid value of my NIPHL Number and select Continue
     Then I should be on the 'Check Your Answers' page
     When I click the UKIMS Number change link
     Then I should be on the check 'UK internal scheme number' page
     And The UKIMS Number field should be prepopulated
-    When I enter different value of my UKIMS Number in the free text field
+    When I enter different value of my UKIMS Number and select Continue
     Then I should be on the 'Check Your Answers' page
     And My 'UKIMS Number' has the different valid value
     When I click the NIRMS Question change link
@@ -91,9 +91,9 @@ Feature: Trader Goods Profile setup and Previous movement records journey
 
   Scenario: As a UKIMS authorised trader I log on to the trader goods profile service without NIRMS and with NIPHL
     Given I login to TGP Profile setup with EORI number GB123456789122
-    Then I should be on the 'Setting up your profile' page and click Continue
+    Then I am on the 'Setting up your profile' page and click Continue
     And I should be on the 'UK internal scheme number' page
-    When I enter valid value of my UKIMS Number in the free text field
+    When I enter valid value of my UKIMS Number and select Continue
     Then I should be on the 'Northern Ireland Retail Movement Scheme' page
     When I select No for the boolean question
     And I select continue
@@ -101,7 +101,7 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     When I select Yes for the boolean question
     And I select continue
     Then I should be on the 'NIPHL registration number' page
-    When I enter valid value of my NIPHL Number in the free text field
+    When I enter valid value of my NIPHL Number and select Continue
     Then I should be on the 'Check Your Answers' page
     And I select continue
     Then I should be on the 'Create Profile Success' page
@@ -112,14 +112,14 @@ Feature: Trader Goods Profile setup and Previous movement records journey
 
   Scenario: As a UKIMS authorised trader I log on to the trader goods profile service with NIRMS and without NIPHL
     Given I login to TGP Profile setup with EORI number GB123456789123
-    Then I should be on the 'Setting up your profile' page and click Continue
+    Then I am on the 'Setting up your profile' page and click Continue
     And I should be on the 'UK internal scheme number' page
-    When I enter valid value of my UKIMS Number in the free text field
+    When I enter valid value of my UKIMS Number and select Continue
     Then I should be on the 'Northern Ireland Retail Movement Scheme' page
     When I select Yes for the boolean question
     And I select continue
     Then I should be on the 'What is your NIRMS number?' page
-    When I enter valid value of my NIRMS Number in the free text field
+    When I enter valid value of my NIRMS Number and select Continue
     Then I should be on the 'Northern Ireland plant health label' page
     When I select No for the boolean question
     And I select continue
@@ -133,7 +133,7 @@ Feature: Trader Goods Profile setup and Previous movement records journey
 
   Scenario: As a UKIMS authorised trader who already has a UKIMS number, I log into TGP and can confirm my UKIMS details
     When I login to TGP Profile setup with EORI number GB000012340002
-    And I should be on the 'Setting up your profile' page and click Continue
+    And I am on the 'Setting up your profile' page and click Continue
     Then I should be on the existing 'UK internal scheme number' page
     When I select continue
     Then Error message 'Select if this is the correct UKIMS number' should be displayed
@@ -156,13 +156,13 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     When I click the UKIMS Number change link
     Then I should be on the update 'UK internal scheme number' page
     And The update UKIMS Number field should be prepopulated
-    When I enter empty value of my UKIMS Number in the free text field
+    When I enter empty value of my UKIMS Number and select Continue
     Then Error message 'Enter your UKIMS number' should be displayed
-    When I enter incorrect value of my UKIMS Number in the free text field
+    When I enter incorrect value of my UKIMS Number and select Continue
     Then Error message 'Enter your UKIMS number in the correct format' should be displayed
     When I select the back link
     Then I should be on the update 'UK internal scheme number' page
-    When I enter different value of my UKIMS Number in the free text field
+    When I enter different value of my UKIMS Number and select Continue
     Then I should be on the update 'UKIMS Check your answers' page
     And I select continue
     Then I should be on the 'Profile details' page
@@ -205,14 +205,14 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     Then I should be on the update 'What is your NIRMS number?' page
     When I select continue
     Then Error message 'Enter your NIRMS number' should be displayed
-    When I enter incorrect value of my NIRMS Number in the free text field
+    When I enter incorrect value of my NIRMS Number and select Continue
     Then Error message 'Enter your NIRMS number in the correct format' should be displayed
-    When I enter valid value of my NIRMS Number in the free text field
+    When I enter valid value of my NIRMS Number and select Continue
     Then I should be on the update 'NIRMS number Check your answers' page
     And My 'NIRMS number' has the valid value
     When I click the NIRMS Number change link in the summary list
     Then I should be on the check update 'What is your NIRMS number?' page
-    And I enter valid value of my NIRMS Number in the free text field
+    And I enter valid value of my NIRMS Number and select Continue
     Then I should be on the update 'NIRMS number Check your answers' page
     And My 'NIRMS number' has the valid value
     And I select continue
@@ -222,7 +222,7 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     When I click the NIRMS Number change link
     Then I should be on the update 'What is your NIRMS number?' page
     And The update NIRMS Number field should be prepopulated
-    When I enter different value of my NIRMS Number in the free text field
+    When I enter different value of my NIRMS Number and select Continue
     And I select continue
     Then My 'NIRMS Number' has the value RMS-GB-654321
     When I click the NIPHL Question change link
@@ -251,13 +251,13 @@ Feature: Trader Goods Profile setup and Previous movement records journey
     When I click the NIPHL Number change link
     Then I should be on the update 'NIPHL registration number' page
     And The update NIPHL Number field should be prepopulated
-    When I enter empty value of my NIPHL Number in the free text field
+    When I enter empty value of my NIPHL Number and select Continue
     Then Error message 'Enter your NIPHL registration number' should be displayed
-    When I enter incorrect value of my NIPHL Number in the free text field
+    When I enter incorrect value of my NIPHL Number and select Continue
     Then Error message 'Enter your NIPHL registration number in the correct format' should be displayed
     When I select the back link
     Then I should be on the update 'NIPHL registration number' page
-    When I enter different value of my NIPHL Number in the free text field
+    When I enter different value of my NIPHL Number and select Continue
     Then I should be on the update 'NIPHL registration number Check your answers' page
     And My 'NIPHL Number CYA' has the different value
     And I select continue

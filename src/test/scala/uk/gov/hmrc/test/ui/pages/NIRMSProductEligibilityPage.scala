@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
 object NIRMSProductEligibilityPage extends BasePage {
 
-  def title(args: String*): String = "Northern Ireland Retail Movement Scheme: how the scheme will work"
+  def title(): String = "Northern Ireland Retail Movement Scheme: how the scheme will work"
 
   def assertPage(): this.type = {
     verifyTitle(title())

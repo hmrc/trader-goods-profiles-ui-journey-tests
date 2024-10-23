@@ -26,7 +26,7 @@ class UpdateUKIMSNumberStepDef extends BaseStepDef {
       .assertPage()
   }
 
-  Then("""^(?:I )?update value of my UKIMS Number in the free text field$""") { () =>
+  Then("""^(?:I )?update value of my UKIMS Number and select Continue$""") { () =>
     UpdateUKIMSNumberPage
       .fillInput("value", "XIUKIM--47699357400020231115081800")
     submitPage()

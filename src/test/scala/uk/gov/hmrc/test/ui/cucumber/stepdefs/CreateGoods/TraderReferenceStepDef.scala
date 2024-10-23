@@ -35,7 +35,7 @@ class TraderReferenceStepDef extends BaseStepDef {
 
   var validUuid = "EMPTY"
 
-  Then("""^(?:I )?enter (.*) Trader reference in the text area$""") { (traderReference: String) =>
+  Then("""^(?:I )?enter (.*) Trader reference and select Continue$""") { (traderReference: String) =>
     traderReference match {
       case "none unique" =>
         TraderReferencePage
@@ -49,7 +49,7 @@ class TraderReferenceStepDef extends BaseStepDef {
           )
         submitPage()
       case "unique"      =>
-        validUuid = "Trader" + UUID.randomUUID().toString()
+        validUuid = "Trader" + UUID.randomUUID().toString
         TraderReferencePage
           .fillInput("value", validUuid)
         submitPage()

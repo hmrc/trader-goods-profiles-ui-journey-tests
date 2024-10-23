@@ -26,7 +26,7 @@ class WithdrawRequestReasonStepDef extends BaseStepDef {
       .assertPage()
   }
 
-  Then("""^(?:I )?enter (.*) text in the free text field$""") { (text: String) =>
+  Then("""^(?:I )?enter (.*) reason and select Continue$""") { (text: String) =>
     text match {
       case "Long"  =>
         WithdrawRequestReasonPage
