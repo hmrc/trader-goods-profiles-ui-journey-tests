@@ -31,24 +31,20 @@ class UKIMSNumberStepDef extends BaseStepDef {
       .assertCheckPage()
   }
 
-  Then("""^(?:I )?enter (.*) value of my UKIMS Number in the free text field$""") { (ukimsNumberValidation: String) =>
+  Then("""^(?:I )?enter (.*) value of my UKIMS Number$""") { (ukimsNumberValidation: String) =>
     ukimsNumberValidation match {
       case "incorrect" =>
         UKIMSNumberPage
           .fillInput("value", "INVALID")
-        submitPage()
       case "different" =>
         UKIMSNumberPage
           .fillInput("value", "XIUKIM 47699357400020231115081801")
-        submitPage()
       case "valid"     =>
         UKIMSNumberPage
           .fillInput("value", "XIUKIM-47699357400020231115081800")
-        submitPage()
       case "empty"     =>
         UKIMSNumberPage
           .fillInput("value", "")
-        submitPage()
     }
   }
 

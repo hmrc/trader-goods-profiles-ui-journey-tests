@@ -31,20 +31,17 @@ class AskNameStepDef extends BaseStepDef {
       .assertCheckPage()
   }
 
-  Then("""^(?:I )?enter (.*) name in the free text field$""") { (name: String) =>
+  Then("""^(?:I )?enter (.*) name$""") { (name: String) =>
     name match {
       case "long"      =>
         AskNamePage
           .fillInput("value", "Thisisaveryveryveryveryveryveryveryveryveryveryveryveryveryverylongname")
-        submitPage()
       case "valid"     =>
         AskNamePage
           .fillInput("value", "Testfirstname Testlastname")
-        submitPage()
       case "different" =>
         AskNamePage
           .fillInput("value", "different name")
-        submitPage()
     }
   }
 

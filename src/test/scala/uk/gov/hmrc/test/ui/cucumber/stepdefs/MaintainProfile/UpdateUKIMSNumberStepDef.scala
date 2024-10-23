@@ -26,10 +26,9 @@ class UpdateUKIMSNumberStepDef extends BaseStepDef {
       .assertPage()
   }
 
-  Then("""^(?:I )?update value of my UKIMS Number in the free text field$""") { () =>
+  Then("""^(?:I )?update value of my UKIMS Number$""") { () =>
     UpdateUKIMSNumberPage
       .fillInput("value", "XIUKIM--47699357400020231115081800")
-    submitPage()
   }
 
   Then("""^(?:The update UKIMS Number field )?should be prepopulated$""") { () =>
