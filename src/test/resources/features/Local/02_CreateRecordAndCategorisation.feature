@@ -24,7 +24,6 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     Then I should be on the 'Goods description' page
     When I enter long text in Goods description
     And I select continue
-    And I select continue
     Then Error message 'The goods description must be 512 characters or less' should be displayed
     When I enter description in Goods description
     And I select continue
