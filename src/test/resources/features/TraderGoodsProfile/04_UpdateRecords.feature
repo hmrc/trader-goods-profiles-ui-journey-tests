@@ -3,7 +3,7 @@
 Feature: Trader Goods Profile - View or Update record journey
 
   Scenario: As a returning user, with historic data, View and update records
-    Given I login to TGP Homepage with EORI number GB123456789085
+    Given I login to TGP Homepage with EORI number GB123456789098
     When I click on the View or update your goods records link
     Then I should be on the 'Previous movement records' page
     And I select continue
@@ -12,7 +12,8 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the 'Goods record' page
     When I click the Goods record Trader Reference change link
     Then I should be on the 'Trader reference' update page
-    And I enter Unique Trader reference update and select Continue
+    And I enter Unique Trader reference update
+    And I select continue
     Then I should be on the 'Trader reference' update CYA page
     And I select continue
     Then I should be on the 'Goods record' page
@@ -28,7 +29,8 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the 'Goods record' page
     When I click the Goods record 'Goods Supplementary Unit' change link
     Then I should be on the 'Goods Supplementary Unit' update page
-    When I enter 54321.4302  in Goods Supplementary Unit and select Continue
+    When I enter 54321.4302 in Goods Supplementary Unit
+    And I select continue
     Then I should be on the update 'Supplementary Unit' CYA page
     And My 'Supplementary Unit' has the updated value 54321.4302 squares
     And I select continue

@@ -41,23 +41,20 @@ class GoodsDescriptionStepDef extends BaseStepDef {
       .assertCheckPage()
   }
 
-  Then("""^(?:I )?enter (.*) in Goods description and select Continue$""") { (description: String) =>
+  Then("""^(?:I )?enter (.*) in Goods description$""") { (description: String) =>
     description match {
       case "description" =>
         GoodsDescriptionPage
           .fillInput("value", description)
-        submitPage()
       case "different"   =>
         GoodsDescriptionPage
           .fillInput("value", "different")
-        submitPage()
       case "long text"   =>
         GoodsDescriptionPage
           .fillInput(
             "value",
             "This is a really looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong text input."
           )
-        submitPage()
     }
   }
 

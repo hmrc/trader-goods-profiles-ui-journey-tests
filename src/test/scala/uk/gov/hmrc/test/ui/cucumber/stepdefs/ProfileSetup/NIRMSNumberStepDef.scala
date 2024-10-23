@@ -31,24 +31,20 @@ class NIRMSNumberStepDef extends BaseStepDef {
       .assertCheckPage()
   }
 
-  Then("""^(?:I )?enter (.*) value of my NIRMS Number and select Continue$""") { (nrimsNumberValidation: String) =>
+  Then("""^(?:I )?enter (.*) value of my NIRMS Number$""") { (nrimsNumberValidation: String) =>
     nrimsNumberValidation match {
       case "incorrect" =>
         NIRMSNumberPage
           .fillInput("value", "Rms-gb-123")
-        submitPage()
       case "different" =>
         NIRMSNumberPage
           .fillInput("value", "RMS   -GB------654321")
-        submitPage()
       case "valid"     =>
         NIRMSNumberPage
           .fillInput("value", "R  M  S-G  B-123  45  6")
-        submitPage()
       case "empty"     =>
         NIRMSNumberPage
           .fillInput("value", "")
-        submitPage()
     }
   }
 

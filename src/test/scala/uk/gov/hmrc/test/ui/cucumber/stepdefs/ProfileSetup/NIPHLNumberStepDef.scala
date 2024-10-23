@@ -31,24 +31,20 @@ class NIPHLNumberStepDef extends BaseStepDef {
       .assertCheckPage()
   }
 
-  Then("""^(?:I )?enter (.*) value of my NIPHL Number and select Continue$""") { (niphlNumberValidation: String) =>
+  Then("""^(?:I )?enter (.*) value of my NIPHL Number$""") { (niphlNumberValidation: String) =>
     niphlNumberValidation match {
       case "incorrect" =>
         NIPHLNumberPage
           .fillInput("value", "SN123452")
-        submitPage()
       case "different" =>
         NIPHLNumberPage
           .fillInput("value", "SN  5432  1")
-        submitPage()
       case "valid"     =>
         NIPHLNumberPage
           .fillInput("value", "S-N-1-2-3-4-5")
-        submitPage()
       case "empty"     =>
         NIPHLNumberPage
           .fillInput("value", "")
-        submitPage()
     }
   }
 

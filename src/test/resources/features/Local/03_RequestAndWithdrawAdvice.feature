@@ -17,24 +17,29 @@ Feature: Trader Goods Categorisation - Request Advice journey
     Then I should be on the 'What is your name?' page
     And I select continue
     Then Error message 'Enter your name' should be displayed
-    When I enter long name and select Continue
+    When I enter long name
+    And I select continue
     Then Error message 'Enter a name with 70 characters or less' should be displayed
     When I select the back link
     Then I should be on the 'What is your name?' page
-    When I enter valid name and select Continue
+    When I enter valid name
+    And I select continue
     Then I should be on the 'What is your email address?' page
     And I select continue
     Then Error message 'Enter your email address' should be displayed
-    When I enter invalid email and select Continue
+    When I enter invalid email
+    And I select continue
     Then Error message 'Enter a valid email address' should be displayed
     When I select the back link
     Then I should be on the 'What is your email address?' page
-    When I enter valid email and select Continue
+    When I enter valid email
+    And I select continue
     Then I should be on the 'Request Advice - Check Your Answers' page
     When I click the Name change link
     Then I should be on the check 'What is your name?' page
     And The Name field should be prepopulated
-    When I enter different name and select Continue
+    When I enter different name
+    And I select continue
     Then I should be on the 'Request Advice - Check Your Answers' page
     And My 'Name' has the different valid value
     When I click the Email change link
@@ -69,11 +74,13 @@ Feature: Trader Goods Categorisation - Request Advice journey
     When I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Can you tell us why you're withdrawing your request for advice' page
-    When I enter Long reason and select Continue
+    When I enter Long reason
+    And I select continue
     Then Error message 'The reason must be 512 characters or less' should be displayed
     When I select the back link
     Then I should be on the 'Can you tell us why you're withdrawing your request for advice' page
-    When I enter Valid reason and select Continue
+    When I enter Valid reason
+    And I select continue
     Then I should be on the 'Request for advice withdrawn' page
     When I click on the Go back to goods record link
     Then I should be on the 'Goods record' page

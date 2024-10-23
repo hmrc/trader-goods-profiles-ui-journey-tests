@@ -26,7 +26,7 @@ class WithdrawRequestReasonStepDef extends BaseStepDef {
       .assertPage()
   }
 
-  Then("""^(?:I )?enter (.*) reason and select Continue$""") { (text: String) =>
+  Then("""^(?:I )?enter (.*) reason$""") { (text: String) =>
     text match {
       case "Long"  =>
         WithdrawRequestReasonPage
@@ -34,11 +34,9 @@ class WithdrawRequestReasonStepDef extends BaseStepDef {
             "value",
             "This is a really looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong text input."
           )
-          .submitPage()
       case "Valid" =>
         WithdrawRequestReasonPage
           .fillInput("value", "Valid Reason")
-          .submitPage()
     }
   }
 }

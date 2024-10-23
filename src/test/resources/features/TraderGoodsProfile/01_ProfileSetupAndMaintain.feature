@@ -2,29 +2,34 @@
 
 Feature: Trader Goods Profile - Profile setup and Maintain profile journey
 
-  Scenario: As a UKIMS authorised trader, I can setup TGP profile and maintain
-    Given I login to TGP Profile setup with EORI number GB000012340002
-    When I am on the 'Setting up your profile' page and click Continue
-    Then I should be on the existing 'UK internal scheme number' page
-    When I select No for the boolean question
+  Scenario: As a UKIMS authorised trader, I can setup and maintain Trader Goods Profile
+    Given I login to TGP Profile setup with EORI number GB123456789098
+    When I am on the 'Setting up your profile' page
     And I select continue
+#    Then I should be on the existing 'UK internal scheme number' page
+#    When I select No for the boolean question
+#    And I select continue
     Then I should be on the 'UK internal scheme number' page
-    And I enter valid value of my UKIMS Number and select Continue
+    And I enter valid value of my UKIMS Number
+    And I select continue
     Then I should be on the 'Northern Ireland Retail Movement Scheme' page
     When I select Yes for the boolean question
     And I select continue
     Then I should be on the 'What is your NIRMS number?' page
-    When I enter valid value of my NIRMS Number and select Continue
+    When I enter valid value of my NIRMS Number
+    And I select continue
     Then I should be on the 'Northern Ireland plant health label' page
     When I select Yes for the boolean question
     And I select continue
     Then I should be on the 'NIPHL registration number' page
-    When I enter valid value of my NIPHL Number and select Continue
+    When I enter valid value of my NIPHL Number
+    And I select continue
     Then I should be on the 'Check Your Answers' page
     When I click the UKIMS Number change link
     Then I should be on the check 'UK internal scheme number' page
     And The UKIMS Number field should be prepopulated
-    When I enter different value of my UKIMS Number and select Continue
+    When I enter different value of my UKIMS Number
+    And I select continue
     Then I should be on the 'Check Your Answers' page
     And My 'UKIMS Number' has the different valid value
     When I click the NIRMS Question change link
@@ -40,7 +45,8 @@ Feature: Trader Goods Profile - Profile setup and Maintain profile journey
     When I click the UKIMS Number change link
     Then I should be on the update 'UK internal scheme number' page
     And The update UKIMS Number field should be prepopulated
-    When I update value of my UKIMS Number and select Continue
+    When I update value of my UKIMS Number
+    And I select continue
     Then I should be on the update 'UKIMS Check your answers' page
     And I select continue
     Then I should be on the 'Profile details' page

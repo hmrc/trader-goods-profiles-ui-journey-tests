@@ -31,16 +31,14 @@ class AskEmailStepDef extends BaseStepDef {
       .assertCheckPage()
   }
 
-  Then("""^(?:I )?enter (.*) email and select Continue$""") { (email: String) =>
+  Then("""^(?:I )?enter (.*) email$""") { (email: String) =>
     email match {
       case "invalid" =>
         AskEmailPage
           .fillInput("value", "test@.com")
-        submitPage()
       case "valid"   =>
         AskEmailPage
           .fillInput("value", "test@test.com")
-        submitPage()
     }
   }
 

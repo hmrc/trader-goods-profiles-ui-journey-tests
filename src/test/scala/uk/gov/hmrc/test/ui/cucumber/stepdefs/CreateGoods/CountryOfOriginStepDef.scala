@@ -31,8 +31,7 @@ class CountryOfOriginStepDef extends BaseStepDef {
       .assertCheckPage()
   }
 
-  Then("""^(?:I )?enter (.*) in country and select Continue$""") { (country: String) =>
+  Then("""^(?:I )?enter (.*) in country$""") { (country: String) =>
     CountryOfOriginPage.select(country)
-    submitPage()
   }
 }

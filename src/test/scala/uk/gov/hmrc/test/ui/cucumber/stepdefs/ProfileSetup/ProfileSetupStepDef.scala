@@ -22,10 +22,9 @@ import uk.gov.hmrc.test.ui.pages.{NIPHLPage, NIRMSPage, UKIMSPage}
 
 class ProfileSetupStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?am on the 'Setting up your profile' page and click Continue$""") { () =>
+  Then("""^(?:I )?am on the 'Setting up your profile' page$""") { () =>
     ProfileSetupPage
       .assertPage()
-    submitPage()
   }
 
   Then("""^(?:I )?should be on the 'UKIMS' page$""") { () =>

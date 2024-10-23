@@ -33,27 +33,23 @@ class UpdateTraderReferenceStepDef extends BaseStepDef {
       .assertPage()
   }
 
-  Then("""^(?:I )?enter (.*) Trader reference update and select Continue$""") { (traderReference: String) =>
+  Then("""^(?:I )?enter (.*) Trader reference update$""") { (traderReference: String) =>
     traderReference match {
       case "Non unique" =>
         UpdateTraderReferencePage
           .fillInput("value", "ABC543211")
-        submitPage()
       case "Unique"     =>
         UpdateTraderReferencePage
           .fillInput("value", "Trader" + UUID.randomUUID().toString)
-        submitPage()
       case "different"  =>
         UpdateTraderReferencePage
           .fillInput("value", "different value")
-        submitPage()
       case "long"       =>
         UpdateTraderReferencePage
           .fillInput(
             "value",
             "This is a really looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong text input."
           )
-        submitPage()
     }
   }
 }
