@@ -40,6 +40,14 @@ class CommonStepDef extends BaseStepDef {
     clickRadioBtn(option)
   }
 
+  When("""^(?:I )?check the first box of the checkbox question""") { () =>
+    clickFirstCheckboxItem()
+  }
+
+  When("""^(?:I )?check none of the above for the checkbox question""") { () =>
+    clickLastCheckboxItem()
+  }
+
   Then("""^(?:The radio button field )?should be prepopulated$""") { () =>
     isRadioBtnSelected("Yes").shouldEqual(true)
   }

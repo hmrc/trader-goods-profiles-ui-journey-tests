@@ -386,6 +386,16 @@ trait BasePage extends BrowserDriver with Matchers {
     this
   }
 
+  def clickFirstCheckboxItem(): this.type = {
+    click(By.xpath("//input[@type='checkbox'][1]"))
+    this
+  }
+
+  def clickLastCheckboxItem(): this.type = {
+    click(By.xpath("(//input[@type='checkbox'])[last()]"))
+    this
+  }
+
   def clickRadioOpt(Option: String): this.type = {
     Option match {
       case "First"             => clickById("value_0")

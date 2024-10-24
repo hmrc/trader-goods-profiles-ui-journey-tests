@@ -33,14 +33,14 @@ Feature: Trader Goods Profile - Create Record, Categorisation with longer commod
     And I click on the Categorise goods now link
     Then I should be on the 'Categorisation Information' page
     And I select continue
-    Then I should be on the 'Category assessment 1' page
-    When I select Yes for the boolean question
+    Then I should be on the 'Category assessment 1 of 6' page
+    And I check the first box of the checkbox question
     And I select continue
-    Then I should be on the 'Category assessment 2' page
-    When I select Yes for the boolean question
+    Then I should be on the 'Category assessment 2 of 6' page
+    And I check the first box of the checkbox question
     And I select continue
-    Then I should be on the 'Category assessment 3' page
-    When I select No for the boolean question
+    Then I should be on the 'Category assessment 3 of 6' page
+    And I check none of the above for the checkbox question
     And I select continue
     Then I should be on the 'Longer commodity code' page
     And I enter 9912 'Longer Commodity code'
@@ -48,8 +48,8 @@ Feature: Trader Goods Profile - Create Record, Categorisation with longer commod
     Then I should be on the Longer Commodity "Results for 1704909912" page
     When I select Yes for the boolean question
     And I select continue
-    Then I should be on the 'Category assessment 3' page for Longer Commodity code
-    When I select Yes for the boolean question
+    Then I should be on the 'Category assessment 3 of 7' page for Longer Commodity code
+    And I check the first box of the checkbox question
     And I select continue
     Then I should be on the 'Supplementary Unit' page
     When I select Yes for the boolean question
@@ -58,8 +58,8 @@ Feature: Trader Goods Profile - Create Record, Categorisation with longer commod
     And I enter 12345.0432 in Goods Supplementary Unit
     And I select continue
     Then I should be on the Categorisation "Check your category assessment answers for 1704909912" page
-    When I click the Category assessment 4 of 6 change link
-    Then I should be on the check 'Category assessment 4' page for Longer Commodity code
+    When I click the Category assessment 4 of 7 change link
+    Then I should be on the check 'Category assessment 4 of 7' page for Longer Commodity code
     And I select continue
     Then I should be on the Categorisation "Check your category assessment answers for 1704909912" page
     When I click the 'Supplementary Unit' change link

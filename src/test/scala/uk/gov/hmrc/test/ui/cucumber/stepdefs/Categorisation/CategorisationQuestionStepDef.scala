@@ -21,25 +21,25 @@ import uk.gov.hmrc.test.ui.pages.Categorisation.CategorisationAssessmentPage
 
 class CategorisationQuestionStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'Category assessment(.+)' page$""") { (number: String) =>
+  Then("""^(?:I )?should be on the 'Category assessment(.+) of (.+)' page$""") { (number: String, total: String) =>
     CategorisationAssessmentPage
-      .assertPage(number)
+      .assertPage(number, total)
   }
 
-  Then("""^(?:I )?should be on the check 'Category assessment(.+)' page$""") { (number: String) =>
+  Then("""^(?:I )?should be on the check 'Category assessment(.+) of (.+)' page$""") { (number: String, total: String) =>
     CategorisationAssessmentPage
-      .assertCheckPage(number)
+      .assertCheckPage(number, total)
   }
 
-  Then("""^(?:I )?should be on the 'Category assessment(.+)' page for Longer Commodity code$""") { (number: String) =>
+  Then("""^(?:I )?should be on the 'Category assessment(.+) of (.+)' page for Longer Commodity code$""") { (number: String, total: String) =>
     CategorisationAssessmentPage
-      .assertRecategorisePage(number)
+      .assertRecategorisePage(number, total)
   }
 
-  Then("""^(?:I )?should be on the check 'Category assessment(.+)' page for Longer Commodity code$""") {
-    (number: String) =>
+  Then("""^(?:I )?should be on the check 'Category assessment(.+) of (.+)' page for Longer Commodity code$""") {
+    (number: String, total: String) =>
       CategorisationAssessmentPage
-        .assertRecategoriseCheckPage(number)
+        .assertRecategoriseCheckPage(number, total)
   }
 
   Then("""^(?:I )?select (.+) option$""") { (option: String) =>
