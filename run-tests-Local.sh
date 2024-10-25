@@ -14,4 +14,4 @@ sbt scalafmtAll
 sbt scalafmtCheckAll scalafmtSbtCheck
 
 
-sbt -Dbrowser="${BROWSER_TYPE:=$DEFAULT_BROWSER}" -Denvironment="${ENV:=local}" -Dbrowser.option.headless=false -Daccessibility.assessment="false" "testOnly uk.gov.hmrc.test.ui.cucumber.runner.TestRunnerLocal" testReport
+sbt -Dbrowser="${BROWSER_TYPE:=$DEFAULT_BROWSER}" -Denvironment="${ENV:=local}" -Dbrowser.option.headless=false -Daccessibility.assessment="true" "testOnly uk.gov.hmrc.test.ui.cucumber.runner.TestRunnerLocal" testReport

@@ -26,14 +26,16 @@ class CategorisationQuestionStepDef extends BaseStepDef {
       .assertPage(number, total)
   }
 
-  Then("""^(?:I )?should be on the check 'Category assessment(.+) of (.+)' page$""") { (number: String, total: String) =>
-    CategorisationAssessmentPage
-      .assertCheckPage(number, total)
+  Then("""^(?:I )?should be on the check 'Category assessment(.+) of (.+)' page$""") {
+    (number: String, total: String) =>
+      CategorisationAssessmentPage
+        .assertCheckPage(number, total)
   }
 
-  Then("""^(?:I )?should be on the 'Category assessment(.+) of (.+)' page for Longer Commodity code$""") { (number: String, total: String) =>
-    CategorisationAssessmentPage
-      .assertRecategorisePage(number, total)
+  Then("""^(?:I )?should be on the 'Category assessment(.+) of (.+)' page for Longer Commodity code$""") {
+    (number: String, total: String) =>
+      CategorisationAssessmentPage
+        .assertRecategorisePage(number, total)
   }
 
   Then("""^(?:I )?should be on the check 'Category assessment(.+) of (.+)' page for Longer Commodity code$""") {
