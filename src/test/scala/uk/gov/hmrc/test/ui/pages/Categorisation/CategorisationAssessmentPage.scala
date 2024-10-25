@@ -21,14 +21,14 @@ import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
 object CategorisationAssessmentPage extends BasePage {
 
-  def title(number: String, total: String): String = f"Category assessment ${number.trim} of ${total.trim}"
-  def h1(number: String, total: String): String = f"Category assessment ${number.trim} of ${total.trim}"
-  def url: String                               = "/update-record/" + recordId + "/categorisation/category-assessment/"
-  def assertPage(number: String, total: String): this.type     = {
+  def title(number: String, total: String): String         = f"Category assessment ${number.trim} of ${total.trim}"
+  def h1(number: String, total: String): String            = f"Category assessment ${number.trim} of ${total.trim}"
+  def url: String                                          = "/update-record/" + recordId + "/categorisation/category-assessment/"
+  def assertPage(number: String, total: String): this.type = {
     getRecordId()
     verifyTitle(title(number, total))
     verifyHeader(h1(number, total))
-    validateUrl(url + (Integer.parseInt(number.trim)))
+    validateUrl(url + Integer.parseInt(number.trim))
     this
   }
 
@@ -36,7 +36,7 @@ object CategorisationAssessmentPage extends BasePage {
     getRecordId()
     verifyTitle(title(number, total))
     verifyHeader(h1(number, total))
-    validateUrl(url + (Integer.parseInt(number.trim)) + "/check")
+    validateUrl(url + Integer.parseInt(number.trim) + "/check")
     this
   }
 
@@ -45,7 +45,7 @@ object CategorisationAssessmentPage extends BasePage {
     verifyTitle(title(number, total))
     verifyHeader(h1(number, total))
     validateUrl(
-      s"/update-record/$recordId/recategorise/category-assessment/" + (Integer.parseInt(number.trim))
+      s"/update-record/$recordId/recategorise/category-assessment/" + Integer.parseInt(number.trim)
     )
     this
   }
@@ -55,7 +55,7 @@ object CategorisationAssessmentPage extends BasePage {
     verifyTitle(title(number, total))
     verifyHeader(h1(number, total))
     validateUrl(
-      s"/update-record/$recordId/recategorise/category-assessment/" + (Integer.parseInt(number.trim)) + "/check"
+      s"/update-record/$recordId/recategorise/category-assessment/" + Integer.parseInt(number.trim) + "/check"
     )
     this
   }
