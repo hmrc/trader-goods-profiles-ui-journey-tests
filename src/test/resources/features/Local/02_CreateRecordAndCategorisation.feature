@@ -227,10 +227,10 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     When I select continue
     And I click on the Categorise goods now link
     Then I select continue
-    Then I should be on the 'Category assessment 1 of 6' page
+    Then I should be on the 'Category assessment 1 of 2' page
     And I check the first box of the checkbox question
     And I select continue
-    Then I should be on the 'Category assessment 2 of 6' page
+    Then I should be on the 'Category assessment 2 of 2' page
     And I check the first box of the checkbox question
     And I select continue
     Then I should be on the Categorisation "Check your category assessment answers for 1601001011" page
