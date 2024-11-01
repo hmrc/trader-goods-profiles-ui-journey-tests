@@ -21,8 +21,8 @@ import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
 object CreateRecordSuccessPage extends BasePage {
 
-  def title: String = "You've created a goods record"
-  def h1: String    = "You've created a goods record"
+  def title: String = "You’ve created a goods record"
+  def h1: String    = "You’ve created a goods record"
   def url: String   = "/create-record/" + recordId + "/success"
 
   def assertPage(): this.type = {

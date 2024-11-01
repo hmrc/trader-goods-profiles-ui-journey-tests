@@ -20,8 +20,8 @@ import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object UpdateGoodsSupplementaryUnitPage extends Page {
 
-  override def title(args: String*): String = "What is the good's supplementary unit?"
-  override def h1(args: String*): String    = "What is the good's supplementary unit?"
+  override def title(args: String*): String = "What is the good’s supplementary unit?"
+  override def h1(args: String*): String    = "What is the good’s supplementary unit?"
   override def url(args: String*): String   =
     "/update-record/" + recordId + "/categorisation/supplementary-unit-amount/update"
 
