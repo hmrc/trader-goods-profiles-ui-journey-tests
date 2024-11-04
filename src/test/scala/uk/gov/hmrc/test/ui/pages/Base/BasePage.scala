@@ -73,6 +73,53 @@ trait BasePage extends BrowserDriver with Matchers {
     )
   }
 
+  def loadDownloadDataSummaries(): Unit = {
+    println("============================Loading Download Data Summaries")
+
+    Await.result(
+      mongoClient
+        .getDatabase("trader-goods-profiles-data-store")
+        .getCollection("downloadDataSummary")
+        .insertMany(
+          Seq(
+            Document(
+              "summaryId" -> "3b1c50e6-3ae6-11ef-a2ec-325096b39f42",
+              "eori"      -> "GB123456789098",
+              "status"    -> "FileReadySeen",
+              "createdAt" -> new Date(),
+              "expiresAt" -> new Date(),
+              "fileInfo"  -> Document(
+                "fileName"      -> "fileNameFileReadySeen",
+                "fileSize"      -> 600,
+                "retentionDays" -> "30"
+              )
+            ),
+            Document(
+              "summaryId" -> "3b1c50e6-3ae6-11ef-a2ec-325096b39f44",
+              "eori"      -> "GB123456789098",
+              "status"    -> "FileReadyUnseen",
+              "createdAt" -> new Date(),
+              "expiresAt" -> new Date(),
+              "fileInfo"  -> Document(
+                "fileName"      -> "fileNameFileReadyUnseen",
+                "fileSize"      -> 600,
+                "retentionDays" -> "30"
+              )
+            ),
+            Document(
+              "summaryId" -> "3b1c50e6-3ae6-11ef-a2ec-325096b39f40",
+              "eori"      -> "GB123456789098",
+              "status"    -> "FileInProgress",
+              "createdAt" -> new Date(),
+              "expiresAt" -> new Date()
+            )
+          )
+        )
+        .toFuture(),
+      10 seconds
+    )
+  }
+
   def loadGoodsItemRecords(): Unit = {
     println("============================Loading Goods Item Records")
 
