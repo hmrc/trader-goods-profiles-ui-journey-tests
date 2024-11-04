@@ -23,7 +23,8 @@ import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.conf.TestConfiguration.config
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
-import java.time.Duration
+import java.time.temporal.ChronoUnit
+import java.time.{Duration, Instant}
 import java.util.Date
 import scala.collection.mutable
 import scala.concurrent.Await
@@ -49,6 +50,7 @@ trait BasePage extends BrowserDriver with Matchers {
     dropCollection("trader-goods-profiles-data-store", "profiles")
     dropCollection("trader-goods-profiles-data-store", "checkRecords")
     dropCollection("trader-goods-profiles-data-store", "goodsItemRecords")
+    dropCollection("trader-goods-profiles-data-store", "downloadDataSummary")
   }
 
   def loadTraderProfiles(): Unit = {
@@ -76,6 +78,9 @@ trait BasePage extends BrowserDriver with Matchers {
   def loadDownloadDataSummaries(): Unit = {
     println("============================Loading Download Data Summaries")
 
+    val localDate    = Date.from(Instant.now)
+    val newLocalDate = Date.from(Instant.now.plus(30, ChronoUnit.DAYS))
+
     Await.result(
       mongoClient
         .getDatabase("trader-goods-profiles-data-store")
@@ -86,10 +91,10 @@ trait BasePage extends BrowserDriver with Matchers {
               "summaryId" -> "3b1c50e6-3ae6-11ef-a2ec-325096b39f42",
               "eori"      -> "GB123456789098",
               "status"    -> "FileReadySeen",
-              "createdAt" -> new Date(),
-              "expiresAt" -> new Date(),
+              "createdAt" -> localDate,
+              "expiresAt" -> newLocalDate,
               "fileInfo"  -> Document(
-                "fileName"      -> "fileNameFileReadySeen",
+                "fileName"      -> "test",
                 "fileSize"      -> 600,
                 "retentionDays" -> "30"
               )
@@ -98,10 +103,10 @@ trait BasePage extends BrowserDriver with Matchers {
               "summaryId" -> "3b1c50e6-3ae6-11ef-a2ec-325096b39f44",
               "eori"      -> "GB123456789098",
               "status"    -> "FileReadyUnseen",
-              "createdAt" -> new Date(),
-              "expiresAt" -> new Date(),
+              "createdAt" -> localDate,
+              "expiresAt" -> newLocalDate,
               "fileInfo"  -> Document(
-                "fileName"      -> "fileNameFileReadyUnseen",
+                "fileName"      -> "test",
                 "fileSize"      -> 600,
                 "retentionDays" -> "30"
               )
@@ -110,8 +115,8 @@ trait BasePage extends BrowserDriver with Matchers {
               "summaryId" -> "3b1c50e6-3ae6-11ef-a2ec-325096b39f40",
               "eori"      -> "GB123456789098",
               "status"    -> "FileInProgress",
-              "createdAt" -> new Date(),
-              "expiresAt" -> new Date()
+              "createdAt" -> localDate,
+              "expiresAt" -> newLocalDate
             )
           )
         )
