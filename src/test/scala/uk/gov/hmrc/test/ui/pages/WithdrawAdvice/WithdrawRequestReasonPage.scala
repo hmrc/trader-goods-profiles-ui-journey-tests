@@ -20,8 +20,8 @@ import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object WithdrawRequestReasonPage extends Page {
 
-  override def title(args: String*): String = "Can you tell us why you're withdrawing your request for advice?"
-  override def h1(args: String*): String    = "Can you tell us why you're withdrawing your request for advice?"
+  override def title(args: String*): String = "Can you tell us why you’re withdrawing your request for advice?"
+  override def h1(args: String*): String    = "Can you tell us why you’re withdrawing your request for advice?"
   override def url(args: String*): String   = "/update-record/" + recordId + "/withdraw-request/reason"
 
   override def verifyHeader(h1: String): this.type = {
