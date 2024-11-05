@@ -88,18 +88,6 @@ trait BasePage extends BrowserDriver with Matchers {
         .insertMany(
           Seq(
             Document(
-              "summaryId" -> "3b1c50e6-3ae6-11ef-a2ec-325096b39f42",
-              "eori"      -> "GB123456789098",
-              "status"    -> "FileReadySeen",
-              "createdAt" -> localDate,
-              "expiresAt" -> newLocalDate,
-              "fileInfo"  -> Document(
-                "fileName"      -> "test",
-                "fileSize"      -> 600,
-                "retentionDays" -> "30"
-              )
-            ),
-            Document(
               "summaryId" -> "3b1c50e6-3ae6-11ef-a2ec-325096b39f44",
               "eori"      -> "GB123456789098",
               "status"    -> "FileReadyUnseen",
@@ -110,13 +98,6 @@ trait BasePage extends BrowserDriver with Matchers {
                 "fileSize"      -> 600,
                 "retentionDays" -> "30"
               )
-            ),
-            Document(
-              "summaryId" -> "3b1c50e6-3ae6-11ef-a2ec-325096b39f40",
-              "eori"      -> "GB123456789098",
-              "status"    -> "FileInProgress",
-              "createdAt" -> localDate,
-              "expiresAt" -> newLocalDate
             )
           )
         )
