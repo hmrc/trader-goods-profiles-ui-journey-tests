@@ -27,6 +27,7 @@ object Hooks extends ScalaDsl with EN with Browser with BasePage {
     dropCollections()
     loadTraderProfiles()
     loadGoodsItemRecords()
+    loadDownloadDataSummaries()
     startBrowser()
   }
 
