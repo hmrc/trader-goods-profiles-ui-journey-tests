@@ -1,8 +1,8 @@
-@AllPipeline
+@AllLocal
 
 Feature: Trader Goods Profile - Download data journey
 
-  Scenario: As a UKIMS authorised trader, I can download and request my TGP data
+  Scenario: As a UKIMS authorised trader, I can download or request my TGP data
     Given I login to TGP Homepage with EORI number GB123456789098
     Then I should be on the 'Home' page
     When I click on the Go to the TGP records file page to download the file link
