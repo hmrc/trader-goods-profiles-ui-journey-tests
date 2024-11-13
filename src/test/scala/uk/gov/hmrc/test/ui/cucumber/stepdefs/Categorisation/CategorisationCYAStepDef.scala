@@ -41,9 +41,9 @@ class CategorisationCYAStepDef extends BaseStepDef {
       .clickConditionsChangeLink(3)
   }
 
-  Then("""^(?:I )?click the Category assessment 4 of 7 change link$""") { () =>
+  Then("""^(?:I )?click the Category assessment 3 of 7 change link$""") { () =>
     CategorisationCYAPage
-      .clickConditionsChangeLink(4)
+      .clickConditionsChangeLink(3)
   }
 
   Then("""^(?:I )?click the Category assessment 5 of 6 change link$""") { () =>
