@@ -16,7 +16,7 @@ Feature: Trader Goods Profile - Download data journey
   Then I should be on the 'Request File' page
   When I select Get TGP records file
   Then I should be on the 'Request Received' page
-  When I click on the download TGP data page link
+  When I click on the TGP records files page link
   Then I should be on the 'File Management' page
   When I select the back link
   Then I should be on the 'Request Received' page
