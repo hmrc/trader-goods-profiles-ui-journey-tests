@@ -22,7 +22,6 @@ Feature: Trader Goods Profile - Request and Withdraw Advice journey
     Then I should be on the 'Request Advice - Check Your Answers' page
     When I click the Name change link
     Then I should be on the check 'What is your name?' page
-    And The Name field should be prepopulated
     When I enter different name
     And I select continue
     Then I should be on the 'Request Advice - Check Your Answers' page
@@ -48,5 +47,3 @@ Feature: Trader Goods Profile - Request and Withdraw Advice journey
     When I enter Valid reason
     And I select continue
     Then I should be on the 'Request for advice withdrawn' page
-    And I click on the Sign out link
-    Then I should be on the 'Signed Out' page

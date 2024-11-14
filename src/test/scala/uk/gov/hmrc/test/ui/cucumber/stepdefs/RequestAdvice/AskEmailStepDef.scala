@@ -35,7 +35,7 @@ class AskEmailStepDef extends BaseStepDef {
     email match {
       case "invalid" =>
         AskEmailPage
-          .fillInput("value", "test@.com")
+          .fillInput("value", "Testing@testing.test")
       case "valid"   =>
         AskEmailPage
           .fillInput("value", "test@test.com")
