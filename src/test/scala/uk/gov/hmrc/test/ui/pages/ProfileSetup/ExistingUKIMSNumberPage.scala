@@ -22,8 +22,8 @@ import org.openqa.selenium.By
 
 object ExistingUKIMSNumberPage extends Page {
 
-  override def title(args: String*): String = "UK Internal Market Scheme (UKIMS) number"
-  override def h1(args: String*): String    = "UK Internal Market Scheme (UKIMS) number"
+  override def title(args: String*): String = "Existing UK Internal Market Scheme (UKIMS) number"
+  override def h1(args: String*): String    = "Existing UK Internal Market Scheme (UKIMS) number"
   override def url(args: String*): String   = "/create-profile/existing-ukims-number"
 
   def checkUKIMS(expected: String): this.type = {
