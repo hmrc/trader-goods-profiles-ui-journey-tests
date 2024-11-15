@@ -26,3 +26,5 @@ Feature: Trader Goods Profile - Download data journey
   Then I should be on the 'Request Received' page
   When I click on the Go back to homepage link
   Then I should be on the 'Home' page
+  And I click on the Sign out link
+  Then I should be on the 'Signed Out' page

@@ -10,23 +10,22 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the 'Goods profile' page 1 results
     When I click on the Change link
     Then I should be on the 'Goods record' page
+#Update trader reference to a new unique value
     When I click the Goods record Trader Reference change link
     Then I should be on the 'Trader reference' update page
     And I enter Unique Trader reference update
-    And I select continue
+    When I select continue
     Then I should be on the 'Trader reference' update CYA page
     And I select continue
     Then I should be on the 'Goods record' page
-    When I click on the Back to goods profile link
-    Then I should be on the 'Goods profile' page 1 results
-    And I select the back link
-    Then I should be on the 'Goods record' page
+#No changes to Goods description after clicking change link
     When I click the Goods record Goods Description change link
     Then I should be on the 'Goods description' update page
     And I select continue
     Then I should be on the 'Goods description' CYA page
     And I select continue
     Then I should be on the 'Goods record' page
+#Update supplimentary unit to new value and validating
     When I click the Goods record 'Goods Supplementary Unit' change link
     Then I should be on the 'Goods Supplementary Unit' update page
     When I enter 54321.4302 in Goods Supplementary Unit
@@ -34,6 +33,7 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the update 'Supplementary Unit' CYA page
     And My 'Supplementary Unit' has the updated value 54321.4302 squares
     And I select continue
+#Removing supplimentary unit
     When I click the Goods record 'Supplementary Unit Question' change link
     Then I should be on the 'Supplementary Unit' update page
     When I select No for the boolean question
@@ -42,6 +42,7 @@ Feature: Trader Goods Profile - View or Update record journey
     And My 'Supplementary Unit without question' has the updated value No
     And I select continue
     Then I should be on the 'Goods record' page
+#Update Commodity Code
     When I click the Goods record Commodity Code change link
     Then I should be on the Goods record Commodity Code warning page
     And I select Yes for the boolean question
@@ -54,6 +55,7 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the update 'commodity code' CYA page
     And I select continue
     Then I should be on the 'Goods record' page
+#Update Country of origin
     When I click the Goods record Country Of Origin change link
     Then I should be on the Goods record Country Of Origin warning page
     And I select Yes for the boolean question
@@ -63,6 +65,7 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the 'Country of origin' CYA page
     And I select continue
     Then I should be on the 'Goods record' page
+#Remove record
     When I click on the Go back to goods profile link
     Then I should be on the 'Goods profile' page 1 results
     When I click on the Remove link

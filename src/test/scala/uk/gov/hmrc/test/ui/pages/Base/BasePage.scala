@@ -63,8 +63,8 @@ trait BasePage extends BrowserDriver with Matchers {
         .insertMany(
           Seq(
             Document(
-              "eori"        -> "GB000012340002",
-              "actorId"     -> "GB000012340002",
+              "eori"        -> "GB123456789098",
+              "actorId"     -> "GB123456789098",
               "ukimsNumber" -> "XIUKIM00001234000220240207140148",
               "lastUpdated" -> new Date()
             )

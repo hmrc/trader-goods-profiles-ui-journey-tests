@@ -6,9 +6,9 @@ Feature: Trader Goods Profile - Profile setup and Maintain profile journey
     Given I login to TGP Profile setup with EORI number GB123456789098
     When I am on the 'Setting up your profile' page
     And I select continue
-#    Then I should be on the existing 'UK internal scheme number' page
-#    When I select No for the boolean question
-#    And I select continue
+    Then I should be on the existing 'UK internal scheme number' page
+    When I select No for the boolean question
+    And I select continue
     Then I should be on the 'UK internal scheme number' page
     And I enter valid value of my UKIMS Number
     And I select continue
@@ -62,7 +62,3 @@ Feature: Trader Goods Profile - Profile setup and Maintain profile journey
     And I select continue
     Then I should be on the 'Profile details' page
     And My 'NIRMS Question' has the value No
-    When I click on the Go back to homepage link
-    Then I should be on the 'Home' page
-    And I click on the Sign out link
-    Then I should be on the 'Signed Out' page
