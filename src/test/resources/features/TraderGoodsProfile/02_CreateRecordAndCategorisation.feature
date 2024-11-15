@@ -48,9 +48,6 @@ Feature: Trader Goods Profile - Create Record, Categorisation with longer commod
     Then I should be on the Longer Commodity "Results for 1704909912" page
     When I select Yes for the boolean question
     And I select continue
-    Then I should be on the 'Category assessment 3 of 7' page for Longer Commodity code
-    And I check the first box of the checkbox question
-    And I select continue
     Then I should be on the 'Supplementary Unit' page
     When I select Yes for the boolean question
     And I select continue
@@ -58,8 +55,8 @@ Feature: Trader Goods Profile - Create Record, Categorisation with longer commod
     And I enter 12345.0432 in Goods Supplementary Unit
     And I select continue
     Then I should be on the Categorisation "Check your category assessment answers for 1704909912" page
-    When I click the Category assessment 4 of 7 change link
-    Then I should be on the check 'Category assessment 4 of 7' page for Longer Commodity code
+    When I click the Category assessment 3 of 7 change link
+    Then I should be on the check 'Category assessment 3 of 7' page for Longer Commodity code
     And I select continue
     Then I should be on the Categorisation "Check your category assessment answers for 1704909912" page
     When I click the 'Supplementary Unit' change link
