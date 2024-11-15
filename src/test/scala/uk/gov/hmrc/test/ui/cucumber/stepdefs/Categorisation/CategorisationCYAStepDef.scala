@@ -26,12 +26,12 @@ class CategorisationCYAStepDef extends BaseStepDef {
       .assertPage(title)
   }
 
-  Then("""^(?:The )?'Category assessment 5 of 6' has the value (.*)$""") { (value: String) =>
+  Then("""^(?:The )?'Category assessment 5' has the value (.*)$""") { (value: String) =>
     CategorisationCYAPage
       .verifyConditionsInput("Category assessment 5 of 6", value)
   }
 
-  Then("""^(?:The )?'Category assessment 2 of 6' has the value (.*)$""") { (value: String) =>
+  Then("""^(?:The )?'Category assessment 2' has the value (.*)$""") { (value: String) =>
     CategorisationCYAPage
       .verifyConditionsInput("Category assessment 2 of 6", value)
   }

@@ -33,13 +33,13 @@ Feature: Trader Goods Profile - Create Record, Categorisation with longer commod
     And I click on the Categorise goods now link
     Then I should be on the 'Categorisation Information' page
     And I select continue
-    Then I should be on the 'Category assessment 1 of 6' page
+    Then I should be on the 'Category assessment 1' page
     And I check the first box of the checkbox question
     And I select continue
-    Then I should be on the 'Category assessment 2 of 6' page
+    Then I should be on the 'Category assessment 2' page
     And I check the first box of the checkbox question
     And I select continue
-    Then I should be on the 'Category assessment 3 of 6' page
+    Then I should be on the 'Category assessment 3' page
     And I check none of the above for the checkbox question
     And I select continue
     Then I should be on the 'Longer commodity code' page
@@ -56,7 +56,7 @@ Feature: Trader Goods Profile - Create Record, Categorisation with longer commod
     And I select continue
     Then I should be on the Categorisation "Check your category assessment answers for 1704909912" page
     When I click the Category assessment 3 change link
-    Then I should be on the check 'Category assessment 3 of 7' page for Longer Commodity code
+    Then I should be on the check 'Category assessment 3' page for Longer Commodity code
     And I select continue
     Then I should be on the Categorisation "Check your category assessment answers for 1704909912" page
     When I click the SupplementaryUnit change link
