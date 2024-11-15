@@ -86,35 +86,35 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     When I click on the Categorise goods now link
     Then I should be on the 'Categorisation Information' page
     And I select continue
-    Then I should be on the 'Category assessment 1 of 6' page
+    Then I should be on the 'Category assessment 1' page
     When I select continue
     Then Error message 'Select exclusions you hold, or select ‘None of the above’' should be displayed
     When I select the back link
-    Then I should be on the 'Category assessment 1 of 6' page
+    Then I should be on the 'Category assessment 1' page
     And I check the first box of the checkbox question
     And I select continue
-    Then I should be on the 'Category assessment 2 of 6' page
+    Then I should be on the 'Category assessment 2' page
     And I check the first box of the checkbox question
     And I select continue
-    Then I should be on the 'Category assessment 3 of 6' page
+    Then I should be on the 'Category assessment 3' page
     And I check the first box of the checkbox question
     And I select continue
-    Then I should be on the 'Category assessment 4 of 6' page
+    Then I should be on the 'Category assessment 4' page
     And I check the first box of the checkbox question
     And I select continue
-    Then I should be on the 'Category assessment 5 of 6' page
+    Then I should be on the 'Category assessment 5' page
     And I check the first box of the checkbox question
     And I select continue
-    Then I should be on the 'Category assessment 6 of 6' page
+    Then I should be on the 'Category assessment 6' page
     And I check the first box of the checkbox question
     And I select continue
     Then I should be on the Categorisation "Check your category assessment answers for 170490" page
-    When I click the Category assessment 2 of 6 change link
-    Then I should be on the check 'Category assessment 2 of 6' page
+    When I click the Category assessment 2 change link
+    Then I should be on the check 'Category assessment 2' page
     When I check none of the above for the checkbox question
     And I select continue
     Then I should be on the Categorisation "Check your category assessment answers for 170490" page
-    And The 'Category assessment 2 of 6' has the value None
+    And The 'Category assessment 2' has the value None
     When I select continue
     Then I should be on the 'Categorisation complete' with Category1 content page
     When I click on the Go back to homepage link
@@ -227,10 +227,10 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     When I select continue
     And I click on the Categorise goods now link
     Then I select continue
-    Then I should be on the 'Category assessment 1 of 2' page
+    Then I should be on the 'Category assessment 1' page
     And I check the first box of the checkbox question
     And I select continue
-    Then I should be on the 'Category assessment 2 of 2' page
+    Then I should be on the 'Category assessment 2' page
     And I check the first box of the checkbox question
     And I select continue
     Then I should be on the Categorisation "Check your category assessment answers for 1601001011" page

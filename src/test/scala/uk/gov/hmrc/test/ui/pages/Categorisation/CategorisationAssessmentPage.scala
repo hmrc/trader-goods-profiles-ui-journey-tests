@@ -21,39 +21,39 @@ import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
 object CategorisationAssessmentPage extends BasePage {
 
-  def title(number: String, total: String): String         = f"Category assessment ${number.trim} of ${total.trim}"
-  def h1(number: String, total: String): String            = f"Category assessment ${number.trim} of ${total.trim}"
-  def url: String                                          = "/update-record/" + recordId + "/categorisation/category-assessment/"
-  def assertPage(number: String, total: String): this.type = {
+  def title(number: String): String         = f"Category assessment ${number.trim}"
+  def h1(number: String): String            = f"Category assessment ${number.trim}"
+  def url: String                           = "/update-record/" + recordId + "/categorisation/category-assessment/"
+  def assertPage(number: String): this.type = {
     getRecordId()
-    verifyTitle(title(number, total))
-    verifyHeader(h1(number, total))
+    verifyTitle(title(number))
+    verifyHeader(h1(number))
     validateUrl(url + Integer.parseInt(number.trim))
     this
   }
 
-  def assertCheckPage(number: String, total: String): this.type = {
+  def assertCheckPage(number: String): this.type = {
     getRecordId()
-    verifyTitle(title(number, total))
-    verifyHeader(h1(number, total))
+    verifyTitle(title(number))
+    verifyHeader(h1(number))
     validateUrl(url + Integer.parseInt(number.trim) + "/check")
     this
   }
 
-  def assertRecategorisePage(number: String, total: String): this.type = {
+  def assertRecategorisePage(number: String): this.type = {
     getRecordId()
-    verifyTitle(title(number, total))
-    verifyHeader(h1(number, total))
+    verifyTitle(title(number))
+    verifyHeader(h1(number))
     validateUrl(
       s"/update-record/$recordId/recategorise/category-assessment/" + Integer.parseInt(number.trim)
     )
     this
   }
 
-  def assertRecategoriseCheckPage(number: String, total: String): this.type = {
+  def assertRecategoriseCheckPage(number: String): this.type = {
     getRecordId()
-    verifyTitle(title(number, total))
-    verifyHeader(h1(number, total))
+    verifyTitle(title(number))
+    verifyHeader(h1(number))
     validateUrl(
       s"/update-record/$recordId/recategorise/category-assessment/" + Integer.parseInt(number.trim) + "/check"
     )
