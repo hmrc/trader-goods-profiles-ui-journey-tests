@@ -23,7 +23,7 @@ Feature: Trader Goods Profile - Create Record, Categorisation with longer commod
     When I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page
-    When I click the Trader Reference change link
+    When I click the Trader reference change link
     Then I should be on the check 'Trader reference' page
     And I enter different Trader reference
     And I select continue
@@ -55,11 +55,11 @@ Feature: Trader Goods Profile - Create Record, Categorisation with longer commod
     And I enter 12345.0432 in Goods Supplementary Unit
     And I select continue
     Then I should be on the Categorisation "Check your category assessment answers for 1704909912" page
-    When I click the Category assessment 3 of 7 change link
+    When I click the Category assessment 3 change link
     Then I should be on the check 'Category assessment 3 of 7' page for Longer Commodity code
     And I select continue
     Then I should be on the Categorisation "Check your category assessment answers for 1704909912" page
-    When I click the 'Supplementary Unit' change link
+    When I click the SupplementaryUnit change link
     Then I should be on the check 'Goods Supplementary Unit' page
     And I select continue
     Then I should be on the Categorisation "Check your category assessment answers for 1704909912" page

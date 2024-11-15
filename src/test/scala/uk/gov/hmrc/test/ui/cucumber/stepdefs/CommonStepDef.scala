@@ -28,6 +28,10 @@ class CommonStepDef extends BaseStepDef {
     clickBackLink()
   }
 
+  Then("""^(?:I )?click the (.+) change link$""") { (link: String) =>
+    clickChangeLink(link)
+  }
+
   Then("""^Error message '(.*)' should be displayed$""") { (errorMessage: String) =>
     verifyErrorMessage(errorMessage)
   }

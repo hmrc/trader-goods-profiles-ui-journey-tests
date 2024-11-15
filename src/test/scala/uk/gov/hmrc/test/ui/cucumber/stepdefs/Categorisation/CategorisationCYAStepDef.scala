@@ -26,46 +26,6 @@ class CategorisationCYAStepDef extends BaseStepDef {
       .assertPage(title)
   }
 
-  Then("""^(?:I )?click the Category assessment 1 of 6 change link$""") { () =>
-    CategorisationCYAPage
-      .clickConditionsChangeLink(1)
-  }
-
-  Then("""^(?:I )?click the Category assessment 2 of 6 change link$""") { () =>
-    CategorisationCYAPage
-      .clickConditionsChangeLink(2)
-  }
-
-  Then("""^(?:I )?click the Category assessment 3 of 6 change link$""") { () =>
-    CategorisationCYAPage
-      .clickConditionsChangeLink(3)
-  }
-
-  Then("""^(?:I )?click the Category assessment 3 of 7 change link$""") { () =>
-    CategorisationCYAPage
-      .clickConditionsChangeLink(3)
-  }
-
-  Then("""^(?:I )?click the Category assessment 5 of 6 change link$""") { () =>
-    CategorisationCYAPage
-      .clickConditionsChangeLink(5)
-  }
-
-  Then("""^(?:I )?click the Category assessment 6 of 6 change link$""") { () =>
-    CategorisationCYAPage
-      .clickConditionsChangeLink(6)
-  }
-
-  Then("""^(?:I )?click the 'Has Supplementary Unit' change link$""") { () =>
-    CategorisationCYAPage
-      .clickSupplementaryUnitChangeLink(1)
-  }
-
-  Then("""^(?:I )?click the 'Supplementary Unit' change link$""") { () =>
-    CategorisationCYAPage
-      .clickSupplementaryUnitChangeLink(2)
-  }
-
   Then("""^(?:The )?'Category assessment 5 of 6' has the value (.*)$""") { (value: String) =>
     CategorisationCYAPage
       .verifyConditionsInput("Category assessment 5 of 6", value)

@@ -25,11 +25,6 @@ class UpdateNIRMSQuestionCYADef extends BaseStepDef {
       .assertPage()
   }
 
-  Then("""^(?:I )?click the NIRMS registered change link$""") { () =>
-    UpdateNIRMSQuestionCYAPage
-      .clickChangeLink("1")
-  }
-
   Then("""^(?:My )?'NIRMS Question CYA' has the (.*) value$""") { (key: String) =>
     UpdateNIRMSQuestionCYAPage
       .verifyInput("nirmsQuestion", key)
