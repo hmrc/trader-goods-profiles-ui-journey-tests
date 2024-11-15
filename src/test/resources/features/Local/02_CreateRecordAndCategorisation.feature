@@ -60,21 +60,21 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     And I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page
-    When I click the Trader Reference change link
+    When I click the Trader reference change link
     Then I should be on the check 'Trader reference' page
     And The Trader reference field should be prepopulated
     When I select continue
     Then I should be on the 'Create Record - Check Your Answers' page
     And My 'Trader Reference' has the same value
-    When I click the Goods Description change link
+    When I click the Goods description change link
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page
     And My 'Goods Description' has the same valid value
-    When I click the Country Of Origin change link
+    When I click the Country of origin change link
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page
     And My 'Country Of Origin' has the same value
-    When I click the Commodity Code change link
+    When I click the Commodity code change link
     And I select continue
     Then I should be on the check "Results for 170490" page
     When I select Yes for the boolean question
@@ -109,7 +109,7 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     And I check the first box of the checkbox question
     And I select continue
     Then I should be on the Categorisation "Check your category assessment answers for 170490" page
-    When I click the Category assessment 2 of 6 change link
+    When I click the Category assessment 2 change link
     Then I should be on the check 'Category assessment 2 of 6' page
     When I check none of the above for the checkbox question
     And I select continue
@@ -195,12 +195,12 @@ Feature: Trader Goods Categorisation - Create Record And Categorisation journey
     And I enter 12345.0432 in Goods Supplementary Unit
     And I select continue
     Then I should be on the Categorisation "Check your category assessment answers for 17049099" page
-    When I click the 'Supplementary Unit' change link
+    When I click the SupplementaryUnit change link
     Then I should be on the check 'Goods Supplementary Unit' page
     And I select continue
     Then I should be on the Categorisation "Check your category assessment answers for 17049099" page
     And The 'Supplementary Unit' has the value 12345.0432 litres
-    When I click the 'Has Supplementary Unit' change link
+    When I click the HasSupplementaryUnit change link
     Then I should be on the check 'Supplementary Unit' page
     And I select No for the boolean question
     And I select continue
