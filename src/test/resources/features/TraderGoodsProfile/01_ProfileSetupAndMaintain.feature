@@ -3,8 +3,10 @@
 Feature: Trader Goods Profile - Profile setup and Maintain profile journey
 
   Scenario: As a UKIMS authorised trader, I can setup and maintain Trader Goods Profile
-    Given I login to TGP Profile setup with EORI number GB123456789098
-    When I am on the 'Setting up your profile' page
+    Given I login to TGP with Invalid details
+    Then I should be on the 'There is a Problem' page
+    When I login to TGP Profile setup with EORI number GB123456789098
+    Then I am on the 'Setting up your profile' page
     And I select continue
     Then I should be on the existing 'UK internal scheme number' page
     When I select No for the boolean question
