@@ -10,7 +10,7 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the 'Goods profile' page 1 results
     When I click on the Change link
     Then I should be on the 'Goods record' page
-    When I click the Goods record Trader Reference change link
+    When I click the Trader reference change link
     Then I should be on the 'Trader reference' update page
     When I enter long Trader reference update
     And I select continue
@@ -24,7 +24,7 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the 'Goods profile' page 1 results
     And I select the back link
     Then I should be on the 'Goods record' page
-    When I click the Goods record Goods Description change link
+    When I click the Goods description change link
     Then I should be on the 'Goods description' update page
     When I enter long text in Goods description
     And I select continue
@@ -36,7 +36,7 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the 'Goods description' CYA page
     And I select continue
     Then I should be on the 'Goods record' page
-    When I click the Goods record 'Supplementary Unit Question' change link
+    When I click the HasSupplementaryUnit change link
     Then I should be on the 'Supplementary Unit' update page
     When I select Yes for the boolean question
     And I select continue
@@ -53,7 +53,7 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the update 'Supplementary Unit' CYA page
     And My 'Supplementary Unit with question' has the updated value 54321.4302 grams
     And I select continue
-    When I click the Goods record 'Supplementary Unit Question' change link
+    When I click the HasSupplementaryUnit change link
     Then I should be on the 'Supplementary Unit' update page
     When I select No for the boolean question
     And I select continue
@@ -61,7 +61,7 @@ Feature: Trader Goods Profile - View or Update record journey
     And My 'Supplementary Unit' has the updated value No
     And I select continue
     Then I should be on the 'Goods record' page
-    When I click the Goods record Country Of Origin change link
+    When I click the Country of origin change link
     Then I should be on the Goods record Country Of Origin warning page
     And I select Yes for the boolean question
     When I select continue
@@ -107,13 +107,13 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the 'Goods profile' page 1 results
     When I click on the Change link
     Then I should be on the 'Goods record' page
-    When I click the Goods record Country Of Origin change link
+    When I click the Country of origin change link
     Then I should be on the 'Country of origin' update page
     And I select continue
     Then I should be on the 'Country of origin' CYA page
     And I select continue
     Then I should be on the 'Goods record' page
-    When I click the Goods record Commodity Code change link
+    When I click the Commodity code change link
     Then I should be on the 'commodity code' update page
     And I select continue
     And I select Yes for the boolean question

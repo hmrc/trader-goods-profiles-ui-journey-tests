@@ -25,14 +25,14 @@ Feature: Trader Goods Profile - Profile setup and Maintain profile journey
     When I enter valid value of my NIPHL Number
     And I select continue
     Then I should be on the 'Check Your Answers' page
-    When I click the UKIMS Number change link
+    When I click the UKIMS number change link
     Then I should be on the check 'UK internal scheme number' page
     And The UKIMS Number field should be prepopulated
     When I enter different value of my UKIMS Number
     And I select continue
     Then I should be on the 'Check Your Answers' page
     And My 'UKIMS Number' has the different valid value
-    When I click the NIRMS Question change link
+    When I click the NIRMS registered change link
     And I select continue
     Then I should be on the 'Check Your Answers' page
     And My 'NIRMS Question' has the same value
@@ -42,7 +42,7 @@ Feature: Trader Goods Profile - Profile setup and Maintain profile journey
     Then I should be on the 'Home' page
     When I click on the Manage your profile details link
     Then I should be on the 'Profile details' page
-    When I click the UKIMS Number change link
+    When I click the UKIMS number change link
     Then I should be on the update 'UK internal scheme number' page
     And The update UKIMS Number field should be prepopulated
     When I update value of my UKIMS Number
@@ -51,7 +51,7 @@ Feature: Trader Goods Profile - Profile setup and Maintain profile journey
     And I select continue
     Then I should be on the 'Profile details' page
     And My 'UKIMS Number' has the value XIUKIM47699357400020231115081800
-    When I click the NIRMS Question change link
+    When I click the NIRMS registered change link
     Then I should be on the update 'Northern Ireland Retail Movement Scheme' page
     When I select No for the boolean question
     And I select continue

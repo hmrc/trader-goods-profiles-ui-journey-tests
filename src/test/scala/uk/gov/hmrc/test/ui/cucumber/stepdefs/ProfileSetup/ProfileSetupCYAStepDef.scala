@@ -26,31 +26,6 @@ class ProfileSetupCYAStepDef extends BaseStepDef {
       .assertPage()
   }
 
-  Then("""^(?:I )?click the UKIMS Number change link$""") { () =>
-    ProfileSetupCYAPage
-      .clickChangeLink("1")
-  }
-
-  Then("""^(?:I )?click the NIRMS Question change link$""") { () =>
-    ProfileSetupCYAPage
-      .clickChangeLink("2")
-  }
-
-  Then("""^(?:I )?click the NIRMS Number change link$""") { () =>
-    ProfileSetupCYAPage
-      .clickChangeLink("3")
-  }
-
-  Then("""^(?:I )?click the NIPHL Question change link$""") { () =>
-    ProfileSetupCYAPage
-      .clickChangeLink("4")
-  }
-
-  Then("""^(?:I )?click the NIPHL Number change link$""") { () =>
-    ProfileSetupCYAPage
-      .clickChangeLink("5")
-  }
-
   Then("""^(?:My )?'UKIMS Number' has the (.*) valid value$""") { (key: String) =>
     key match {
       case "same"      =>

@@ -25,11 +25,6 @@ class UpdateNIRMSNumberCYADef extends BaseStepDef {
       .assertPage()
   }
 
-  Then("""^(?:I )?click the NIRMS Number change link in the summary list$""") { () =>
-    UpdateNIRMSNumberCYAPage
-      .clickChangeLink("2")
-  }
-
   Then("""^(?:My )?'NIRMS number' has the (.*) value""") { (key: String) =>
     key match {
       case "different" =>

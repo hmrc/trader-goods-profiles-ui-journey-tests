@@ -381,7 +381,7 @@ trait BasePage extends BrowserDriver with Matchers {
   def clickByPartialLinkText(linkText: String): Unit = click(By.partialLinkText(linkText))
 
   def clickChangeLink(key: String): Unit =
-    click(By.xpath(s"(//a[text()='Change'])[$key]"))
+    click(By.xpath(s"//span[contains(text(), ' $key')]/.."))
 
   def submitPage(): Unit = clickByClassName("govuk-button")
 

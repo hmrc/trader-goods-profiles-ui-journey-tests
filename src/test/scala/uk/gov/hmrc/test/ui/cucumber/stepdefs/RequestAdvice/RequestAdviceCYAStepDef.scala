@@ -26,16 +26,6 @@ class RequestAdviceCYAStepDef extends BaseStepDef {
       .assertPage()
   }
 
-  Then("""^(?:I )?click the Name change link$""") { () =>
-    RequestAdviceCYAPage
-      .clickChangeLink("1")
-  }
-
-  Then("""^(?:I )?click the Email change link$""") { () =>
-    RequestAdviceCYAPage
-      .clickChangeLink("2")
-  }
-
   Then("""^(?:My )?'Name' has the (.*) valid value$""") { (key: String) =>
     key match {
       case "same"      =>

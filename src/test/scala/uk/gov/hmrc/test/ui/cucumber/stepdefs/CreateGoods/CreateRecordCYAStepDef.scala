@@ -26,26 +26,6 @@ class CreateRecordCYAStepDef extends BaseStepDef {
       .assertPage()
   }
 
-  Then("""^(?:I )?click the Trader Reference change link$""") { () =>
-    CreateRecordCYAPage
-      .clickChangeLink("1")
-  }
-
-  Then("""^(?:I )?click the Goods Description change link$""") { () =>
-    CreateRecordCYAPage
-      .clickChangeLink("2")
-  }
-
-  Then("""^(?:I )?click the Country Of Origin change link$""") { () =>
-    CreateRecordCYAPage
-      .clickChangeLink("3")
-  }
-
-  Then("""^(?:I )?click the Commodity Code change link$""") { () =>
-    CreateRecordCYAPage
-      .clickChangeLink("4")
-  }
-
   Then("""^(?:My )?'Trader Reference' has the same value$""") { () =>
     CreateRecordCYAPage
       .verifyInput("traderReference", "not a unique reference")
