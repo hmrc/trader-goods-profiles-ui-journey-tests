@@ -32,6 +32,10 @@ class CommonStepDef extends BaseStepDef {
     clickChangeLink(link)
   }
 
+  Then("""^(?:The )?'(.+)' has the value (.*)$""") { (field: String, value: String) =>
+    verifyCyaInput(field, value)
+  }
+
   Then("""^Error message '(.*)' should be displayed$""") { (errorMessage: String) =>
     verifyErrorMessage(errorMessage)
   }

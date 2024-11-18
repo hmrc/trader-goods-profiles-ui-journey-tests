@@ -26,19 +26,4 @@ class ProfileSetupStepDef extends BaseStepDef {
     ProfileSetupPage
       .assertPage()
   }
-
-  Then("""^(?:I )?should be on the 'UKIMS' page$""") { () =>
-    UKIMSPage
-      .assertPage()
-  }
-
-  Then("""^(?:I )?should be on the 'NIRMS' page$""") { () =>
-    NIRMSPage
-      .assertPage()
-  }
-
-  Then("""^(?:I )?should be on the 'NIPHL' page$""") { () =>
-    NIPHLPage
-      .assertPage()
-  }
 }

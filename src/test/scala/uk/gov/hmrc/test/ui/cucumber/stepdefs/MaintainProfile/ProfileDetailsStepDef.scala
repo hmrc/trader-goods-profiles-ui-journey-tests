@@ -25,24 +25,4 @@ class ProfileDetailsStepDef extends BaseStepDef {
     ProfileDetailsPage
       .assertPage()
   }
-
-  Then("""^(?:My )?'(.*)' has the value (.*)$""") { (key: String, value: String) =>
-    key match {
-      case "UKIMS Number"   =>
-        ProfileDetailsPage
-          .verifyInput("ukimsNumber", value)
-      case "NIPHL Question" =>
-        ProfileDetailsPage
-          .verifyInput("niphlQuestion", value)
-      case "NIRMS Question" =>
-        ProfileDetailsPage
-          .verifyInput("nirmsQuestion", value)
-      case "NIPHL Number"   =>
-        ProfileDetailsPage
-          .verifyInput("niphlNumber", value)
-      case "NIRMS Number"   =>
-        ProfileDetailsPage
-          .verifyInput("nirmsNumber", value)
-    }
-  }
 }

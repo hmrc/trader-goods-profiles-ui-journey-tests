@@ -21,14 +21,9 @@ import uk.gov.hmrc.test.ui.pages.AuthorityWizard
 
 class LoginStepDef extends BaseStepDef {
 
-  And("""^I login to TGP Homepage with EORI number (.*)$""") { (EORINumber: String) =>
+  And("""^I login to TGP with EORI number (.*)$""") { (EORINumber: String) =>
     AuthorityWizard
-      .validLogin(EORINumber, TestConfiguration.authorise("trader-goods-profiles-Home"))
-  }
-
-  And("""^I login to TGP Profile setup with EORI number (.*)$""") { (EORINumber: String) =>
-    AuthorityWizard
-      .validLogin(EORINumber, TestConfiguration.authorise("trader-goods-profiles-Profile-setup"))
+      .validLogin(EORINumber, TestConfiguration.authorise("trader-goods-profiles"))
   }
 
   And("I login to TGP with Invalid details") { () =>

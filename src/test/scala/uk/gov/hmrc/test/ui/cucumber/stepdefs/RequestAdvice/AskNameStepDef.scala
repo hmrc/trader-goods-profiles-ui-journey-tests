@@ -44,11 +44,4 @@ class AskNameStepDef extends BaseStepDef {
           .fillInput("value", "different name")
     }
   }
-
-  Then("""^(?:The Name field )?should be prepopulated$""") { () =>
-    AskNamePage
-      .findById("value")
-      .getAttribute("value")
-      .shouldEqual("Testfirstname Testlastname")
-  }
 }

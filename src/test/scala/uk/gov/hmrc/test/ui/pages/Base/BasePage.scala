@@ -383,6 +383,10 @@ trait BasePage extends BrowserDriver with Matchers {
   def clickChangeLink(key: String): Unit =
     click(By.xpath(s"//span[contains(text(), ' $key')]/.."))
 
+  def verifyCyaInput(key: String, expected: String): Unit = {
+    findBy(By.xpath(s"//span[contains(text(), ' $key')]/../../preceding-sibling::dd")).getText.shouldEqual(expected)
+  }
+
   def submitPage(): Unit = clickByClassName("govuk-button")
 
   def verifyErrorMessage(message: String): Unit =

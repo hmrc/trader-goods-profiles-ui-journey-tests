@@ -26,7 +26,7 @@ object ProfileDetailsPage extends Page {
   override def h1(args: String*): String    = "Profile details"
   override def url(args: String*): String   = "/update-profile/profile-information"
 
-  def verifyInput(field: String, expected: String): this.type = {
+  /*def verifyInput(field: String, expected: String): this.type = {
     val actual = field match {
       case "ukimsNumber"   => findBy(By.cssSelector("div:nth-child(1) > dd.govuk-summary-list__value")).getText
       case "nirmsQuestion" => findBy(By.cssSelector("div:nth-child(2) > dd.govuk-summary-list__value")).getText
@@ -36,5 +36,5 @@ object ProfileDetailsPage extends Page {
     }
     Assert.assertEquals("Expected " + expected + " value but found " + actual + " instead.", expected, actual)
     this
-  }
+  }*/
 }

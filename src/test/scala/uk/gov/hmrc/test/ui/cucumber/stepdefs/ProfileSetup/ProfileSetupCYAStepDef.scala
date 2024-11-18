@@ -48,7 +48,7 @@ class ProfileSetupCYAStepDef extends BaseStepDef {
     }
   }
 
-  Then("""^(?:My )?'NIRMS Number' has the (.*) valid value$""") { (key: String) =>
+/*  Then("""^(?:My )?'NIRMS Number' has the (.*) valid value$""") { (key: String) =>
     key match {
       case "same"      =>
         ProfileSetupCYAPage
@@ -57,7 +57,7 @@ class ProfileSetupCYAStepDef extends BaseStepDef {
         ProfileSetupCYAPage
           .verifyInput("nirmsNumber", "RMS-GB-654321")
     }
-  }
+  }*/
 
   Then("""^(?:My )?'NIPHL Question' has the (.*) value$""") { (key: String) =>
     key match {

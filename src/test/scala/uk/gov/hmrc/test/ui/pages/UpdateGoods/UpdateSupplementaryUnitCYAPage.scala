@@ -26,17 +26,4 @@ object UpdateSupplementaryUnitCYAPage extends Page {
   override def h1(args: String*): String    = "Check your answers for changing the supplementary unit"
   override def url(args: String*): String   =
     "/update-record/" + recordId + "/categorisation/check-your-answers/supplementary-unit"
-
-  def verifyInput(field: String, expected: String): this.type = {
-    val actual = field match {
-      case "Supplementary Unit"                  => findBy(By.cssSelector("div:nth-child(1) > dd.govuk-summary-list__value")).getText
-      case "Supplementary Unit without question" =>
-        findBy(By.cssSelector("div:nth-child(1) > dd.govuk-summary-list__value")).getText
-      case "Supplementary Unit with question"    =>
-        findBy(By.cssSelector("div:nth-child(2) > dd.govuk-summary-list__value")).getText
-    }
-
-    Assert.assertEquals("Expected " + expected + " value but found " + actual + " instead.", expected, actual)
-    this
-  }
 }

@@ -30,11 +30,4 @@ class UpdateNIPHLNumberStepDef extends BaseStepDef {
     UpdateNIPHLNumberCheckPage
       .assertPage()
   }
-
-  Then("""^(?:The update NIPHL Number field )?should be prepopulated$""") { () =>
-    UpdateNIPHLNumberPage
-      .findById("value")
-      .getAttribute("value")
-      .shouldEqual("SN12345")
-  }
 }

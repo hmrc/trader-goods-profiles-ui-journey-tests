@@ -3,7 +3,7 @@
 Feature: Trader Goods Profile - Create Record and Categorisation journeys
 
   Scenario:As a returning user, I want to create a record and categorise Standard goods, Category-1 goods and Category-2(longer commodity and supplementary unit)
-    Given I login to TGP Homepage with EORI number GB123456789098
+    Given I login to TGP with EORI number GB123456789098
     When I click on the Create a new goods record link
     Then I should be on the 'Creating a goods record' page
     And I select continue
@@ -103,6 +103,6 @@ Feature: Trader Goods Profile - Create Record and Categorisation journeys
     Then I should be on the check 'Goods Supplementary Unit' page
     And I select continue
     Then I should be on the Categorisation "Check your category assessment answers for 1704909912" page
-    And The 'Supplementary Unit' has the value 12345.0432 litres
+    And The 'SupplementaryUnit' has the value 12345.0432 litres
     When I select continue
     Then I should be on the 'Categorisation complete' with Category2 content page

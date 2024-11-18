@@ -29,18 +29,6 @@ class CategorisationCompleteStepDef extends BaseStepDef {
           .checkForContent(
             "Your goods have been categorised and are eligible for Simplified Process for Internal Market Movements (SPIMM)."
           )
-      case "standard-no-assessments content"  =>
-        CategorisationStandardGoodsCompletePage
-          .assertPage("standard-no-assessments")
-          .checkForContent(
-            "Your goods have been categorised and are eligible for Simplified Process for Internal Market Movements (SPIMM). There are no category assessments needed."
-          )
-      case "category-1-no-exemptions content" =>
-        CategorisationCategory1CompletePage
-          .assertPage("category-1-no-exemptions")
-          .checkForContent(
-            "Your goods have been categorised and are not eligible for Simplified Process for Internal Market Movements (SPIMM). There are no available exclusions to change the category."
-          )
       case "Category1 content"                =>
         CategorisationCategory1CompletePage
           .assertPage("category-1")

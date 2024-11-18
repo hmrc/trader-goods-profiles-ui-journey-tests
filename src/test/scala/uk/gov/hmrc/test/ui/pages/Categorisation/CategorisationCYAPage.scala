@@ -52,38 +52,6 @@ object CategorisationCYAPage extends BasePage {
     checkURL(TestConfiguration.url("trader-goods-profiles-frontend") + url)
     this
   }
-  def clickConditionsChangeLink(ChangelinkNumber: Int): this.type = {
-
-    click(
-      By.cssSelector(
-        s"dl:nth-child($Cdl) > div:nth-child(" + ChangelinkNumber + ") > dd.govuk-summary-list__actions > a"
-      )
-    )
-
-    this
-  }
-
-  def clickSupplementaryUnitChangeLink(ChangelinkNumber: Int): this.type = {
-
-    click(
-      By.cssSelector(
-        s"dl:nth-child($Sdl) > div:nth-child(" + ChangelinkNumber + ") > dd.govuk-summary-list__actions > a"
-      )
-    )
-
-    this
-  }
-
-  def clickLongerCommodityCodeChangeLink(ChangelinkNumber: Int): this.type = {
-
-    click(
-      By.cssSelector(
-        s"dl:nth-child($Ldl) > div:nth-child(" + ChangelinkNumber + ") > dd.govuk-summary-list__actions > a"
-      )
-    )
-
-    this
-  }
 
   def verifyConditionsInput(field: String, expected: String): this.type = {
     val actual = field match {

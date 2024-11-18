@@ -47,11 +47,4 @@ class NIRMSNumberStepDef extends BaseStepDef {
           .fillInput("value", "")
     }
   }
-
-  Then("""^(?:The NIRMS Number field )?should be prepopulated$""") { () =>
-    NIRMSNumberPage
-      .findById("value")
-      .getAttribute("value")
-      .shouldEqual("RMS-GB-123456")
-  }
 }

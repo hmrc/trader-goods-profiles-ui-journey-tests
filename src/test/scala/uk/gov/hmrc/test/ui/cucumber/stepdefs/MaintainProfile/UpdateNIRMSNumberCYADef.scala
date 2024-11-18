@@ -24,15 +24,4 @@ class UpdateNIRMSNumberCYADef extends BaseStepDef {
     UpdateNIRMSNumberCYAPage
       .assertPage()
   }
-
-  Then("""^(?:My )?'NIRMS number' has the (.*) value""") { (key: String) =>
-    key match {
-      case "different" =>
-        UpdateNIRMSNumberCYAPage
-          .verifyInput("value", "RMS-GB-654321")
-      case "valid"     =>
-        UpdateNIRMSNumberCYAPage
-          .verifyInput("value", "RMS-GB-123456")
-    }
-  }
 }

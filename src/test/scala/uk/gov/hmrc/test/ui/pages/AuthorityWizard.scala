@@ -55,7 +55,7 @@ object AuthorityWizard extends BasePage {
   }
 
   def fillInvalidInputs(): this.type = {
-    val redirectionUrl = TestConfiguration.authorise("trader-goods-profiles-Profile-setup")
+    val redirectionUrl = TestConfiguration.authorise("trader-goods-profiles")
     findById("redirectionUrl").sendKeys(redirectionUrl)
     findById("enrolment[0].name").sendKeys("Invalid-name")
     findById("input-0-0-name").sendKeys("Invalid-identifier")

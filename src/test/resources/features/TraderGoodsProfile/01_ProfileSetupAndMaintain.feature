@@ -5,7 +5,7 @@ Feature: Trader Goods Profile - Profile setup and Maintain profile journey
   Scenario: As a UKIMS authorised trader, I can setup and maintain Trader Goods Profile
     Given I login to TGP with Invalid details
     Then I should be on the 'There is a Problem' page
-    When I login to TGP Profile setup with EORI number GB123456789098
+    When I login to TGP with EORI number GB123456789098
     Then I am on the 'Setting up your profile' page
     And I select continue
     Then I should be on the existing 'UK internal scheme number' page
@@ -52,7 +52,7 @@ Feature: Trader Goods Profile - Profile setup and Maintain profile journey
     Then I should be on the update 'UKIMS Check your answers' page
     And I select continue
     Then I should be on the 'Profile details' page
-    And My 'UKIMS Number' has the value XIUKIM47699357400020231115081800
+    And The 'UKIMS number' has the value XIUKIM47699357400020231115081800
     When I click the NIRMS registered change link
     Then I should be on the update 'Northern Ireland Retail Movement Scheme' page
     When I select No for the boolean question
@@ -63,4 +63,4 @@ Feature: Trader Goods Profile - Profile setup and Maintain profile journey
     Then I should be on the update 'NIRMS Question Check your answers' page
     And I select continue
     Then I should be on the 'Profile details' page
-    And My 'NIRMS Question' has the value No
+    And The 'NIRMS registered' has the value No

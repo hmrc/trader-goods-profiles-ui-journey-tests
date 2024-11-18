@@ -3,7 +3,7 @@
 Feature: Trader Goods Profile - View or Update record journey
 
   Scenario: As a returning user, with historic data, View and update records
-    Given I login to TGP Homepage with EORI number GB123456789098
+    Given I login to TGP with EORI number GB123456789098
     When I click on the View or update your goods records link
     Then I should be on the 'Previous movement records' page
     And I select continue
@@ -31,7 +31,7 @@ Feature: Trader Goods Profile - View or Update record journey
     When I enter 54321.4302 in Goods Supplementary Unit
     And I select continue
     Then I should be on the update 'Supplementary Unit' CYA page
-    And My 'Supplementary Unit' has the updated value 54321.4302 squares
+    And The 'SupplementaryUnit' has the value 54321.4302 squares
     And I select continue
 #Removing supplimentary unit
     When I click the HasSupplementaryUnit change link
@@ -39,7 +39,7 @@ Feature: Trader Goods Profile - View or Update record journey
     When I select No for the boolean question
     And I select continue
     Then I should be on the update 'Supplementary Unit' CYA page
-    And My 'Supplementary Unit without question' has the updated value No
+    And The 'HasSupplementaryUnit' has the value No
     And I select continue
     Then I should be on the 'Goods record' page
 #Update Commodity Code

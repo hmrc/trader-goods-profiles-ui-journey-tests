@@ -30,11 +30,4 @@ class UpdateNIRMSNumberStepDef extends BaseStepDef {
     UpdateNIRMSNumberCheckPage
       .assertPage()
   }
-
-  Then("""^(?:The update NIRMS Number field )?should be prepopulated$""") { () =>
-    UpdateNIRMSNumberPage
-      .findById("value")
-      .getAttribute("value")
-      .shouldEqual("RMS-GB-123456")
-  }
 }

@@ -49,13 +49,4 @@ class CreateCommodityCodeStepDef extends BaseStepDef {
     NIOTTPage
       .assertPage()
   }
-
-  Then("""^(?:The commodity code field )?should be prepopulated with (.+)$""") { (value: String) =>
-    CreateCommodityCodePage
-      .findById("value")
-      .getAttribute("value")
-      .shouldEqual(value)
-
-  }
-
 }
