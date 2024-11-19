@@ -67,6 +67,34 @@ trait BasePage extends BrowserDriver with Matchers {
               "actorId"     -> "GB123456789098",
               "ukimsNumber" -> "XIUKIM00001234000220240207140148",
               "lastUpdated" -> new Date()
+            ),
+            Document(
+              "eori"        -> "GB123456789555",
+              "actorId"     -> "GB123456789555",
+              "ukimsNumber" -> "XIUKIM00001234000220240207140148",
+              "lastUpdated" -> new Date()
+            )
+          )
+        )
+        .toFuture(),
+      10 seconds
+    )
+  }
+
+  def loadProfiles(): Unit = {
+    println("============================Loading Profiles")
+
+    Await.result(
+      mongoClient
+        .getDatabase("trader-goods-profiles-data-store")
+        .getCollection("profiles")
+        .insertMany(
+          Seq(
+            Document(
+              "eori"        -> "GB123456789555",
+              "actorId"     -> "GB123456789555",
+              "ukimsNumber" -> "XIUKIM00001234000220240207140148",
+              "eoriChanged" -> true
             )
           )
         )
@@ -383,9 +411,8 @@ trait BasePage extends BrowserDriver with Matchers {
   def clickChangeLink(key: String): Unit =
     click(By.xpath(s"//span[contains(text(), ' $key')]/.."))
 
-  def verifyCyaInput(key: String, expected: String): Unit = {
+  def verifyCyaInput(key: String, expected: String): Unit =
     findBy(By.xpath(s"//span[contains(text(), ' $key')]/../../preceding-sibling::dd")).getText.shouldEqual(expected)
-  }
 
   def submitPage(): Unit = clickByClassName("govuk-button")
 

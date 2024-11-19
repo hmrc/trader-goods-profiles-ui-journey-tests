@@ -14,15 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.ProfileSetup
+package uk.gov.hmrc.test.ui.pages.NewUkims
 
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.ProfileSetup._
+import uk.gov.hmrc.test.ui.pages.Base.Page
 
-class HomepageStepDef extends BaseStepDef {
+object UkimsNumberChangePage extends Page {
 
-  Then("""^(?:I )?should be on the 'Home' page$""") { () =>
-    HomePage
-      .assertPage()
+  override def title(args: String*): String = "UK Internal Market Scheme (UKIMS) number change"
+  override def h1(args: String*): String    = "UK Internal Market Scheme (UKIMS) number change"
+  override def url(args: String*): String   = "/new/ukims-number-change"
+  def clickOnLink(link: String): this.type  = {
+    link match {
+      case "Go to homepage" =>
+        clickByPartialLinkText("Go to homepage")
+    }
+    this
   }
 }

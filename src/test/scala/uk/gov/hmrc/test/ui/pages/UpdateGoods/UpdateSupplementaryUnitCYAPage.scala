@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages.UpdateGoods
 
-import org.junit.Assert
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object UpdateSupplementaryUnitCYAPage extends Page {

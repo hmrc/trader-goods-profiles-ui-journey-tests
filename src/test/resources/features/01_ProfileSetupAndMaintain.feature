@@ -64,3 +64,21 @@ Feature: Trader Goods Profile - Profile setup and Maintain profile journey
     And I select continue
     Then I should be on the 'Profile details' page
     And The 'NIRMS registered' has the value No
+
+  Scenario: As a UKIMS authorised trader, I can change my UKIMS when my EORI changes
+    When I login to TGP with EORI number GB123456789555
+    Then I am on the 'UKIMS change' page
+    And I select 'Update UKIMS number'
+    Then I should be on the 'New UK internal scheme number' page
+    And I enter valid value of my UKIMS Number
+    And I select continue
+    Then I should be on the 'New Ukims Check Your Answers' page
+    When I click the UKIMS number change link
+    Then I should be on the check 'New UK internal scheme number' page
+    And The New UKIMS Number field should be prepopulated
+    When I enter different value of my New UKIMS Number
+    And I select continue
+    Then I should be on the 'New Ukims Check Your Answers' page
+    And The 'UKIMS number' has the value XIUKIM47699357400020231115081801
+    When I select continue
+    Then I should be on the 'Home' page
