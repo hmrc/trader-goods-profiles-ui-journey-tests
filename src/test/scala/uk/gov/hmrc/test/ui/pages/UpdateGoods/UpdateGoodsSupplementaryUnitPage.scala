@@ -26,7 +26,7 @@ object UpdateGoodsSupplementaryUnitPage extends Page {
     "/update-record/" + recordId + "/categorisation/supplementary-unit-amount/update"
 
   override def verifyHeader(h1: String): this.type = {
-    checkSecondaryHeader(h1)
+    checkHeaderLabel(h1)
     this
   }
 }

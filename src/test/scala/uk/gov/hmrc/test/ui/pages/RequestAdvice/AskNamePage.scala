@@ -25,7 +25,7 @@ object AskNamePage extends Page {
   override def url(args: String*): String   = "/update-record/" + recordId + "/create-advice/name"
 
   override def verifyHeader(h1: String): this.type = {
-    checkSecondaryHeader(h1)
+    checkHeaderLabel(h1)
     this
   }
 }

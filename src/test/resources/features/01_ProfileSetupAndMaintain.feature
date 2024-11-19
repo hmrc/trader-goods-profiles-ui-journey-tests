@@ -33,11 +33,11 @@ Feature: Trader Goods Profile - Profile setup and Maintain profile journey
     When I enter different value of my UKIMS Number
     And I select continue
     Then I should be on the 'Check Your Answers' page
-    And My 'UKIMS Number' has the different valid value
+    And The 'UKIMS number' has the value XIUKIM47699357400020231115081801
     When I click the NIRMS registered change link
     And I select continue
     Then I should be on the 'Check Your Answers' page
-    And My 'NIRMS Question' has the same value
+    And The 'NIRMS registered' has the value Yes
     When I select continue
     Then I should be on the 'Create Profile Success' page
     And I click on the Go to homepage link
