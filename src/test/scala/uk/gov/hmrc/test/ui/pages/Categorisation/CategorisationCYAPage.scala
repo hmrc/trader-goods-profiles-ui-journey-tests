@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages.Categorisation
 
-import org.junit.Assert
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
@@ -44,7 +42,7 @@ object CategorisationCYAPage extends BasePage {
     this
   }
 
-  def validateUrl(url: String): this.type                         = {
+  def validateUrl(url: String): this.type = {
     checkURL(TestConfiguration.url("trader-goods-profiles-frontend") + url)
     this
   }

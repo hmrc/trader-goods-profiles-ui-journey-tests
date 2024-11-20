@@ -14,15 +14,19 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.ProfileSetup
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.NewUkims
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.ProfileSetup._
+import uk.gov.hmrc.test.ui.pages.NewUkims.UkimsNumberChangePage
 
-class HomepageStepDef extends BaseStepDef {
+class UkimsNumberChangeStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'Home' page$""") { () =>
-    HomePage
+  Then("""^(?:I )?am on the 'UKIMS change' page$""") { () =>
+    UkimsNumberChangePage
       .assertPage()
+  }
+
+  And("""^(?:I )?select 'Update UKIMS number'$""") { () =>
+    submitPage()
   }
 }
