@@ -25,7 +25,7 @@ object WithdrawRequestReasonPage extends Page {
   override def url(args: String*): String   = "/update-record/" + recordId + "/withdraw-request/reason"
 
   override def verifyHeader(h1: String): this.type = {
-    checkSecondaryHeader(h1)
+    checkHeaderLabel(h1)
     this
   }
 }

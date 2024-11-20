@@ -28,22 +28,4 @@ class HomepageStepDef extends BaseStepDef {
     HomePage
       .assertPage()
   }
-
-  Then("""^(?:I )?am on the 'Home' page with EORI (.+)""") { (eoriNumber: String) =>
-    AuthorityWizard
-      .validLogin(eoriNumber, TestConfiguration.authorise("trader-goods-profiles-Profile-setup"))
-    submitPage()
-    UKIMSNumberPage
-      .fillInput("value", "XIUKIM47699357400020231115081800")
-    submitPage()
-    clickRadioBtn("No")
-    submitPage()
-    clickRadioBtn("No")
-    submitPage()
-    submitPage()
-    CreateProfileSuccessPage.assertPage()
-    click(By.partialLinkText("Go to homepage"))
-    HomePage
-      .assertPage()
-  }
 }

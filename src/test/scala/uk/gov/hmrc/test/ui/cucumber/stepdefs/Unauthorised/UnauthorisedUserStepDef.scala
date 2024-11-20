@@ -25,14 +25,4 @@ class UnauthorisedUserStepDef extends BaseStepDef {
     UnauthorisedUserPage
       .assertPage()
   }
-
-  And("""^(?:I )?navigate to the 'Incorrect' page$""") { () =>
-    PageNotFoundPage
-      .navigateToPage()
-  }
-
-  Then("""^(?:I )?should be on the 'Page not found' page$""") { () =>
-    PageNotFoundPage
-      .assertPage()
-  }
 }

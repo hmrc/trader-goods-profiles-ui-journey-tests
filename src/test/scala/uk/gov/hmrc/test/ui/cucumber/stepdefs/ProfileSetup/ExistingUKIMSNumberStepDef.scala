@@ -25,9 +25,4 @@ class ExistingUKIMSNumberStepDef extends BaseStepDef {
     ExistingUKIMSNumberPage
       .assertPage()
   }
-
-  Then("""^(?:The existing UKIMS Number )?should be (.*)$""") { (existingUKIMSNumber: String) =>
-    ExistingUKIMSNumberPage
-      .checkUKIMS(existingUKIMSNumber)
-  }
 }

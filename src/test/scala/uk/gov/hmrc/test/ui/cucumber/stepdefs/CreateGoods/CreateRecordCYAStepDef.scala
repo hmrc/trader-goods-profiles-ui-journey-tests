@@ -25,42 +25,4 @@ class CreateRecordCYAStepDef extends BaseStepDef {
     CreateRecordCYAPage
       .assertPage()
   }
-
-  Then("""^(?:My )?'Trader Reference' has the same value$""") { () =>
-    CreateRecordCYAPage
-      .verifyInput("traderReference", "not a unique reference")
-  }
-
-  Then("""^(?:My )?'Goods Description' has the (.*) valid value$""") { (key: String) =>
-    key match {
-      case "same"      =>
-        CreateRecordCYAPage
-          .verifyInput("goodsDescription", "description")
-      case "different" =>
-        CreateRecordCYAPage
-          .verifyInput("goodsDescription", "different")
-    }
-  }
-
-  Then("""^(?:My )?'Country Of Origin' has the (.*) value$""") { (key: String) =>
-    key match {
-      case "same"      =>
-        CreateRecordCYAPage
-          .verifyInput("countryOfOrigin", "Iraq")
-      case "different" =>
-        CreateRecordCYAPage
-          .verifyInput("countryOfOrigin", "Other")
-    }
-  }
-
-  Then("""^(?:My )?'Commodity Code' has the (.*) valid value$""") { (key: String) =>
-    key match {
-      case "same"      =>
-        CreateRecordCYAPage
-          .verifyInput("commodityCode", "170490")
-      case "different" =>
-        CreateRecordCYAPage
-          .verifyInput("commodityCode", "0987654321")
-    }
-  }
 }

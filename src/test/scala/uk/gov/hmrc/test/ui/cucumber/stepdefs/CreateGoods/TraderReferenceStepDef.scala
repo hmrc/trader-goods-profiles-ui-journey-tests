@@ -55,18 +55,4 @@ class TraderReferenceStepDef extends BaseStepDef {
           .fillInput("value", "different value")
     }
   }
-
-  Then("""^(?:The Trader reference field )?should be prepopulated $""") { () =>
-    TraderReferencePage
-      .findById("value")
-      .getAttribute("value")
-      .shouldEqual("Unique value")
-  }
-
-  Then("""^(?:The Trader reference field )?should be prepopulated$""") { () =>
-    TraderReferencePage
-      .findById("value")
-      .getAttribute("value")
-      .shouldEqual("not a unique reference")
-  }
 }

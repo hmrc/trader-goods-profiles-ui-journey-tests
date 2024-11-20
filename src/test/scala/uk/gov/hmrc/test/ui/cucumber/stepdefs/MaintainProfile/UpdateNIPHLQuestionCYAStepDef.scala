@@ -24,9 +24,4 @@ class UpdateNIPHLQuestionCYAStepDef extends BaseStepDef {
     UpdateNIPHLQuestionCYAPage
       .assertPage()
   }
-
-  Then("""^(?:My )?'NIPHL Question CYA' has the (.*) value$""") { (key: String) =>
-    UpdateNIPHLQuestionCYAPage
-      .verifyInput("niphlQuestion", key)
-  }
 }

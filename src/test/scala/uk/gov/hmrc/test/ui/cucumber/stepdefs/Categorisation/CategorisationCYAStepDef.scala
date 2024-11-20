@@ -25,24 +25,4 @@ class CategorisationCYAStepDef extends BaseStepDef {
     CategorisationCYAPage
       .assertPage(title)
   }
-
-  Then("""^(?:The )?'Category assessment 5' has the value (.*)$""") { (value: String) =>
-    CategorisationCYAPage
-      .verifyConditionsInput("Category assessment 5 of 6", value)
-  }
-
-  Then("""^(?:The )?'Category assessment 2' has the value (.*)$""") { (value: String) =>
-    CategorisationCYAPage
-      .verifyConditionsInput("Category assessment 2 of 6", value)
-  }
-
-  Then("""^(?:The )?'Has Supplementary Unit' has the value (.*)$""") { (value: String) =>
-    CategorisationCYAPage
-      .verifySupplementaryUnitInput("Has Supplementary Unit", value)
-  }
-
-  Then("""^(?:The )?'Supplementary Unit' has the value (.*)$""") { (value: String) =>
-    CategorisationCYAPage
-      .verifySupplementaryUnitInput("Supplementary Unit", value)
-  }
 }

@@ -35,9 +35,4 @@ class UpdateSupplementaryUnitStepDef extends BaseStepDef {
     UpdateSupplementaryUnitPage
       .assertPage()
   }
-
-  Then("""^(?:My )?'(.*)' has the updated value (.*)$""") { (key: String, value: String) =>
-    UpdateSupplementaryUnitCYAPage
-      .verifyInput(key, value)
-  }
 }

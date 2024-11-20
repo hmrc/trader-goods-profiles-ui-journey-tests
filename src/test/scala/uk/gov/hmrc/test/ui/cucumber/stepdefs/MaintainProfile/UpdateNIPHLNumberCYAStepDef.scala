@@ -24,20 +24,4 @@ class UpdateNIPHLNumberCYAStepDef extends BaseStepDef {
     UpdateNIPHLNumberCYAPage
       .assertPage()
   }
-
-  Then("""^(?:I )?click the NIPHL Number change link in the summary list$""") { () =>
-    UpdateNIPHLNumberCYAPage
-      .clickChangeLink("2")
-  }
-
-  Then("""^(?:My )?'NIPHL Number CYA' has the (.*) value$""") { (key: String) =>
-    key match {
-      case "different" =>
-        UpdateNIPHLNumberCYAPage
-          .verifyInput("value", "SN54321")
-      case "valid"     =>
-        UpdateNIPHLNumberCYAPage
-          .verifyInput("value", "SN12345")
-    }
-  }
 }

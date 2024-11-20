@@ -24,14 +24,4 @@ class UpdateUKIMSCYADef extends BaseStepDef {
     UpdateUKIMSCYAPage
       .assertPage()
   }
-
-  Then("""^(?:I )?click the UKIMS change link$""") { () =>
-    UpdateUKIMSCYAPage
-      .clickChangeLink("1")
-  }
-
-  Then("""^(?:My )?'UKIMS CYA' has the (.*) value$""") { (key: String) =>
-    UpdateUKIMSCYAPage
-      .verifyInput("ukims", key)
-  }
 }

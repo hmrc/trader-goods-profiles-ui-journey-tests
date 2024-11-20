@@ -25,7 +25,7 @@ object NIRMSNumberPage extends Page {
   override def url(args: String*): String   = "/create-profile/nirms-number"
 
   override def verifyHeader(h1: String): this.type = {
-    checkSecondaryHeader(h1)
+    checkHeaderLabel(h1)
     this
   }
 }

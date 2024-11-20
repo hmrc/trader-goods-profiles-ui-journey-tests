@@ -42,7 +42,6 @@ object CategorisationCategory1CompletePage extends BasePage {
       )
 
   def verifyHeader(h1: String): this.type = {
-//    checkPanelHeader(h1)
     checkHeader(h1)
     this
   }
