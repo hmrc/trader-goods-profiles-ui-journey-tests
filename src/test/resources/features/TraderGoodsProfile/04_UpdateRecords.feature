@@ -8,7 +8,7 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the 'Previous movement records' page
     And I select continue
     Then I should be on the 'Goods profile' page 1 results
-    When I click on the Change link
+    When I click on the View link
     Then I should be on the 'Goods record' page
 #Update trader reference to a new unique value
     When I click the Trader reference change link
