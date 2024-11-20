@@ -8,7 +8,7 @@ Feature: Trader Goods Profile - Request and Withdraw Advice journey
     Then I should be on the 'Previous movement records' page
     And I select continue
     Then I should be on the 'Goods profile' page 1 results
-    When I click on the Change link
+    When I click on the View link
     Then I should be on the 'Goods record' page
     And I click on the Ask for advice link
     Then I should be on the 'Asking HMRC for advice' page
@@ -37,7 +37,7 @@ Feature: Trader Goods Profile - Request and Withdraw Advice journey
     And I click on the Go back to goods profile link
     Then I should be on the 'Goods profile' page 1 results
     When I search for Locked goods record
-    And I click on the Change link
+    And I click on the View link
     Then I should be on the 'Goods record' page
     When I click on the Withdraw request link
     Then I should be on the 'Withdrawing your request' page

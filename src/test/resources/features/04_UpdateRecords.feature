@@ -8,7 +8,7 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the 'Previous movement records' page
     And I select continue
     Then I should be on the 'Goods profile' page 1 results
-    When I click on the Change link
+    When I click on the View link
     Then I should be on the 'Goods record' page
 #Update trader reference to a new unique value
     When I click the Trader reference change link
@@ -25,7 +25,7 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the 'Goods description' CYA page
     And I select continue
     Then I should be on the 'Goods record' page
-#Update supplimentary unit to new value and validating
+#Update supplementary unit to new value and validating
     When I click the SupplementaryUnit change link
     Then I should be on the 'Goods Supplementary Unit' update page
     When I enter 54321.4302 in Goods Supplementary Unit
@@ -33,7 +33,7 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the update 'Supplementary Unit' CYA page
     And The 'SupplementaryUnit' has the value 54321.4302 squares
     And I select continue
-#Removing supplimentary unit
+#Removing supplementary unit
     When I click the HasSupplementaryUnit change link
     Then I should be on the 'Supplementary Unit' update page
     When I select No for the boolean question
