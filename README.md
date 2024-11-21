@@ -21,6 +21,7 @@ docker run --rm -d -p 27017:27017 --name mongo percona/percona-server-mongodb:5.
 Start `TGP_FE>` services as follows:
 
 ```bash
+sm2 --update-config
 sm2 --start TGP_FE_ALL
 ```
 
