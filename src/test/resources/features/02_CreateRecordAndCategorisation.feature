@@ -19,7 +19,7 @@ Feature: Trader Goods Profile - Create Record and Categorisation journeys
     Then I should be on the 'commodity code' page
     When I enter 170490 Commodity code
     And I select continue
-    Then I should be on the "Results for 170490" page
+    Then I should be on the "Results for the commodity code 170490" page
     When I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page
@@ -85,7 +85,7 @@ Feature: Trader Goods Profile - Create Record and Categorisation journeys
     Then I should be on the 'Longer commodity code' page
     And I enter 9912 'Longer Commodity code'
     And I select continue
-    Then I should be on the Longer Commodity "Results for 1704909912" page
+    Then I should be on the Longer Commodity "Results for the commodity code 1704909912" page
     When I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Supplementary Unit' page
