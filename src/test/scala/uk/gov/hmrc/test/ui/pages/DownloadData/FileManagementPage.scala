@@ -26,7 +26,7 @@ object FileManagementPage extends Page {
   override def url(args: String*): String   = "/download/tgp-record-files"
 
   def assertDownloadLink(): this.type = {
-    findBy(By.xpath("/html/body/div/main/div/div/table[1]/tbody/tr/td[3]/a")).getAttribute("href").equals("/some-url")
+    findBy(By.xpath("/html/body/div/main/div/div/div/table[1]/tbody/tr/td[3]/a")).getAttribute("href").equals("/some-url")
     this
   }
 }
