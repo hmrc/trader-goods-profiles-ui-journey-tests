@@ -57,9 +57,6 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the 'Goods record' page
 #Update Country of origin
     When I click the Country of origin change link
-    Then I should be on the Goods record Country Of Origin warning page
-    And I select Yes for the boolean question
-    When I select continue
     Then I should be on the 'Country of origin' update page
     And I select continue
     Then I should be on the 'Country of origin' CYA page
