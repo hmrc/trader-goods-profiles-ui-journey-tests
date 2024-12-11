@@ -52,21 +52,13 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the update 'commodity code' result page
     And I select Yes for the boolean question
     When I select continue
-    Then I should be on the update 'commodity code' CYA page
+    Then I should be on the update 'commodity code updated' page
+    When I click on the Categorise this record link
+    Then I should be on the 'Categorisation Information' page
     And I select continue
-    Then I should be on the 'Goods record' page
-#Update Country of origin
-    When I click the Country of origin change link
-    Then I should be on the 'Country of origin' update page
+    Then I should be on the 'Category assessment 1' page
+    When I check none of the above for the checkbox question
     And I select continue
-    Then I should be on the 'Country of origin' CYA page
+    Then I should be on the Categorisation "Check your category assessment answers for 1704909912" page
     And I select continue
-    Then I should be on the 'Goods record' page
-#Remove record
-    When I click on the Go back to goods profile link
-    Then I should be on the 'Goods profile' page 1 results
-    When I click on the Remove link
-    Then I should be on the 'Removing goods record' page
-    When I select Yes for the boolean question
-    And I select continue
-    Then I should be on the 'Goods profile' page 1 results
+    Then I should be on the 'Categorisation complete' with Category1 content page
