@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object UpdateCountryOfOriginWarningPage extends Page {
 
-  override def title(args: String*): String = "Change record information"
-  override def h1(args: String*): String    = "Change record information"
+  override def title(args: String*): String = "Changing the country of origin"
+  override def h1(args: String*): String    = "Changing the country of origin"
   override def url(args: String*): String   = "/update-record/" + recordId + "/change-record-warning/country-of-origin"
 }
