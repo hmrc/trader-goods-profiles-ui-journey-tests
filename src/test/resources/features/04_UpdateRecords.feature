@@ -48,7 +48,7 @@ Feature: Trader Goods Profile - View or Update record journey
     And I select Yes for the boolean question
     When I select continue
     Then I should be on the 'commodity code' update page
-    And I enter 9301900000 in the Commodity code text field
+    And I enter 1704909912 in the Commodity code text field
     Then I should be on the update 'commodity code' result page
     And I select Yes for the boolean question
     When I select continue
