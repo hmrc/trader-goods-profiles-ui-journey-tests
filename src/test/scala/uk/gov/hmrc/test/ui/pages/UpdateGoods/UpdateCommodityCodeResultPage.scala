@@ -19,9 +19,9 @@ package uk.gov.hmrc.test.ui.pages.UpdateGoods
 import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object UpdateCommodityCodeResultPage extends Page {
-  override def title(args: String*): String = "Results for the commodity code 9301900000"
+  override def title(args: String*): String = "Results for the commodity code 1704909912"
 
-  override def h1(args: String*): String = "Results for the commodity code 9301900000"
+  override def h1(args: String*): String = "Results for the commodity code 1704909912"
 
   override def url(args: String*): String = "/update-record/" + recordId + "/commodity-code-result"
 
