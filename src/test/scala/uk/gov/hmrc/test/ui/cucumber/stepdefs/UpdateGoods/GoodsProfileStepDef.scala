@@ -35,7 +35,7 @@ class GoodsProfileStepDef extends BaseStepDef {
     search match {
       case "Locked" =>
         GoodsProfileNoRecordsPage
-          .fillInput("value", "GB - 22030001 - In bottles 2")
+          .fillInput("searchTerm", "GB - 22030001 - In bottles 2")
           .submitPage()
     }
   }
