@@ -7,8 +7,8 @@ Feature: Trader Goods Profile - Create Record and Categorisation journeys
     When I click on the Create a new goods record link
     Then I should be on the 'Creating a goods record' page
     And I select continue
-    Then I should be on the 'Trader reference' page
-    When I enter unique Trader reference
+    Then I should be on the 'Product reference' page
+    When I enter unique Product reference
     And I select continue
     Then I should be on the 'Goods description' page
     When I enter description in Goods description
@@ -23,9 +23,9 @@ Feature: Trader Goods Profile - Create Record and Categorisation journeys
     When I select Yes for the boolean question
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page
-    When I click the Trader reference change link
-    Then I should be on the check 'Trader reference' page
-    And I enter different Trader reference
+    When I click the Product reference change link
+    Then I should be on the check 'Product reference' page
+    And I enter different Product reference
     And I select continue
     Then I should be on the 'Create Record - Check Your Answers' page
     When I select continue
