@@ -23,17 +23,17 @@ import java.util.UUID
 
 class UpdateTraderReferenceStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'Trader reference' update page$""") { () =>
+  Then("""^(?:I )?should be on the 'Product reference' update page$""") { () =>
     UpdateTraderReferencePage
       .assertPage()
   }
 
-  Then("""^(?:I )?should be on the 'Trader reference' update CYA page$""") { () =>
+  Then("""^(?:I )?should be on the 'Product reference' update CYA page$""") { () =>
     UpdateTraderReferenceCYAPage
       .assertPage()
   }
 
-  Then("""^(?:I )?enter (.*) Trader reference update$""") { (traderReference: String) =>
+  Then("""^(?:I )?enter (.*) Product reference update$""") { (traderReference: String) =>
     traderReference match {
       case "Non unique" =>
         UpdateTraderReferencePage

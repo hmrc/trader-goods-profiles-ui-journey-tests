@@ -23,19 +23,19 @@ import java.util.UUID
 
 class TraderReferenceStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'Trader reference' page$""") { () =>
+  Then("""^(?:I )?should be on the 'Product reference' page$""") { () =>
     TraderReferencePage
       .assertPage()
   }
 
-  Then("""^(?:I )?should be on the check 'Trader reference' page$""") { () =>
+  Then("""^(?:I )?should be on the check 'Product reference' page$""") { () =>
     TraderReferencePage
       .assertCheckPage()
   }
 
   var validUuid = "EMPTY"
 
-  Then("""^(?:I )?enter (.*) Trader reference$""") { (traderReference: String) =>
+  Then("""^(?:I )?enter (.*) Product reference$""") { (traderReference: String) =>
     traderReference match {
       case "none unique" =>
         TraderReferencePage

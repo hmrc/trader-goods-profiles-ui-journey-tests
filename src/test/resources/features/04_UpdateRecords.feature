@@ -10,12 +10,12 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the 'Goods profile' page 1 results
     When I click on the View link
     Then I should be on the 'Goods record' page
-#Update trader reference to a new unique value
-    When I click the Trader reference change link
-    Then I should be on the 'Trader reference' update page
-    And I enter Unique Trader reference update
+#Update product reference to a new unique value
+    When I click the Product reference change link
+    Then I should be on the 'Product reference' update page
+    And I enter Unique Product reference update
     When I select continue
-    Then I should be on the 'Trader reference' update CYA page
+    Then I should be on the 'Product reference' update CYA page
     And I select continue
     Then I should be on the 'Goods record' page
 #No changes to Goods description after clicking change link

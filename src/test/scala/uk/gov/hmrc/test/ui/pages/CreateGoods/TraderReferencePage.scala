@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.Base.Page
 
 object TraderReferencePage extends Page {
 
-  override def title(args: String*): String = "Trader reference"
-  override def h1(args: String*): String    = "Trader reference"
-  override def url(args: String*): String   = "/create-record/trader-reference"
+  override def title(args: String*): String = "Product reference"
+  override def h1(args: String*): String    = "Product reference"
+  override def url(args: String*): String   = "/create-record/product-reference"
 }
