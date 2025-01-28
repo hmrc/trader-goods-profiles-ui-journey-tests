@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.test.ui.pages.SignedOutPage
+import uk.gov.hmrc.test.ui.pages.{FeedbackPage, SignedOutPage}
 
 class CommonStepDef extends BaseStepDef {
 
@@ -62,6 +62,11 @@ class CommonStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the 'Signed Out' page$""") { () =>
     SignedOutPage
+      .assertPage()
+  }
+
+  Then("""^(?:I )?should be on the 'Give Feedback' page$""") { () =>
+    FeedbackPage
       .assertPage()
   }
 }
