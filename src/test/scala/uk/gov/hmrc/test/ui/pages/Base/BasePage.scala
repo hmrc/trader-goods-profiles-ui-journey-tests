@@ -433,6 +433,9 @@ trait BasePage extends BrowserDriver with Matchers {
   def checkHeader(content: String): Unit =
     findBy(By.className("govuk-heading-l")).getText.shouldEqual(content)
 
+  def checkGenericHMRCHeader(content: String): Unit =
+    findBy(By.className("govuk-heading-xl")).getText.shouldEqual(content)
+
   def checkHeaderLabel(content: String): Unit =
     findBy(By.className("govuk-label--l")).getText.shouldEqual(content)
 
