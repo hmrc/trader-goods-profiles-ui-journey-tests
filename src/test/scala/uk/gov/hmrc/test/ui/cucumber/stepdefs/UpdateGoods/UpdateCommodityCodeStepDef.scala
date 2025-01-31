@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.UpdateGoods
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.UpdateGoods.{UpdateCommodityCodePage, UpdateCommodityCodeResultPage, UpdateCommodityCodeWarningPage, UpdatedCommodityCodePage}
+import uk.gov.hmrc.test.ui.pages.UpdateGoods.{UpdateCommodityCodeCYAPage, UpdateCommodityCodePage, UpdateCommodityCodeResultPage, UpdateCommodityCodeWarningPage, UpdatedCommodityCodePage}
 
 class UpdateCommodityCodeStepDef extends BaseStepDef {
   Then("""^(?:I )?should be on the 'commodity code' update page$""") { () =>
