@@ -22,8 +22,6 @@ import org.openqa.selenium._
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.conf.TestConfiguration.config
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import org.mongodb.scala.SingleObservableFuture
-
 
 import java.time.temporal.ChronoUnit
 import java.time.{Duration, Instant}
