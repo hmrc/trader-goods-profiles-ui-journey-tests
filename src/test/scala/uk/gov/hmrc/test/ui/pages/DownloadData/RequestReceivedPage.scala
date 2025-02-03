@@ -21,8 +21,8 @@ import uk.gov.hmrc.test.ui.pages.CreateGoods.CreateRecordSuccessPage.checkPanelH
 
 object RequestReceivedPage extends Page {
 
-  override def title(args: String*): String = "We’ve received your request for a file of your TGP data"
-  override def h1(args: String*): String    = "We’ve received your request for a file of your TGP data"
+  override def title(args: String*): String = "We've received your request for a file of your TGP data"
+  override def h1(args: String*): String    = "We've received your request for a file of your TGP data"
   override def url(args: String*): String   = "/download-data/request-received"
 
   override def verifyHeader(h1: String): this.type = {

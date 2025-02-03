@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
 object CreateProfileSuccessPage extends BasePage {
 
-  def title(): String = "You’ve created your Trader Goods Profile"
+  def title(): String = "You've created your Trader Goods Profile"
   def url: String     = "/create-profile/success"
 
   def assertPage(): this.type = {
