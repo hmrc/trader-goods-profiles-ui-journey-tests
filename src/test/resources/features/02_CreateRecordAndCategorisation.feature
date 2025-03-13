@@ -64,6 +64,9 @@ Feature: Trader Goods Profile - Create Record and Categorisation journeys
     Then I should be on the 'Category assessment 6' page
     When I check the first box of the checkbox question
     And I select continue
+    Then I should be on the 'Category assessment 7' page
+    When I check the first box of the checkbox question
+    And I select continue
     Then I should be on the Categorisation "Check your category assessment answers for 170490" page
     And I select continue
     Then I should be on the 'Categorisation complete' with standard content page
