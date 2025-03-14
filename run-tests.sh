@@ -9,4 +9,4 @@ if [ -z "$BROWSER_TYPE" ]; then
     echo ""
 fi
 
-sbt -Dbrowser="${BROWSER_TYPE:=$DEFAULT_BROWSER}" -Denvironment="${ENV:=local}" -Dbrowser.option.headless="${HEADLESS:=false}" -Daccessibility.assessment="true" "testOnly uk.gov.hmrc.test.ui.cucumber.runner.TestRunner" testReport
+sbt -Dbrowser="${BROWSER_TYPE:=$DEFAULT_BROWSER}" -Denvironment="${ENV:=local}" -Dbrowser.option.headless="${HEADLESS:=true}" -Daccessibility.assessment="true" "testOnly uk.gov.hmrc.test.ui.cucumber.runner.TestRunner" testReport
