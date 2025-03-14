@@ -31,9 +31,15 @@ Run tests as follows:
 
 * Argument `<browser>` must be `chrome`, `edge`, or `firefox`.
 * Argument `<environment>` must be `local`, `dev`, `qa` or `staging`.
+* Argument `<headless>` must be `false`, or `true`.
 
 ```bash
-./run-tests.sh <browser> <environment>
+./run-tests.sh <browser> <environment> <headless>
+```
+
+Basic Command to run the tests locally with the UI shown
+```bash
+./run-tests.sh chrome local false
 ```
 
 ## Scalafmt
