@@ -31,7 +31,7 @@ import scala.concurrent.Await
 import scala.concurrent.duration.DurationInt
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 import scala.language.postfixOps
-
+import org.mongodb.scala.gridfs.SingleObservableFuture
 trait BasePage extends BrowserDriver with Matchers {
   var recordId = ""
 
