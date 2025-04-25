@@ -20,9 +20,8 @@ Feature: Trader Goods Profile - View or Update record journey
     Then I should be on the 'Goods record' page
 #No changes to Goods description after clicking change link
     When I click the Goods description change link
-    Then I should be on the 'Goods description' update page
-    And I select continue
-    Then I should be on the 'Goods description' CYA page
+    Then I should be on the Goods record Goods Description warning page
+    When I select No for the boolean question
     And I select continue
     Then I should be on the 'Goods record' page
 #Update supplementary unit to new value and validating
