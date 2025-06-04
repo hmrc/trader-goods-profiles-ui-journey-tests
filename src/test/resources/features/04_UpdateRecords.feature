@@ -64,6 +64,8 @@ Feature: Trader Goods Profile - View or Update record journey
     And I select continue
     Then I should be on the 'Country of origin' CYA page
     And I select continue
+    Then I should be on the 'Updated Country of origin' page
+    And I click on the Go back to goods record link
     Then I should be on the 'Goods record' page
 #Remove record
     When I click on the Go back to goods profile link

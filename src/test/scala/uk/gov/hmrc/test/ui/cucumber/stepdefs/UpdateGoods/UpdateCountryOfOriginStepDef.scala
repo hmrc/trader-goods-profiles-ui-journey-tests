@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.UpdateGoods
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.UpdateGoods.{UpdateCountryOfOriginCYAPage, UpdateCountryOfOriginPage, UpdateCountryOfOriginWarningPage}
+import uk.gov.hmrc.test.ui.pages.UpdateGoods.{UpdateCountryOfOriginCYAPage, UpdateCountryOfOriginPage, UpdateCountryOfOriginWarningPage, UpdatedCountryOfOriginPage}
 
 class UpdateCountryOfOriginStepDef extends BaseStepDef {
 
@@ -33,6 +33,11 @@ class UpdateCountryOfOriginStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the 'Country of origin' CYA page$""") { () =>
     UpdateCountryOfOriginCYAPage
+      .assertPage()
+  }
+
+  Then("""^(?:I )?should be on the 'Updated Country of origin' page$""") { () =>
+    UpdatedCountryOfOriginPage
       .assertPage()
   }
 }
