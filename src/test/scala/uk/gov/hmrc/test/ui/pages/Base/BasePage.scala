@@ -34,7 +34,6 @@ import scala.language.postfixOps
 import org.mongodb.scala.gridfs.SingleObservableFuture
 trait BasePage extends BrowserDriver with Matchers {
   var recordId = ""
-  var productRef = ""
 
   private lazy val mongoClient: MongoClient = MongoClient()
 
@@ -380,10 +379,6 @@ trait BasePage extends BrowserDriver with Matchers {
         recordId = draft
       case _           => None
     }
-  }
-
-  def getProductRef(): Unit = {
-    productRef = findBy(By.xpath(s"//*[contains(text(), 'Product reference')]/following-sibling::dd[1]")).getText
   }
 
   private lazy val fluentWait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
