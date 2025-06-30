@@ -16,14 +16,41 @@
 
 package uk.gov.hmrc.test.ui.pages.UpdateGoods
 
-import uk.gov.hmrc.test.ui.pages.Base.Page
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
+import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
-object GoodsRecordPage extends Page {
+object GoodsRecordPage extends BasePage {
 
-  override def title(args: String*): String = "Goods record"
+  def title: String = s"$productRef - Goods record"
 
-  override def h1(args: String*): String = "Goods record"
+  def h1: String = "Goods record"
 
-  override def url(args: String*): String = "/goods-record/" + recordId
+  def url: String = "/goods-record/" + recordId
 
+  def assertPage(): this.type = {
+    getRecordId()
+    getProductRef()
+    verifyTitle(title)
+    verifyHeader(h1)
+    validateUrl(url)
+    this
+  }
+
+  val serviceName: String = "Trader Goods Profile"
+
+  private def verifyTitle(pageTitle: String): Unit =
+    if (driver.getTitle != s"$pageTitle - $serviceName - GOV.UK")
+      throw PageNotFoundException(
+        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
+      )
+
+  def verifyHeader(h1: String): this.type = {
+    checkHeader(h1)
+    this
+  }
+
+  def validateUrl(url: String): this.type = {
+    checkURL(TestConfiguration.url("trader-goods-profiles-frontend") + url)
+    this
+  }
 }
