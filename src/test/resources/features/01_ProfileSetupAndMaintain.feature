@@ -40,7 +40,7 @@ Feature: Trader Goods Profile - Profile setup and Maintain profile journey
     Then I should be on the 'Create Profile Success' page
     And I click on the Go to homepage link
     Then I should be on the 'Home' page
-    When I click on the Manage your profile details link
+    When I click on the Manage your profile link
     Then I should be on the 'Profile details' page
     When I click the UKIMS number change link
     Then I should be on the update 'UK internal scheme number' page
