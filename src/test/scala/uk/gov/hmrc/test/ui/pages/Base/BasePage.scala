@@ -33,13 +33,12 @@ import scala.jdk.CollectionConverters.CollectionHasAsScala
 import scala.language.postfixOps
 import org.mongodb.scala.gridfs.SingleObservableFuture
 trait BasePage extends BrowserDriver with Matchers {
-  var recordId = ""
+  var recordId   = ""
   var productRef = ""
 
   private lazy val mongoClient: MongoClient = MongoClient()
 
   def dropCollections(): Unit = {
-    println("============================Dropping Collection")
 
     def dropCollection(dbName: String, collectionName: String): Unit =
       Await.result(
@@ -54,9 +53,7 @@ trait BasePage extends BrowserDriver with Matchers {
     dropCollection("trader-goods-profiles-data-store", "downloadDataSummary")
   }
 
-  def loadTraderProfiles(): Unit = {
-    println("============================Loading Goods Trader Profiles")
-
+  def loadTraderProfiles(): Unit =
     Await.result(
       mongoClient
         .getDatabase("trader-goods-profiles-hawk-stub")
@@ -80,11 +77,8 @@ trait BasePage extends BrowserDriver with Matchers {
         .toFuture(),
       10 seconds
     )
-  }
 
-  def loadProfiles(): Unit = {
-    println("============================Loading Profiles")
-
+  def loadProfiles(): Unit =
     Await.result(
       mongoClient
         .getDatabase("trader-goods-profiles-data-store")
@@ -102,10 +96,8 @@ trait BasePage extends BrowserDriver with Matchers {
         .toFuture(),
       10 seconds
     )
-  }
 
   def loadDownloadDataSummaries(): Unit = {
-    println("============================Loading Download Data Summaries")
 
     val localDate    = Date.from(Instant.now)
     val newLocalDate = Date.from(Instant.now.plus(30, ChronoUnit.DAYS))
@@ -136,7 +128,6 @@ trait BasePage extends BrowserDriver with Matchers {
   }
 
   def loadGoodsItemRecords(): Unit = {
-    println("============================Loading Goods Item Records")
 
     Await.result(
       mongoClient
@@ -382,9 +373,8 @@ trait BasePage extends BrowserDriver with Matchers {
     }
   }
 
-  def getProductRef(): Unit = {
+  def getProductRef(): Unit =
     productRef = findBy(By.xpath(s"//*[contains(text(), 'Product reference')]/following-sibling::dd[1]")).getText
-  }
 
   private lazy val fluentWait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
     .withTimeout(Duration.ofSeconds(config.getInt("wait.timeout.seconds")))
@@ -396,10 +386,8 @@ trait BasePage extends BrowserDriver with Matchers {
   def findSiblingByText(text: String): WebElement =
     driver.findElement(By.xpath(s"//td[contains(.,'$text')]//following-sibling::td[2]"))
 
-  def deleteCookies(): Unit = {
-    println("============================Clearing cookies")
+  def deleteCookies(): Unit =
     driver.manage().deleteAllCookies()
-  }
 
   def findBy(by: By): WebElement = fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
 

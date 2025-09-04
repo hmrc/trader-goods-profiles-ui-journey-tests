@@ -39,7 +39,7 @@ object Hooks extends ScalaDsl with EN with Browser with BasePage {
   After { (scenario: Scenario) =>
     if (scenario.isFailed) {
       val screenshotName = scenario.getName.replaceAll(" ", "_")
-      val screenshot = driver.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.BYTES)
+      val screenshot     = driver.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.BYTES)
       scenario.attach(screenshot, "image/png", screenshotName)
     }
   }

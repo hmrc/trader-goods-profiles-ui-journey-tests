@@ -46,5 +46,4 @@ class UpdateCommodityCodeStepDef extends BaseStepDef {
       .assertPage()
   }
 
-
 }

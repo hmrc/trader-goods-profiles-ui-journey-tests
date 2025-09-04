@@ -23,6 +23,7 @@ object UpdatedCommodityCodePage extends Page {
 
   override def h1(args: String*): String = "You’ve updated the commodity code"
 
-  override def url(args: String*): String = "/update-record/" + recordId + "/change-record-warning/updated-commodity-code"
+  override def url(args: String*): String =
+    "/update-record/" + recordId + "/change-record-warning/updated-commodity-code"
 
 }

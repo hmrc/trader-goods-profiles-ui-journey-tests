@@ -23,6 +23,7 @@ object UpdatedCountryOfOriginPage extends Page {
 
   override def h1(args: String*): String = "You’ve updated the country of origin"
 
-  override def url(args: String*): String = "/update-record/" + recordId + "/change-record-warning/updated-country-of-origin"
+  override def url(args: String*): String =
+    "/update-record/" + recordId + "/change-record-warning/updated-country-of-origin"
 
 }
