@@ -24,6 +24,7 @@ class RequestReceivedStepDef extends BaseStepDef {
   Then("""^(?:I )?should be on the 'Request Received' page$""") { () =>
     RequestReceivedPage
       .assertPage()
+      .loadDownloadDataSummaries()
   }
 
 }
