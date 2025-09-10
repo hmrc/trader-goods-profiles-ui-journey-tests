@@ -5,8 +5,6 @@ Feature: Trader Goods Profile - Request and Withdraw Advice journey
   Scenario:As a returning user, I can request/withdraw HMRC advice
     Given I login to TGP with EORI number GB123456789098
     When I click on the Manage your goods records link
-    Then I should be on the 'Previous movement records' page
-    And I select continue
     Then I should be on the 'Goods profile' page 1 results
     When I click on the View link
     Then I should be on the 'Goods record' page
