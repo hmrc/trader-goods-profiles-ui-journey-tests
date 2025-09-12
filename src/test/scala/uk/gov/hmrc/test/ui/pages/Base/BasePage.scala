@@ -376,9 +376,10 @@ trait BasePage extends BrowserDriver with Matchers {
   def getProductRef(): Unit =
     productRef = findBy(By.xpath(s"//*[contains(text(), 'Product reference')]/following-sibling::dd[1]")).getText
 
-  private lazy val fluentWait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
+  lazy val fluentWait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
     .withTimeout(Duration.ofSeconds(config.getInt("wait.timeout.seconds")))
     .pollingEvery(Duration.ofMillis(config.getInt("wait.poll.seconds")))
+    .ignoring(classOf[StaleElementReferenceException])
     .ignoring(classOf[Exception])
 
   private lazy val jse: JavascriptExecutor = driver.asInstanceOf[JavascriptExecutor]
@@ -389,20 +390,20 @@ trait BasePage extends BrowserDriver with Matchers {
   def deleteCookies(): Unit =
     driver.manage().deleteAllCookies()
 
-  def findBy(by: By): WebElement = fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
+  def findBy(by: By): WebElement = fluentWait.ignoring(classOf[StaleElementReferenceException]).until(ExpectedConditions.presenceOfElementLocated(by))
 
   def findById(id: String): WebElement = findBy(By.id(id))
 
   def click(by: By): Unit = bringIntoView(by, _.click)
 
-  def clickById(id: String): Unit = click(By.id(id))
+  def clickById(id: String): Unit = findBy(By.id(id)).click()
 
-  def clickByClassName(className: String): Unit = click(By.className(className))
+  def clickByClassName(className: String): Unit = findBy(By.className(className)).click()
 
-  def clickByPartialLinkText(linkText: String): Unit = click(By.partialLinkText(linkText))
+  def clickByPartialLinkText(linkText: String): Unit = findBy(By.partialLinkText(linkText)).click()
 
   def clickChangeLink(key: String): Unit =
-    click(By.xpath(s"//span[contains(text(), ' $key')]/.."))
+    findBy(By.xpath(s"//span[contains(text(), ' $key')]/..")).click()
 
   def verifyCyaInput(key: String, expected: String): Unit =
     findBy(By.xpath(s"//span[contains(text(), ' $key')]/../../preceding-sibling::dd")).getText.shouldEqual(expected)
@@ -433,7 +434,7 @@ trait BasePage extends BrowserDriver with Matchers {
     findBy(By.className("govuk-label--l")).getText.shouldEqual(content)
 
   def checkURL(url: String): Unit =
-    driver.getCurrentUrl.shouldEqual(url)
+    fluentWait.until(ExpectedConditions.urlToBe(url))
 
   def checkPanelHeader(content: String): Unit =
     findBy(By.className("govuk-panel__title")).getText.shouldEqual(content)
@@ -447,12 +448,12 @@ trait BasePage extends BrowserDriver with Matchers {
   }
 
   def clickFirstCheckboxItem(): this.type = {
-    click(By.xpath("//input[@type='checkbox'][1]"))
+    findBy(By.xpath("//input[@type='checkbox'][1]")).click()
     this
   }
 
   def clickLastCheckboxItem(): this.type = {
-    click(By.xpath("(//input[@type='checkbox'])[last()]"))
+    findBy(By.xpath("(//input[@type='checkbox'])[last()]")).click()
     this
   }
 
@@ -462,7 +463,7 @@ trait BasePage extends BrowserDriver with Matchers {
       case "Second"            => clickById("value_1")
       case "Third"             => clickById("value_2")
       case "Fourth"            => clickById("value_3")
-      case "None of the above" => click(By.xpath("//input[@value=\"none\"]"))
+      case "None of the above" => findBy(By.xpath("//input[@value=\"none\"]")).click()
     }
     this
   }
