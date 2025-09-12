@@ -50,11 +50,13 @@ trait Page extends BasePage {
 
   val serviceName: String = "Trader Goods Profile"
 
-  private def verifyTitle(pageTitle: String): Unit =
-    if (driver.getTitle != s"$pageTitle - $serviceName - GOV.UK")
+  private def verifyTitle(pageTitle: String): Unit = {
+    val expected = pageTitle + " - " + serviceName + " - GOV.UK"
+    if (driver.getTitle != expected)
       throw PageNotFoundException(
-        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
+        s"Expected '$expected' page, but found '${driver.getTitle}' page."
       )
+  }
 
   def verifyHeader(h1: String): this.type = {
     checkHeader(h1)

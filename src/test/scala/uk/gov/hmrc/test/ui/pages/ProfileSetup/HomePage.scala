@@ -21,9 +21,11 @@ import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
 object HomePage extends BasePage {
 
-  def title(): String  = "Trader Goods Profile (TGP) homepage"
+  def title(): String = "Trader Goods Profile (TGP) homepage"
+
   def header(): String = "Trader Goods Profile (TGP) homepage"
-  def url: String      = "/homepage"
+
+  def url: String = "/homepage"
 
   def assertPage(): this.type = {
     verifyTitle(title())
@@ -32,11 +34,13 @@ object HomePage extends BasePage {
     this
   }
 
-  private def verifyTitle(pageTitle: String): Unit =
-    if (driver.getTitle != s"$pageTitle - GOV.UK")
+  private def verifyTitle(pageTitle: String): Unit = {
+    val expected = s"$pageTitle - GOV.UK"
+    if (driver.getTitle != expected)
       throw PageNotFoundException(
-        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
+        s"Expected '$expected' page, but found '${driver.getTitle}' page."
       )
+}
 
   def verifyHeader(h1: String): this.type = {
     checkHeader(h1)
