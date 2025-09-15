@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
+import org.openqa.selenium.support.ui.ExpectedConditions
 import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
 object NIRMSProductEligibilityPage extends BasePage {
@@ -30,6 +31,7 @@ object NIRMSProductEligibilityPage extends BasePage {
   }
 
   private def verifyTitle(pageTitle: String): Unit =
+    fluentWait.until(ExpectedConditions.titleContains(s"$pageTitle - GOV.UK"))
     if (driver.getTitle != s"$pageTitle - GOV.UK")
       throw PageNotFoundException(
         s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."

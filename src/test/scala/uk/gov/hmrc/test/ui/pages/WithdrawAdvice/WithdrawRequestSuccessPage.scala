@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages.WithdrawAdvice
 
+import org.openqa.selenium.support.ui.ExpectedConditions
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages.Base.BasePage
 
@@ -35,6 +36,7 @@ object WithdrawRequestSuccessPage extends BasePage {
   val serviceName: String = "Trader Goods Profile"
 
   private def verifyTitle(pageTitle: String): Unit =
+    fluentWait.until(ExpectedConditions.titleContains(s"$pageTitle - $serviceName - GOV.UK"))
     if (driver.getTitle != s"$pageTitle - $serviceName - GOV.UK")
       throw PageNotFoundException(
         s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
