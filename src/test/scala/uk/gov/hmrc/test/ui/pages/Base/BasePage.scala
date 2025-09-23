@@ -390,7 +390,7 @@ trait BasePage extends BrowserDriver with Matchers {
   def deleteCookies(): Unit =
     driver.manage().deleteAllCookies()
 
-  def findBy(by: By): WebElement = fluentWait.ignoring(classOf[StaleElementReferenceException]).until(ExpectedConditions.presenceOfElementLocated(by))
+  def findBy(by: By): WebElement = fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
 
   def findById(id: String): WebElement = findBy(By.id(id))
 
@@ -400,7 +400,7 @@ trait BasePage extends BrowserDriver with Matchers {
 
   def clickByClassName(className: String): Unit = findBy(By.className(className)).click()
 
-  def clickByPartialLinkText(linkText: String): Unit = findBy(By.partialLinkText(linkText)).click()
+  def clickByPartialLinkText(linkText: String): Unit = fluentWait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText(linkText))).click()
 
   def clickChangeLink(key: String): Unit =
     findBy(By.xpath(s"//span[contains(text(), ' $key')]/..")).click()
