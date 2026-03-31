@@ -17,11 +17,11 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.DoNotDiscover
-import uk.gov.hmrc.test.ui.stepdefs.Categorisation.{CategorisationCYASteps, CategorisationCompleteSteps, CategorisationInformationSteps, CategorisationQuestionSteps, GoodsSupplementaryUnitSteps, LongerCommodityCodeResultSteps, LongerCommodityCodeSteps, SupplementaryUnitSteps}
-import uk.gov.hmrc.test.ui.stepdefs.{CommonSteps, LoginSteps}
-import uk.gov.hmrc.test.ui.stepdefs.CreateGoods.{CommodityCodeResultSteps, CountryOfOriginSteps, CreateCommodityCodeSteps, CreateRecordCYASteps, CreateRecordSuccessSteps, CreatingGoodsRecordSteps, GoodsDescriptionSteps, TraderReferenceSteps}
-import uk.gov.hmrc.test.ui.stepdefs.UpdateGoods.GoodsRecordSteps
-import uk.gov.hmrc.test.ui.stepdefs.*
+import uk.gov.hmrc.test.ui.specsteps.Categorisation.{CategorisationCYASteps, CategorisationCompleteSteps, CategorisationInformationSteps, CategorisationQuestionSteps, GoodsSupplementaryUnitSteps, LongerCommodityCodeResultSteps, LongerCommodityCodeSteps, SupplementaryUnitSteps}
+import uk.gov.hmrc.test.ui.specsteps.{CommonSteps, LoginSteps}
+import uk.gov.hmrc.test.ui.specsteps.CreateGoods.{CommodityCodeResultSteps, CountryOfOriginSteps, CreateCommodityCodeSteps, CreateRecordCYASteps, CreateRecordSuccessSteps, CreatingGoodsRecordSteps, GoodsDescriptionSteps, TraderReferenceSteps}
+import uk.gov.hmrc.test.ui.specsteps.UpdateGoods.GoodsRecordSteps
+import uk.gov.hmrc.test.ui.specsteps.*
 
 @DoNotDiscover
 class CreateRecordAndCategorisationSpec extends BaseSpec {

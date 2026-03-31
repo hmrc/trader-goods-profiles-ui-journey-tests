@@ -17,11 +17,11 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.DoNotDiscover
-import uk.gov.hmrc.test.ui.stepdefs.{CommonSteps, LoginSteps}
-import uk.gov.hmrc.test.ui.stepdefs.MaintainProfile.{ProfileDetailsSteps, RemovingNIRMSNumberSteps, UpdateNIRMSQuestionCYASteps, UpdateNIRMSQuestionSteps, UpdateUKIMSCYASteps, UpdateUKIMSNumberSteps}
-import uk.gov.hmrc.test.ui.stepdefs.NewUkims.{NewUKIMSNumberSteps, NewUkimsCYASteps, UkimsNumberChangeSteps}
-import uk.gov.hmrc.test.ui.stepdefs.ProfileSetup.{ExistingUKIMSNumberSteps, HomepageSteps, NIPHLNumberSteps, NIPHLQuestionSteps, NIRMSNumberSteps, NIRMSQuestionSteps, ProfileSetupCYASteps, ProfileSetupSteps, ProfileSuccessSteps, UKIMSNumberSteps}
-import uk.gov.hmrc.test.ui.stepdefs.*
+import uk.gov.hmrc.test.ui.specsteps.{CommonSteps, LoginSteps}
+import uk.gov.hmrc.test.ui.specsteps.MaintainProfile.{ProfileDetailsSteps, RemovingNIRMSNumberSteps, UpdateNIRMSQuestionCYASteps, UpdateNIRMSQuestionSteps, UpdateUKIMSCYASteps, UpdateUKIMSNumberSteps}
+import uk.gov.hmrc.test.ui.specsteps.NewUkims.{NewUKIMSNumberSteps, NewUkimsCYASteps, UkimsNumberChangeSteps}
+import uk.gov.hmrc.test.ui.specsteps.ProfileSetup.{ExistingUKIMSNumberSteps, HomepageSteps, NIPHLNumberSteps, NIPHLQuestionSteps, NIRMSNumberSteps, NIRMSQuestionSteps, ProfileSetupCYASteps, ProfileSetupSteps, ProfileSuccessSteps, UKIMSNumberSteps}
+import uk.gov.hmrc.test.ui.specsteps.*
 
 @DoNotDiscover
 class ProfileSetupAndMaintainSpec extends BaseSpec {

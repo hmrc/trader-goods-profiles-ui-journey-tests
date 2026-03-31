@@ -17,10 +17,10 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.DoNotDiscover
-import uk.gov.hmrc.test.ui.stepdefs.DownloadData.{FileManagementSteps, RequestFileSteps, RequestReceivedSteps}
-import uk.gov.hmrc.test.ui.stepdefs.ProfileSetup.HomepageSteps
-import uk.gov.hmrc.test.ui.stepdefs.{CommonSteps, LoginSteps}
-import uk.gov.hmrc.test.ui.stepdefs.*
+import uk.gov.hmrc.test.ui.specsteps.DownloadData.{FileManagementSteps, RequestFileSteps, RequestReceivedSteps}
+import uk.gov.hmrc.test.ui.specsteps.ProfileSetup.HomepageSteps
+import uk.gov.hmrc.test.ui.specsteps.{CommonSteps, LoginSteps}
+import uk.gov.hmrc.test.ui.specsteps.*
 
 @DoNotDiscover
 class DownloadDataSpec extends BaseSpec {

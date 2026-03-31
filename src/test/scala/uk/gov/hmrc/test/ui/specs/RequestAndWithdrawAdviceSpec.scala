@@ -17,11 +17,11 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.DoNotDiscover
-import uk.gov.hmrc.test.ui.stepdefs.RequestAdvice.{AdviceStartSteps, AskEmailSteps, AskNameSteps, RequestAdviceCYASteps, RequestAdviceSuccessSteps}
-import uk.gov.hmrc.test.ui.stepdefs.{CommonSteps, LoginSteps}
-import uk.gov.hmrc.test.ui.stepdefs.UpdateGoods.{GoodsProfileSteps, GoodsRecordSteps}
-import uk.gov.hmrc.test.ui.stepdefs.WithdrawAdvice.{WithdrawRequestReasonSteps, WithdrawRequestSteps, WithdrawRequestSuccessSteps}
-import uk.gov.hmrc.test.ui.stepdefs.*
+import uk.gov.hmrc.test.ui.specsteps.RequestAdvice.{AdviceStartSteps, AskEmailSteps, AskNameSteps, RequestAdviceCYASteps, RequestAdviceSuccessSteps}
+import uk.gov.hmrc.test.ui.specsteps.{CommonSteps, LoginSteps}
+import uk.gov.hmrc.test.ui.specsteps.UpdateGoods.{GoodsProfileSteps, GoodsRecordSteps}
+import uk.gov.hmrc.test.ui.specsteps.WithdrawAdvice.{WithdrawRequestReasonSteps, WithdrawRequestSteps, WithdrawRequestSuccessSteps}
+import uk.gov.hmrc.test.ui.specsteps.*
 
 @DoNotDiscover
 class RequestAndWithdrawAdviceSpec extends BaseSpec {

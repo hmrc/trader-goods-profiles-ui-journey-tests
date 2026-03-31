@@ -17,10 +17,10 @@
 package uk.gov.hmrc.test.ui.specs
 
 import org.scalatest.DoNotDiscover
-import uk.gov.hmrc.test.ui.stepdefs.Categorisation.GoodsSupplementaryUnitSteps
-import uk.gov.hmrc.test.ui.stepdefs.{CommonSteps, LoginSteps}
-import uk.gov.hmrc.test.ui.stepdefs.UpdateGoods.{GoodsProfileSteps, GoodsRecordSteps, RemovingRecordSteps, UpdateCommodityCodeSteps, UpdateCountryOfOriginSteps, UpdateGoodsDescriptionSteps, UpdateSupplementaryUnitSteps, UpdateTraderReferenceSteps}
-import uk.gov.hmrc.test.ui.stepdefs.*
+import uk.gov.hmrc.test.ui.specsteps.Categorisation.GoodsSupplementaryUnitSteps
+import uk.gov.hmrc.test.ui.specsteps.{CommonSteps, LoginSteps}
+import uk.gov.hmrc.test.ui.specsteps.UpdateGoods.{GoodsProfileSteps, GoodsRecordSteps, RemovingRecordSteps, UpdateCommodityCodeSteps, UpdateCountryOfOriginSteps, UpdateGoodsDescriptionSteps, UpdateSupplementaryUnitSteps, UpdateTraderReferenceSteps}
+import uk.gov.hmrc.test.ui.specsteps.*
 
 @DoNotDiscover
 class UpdateRecordsSpec extends BaseSpec {
