@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.ui.specs
+package uk.gov.hmrc.test.ui.runner
 
 import org.scalatest.{Args, BeforeAndAfterAll, Status, Suites}
+import specs._
 import testdata.TestDataHelper
 
 class ScalaTestRunner
