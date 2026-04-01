@@ -17,8 +17,8 @@
 package uk.gov.hmrc.test.ui.runner
 
 import org.scalatest.{Args, BeforeAndAfterAll, Status, Suites}
-import specs._
 import testdata.TestDataHelper
+import uk.gov.hmrc.ui.specs.{CreateRecordAndCategorisationSpec, DownloadDataSpec, ProfileSetupAndMaintainSpec, RequestAndWithdrawAdviceSpec, UpdateRecordsSpec}
 
 class ScalaTestRunner
     extends Suites(
