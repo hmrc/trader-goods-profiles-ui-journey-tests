@@ -24,7 +24,7 @@ class RequestAndWithdrawAdviceSpec extends BaseSpec {
 
   Feature("Trader Goods Profile - Request and Withdraw Advice journey") {
 
-    Scenario("As a returning user, I can request/withdraw HMRC advice") {
+    Scenario("As a returning user, I can request and withdraw HMRC advice") {
       Given("I login to TGP with EORI number GB123456789098")
         LoginSteps.loginToTGPEORINumber("GB123456789098")
 

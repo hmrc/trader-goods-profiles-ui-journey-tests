@@ -393,15 +393,17 @@ trait BasePage extends BrowserDriver with Matchers {
 
   def findBy(by: By): WebElement = fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
 
+  def findByClickable(by: By): WebElement = fluentWait.until(ExpectedConditions.elementToBeClickable(by))
+
   def findById(id: String): WebElement = findBy(By.id(id))
 
   def click(by: By): Unit = bringIntoView(by, _.click)
 
   def clickById(id: String): Unit = findBy(By.id(id)).click()
 
-  def clickByClassName(className: String): Unit = findBy(By.className(className)).click()
+  def clickByClassName(className: String): Unit = findByClickable(By.className(className)).click()
 
-  def clickByPartialLinkText(linkText: String): Unit = fluentWait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText(linkText))).click()
+  def clickByPartialLinkText(linkText: String): Unit = findByClickable(By.partialLinkText(linkText)).click()
 
   def clickChangeLink(key: String): Unit =
     findBy(By.xpath(s"//span[contains(text(), ' $key')]/..")).click()
@@ -510,7 +512,6 @@ trait BasePage extends BrowserDriver with Matchers {
   }
 
   protected def selectValueFromDropDown(valueOption: String, id: String = "value"): Unit = {
-    findBy(By.id(id))
     fillInputById(id, valueOption)
     selectFirstValue(id)
   }
