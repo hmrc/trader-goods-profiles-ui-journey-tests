@@ -31,21 +31,17 @@ object TestDataHelper {
   private val dataStoreDb = "trader-goods-profiles-data-store"
   private val hawkStubDb  = "trader-goods-profiles-hawk-stub"
 
-  // Stable record ID — seeded before every run so DownloadDataSpec always finds at least one record.
-  // UpdateRecordsSpec removes the record created by CreateRecordAndCategorisationSpec (it appears
-  // first because it has a newer updatedDateTime); this seeded record is left untouched.
-  private val seededRecordId = "pre-seeded-goods-record-001"
+  private val seededRecordId  = "pre-seeded-goods-record-001"
+  private val lockedRecordId  = "pre-seeded-locked-record-001"
+  private val seededSummaryId = "pre-seeded-summary-001"
 
   def resetTestData(): Unit = {
-    println("[TestDataHelper] Starting test data reset...")
     val client       = MongoClient(mongoUri)
     val profiles     = client.getDatabase(dataStoreDb).getCollection("profiles")
     val goodsRecords = client.getDatabase(dataStoreDb).getCollection("goodsItemRecords")
     val hawkProfiles = client.getDatabase(hawkStubDb).getCollection("traderProfiles")
 
-    // --- Profiles ---
     Await.result(profiles.deleteOne(equal("eori", "GB123456789098")).toFuture(), 10.seconds)
-    println("[TestDataHelper] Deleted TGP data-store profile for GB123456789098")
 
     Await.result(hawkProfiles.deleteOne(equal("eori", "GB123456789098")).toFuture(), 10.seconds)
     Await.result(
@@ -62,7 +58,6 @@ object TestDataHelper {
         .toFuture(),
       10.seconds
     )
-    println("[TestDataHelper] Seeded hawk-stub traderProfiles for GB123456789098")
 
     Await.result(profiles.deleteOne(equal("eori", "GB123456789555")).toFuture(), 10.seconds)
     Await.result(
@@ -79,17 +74,8 @@ object TestDataHelper {
         .toFuture(),
       10.seconds
     )
-    println("[TestDataHelper] Seeded TGP data-store profile for GB123456789555")
 
-    // --- Goods records ---
-    // Delete and re-seed a stable goods record for GB123456789098.
-    // Its updatedDateTime is set to 1 day ago so it sorts below any record created during the
-    // test run; UpdateRecordsSpec will therefore click "View" on the newer test-created record
-    // and remove that one — leaving this seeded record in place for DownloadDataSpec.
-    //
-    // Date fields must be ISO-8601 strings — the data store's GoodsItemRecord.mongoReads uses
-    // Play JSON's standard Reads[Instant] which expects strings, not BSON Date objects.
-    val oneDayAgo    = Instant.now().minus(1, ChronoUnit.DAYS).toString
+    val oneDayAgo = Instant.now().minus(1, ChronoUnit.DAYS).toString
     Await.result(goodsRecords.deleteOne(equal("_id", seededRecordId)).toFuture(), 10.seconds)
     Await.result(
       goodsRecords
@@ -115,9 +101,59 @@ object TestDataHelper {
         .toFuture(),
       10.seconds
     )
-    println("[TestDataHelper] Seeded goodsItemRecords for GB123456789098")
+
+    val twoDaysAgo = Instant.now().minus(2, ChronoUnit.DAYS).toString
+    Await.result(goodsRecords.deleteOne(equal("_id", lockedRecordId)).toFuture(), 10.seconds)
+    Await.result(
+      goodsRecords
+        .insertOne(
+          Document(
+            "_id"                      -> lockedRecordId,
+            "eori"                     -> "GB123456789098",
+            "actorId"                  -> "GB123456789098",
+            "traderRef"                -> "GB - 22030001 - In bottles 2",
+            "comcode"                  -> "22030001",
+            "adviceStatus"             -> "Requested",
+            "goodsDescription"         -> "In bottles",
+            "countryOfOrigin"          -> "GB",
+            "category"                 -> 1,
+            "version"                  -> 1,
+            "active"                   -> true,
+            "toReview"                 -> false,
+            "declarable"               -> "IMMI Ready",
+            "comcodeEffectiveFromDate" -> twoDaysAgo,
+            "createdDateTime"          -> twoDaysAgo,
+            "updatedDateTime"          -> twoDaysAgo
+          )
+        )
+        .toFuture(),
+      10.seconds
+    )
+
+    val downloadDataSummary = client.getDatabase(dataStoreDb).getCollection("downloadDataSummary")
+    val createdAtBson       = BsonDateTime(Instant.now().minus(1, ChronoUnit.DAYS).toEpochMilli)
+    val expiresAtBson       = BsonDateTime(Instant.now().plus(30, ChronoUnit.DAYS).toEpochMilli)
+    Await.result(downloadDataSummary.deleteOne(equal("summaryId", seededSummaryId)).toFuture(), 10.seconds)
+    Await.result(
+      downloadDataSummary
+        .insertOne(
+          Document(
+            "summaryId" -> seededSummaryId,
+            "eori"      -> "GB123456789098",
+            "status"    -> "FileReadySeen",
+            "createdAt" -> createdAtBson,
+            "expiresAt" -> expiresAtBson,
+            "fileInfo"  -> Document(
+              "fileName"      -> "test",
+              "fileSize"      -> 600,
+              "retentionDays" -> "30"
+            )
+          )
+        )
+        .toFuture(),
+      10.seconds
+    )
 
     client.close()
-    println("[TestDataHelper] Test data reset complete")
   }
 }
