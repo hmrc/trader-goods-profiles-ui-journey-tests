@@ -32,7 +32,7 @@ object TestDataHelper {
   private val hawkStubDb  = "trader-goods-profiles-hawk-stub"
 
   private val seededRecordId  = "pre-seeded-goods-record-001"
-  private val lockedRecordId  = "pre-seeded-locked-record-001"
+  private val lockedRecordId  = "3b1c50e6-3ae6-11ef-a2ec-325096b39f42"
   private val seededSummaryId = "pre-seeded-summary-001"
 
   def resetTestData(): Unit = {
@@ -102,7 +102,10 @@ object TestDataHelper {
       10.seconds
     )
 
-    val twoDaysAgo = Instant.now().minus(2, ChronoUnit.DAYS).toString
+    val twoDaysAgo     = Instant.now().minus(2, ChronoUnit.DAYS).toString
+    val twoDaysAgoBson = BsonDateTime(Instant.now().minus(2, ChronoUnit.DAYS).toEpochMilli)
+    val hawkRecords    = client.getDatabase(hawkStubDb).getCollection("goodsItemRecords")
+
     Await.result(goodsRecords.deleteOne(equal("_id", lockedRecordId)).toFuture(), 10.seconds)
     Await.result(
       goodsRecords
@@ -124,6 +127,39 @@ object TestDataHelper {
             "comcodeEffectiveFromDate" -> twoDaysAgo,
             "createdDateTime"          -> twoDaysAgo,
             "updatedDateTime"          -> twoDaysAgo
+          )
+        )
+        .toFuture(),
+      10.seconds
+    )
+
+    Await.result(hawkRecords.deleteOne(equal("recordId", lockedRecordId)).toFuture(), 10.seconds)
+    Await.result(
+      hawkRecords
+        .insertOne(
+          Document(
+            "recordId"  -> lockedRecordId,
+            "goodsItem" -> Document(
+              "eori"                     -> "GB123456789098",
+              "actorId"                  -> "GB123456789098",
+              "traderRef"                -> "GB - 22030001 - In bottles 2",
+              "comcode"                  -> "22030001",
+              "goodsDescription"         -> "In bottles",
+              "countryOfOrigin"          -> "GB",
+              "category"                 -> 1,
+              "comcodeEffectiveFromDate" -> twoDaysAgoBson,
+              "comcodeEffectiveToDate"   -> twoDaysAgoBson
+            ),
+            "metadata"  -> Document(
+              "accreditationStatus" -> "Requested",
+              "version"             -> 1,
+              "active"              -> true,
+              "locked"              -> false,
+              "toReview"            -> false,
+              "srcSystemName"       -> "MDTP",
+              "createdDateTime"     -> twoDaysAgoBson,
+              "updatedDateTime"     -> twoDaysAgoBson
+            )
           )
         )
         .toFuture(),
